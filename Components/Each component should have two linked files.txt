@@ -1,0 +1,9 @@
+Example of naming conventions for components
+
+Button.tsx
+button.rules.md
+
+OR
+
+CTASection.tsx
+cta-section.rules.md

@@ -1,0 +1,623 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format.schema.json",
+  "$description": "Loyaltymaster/sendPUSH canonical Phase 2 design tokens in DTCG-style JSON. Source: DESIGN_SYSTEM.md, withremy.css, and src/design-system/tokens.ts.",
+  "color": {
+    "$type": "color",
+    "ink": {
+      "$value": "#302127",
+      "$description": "Deep Business Ink. Primary body text, dark sections, and high-contrast structure.",
+      "$extensions": {
+        "cssVariable": "--lm-color-ink",
+        "remyVariable": "--wr-ink"
+      }
+    },
+    "text": {
+      "muted": {
+        "$value": "#979093",
+        "$description": "Secondary body text, labels, and footer copy.",
+        "$extensions": {
+          "cssVariable": "--lm-color-text-muted",
+          "remyVariable": "--wr-text-muted"
+        }
+      },
+      "subtle": {
+        "$value": "#bfb8bc",
+        "$description": "Placeholders, hints, and lowest-emphasis text.",
+        "$extensions": {
+          "cssVariable": "--lm-color-text-subtle",
+          "remyVariable": "--wr-text-subtle"
+        }
+      }
+    },
+    "surface": {
+      "white": {
+        "$value": "#ffffff",
+        "$description": "Default page surface and card background.",
+        "$extensions": {
+          "cssVariable": "--lm-color-surface-white",
+          "remyVariable": "--wr-white"
+        }
+      },
+      "panelLight": {
+        "$value": "#faf8f9",
+        "$description": "Cards, FAQ items, and lighter containers.",
+        "$extensions": {
+          "cssVariable": "--lm-color-surface-panel-light",
+          "remyVariable": "--wr-bg-panel-light"
+        }
+      },
+      "panelGray": {
+        "$value": "#f4eff2",
+        "$description": "Inputs, toggles, and quiet UI surfaces.",
+        "$extensions": {
+          "cssVariable": "--lm-color-surface-panel-gray",
+          "remyVariable": "--wr-bg-panel-gray"
+        }
+      }
+    },
+    "background": {
+      "peach": {
+        "$value": "#fef0e9",
+        "$description": "Hero, tenant trial, and warm explanatory sections.",
+        "$extensions": {
+          "cssVariable": "--lm-color-background-peach",
+          "remyVariable": "--wr-bg-peach"
+        }
+      },
+      "cyan": {
+        "$value": "#eaf5f8",
+        "$description": "Problem and contrast sections.",
+        "$extensions": {
+          "cssVariable": "--lm-color-background-cyan",
+          "remyVariable": "--wr-bg-cyan"
+        }
+      },
+      "salmon": {
+        "$value": "#fde9e2",
+        "$description": "Use-case and process sections.",
+        "$extensions": {
+          "cssVariable": "--lm-color-background-salmon",
+          "remyVariable": "--wr-bg-salmon"
+        }
+      },
+      "dark": {
+        "$value": "#302127",
+        "$description": "Dark final CTA/proof section background.",
+        "$extensions": {
+          "cssVariable": "--lm-color-background-dark",
+          "remyVariable": "--wf-section-dark-bg"
+        }
+      },
+      "yellow": {
+        "$value": "#fef9e6",
+        "$description": "Soft yellow process/card background.",
+        "$extensions": {
+          "cssVariable": "--lm-color-background-yellow",
+          "remyVariable": "--wr-bg-yellow"
+        }
+      }
+    },
+    "dark": {
+      "warm": {
+        "$value": "#1A1519",
+        "$description": "Warm dark-mode surface harvested from V1.0 notes.",
+        "$extensions": {
+          "cssVariable": "--lm-color-dark-warm"
+        }
+      },
+      "deep": {
+        "$value": "#141015",
+        "$description": "Deep dark-mode surface and dark-section variant.",
+        "$extensions": {
+          "cssVariable": "--lm-color-dark-deep"
+        }
+      }
+    },
+    "accent": {
+      "yellow": {
+        "$value": "#fcb827",
+        "$description": "Direct Action Yellow. Primary CTAs and high-intent conversion only.",
+        "$extensions": {
+          "cssVariable": "--lm-color-accent-yellow",
+          "remyVariable": "--wr-accent-yellow"
+        }
+      },
+      "yellowSoft": {
+        "$value": "#fdd564",
+        "$description": "Soft yellow accent for secondary emphasis.",
+        "$extensions": {
+          "cssVariable": "--lm-color-accent-yellow-soft",
+          "remyVariable": "--wr-accent-yellow-soft"
+        }
+      },
+      "orange": {
+        "$value": "#f37d39",
+        "$description": "Warm Motion Orange. CTA edges, hover states, active nav, and focus rings.",
+        "$extensions": {
+          "cssVariable": "--lm-color-accent-orange",
+          "remyVariable": "--wr-accent-orange"
+        }
+      },
+      "blue": {
+        "$value": "#4c93af",
+        "$description": "Trust Blue. Process markers and cooler contrast.",
+        "$extensions": {
+          "cssVariable": "--lm-color-accent-blue",
+          "remyVariable": "--wr-accent-blue"
+        }
+      },
+      "tagYellow": {
+        "$value": "#fff3c4",
+        "$description": "Warm tag/badge background without CTA weight.",
+        "$extensions": {
+          "cssVariable": "--lm-color-accent-tag-yellow",
+          "remyVariable": "--wr-tag-yellow"
+        }
+      }
+    },
+    "feedback": {
+      "error": {
+        "$value": "#d94f3a",
+        "$description": "Error state foreground.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-error",
+          "remyVariable": "--wf-feedback-error"
+        }
+      },
+      "warning": {
+        "$value": "#c48a12",
+        "$description": "Warning state foreground.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-warning",
+          "remyVariable": "--wf-feedback-warning"
+        }
+      },
+      "success": {
+        "$value": "#2e8e7a",
+        "$description": "Success state foreground.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-success",
+          "remyVariable": "--wf-feedback-success"
+        }
+      },
+      "info": {
+        "$value": "#3a7a94",
+        "$description": "Info state foreground.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-info",
+          "remyVariable": "--wf-feedback-info"
+        }
+      }
+    }
+  },
+  "fontFamily": {
+    "$type": "fontFamily",
+    "display": {
+      "$value": ["Rodger Bold", "Rodger Bold Placeholder", "Arial", "sans-serif"],
+      "$description": "Default display heading stack.",
+      "$extensions": {
+        "cssVariable": "--lm-font-display"
+      }
+    },
+    "stat": {
+      "$value": ["Rodger", "Rodger Regular", "Arial", "sans-serif"],
+      "$description": "Approved stat numeral stack when lighter numerals are needed.",
+      "$extensions": {
+        "cssVariable": "--lm-font-stat"
+      }
+    },
+    "body": {
+      "$value": ["Onest", "Onest Placeholder", "sans-serif"],
+      "$description": "Body, UI, label, and control text.",
+      "$extensions": {
+        "cssVariable": "--lm-font-body"
+      }
+    },
+    "wordmark": {
+      "$value": ["Lato", "sans-serif"],
+      "$description": "Live text wordmark stack only.",
+      "$extensions": {
+        "cssVariable": "--lm-font-wordmark"
+      }
+    }
+  },
+  "typography": {
+    "$type": "typography",
+    "display": {
+      "$value": {
+        "fontFamily": "{fontFamily.display}",
+        "fontSize": "clamp(40px, 5.6vw, 72px)",
+        "fontWeight": 700,
+        "lineHeight": 1.03,
+        "letterSpacing": "clamp(-0.5px, -0.012em, -0.8px)"
+      },
+      "$description": "Hero headlines and largest page promises."
+    },
+    "headline": {
+      "$value": {
+        "fontFamily": "{fontFamily.display}",
+        "fontSize": "clamp(30px, 4vw, 52px)",
+        "fontWeight": 700,
+        "lineHeight": 1.05,
+        "letterSpacing": "clamp(-0.3px, -0.01em, -0.6px)"
+      },
+      "$description": "Section headings and major persuasive beats."
+    },
+    "title": {
+      "$value": {
+        "fontFamily": "{fontFamily.body}",
+        "fontSize": "24px",
+        "fontWeight": 700,
+        "lineHeight": 1,
+        "letterSpacing": "-0.48px"
+      },
+      "$description": "Feature-card titles, pricing plan names, and process titles."
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{fontFamily.body}",
+        "fontSize": "20px",
+        "fontWeight": 400,
+        "lineHeight": 1.56,
+        "letterSpacing": "-0.4px"
+      },
+      "$description": "Main explanatory copy."
+    },
+    "label": {
+      "$value": {
+        "fontFamily": "{fontFamily.body}",
+        "fontSize": "16px",
+        "fontWeight": 700,
+        "lineHeight": 1,
+        "letterSpacing": "-0.2px"
+      },
+      "$description": "Buttons and UI labels. Kept separate from eyebrow."
+    },
+    "eyebrow": {
+      "$value": {
+        "fontFamily": "{fontFamily.body}",
+        "fontSize": "16px",
+        "fontWeight": 700,
+        "lineHeight": 1,
+        "letterSpacing": "0.08em",
+        "textTransform": "uppercase"
+      },
+      "$description": "Uppercase section tags with positive tracking."
+    },
+    "stat": {
+      "$value": {
+        "fontFamily": "{fontFamily.stat}",
+        "fontSize": "44px",
+        "fontWeight": 400,
+        "lineHeight": 1,
+        "letterSpacing": "-0.8px"
+      },
+      "$description": "Large stat and pricing numerals."
+    }
+  },
+  "dimension": {
+    "$type": "dimension",
+    "radius": {
+      "pill": {
+        "$value": "999px",
+        "$description": "CTAs, email inputs, toggles, and tags.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-pill",
+          "remyVariable": "--wr-r-pill"
+        }
+      },
+      "cardPrimary": {
+        "$value": "20px",
+        "$description": "Primary desktop cards.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-card-primary",
+          "remyVariable": "--wr-r-20"
+        }
+      },
+      "cardSecondary": {
+        "$value": "16px",
+        "$description": "Secondary, mobile, and form-adjacent cards.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-card-secondary",
+          "remyVariable": "--wr-r-16"
+        }
+      },
+      "inputTenant": {
+        "$value": "16px",
+        "$description": "Tenant/trial conversion inputs.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-input-tenant",
+          "remyVariable": "--wr-r-16"
+        }
+      },
+      "inputCompact": {
+        "$value": "12px",
+        "$description": "Compact fields, smaller panels, and FAQ items.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-input-compact",
+          "remyVariable": "--wr-r-12"
+        }
+      },
+      "badge": {
+        "$value": "8px",
+        "$description": "Compact badges.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-badge",
+          "remyVariable": "--wr-r-8"
+        }
+      },
+      "brandDot": {
+        "$value": "7px",
+        "$description": "Footer/wordmark brand dot.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-brand-dot"
+        }
+      },
+      "checkDot": {
+        "$value": "6px",
+        "$description": "Checklist and accent dots.",
+        "$extensions": {
+          "cssVariable": "--lm-radius-check-dot"
+        }
+      }
+    },
+    "spacing": {
+      "xs": {
+        "$value": "8px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-xs"
+        }
+      },
+      "sm": {
+        "$value": "12px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-sm"
+        }
+      },
+      "md": {
+        "$value": "18px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-md"
+        }
+      },
+      "lg": {
+        "$value": "24px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-lg"
+        }
+      },
+      "xl": {
+        "$value": "48px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-xl"
+        }
+      },
+      "sectionMobileY": {
+        "$value": "56px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-section-mobile-y"
+        }
+      },
+      "sectionTabletY": {
+        "$value": "72px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-section-tablet-y"
+        }
+      },
+      "sectionDesktopY": {
+        "$value": "84px",
+        "$extensions": {
+          "cssVariable": "--lm-spacing-section-desktop-y"
+        }
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "cardBase": {
+      "$value": {
+        "color": "rgba(48, 33, 39, 0.06)",
+        "offsetX": "0px",
+        "offsetY": "8px",
+        "blur": "20px",
+        "spread": "0px"
+      },
+      "$description": "Default process, feature, pricing, and content cards.",
+      "$extensions": {
+        "cssVariable": "--lm-shadow-card-base"
+      }
+    },
+    "cardHover": {
+      "$value": {
+        "color": "rgba(48, 33, 39, 0.12)",
+        "offsetX": "0px",
+        "offsetY": "14px",
+        "blur": "26px",
+        "spread": "0px"
+      },
+      "$description": "Hover or focus state for interactive cards.",
+      "$extensions": {
+        "cssVariable": "--lm-shadow-card-hover"
+      }
+    },
+    "badge": {
+      "$value": {
+        "color": "rgba(48, 33, 39, 0.82)",
+        "offsetX": "0px",
+        "offsetY": "7px",
+        "blur": "0px",
+        "spread": "0px"
+      },
+      "$description": "Chunky sticker-like hard shadow.",
+      "$extensions": {
+        "cssVariable": "--lm-shadow-badge",
+        "remyVariable": "--wr-shadow-badge"
+      }
+    },
+    "formShell": {
+      "$value": {
+        "color": "rgba(48, 33, 39, 0.1)",
+        "offsetX": "0px",
+        "offsetY": "12px",
+        "blur": "24px",
+        "spread": "0px"
+      },
+      "$description": "Tenant trial form and heavier conversion containers.",
+      "$extensions": {
+        "cssVariable": "--lm-shadow-form-shell",
+        "remyVariable": "--wf-tenant-form-shadow"
+      }
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": {
+        "$value": "220ms",
+        "$extensions": {
+          "cssVariable": "--lm-motion-duration-fast"
+        }
+      },
+      "base": {
+        "$value": "280ms",
+        "$extensions": {
+          "cssVariable": "--lm-motion-duration-base"
+        }
+      },
+      "reveal": {
+        "$value": "560ms",
+        "$extensions": {
+          "cssVariable": "--lm-motion-duration-reveal"
+        }
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "gentle": {
+        "$value": [0.2, 0.8, 0.2, 1],
+        "$extensions": {
+          "cssVariable": "--lm-motion-easing-gentle"
+        }
+      },
+      "standard": {
+        "$value": [0.4, 0, 0.2, 1],
+        "$extensions": {
+          "cssVariable": "--lm-motion-easing-standard"
+        }
+      },
+      "reveal": {
+        "$value": [0.22, 1, 0.36, 1],
+        "$extensions": {
+          "cssVariable": "--lm-motion-easing-reveal"
+        }
+      }
+    }
+  },
+  "layout": {
+    "$type": "dimension",
+    "container": {
+      "main": {
+        "$value": "1280px",
+        "$extensions": {
+          "cssVariable": "--lm-container-main"
+        }
+      },
+      "focus": {
+        "$value": "840px",
+        "$extensions": {
+          "cssVariable": "--lm-container-focus"
+        }
+      },
+      "cta": {
+        "$value": "640px",
+        "$extensions": {
+          "cssVariable": "--lm-container-cta"
+        }
+      }
+    },
+    "containerPadding": {
+      "desktop": {
+        "$value": "48px",
+        "$extensions": {
+          "cssVariable": "--lm-container-padding-desktop"
+        }
+      },
+      "tablet": {
+        "$value": "32px",
+        "$extensions": {
+          "cssVariable": "--lm-container-padding-tablet"
+        }
+      },
+      "mobile": {
+        "$value": "20px",
+        "$extensions": {
+          "cssVariable": "--lm-container-padding-mobile"
+        }
+      }
+    }
+  },
+  "component": {
+    "button": {
+      "primary": {
+        "$type": "object",
+        "$value": {
+          "backgroundColor": "{color.accent.yellow}",
+          "textColor": "{color.ink}",
+          "borderRadius": "{dimension.radius.pill}",
+          "height": "58px",
+          "paddingInline": "28px",
+          "typography": "{typography.label}"
+        },
+        "$description": "Primary yellow pill CTA."
+      }
+    },
+    "card": {
+      "primary": {
+        "$type": "object",
+        "$value": {
+          "backgroundColor": "{color.surface.white}",
+          "textColor": "{color.ink}",
+          "borderRadius": "{dimension.radius.cardPrimary}",
+          "padding": "26px 24px",
+          "shadow": "{shadow.cardBase}"
+        },
+        "$description": "Primary desktop card."
+      },
+      "secondary": {
+        "$type": "object",
+        "$value": {
+          "backgroundColor": "{color.surface.panelLight}",
+          "textColor": "{color.ink}",
+          "borderRadius": "{dimension.radius.cardSecondary}",
+          "padding": "26px 24px",
+          "shadow": "{shadow.cardBase}"
+        },
+        "$description": "Secondary/mobile/form-adjacent card."
+      }
+    },
+    "input": {
+      "tenant": {
+        "$type": "object",
+        "$value": {
+          "backgroundColor": "{color.surface.panelLight}",
+          "textColor": "{color.ink}",
+          "borderRadius": "{dimension.radius.inputTenant}",
+          "padding": "18px 20px",
+          "typography": "{typography.body}"
+        },
+        "$description": "Tenant/trial conversion input."
+      },
+      "compact": {
+        "$type": "object",
+        "$value": {
+          "backgroundColor": "{color.surface.panelLight}",
+          "textColor": "{color.ink}",
+          "borderRadius": "{dimension.radius.inputCompact}",
+          "padding": "14px 16px",
+          "typography": "{typography.label}"
+        },
+        "$description": "Compact/default form field."
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Pre-commit hook: block commits that contain obvious secrets.
+#
+# Activation (one-time, per clone):
+#   git config core.hooksPath .githooks
+#
+# Requires `gitleaks` to be installed locally:
+#   brew install gitleaks
+#   # or: go install github.com/gitleaks/gitleaks/v8@latest
+#
+# If gitleaks is not installed, the hook prints a warning and allows the commit.
+# CI still runs the same scan, so missing local hook is not a security gap,
+# only a convenience loss.
+
+set -euo pipefail
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "[pre-commit] gitleaks not installed, skipping local secret scan." >&2
+  echo "[pre-commit] Install with: brew install gitleaks" >&2
+  exit 0
+fi
+
+# --staged:  only scan files in the current commit
+# --redact:  hide matched secret values in output
+# --no-banner: quieter output
+# --config:  use the repo config so allowlisting works
+gitleaks protect \
+  --staged \
+  --redact \
+  --no-banner \
+  --config=.gitleaks.toml

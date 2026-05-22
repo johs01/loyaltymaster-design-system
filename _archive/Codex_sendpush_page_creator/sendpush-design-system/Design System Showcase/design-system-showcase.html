@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sendPUSH Design System Atlas</title>
+  <link rel="icon" href="assets/logos/loyaltymaster-favicon-512.png">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <link rel="stylesheet" href="design-system-showcase.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-nav wr-container--main">
+      <a class="site-brand" href="#top">
+        <img src="assets/logos/sendpush-loyaltymaster.png" alt="sendPUSH | Loyaltymaster">
+        <span>Design System Atlas</span>
+      </a>
+      <nav class="site-links" aria-label="Page sections">
+        <a href="#overview">Overview</a>
+        <a href="#foundations">Foundations</a>
+        <a href="#components">Components</a>
+        <a href="#sections">Sections</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-band">
+      <div class="wr-container--main hero-grid">
+        <div class="hero-copy reveal">
+          <p class="wf-eyebrow">sendPUSH | Loyaltymaster</p>
+          <h1 class="wr-h1">Design System Atlas</h1>
+          <p class="wr-text-body">
+            One searchable page for the bundled tokens, brand assets, live component specimens,
+            and the full marketing section stack found in this folder.
+          </p>
+          <div class="hero-tools">
+            <label class="search-shell" for="catalogSearch">
+              <span class="search-label">Search the system</span>
+              <input id="catalogSearch" type="search" placeholder="Try: pricing, hero, orange, FAQ, logos">
+            </label>
+            <div class="filter-row" id="filterRow" aria-label="Catalog filters">
+              <button class="filter-chip is-active" data-filter="all" type="button">All</button>
+              <button class="filter-chip" data-filter="foundations" type="button">Foundations</button>
+              <button class="filter-chip" data-filter="assets" type="button">Assets</button>
+              <button class="filter-chip" data-filter="components" type="button">Components</button>
+              <button class="filter-chip" data-filter="sections" type="button">Sections</button>
+            </div>
+            <p class="result-line">
+              <strong id="resultCount">40 matches</strong>
+              <span id="resultLabel">Across previews and section demos</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-board reveal" data-reveal-order="1">
+          <div class="hero-panel">
+            <span class="panel-kicker">Read directly from this folder</span>
+            <div class="board-list">
+              <div class="board-row"><span>Foundations</span><strong>15 previews</strong></div>
+              <div class="board-row"><span>Assets</span><strong>3 modules</strong></div>
+              <div class="board-row"><span>Components</span><strong>12 previews</strong></div>
+              <div class="board-row"><span>Marketing sections</span><strong>10 labeled demos</strong></div>
+            </div>
+            <div class="board-stat-grid">
+              <article class="board-stat">
+                <span class="board-stat__value">Rodger</span>
+                <span class="board-stat__label">Display family</span>
+              </article>
+              <article class="board-stat">
+                <span class="board-stat__value">Onest</span>
+                <span class="board-stat__label">Body family</span>
+              </article>
+              <article class="board-stat">
+                <span class="board-stat__value">220 / 280 / 560</span>
+                <span class="board-stat__label">Motion rhythm</span>
+              </article>
+              <article class="board-stat">
+                <span class="board-stat__value">Yellow pill</span>
+                <span class="board-stat__label">Primary CTA rule</span>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="overview-band">
+      <div class="wr-container--main">
+        <div class="section-intro reveal">
+          <p class="wf-eyebrow">System map</p>
+          <h2 class="wr-h2">The page is split the same way the design system is split.</h2>
+          <p class="wr-text-body">
+            Foundations document the token logic. Components capture the reusable interface pieces.
+            Marketing sections show how those pieces compose into the live sendPUSH flow.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="overview-card reveal" data-reveal-order="1">
+            <p class="overview-card__eyebrow">Brand rules</p>
+            <h3 class="overview-card__title">sendPUSH stays product-first.</h3>
+            <p class="overview-card__body">
+              Product name is always <strong>sendPUSH</strong>. Tone is direct, practical, and
+              reassuring. Primary CTA remains the yellow pill with the orange hard edge.
+            </p>
+          </article>
+
+          <article class="overview-card reveal" data-reveal-order="2">
+            <p class="overview-card__eyebrow">Typography</p>
+            <h3 class="overview-card__title">Rodger leads, Onest explains.</h3>
+            <p class="overview-card__body">
+              Rodger handles H1, H2, H3, and stat values. Onest drives navigation, body copy,
+              labels, eyebrows, form fields, and utility UI.
+            </p>
+          </article>
+
+          <article class="overview-card reveal" data-reveal-order="3">
+            <p class="overview-card__eyebrow">Color logic</p>
+            <h3 class="overview-card__title">Warm surfaces, sharp accents.</h3>
+            <p class="overview-card__body">
+              Yellow, orange, blue, and ink sit on peach, cyan, salmon, yellow, and light panel
+              backgrounds. The result is warm, commercial, and unmistakably branded.
+            </p>
+          </article>
+
+          <article class="overview-card reveal" data-reveal-order="4">
+            <p class="overview-card__eyebrow">Interaction</p>
+            <h3 class="overview-card__title">Soft lift, crisp reveal.</h3>
+            <p class="overview-card__body">
+              Hover states are restrained. Scroll reveals use opacity plus a 24px rise. Focus
+              rings stay visible, mobile targets stay generous, and motion respects user settings.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wr-container--main">
+      <section id="emptyState" class="empty-state" hidden>
+        <p class="wf-eyebrow">No matches</p>
+        <h2 class="wr-h2">Nothing in the atlas matched that filter.</h2>
+        <p class="wr-text-body">Try a broader term or switch back to another group.</p>
+      </section>
+    </div>
+
+    <section id="foundations" class="catalog-section catalog-section--white">
+      <div class="wr-container--main">
+        <div class="catalog-head reveal">
+          <div>
+            <p class="wf-eyebrow">Foundations</p>
+            <h2 class="wr-h2">Tokens, typography, and surface logic.</h2>
+          </div>
+          <p class="catalog-note">
+            Each card below loads the local preview specimen directly from the design-system folder.
+          </p>
+        </div>
+        <div class="catalog-cluster" data-cluster="foundations">
+          <div class="preview-grid" id="foundationsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assets" class="catalog-section catalog-section--peach">
+      <div class="wr-container--main">
+        <div class="catalog-head reveal">
+          <div>
+            <p class="wf-eyebrow">Assets</p>
+            <h2 class="wr-h2">Logos, integrations, and trust markers.</h2>
+          </div>
+          <p class="catalog-note">
+            These are the bundled brand assets the system uses for proof, identity, and platform compatibility.
+          </p>
+        </div>
+        <div class="catalog-cluster" data-cluster="assets">
+          <div class="preview-grid" id="assetsGrid"></div>
+
+          <article class="preview-card preview-card--custom filterable reveal" data-group="assets" data-search="awards badges trust proof users love us high performer implementation">
+            <div class="preview-card__meta">
+              <div>
+                <span class="meta-chip meta-chip--assets">Asset</span>
+                <h3 class="preview-card__title">Awards &amp; trust badges</h3>
+                <p class="preview-card__text">
+                  G2-style proof marks and trust badges used to reinforce credibility inside supporting sections.
+                </p>
+              </div>
+            </div>
+            <div class="preview-frame preview-frame--custom">
+              <div class="awards-grid">
+                <img src="assets/awards/loyaltymaster uses_users-love-us.svg" alt="Users love us badge">
+                <img src="assets/awards/loyaltymaster uses_LoyaltyManagement_FastestImplementation_GoLiveTime.svg" alt="Fastest implementation badge">
+                <img src="assets/awards/loyaltymaster uses_LoyaltyManagement_HighPerformer_HighPerformer.svg" alt="High performer badge">
+                <img src="assets/awards/loyaltymaster uses_LoyaltyManagement_MomentumLeader_Leader.svg" alt="Momentum leader badge">
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="components" class="catalog-section catalog-section--panel">
+      <div class="wr-container--main">
+        <div class="catalog-head reveal">
+          <div>
+            <p class="wf-eyebrow">Components</p>
+            <h2 class="wr-h2">Reusable UI pieces that make up the system.</h2>
+          </div>
+          <p class="catalog-note">
+            Buttons, cards, form patterns, toggles, navigation shells, and proof modules are all represented here.
+          </p>
+        </div>
+        <div class="catalog-cluster" data-cluster="components">
+          <div class="preview-grid" id="componentsGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sections" class="sections-stage">
+      <div class="wr-container--main">
+        <div class="catalog-head reveal">
+          <div>
+            <p class="wf-eyebrow">Marketing sections</p>
+            <h2 class="wr-h2">The named page flow from the marketing UI kit.</h2>
+          </div>
+          <p class="catalog-note">
+            These demos recreate the site sections in plain HTML, CSS, and JS while keeping the system labels visible.
+          </p>
+        </div>
+
+        <div class="section-index reveal">
+          <a href="#demo-nav">Nav</a>
+          <a href="#demo-hero">Hero</a>
+          <a href="#demo-partners">Partner Strip</a>
+          <a href="#demo-process">Process</a>
+          <a href="#demo-features">Features</a>
+          <a href="#demo-pricing">Pricing</a>
+          <a href="#demo-testimonials">Testimonials</a>
+          <a href="#demo-faq">FAQ</a>
+          <a href="#demo-final-cta">Final CTA</a>
+          <a href="#demo-footer">Footer</a>
+        </div>
+      </div>
+
+      <div class="sections-flow" data-cluster="sections">
+        <article id="demo-nav" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="nav navigation glass sticky header links logo signup login">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Nav</span>
+            </div>
+            <p class="section-note">
+              Floating glass pill navigation with centered links, a secondary log-in link, and a yellow CTA.
+            </p>
+            <div class="nav-demo">
+              <a class="nav-demo__brand" href="#top">
+                <img src="assets/logos/sendpush-loyaltymaster.png" alt="sendPUSH">
+              </a>
+              <nav class="nav-demo__links" aria-label="Marketing navigation">
+                <a href="#demo-features">Features</a>
+                <a href="#demo-process">Use Cases</a>
+                <a href="#demo-testimonials">Blog</a>
+                <a class="is-active" href="#demo-pricing">Pricing</a>
+                <a href="#demo-footer">Contact</a>
+              </nav>
+              <a class="nav-demo__login" href="#demo-final-cta">Log In</a>
+              <button class="sp-button sp-button--primary sp-button--sm" type="button">Sign Up</button>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-hero" class="showcase-block showcase-block--peach filterable reveal" data-group="sections" data-search="hero eyebrow h1 checklist email cta dashboard stats">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Hero</span>
+            </div>
+            <p class="section-note">
+              Eyebrow, H1, body copy, checklist, email CTA, and a warm product snapshot card.
+            </p>
+
+            <div class="hero-demo">
+              <div class="hero-demo__copy">
+                <p class="wf-eyebrow">Customer messaging system</p>
+                <h2 class="wr-h2 hero-demo__headline">Have Your Own Customer List. Message Them Anytime - Free.</h2>
+                <p class="wr-text-body hero-demo__body">
+                  Build your direct customer list, automate outreach, and send high-converting
+                  campaigns without relying on social algorithms.
+                </p>
+                <ul class="checklist">
+                  <li><span class="checkmark"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5 5 9l4.5-5.5"></path></svg></span>Own your audience and contact data from day one.</li>
+                  <li><span class="checkmark"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5 5 9l4.5-5.5"></path></svg></span>Trigger reminders, offers, and follow-ups in minutes.</li>
+                  <li><span class="checkmark"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5 5 9l4.5-5.5"></path></svg></span>Keep customers engaged with timely personalized updates.</li>
+                </ul>
+
+                <form class="email-shell" action="#" method="get" onsubmit="return false;">
+                  <input type="email" placeholder="name@email.com" aria-label="Email address">
+                  <button class="sp-button sp-button--primary" type="submit">Start Free in 2 Minutes</button>
+                </form>
+              </div>
+
+              <div class="hero-snapshot">
+                <div class="app-snapshot">
+                  <div class="app-snapshot__bar">
+                    <span class="window-dot window-dot--orange"></span>
+                    <span class="window-dot window-dot--yellow"></span>
+                    <span class="window-dot window-dot--blue"></span>
+                    <span class="app-snapshot__url">app.sendpush.com</span>
+                  </div>
+
+                  <div class="snapshot-panel snapshot-panel--wide">
+                    <div>
+                      <div class="snapshot-label">CAMPAIGN SENT</div>
+                      <div class="snapshot-title">Saturday Brunch - 20% off</div>
+                    </div>
+                    <span class="token-tag token-tag--cyan">Live</span>
+                  </div>
+
+                  <div class="snapshot-stats">
+                    <div class="snapshot-stat">
+                      <strong>2,841</strong>
+                      <span>Delivered</span>
+                    </div>
+                    <div class="snapshot-stat">
+                      <strong>94%</strong>
+                      <span>Open rate</span>
+                    </div>
+                    <div class="snapshot-stat">
+                      <strong>312</strong>
+                      <span>Clicks</span>
+                    </div>
+                  </div>
+
+                  <div class="snapshot-panel snapshot-panel--message">
+                    <span class="avatar-pill"></span>
+                    <div>
+                      <div class="snapshot-message__title">New reply - Maya R.</div>
+                      <div class="snapshot-message__body">Booking a table for 4 tonight.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-partners" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="partner strip integrations stripe apple pay google pay aws toast clover zapier make">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Partner Strip</span>
+            </div>
+            <p class="section-note">
+              Monochrome proof row that confirms sendPUSH fits into the tools operators already use.
+            </p>
+            <div class="partner-demo">
+              <p class="partner-demo__label">Connects with the tools you already use</p>
+              <div class="partner-demo__row">
+                <img src="assets/partners/Stripe Payment.webp" alt="Stripe">
+                <img src="assets/partners/Apple Pay Logo.webp" alt="Apple Pay">
+                <img src="assets/partners/Google Pay Logo.webp" alt="Google Pay">
+                <img src="assets/partners/AWS.webp" alt="AWS">
+                <img src="assets/partners/Toast integrated with Loyaltymaster.webp" alt="Toast">
+                <img src="assets/partners/Clover POS Logo.webp" alt="Clover POS">
+                <img src="assets/partners/Loyaltymaster is Zapier Ready.webp" alt="Zapier">
+                <img src="assets/partners/Loyaltymaster is Make Ready.webp" alt="Make">
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-process" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="process how it works invite segment send numbered cards">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Process</span>
+            </div>
+            <p class="section-note">
+              Three-step sequence using tinted cards, numbered pills, and short operational copy.
+            </p>
+            <p class="wf-eyebrow">How it works</p>
+            <h2 class="wr-h2 section-headline">Three steps from list to message.</h2>
+            <div class="process-grid">
+              <article class="process-card process-card--peach">
+                <span class="step-badge step-badge--orange">1</span>
+                <h3 class="wr-h3">Invite</h3>
+                <p>Import existing customers or add them as you go - one list you actually own.</p>
+              </article>
+              <article class="process-card process-card--cyan">
+                <span class="step-badge step-badge--blue">2</span>
+                <h3 class="wr-h3">Segment</h3>
+                <p>Group by recency, spend, or visit habits. Smart segments update themselves.</p>
+              </article>
+              <article class="process-card process-card--yellow">
+                <span class="step-badge step-badge--yellow">3</span>
+                <h3 class="wr-h3">Send</h3>
+                <p>Launch a campaign in minutes or schedule seasonal offers ahead of time.</p>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-features" class="showcase-block showcase-block--panel filterable reveal" data-group="sections" data-search="features icon tiles cards smart segments behavior triggers campaign calendar wallet passes integrations analytics">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Features</span>
+            </div>
+            <p class="section-note">
+              White cards on a light panel background, each led by a gradient icon tile and a short feature noun phrase.
+            </p>
+            <p class="wf-eyebrow">Features</p>
+            <h2 class="wr-h2 section-headline">All the power. None of the complexity.</h2>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--orange"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M6 12h12M9 18h6"></path></svg></span>
+                <h3>Smart Segments</h3>
+                <p>Group by recency, spend, or habits, then let the groups update automatically.</p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--blue"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"></path></svg></span>
+                <h3>Behavior Triggers</h3>
+                <p>Launch flows from real customer actions instead of guessing when to reach out.</p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--yellow"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 2v4M16 2v4"></path></svg></span>
+                <h3>Campaign Calendar</h3>
+                <p>Plan seasonal offers ahead of time and activate them automatically when they matter.</p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--sun"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 11h18"></path></svg></span>
+                <h3>Wallet Passes</h3>
+                <p>Branded passes live in Apple and Google Wallet so customers keep you close.</p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--mist"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"></circle><circle cx="17" cy="12" r="3"></circle><path d="M10 12h4"></path></svg></span>
+                <h3>Plug &amp; Play Integrations</h3>
+                <p>Connect Stripe, Toast, Clover, Zapier, Make, and the rest of your operator stack.</p>
+              </article>
+              <article class="feature-card">
+                <span class="icon-tile icon-tile--ink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20V10M9 20V4M15 20v-7M21 20v-4"></path></svg></span>
+                <h3>Analytics That Matter</h3>
+                <p>Delivered, open, reply, and attributed revenue stay visible at a glance.</p>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-pricing" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="pricing cards starter pro scale yearly monthly most popular toggle">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Pricing</span>
+            </div>
+            <p class="section-note">
+              Three pricing tiers, a pill-style billing toggle, and a highlighted middle plan with a warm gradient.
+            </p>
+            <p class="wf-eyebrow section-center">Pricing</p>
+            <h2 class="wr-h2 section-headline section-center">Simple pricing. No surprises.</h2>
+
+            <div class="billing-toggle" role="tablist" aria-label="Billing period">
+              <button class="billing-toggle__button" data-billing="monthly" type="button" role="tab" aria-selected="false">Monthly</button>
+              <button class="billing-toggle__button is-active" data-billing="yearly" type="button" role="tab" aria-selected="true">
+                Yearly
+                <span class="billing-toggle__offer">30% OFF</span>
+              </button>
+            </div>
+
+            <div class="pricing-grid">
+              <article class="pricing-card">
+                <h3>Starter</h3>
+                <div class="pricing-card__price">
+                  <span class="price-value" data-price data-monthly="9" data-yearly="7">$7</span>
+                  <span>/mo</span>
+                </div>
+                <button class="sp-button sp-button--secondary" type="button">Get Started</button>
+                <ul>
+                  <li><span></span>Up to 500 contacts</li>
+                  <li><span></span>Email + SMS campaigns</li>
+                  <li><span></span>Basic segments</li>
+                  <li><span></span>Community support</li>
+                </ul>
+              </article>
+
+              <article class="pricing-card pricing-card--featured">
+                <span class="pricing-card__badge">MOST POPULAR</span>
+                <h3>Pro</h3>
+                <div class="pricing-card__price">
+                  <span class="price-value" data-price data-monthly="19" data-yearly="15">$15</span>
+                  <span>/mo</span>
+                </div>
+                <button class="sp-button sp-button--primary" type="button">Start Free Trial</button>
+                <ul>
+                  <li><span></span>Up to 5,000 contacts</li>
+                  <li><span></span>Automations &amp; triggers</li>
+                  <li><span></span>Wallet passes</li>
+                  <li><span></span>Priority support</li>
+                </ul>
+              </article>
+
+              <article class="pricing-card">
+                <h3>Scale</h3>
+                <div class="pricing-card__price">
+                  <span class="price-value" data-price data-monthly="49" data-yearly="39">$39</span>
+                  <span>/mo</span>
+                </div>
+                <button class="sp-button sp-button--secondary" type="button">Talk to Sales</button>
+                <ul>
+                  <li><span></span>Unlimited contacts</li>
+                  <li><span></span>Advanced analytics</li>
+                  <li><span></span>Multi-location</li>
+                  <li><span></span>Dedicated manager</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-testimonials" class="showcase-block showcase-block--salmon filterable reveal" data-group="sections" data-search="testimonials social proof stars quote cards reviews avatars">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Testimonials</span>
+            </div>
+            <p class="section-note">
+              Social-proof card row with stars, italicized quotes, and small owner or operator identities.
+            </p>
+            <p class="wf-eyebrow">Loved by local businesses</p>
+            <h2 class="wr-h2 section-headline">Real results from teams like yours.</h2>
+
+            <div class="testimonial-grid">
+              <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"sendPUSH gave us one place to run reminders, promos, and follow-ups. We filled more open slots in weeks."</p>
+                <div class="testimonial-card__person">
+                  <span class="person-avatar person-avatar--blue">MR</span>
+                  <div>
+                    <strong>Maya Rivera</strong>
+                    <span>Ops Lead, Riverfront Wellness</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"The automations are simple to set up and the reporting is clear. It kept patients engaged month over month."</p>
+                <div class="testimonial-card__person">
+                  <span class="person-avatar person-avatar--orange">EB</span>
+                  <div>
+                    <strong>Elena Brooks</strong>
+                    <span>GM, Elm Street Clinic</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testimonial-card">
+                <div class="testimonial-card__stars">★★★★★</div>
+                <p>"We cut our no-show rate in half. The ROI paid for the whole year in six weeks."</p>
+                <div class="testimonial-card__person">
+                  <span class="person-avatar person-avatar--yellow">DP</span>
+                  <div>
+                    <strong>Devon Park</strong>
+                    <span>Owner, The Standing Room</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-faq" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="faq accordion questions answers credit card imports pos contract email marketing">
+          <div class="wr-container--focus">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">FAQ</span>
+            </div>
+            <p class="section-note">
+              Single-column accordion with clear borders, round chevrons, and short, practical answers.
+            </p>
+            <p class="wf-eyebrow section-center">Questions</p>
+            <h2 class="wr-h2 section-headline section-center">Frequently asked.</h2>
+
+            <div class="faq-list" data-accordion>
+              <article class="faq-item is-open">
+                <button class="faq-button" type="button" aria-expanded="true">
+                  <span>Do I need a credit card to start?</span>
+                  <span class="faq-icon" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-panel">
+                  <p>No - every sendPUSH plan starts with a free 14-day trial. No credit card required.</p>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-button" type="button" aria-expanded="false">
+                  <span>Can I import my existing contacts?</span>
+                  <span class="faq-icon" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-panel" hidden>
+                  <p>Yes. Upload a CSV, connect your POS, or add contacts one at a time. Your list is always yours to export.</p>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-button" type="button" aria-expanded="false">
+                  <span>Does it integrate with my POS?</span>
+                  <span class="faq-icon" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-panel" hidden>
+                  <p>We integrate directly with Stripe, Toast, Clover, and TouchBistro, plus anything reachable via Zapier or Make.</p>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-button" type="button" aria-expanded="false">
+                  <span>How is sendPUSH different from email marketing tools?</span>
+                  <span class="faq-icon" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-panel" hidden>
+                  <p>sendPUSH is built for local businesses. It combines SMS, email, and wallet passes with flows that fire from real customer actions.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-final-cta" class="showcase-block showcase-block--ink filterable reveal" data-group="sections" data-search="final cta ink dark email capture start free no credit card">
+          <div class="wr-container--cta">
+            <div class="section-marker section-marker--on-dark">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Final CTA</span>
+            </div>
+            <p class="section-note section-note--on-dark">
+              Single high-contrast conversion band that uses yellow for emphasis and keeps the offer extremely plain.
+            </p>
+            <div class="final-cta">
+              <p class="wf-eyebrow final-cta__eyebrow">Ready when you are</p>
+              <h2 class="wr-h2 final-cta__headline">Start Free in 2 Minutes.</h2>
+              <p class="final-cta__body">No credit card. No contracts. Just your customers, in one place.</p>
+              <form class="email-shell email-shell--on-dark" action="#" method="get" onsubmit="return false;">
+                <input type="email" placeholder="name@email.com" aria-label="Email address">
+                <button class="sp-button sp-button--primary" type="submit">Start Free in 2 Minutes</button>
+              </form>
+              <p class="final-cta__fineprint">14-day free trial - cancel anytime - your data is always yours</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="demo-footer" class="showcase-block showcase-block--white filterable reveal" data-group="sections" data-search="footer columns product use cases resources company privacy terms security">
+          <div class="wr-container--main">
+            <div class="section-marker">
+              <span class="section-marker__kind">Section</span>
+              <span class="section-marker__name">Footer</span>
+            </div>
+            <p class="section-note">
+              Brand lockup, short product description, four link columns, and a small legal baseline.
+            </p>
+            <footer class="footer-demo">
+              <div class="footer-demo__top">
+                <div class="footer-demo__brand">
+                  <img src="assets/logos/sendpush-loyaltymaster.png" alt="sendPUSH Loyaltymaster">
+                  <p>
+                    The customer messaging system for local businesses. Own your audience. Grow your revenue.
+                  </p>
+                </div>
+
+                <div class="footer-demo__columns">
+                  <div>
+                    <h3>Product</h3>
+                    <a href="#demo-features">Features</a>
+                    <a href="#demo-pricing">Pricing</a>
+                    <a href="#demo-partners">Integrations</a>
+                    <a href="#demo-hero">Changelog</a>
+                  </div>
+                  <div>
+                    <h3>Use Cases</h3>
+                    <a href="#demo-process">Restaurants</a>
+                    <a href="#demo-process">Wellness</a>
+                    <a href="#demo-process">Clinics</a>
+                    <a href="#demo-process">Retail</a>
+                  </div>
+                  <div>
+                    <h3>Resources</h3>
+                    <a href="#demo-faq">Blog</a>
+                    <a href="#demo-faq">Guides</a>
+                    <a href="#demo-faq">Help Center</a>
+                    <a href="#demo-footer">Contact</a>
+                  </div>
+                  <div>
+                    <h3>Company</h3>
+                    <a href="#overview">About</a>
+                    <a href="#overview">Careers</a>
+                    <a href="#assets">Partners</a>
+                    <a href="#assets">Press</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer-demo__bottom">
+                <span>&copy; 2026 Loyaltymaster, Inc. All rights reserved.</span>
+                <div>
+                  <a href="#demo-footer">Privacy</a>
+                  <a href="#demo-footer">Terms</a>
+                  <a href="#demo-footer">Security</a>
+                </div>
+              </div>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="design-system-showcase.js"></script>
+</body>
+</html>

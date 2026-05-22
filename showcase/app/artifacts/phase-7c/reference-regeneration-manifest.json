@@ -1,0 +1,541 @@
+{
+  "generatedAt": "2026-05-20T07:06:14.543Z",
+  "phase": "7C",
+  "mode": "intentional-reference-regeneration",
+  "runtime": {
+    "phase": "7C",
+    "browserName": "chromium",
+    "browserVersion": "148.0.7778.168",
+    "deviceScaleFactor": 1,
+    "playwrightPackage": "@playwright/test",
+    "os": "Darwin 25.4.0 arm64",
+    "fontRuntime": {
+      "checks": [
+        {
+          "family": "Rodger Bold",
+          "descriptor": "700 48px \"Rodger Bold\"",
+          "loaded": true,
+          "loadedFaces": [
+            {
+              "family": "Rodger Bold",
+              "weight": "700",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            }
+          ]
+        },
+        {
+          "family": "Rodger",
+          "descriptor": "400 72px \"Rodger\"",
+          "loaded": true,
+          "loadedFaces": [
+            {
+              "family": "Rodger",
+              "weight": "400",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            }
+          ]
+        },
+        {
+          "family": "Onest",
+          "descriptor": "400 16px \"Onest\"",
+          "loaded": true,
+          "loadedFaces": [
+            {
+              "family": "Onest",
+              "weight": "400",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "600",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "700",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "800",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "900",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            }
+          ]
+        },
+        {
+          "family": "Onest",
+          "descriptor": "700 16px \"Onest\"",
+          "loaded": true,
+          "loadedFaces": [
+            {
+              "family": "Onest",
+              "weight": "400",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "600",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "700",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "800",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "900",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            }
+          ]
+        },
+        {
+          "family": "Onest",
+          "descriptor": "900 16px \"Onest\"",
+          "loaded": true,
+          "loadedFaces": [
+            {
+              "family": "Onest",
+              "weight": "400",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "600",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "700",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "800",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            },
+            {
+              "family": "Onest",
+              "weight": "900",
+              "style": "normal",
+              "status": "loaded",
+              "display": "swap"
+            }
+          ]
+        }
+      ],
+      "faces": [
+        {
+          "family": "Rodger",
+          "weight": "100",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "100",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "200",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "200",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "300",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "300",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "400",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "400",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "500",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "500",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "600",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "600",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "700",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "700",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "800",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "800",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "900",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger",
+          "weight": "900",
+          "style": "italic",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger Bold",
+          "weight": "700",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Rodger Bold Placeholder",
+          "weight": "700",
+          "style": "normal",
+          "status": "loaded",
+          "display": "block"
+        },
+        {
+          "family": "Onest",
+          "weight": "100",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "200",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "300",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "400",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "500",
+          "style": "normal",
+          "status": "unloaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "600",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "700",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "800",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        },
+        {
+          "family": "Onest",
+          "weight": "900",
+          "style": "normal",
+          "status": "loaded",
+          "display": "swap"
+        }
+      ]
+    },
+    "screenshotTiming": "document.fonts.load + document.fonts.ready + two requestAnimationFrame ticks + 120ms settle",
+    "captureHost": "http://127.0.0.1:4177",
+    "artifactDirectory": "showcase/app/artifacts/phase-7c"
+  },
+  "references": [
+    {
+      "id": "billing-toggle-button",
+      "canonicalPath": "assets/screenshots/billing-toggle-button.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/billing-toggle-button.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/billing-toggle-button.png",
+      "width": 1277,
+      "height": 302
+    },
+    {
+      "id": "button-email",
+      "canonicalPath": "assets/screenshots/button-email.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/button-email.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/button-email.png",
+      "width": 780,
+      "height": 293
+    },
+    {
+      "id": "comparison-table",
+      "canonicalPath": "assets/screenshots/comparison-table.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/comparison-table.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/comparison-table.png",
+      "width": 1172,
+      "height": 595
+    },
+    {
+      "id": "cta-trial-full-form",
+      "canonicalPath": "assets/screenshots/cta-trial-full-form.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/cta-trial-full-form.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/cta-trial-full-form.png",
+      "width": 1172,
+      "height": 909
+    },
+    {
+      "id": "cta-with-button-email",
+      "canonicalPath": "assets/screenshots/cta-with-button-email.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/cta-with-button-email.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/cta-with-button-email.png",
+      "width": 1172,
+      "height": 417
+    },
+    {
+      "id": "faq-accordion",
+      "canonicalPath": "assets/screenshots/faq-accordion.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/faq-accordion.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/faq-accordion.png",
+      "width": 1172,
+      "height": 748
+    },
+    {
+      "id": "feature-section-2-column-bullets-image",
+      "canonicalPath": "assets/screenshots/feature-section-2-column-bullets-image.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/feature-section-2-column-bullets-image.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/feature-section-2-column-bullets-image.png",
+      "width": 1172,
+      "height": 682
+    },
+    {
+      "id": "feature-section-2-column-image",
+      "canonicalPath": "assets/screenshots/feature-section-2-column-image.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/feature-section-2-column-image.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/feature-section-2-column-image.png",
+      "width": 1172,
+      "height": 871
+    },
+    {
+      "id": "features-grid",
+      "canonicalPath": "assets/screenshots/features-grid.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/features-grid.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/features-grid.png",
+      "width": 1172,
+      "height": 683
+    },
+    {
+      "id": "footer",
+      "canonicalPath": "assets/screenshots/footer.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/footer.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/footer.png",
+      "width": 1172,
+      "height": 470
+    },
+    {
+      "id": "geo-fence-use-case",
+      "canonicalPath": "assets/screenshots/geo-fence-use-case.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/geo-fence-use-case.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/geo-fence-use-case.png",
+      "width": 792,
+      "height": 581
+    },
+    {
+      "id": "hero-main-section",
+      "canonicalPath": "assets/screenshots/hero-main-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/hero-main-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/hero-main-section.png",
+      "width": 1172,
+      "height": 1002
+    },
+    {
+      "id": "image-grid",
+      "canonicalPath": "assets/screenshots/image-grid.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/image-grid.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/image-grid.png",
+      "width": 1172,
+      "height": 262
+    },
+    {
+      "id": "image-strip",
+      "canonicalPath": "assets/screenshots/image-strip.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/image-strip.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/image-strip.png",
+      "width": 1161,
+      "height": 253
+    },
+    {
+      "id": "navbar-glassmorphism",
+      "canonicalPath": "assets/screenshots/navbar-glassmorphism.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/navbar-glassmorphism.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/navbar-glassmorphism.png",
+      "width": 1161,
+      "height": 82
+    },
+    {
+      "id": "pricing-section",
+      "canonicalPath": "assets/screenshots/pricing-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/pricing-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/pricing-section.png",
+      "width": 1172,
+      "height": 1049
+    },
+    {
+      "id": "process-steps",
+      "canonicalPath": "assets/screenshots/process-steps.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/process-steps.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/process-steps.png",
+      "width": 1172,
+      "height": 650
+    },
+    {
+      "id": "stats-card-strip",
+      "canonicalPath": "assets/screenshots/stats-card-strip.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/stats-card-strip.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/stats-card-strip.png",
+      "width": 1172,
+      "height": 196
+    },
+    {
+      "id": "testimonial-single",
+      "canonicalPath": "assets/screenshots/testimonial-single.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/testimonial-single.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/testimonial-single.png",
+      "width": 1172,
+      "height": 552
+    },
+    {
+      "id": "testimonials-grid",
+      "canonicalPath": "assets/screenshots/testimonials-grid.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/testimonials-grid.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/testimonials-grid.png",
+      "width": 1172,
+      "height": 606
+    }
+  ]
+}

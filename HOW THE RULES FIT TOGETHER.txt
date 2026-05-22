@@ -1,0 +1,22 @@
+The rule system should have three levels
+Level 1: Brand rules
+
+Stored in:
+DESIGN.md
+PRODUCT.md
+
+These define the brand and product.
+
+Level 2: Component rules
+
+Stored in:
+design-system/component-rules/
+These define each Lego block.
+
+Level 3: Combination rules
+
+Stored in:
+design-system/composition-rules.json
+
+
+Also the staging matters because v1 will teach you what v2 and v3 need to enforce.

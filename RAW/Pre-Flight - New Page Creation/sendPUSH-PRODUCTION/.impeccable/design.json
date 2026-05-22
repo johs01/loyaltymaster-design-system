@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-08T14:26:21+02:00",
+  "title": "Design System: sendPUSH | Loyaltymaster",
+  "sourceRoute": "/design-system-template-page",
+  "sourceFiles": [
+    "src/next/SitePage.tsx",
+    "src/design-system/STYLE-GUIDE.md",
+    "src/design-system/tokens.ts",
+    "src/design-system/components.js",
+    "public/design-system/withremy/withremy.css",
+    "public/wireframe-remy.css",
+    "src/index.css"
+  ],
+  "extensions": {
+    "northStar": "The Local Growth Counter",
+    "routeInventory": {
+      "route": "/design-system-template-page",
+      "resolver": "src/next/SitePage.tsx",
+      "component": "DesignSystemTemplatePage",
+      "shellComponents": ["Nav", "Footer", "skip link", "theme live region"],
+      "bodyComponents": [
+        "HeroSection",
+        "LocalHeroBanner",
+        "AwardsStrip",
+        "LogoGrid",
+        "StatsSection",
+        "ProblemSection",
+        "TestimonialSection",
+        "UseCaseSection",
+        "FeaturesSection",
+        "ComparisonSection",
+        "ServiceAreaSection",
+        "PricingSection",
+        "ProcessSection",
+        "FaqSection",
+        "GoogleMapEmbed",
+        "FinalCtaSection",
+        "TenantTrialSection"
+      ]
+    },
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Business Ink",
+        "canonical": "#302127",
+        "dark": "#f5edf1",
+        "css": "var(--wr-ink)"
+      },
+      "peach": {
+        "role": "neutral",
+        "displayName": "Peach Section",
+        "canonical": "#fef0e9",
+        "dark": "#231c21",
+        "css": "var(--wr-bg-peach)"
+      },
+      "cyan": {
+        "role": "neutral",
+        "displayName": "Cyan Section",
+        "canonical": "#eaf5f8",
+        "dark": "#1b252b",
+        "css": "var(--wr-bg-cyan)"
+      },
+      "salmon": {
+        "role": "neutral",
+        "displayName": "Salmon Section",
+        "canonical": "#fde9e2",
+        "dark": "#281f1c",
+        "css": "var(--wr-bg-salmon)"
+      },
+      "yellow": {
+        "role": "primary",
+        "displayName": "Direct Action Yellow",
+        "canonical": "#fcb827",
+        "dark": "#ffd25d",
+        "css": "var(--wr-accent-yellow)"
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Warm Motion Orange",
+        "canonical": "#f37d39",
+        "dark": "#ff9d63",
+        "css": "var(--wr-accent-orange)"
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "Trust Blue",
+        "canonical": "#4c93af",
+        "dark": "#72bdd9",
+        "css": "var(--wr-accent-blue)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Rodger Bold Display",
+        "purpose": "Hero headlines, major promises, stat values, and pricing values."
+      },
+      "body": {
+        "displayName": "Onest Body",
+        "purpose": "Readable persuasive copy, navigation, labels, forms, and UI text."
+      },
+      "brandLogo": {
+        "displayName": "Lato Wordmark",
+        "purpose": "Live text sendPUSH | Loyaltymaster logo."
+      }
+    },
+    "elevationMeta": {
+      "badge": "0 7px 0 0 rgba(48, 33, 39, 0.82)",
+      "email": "0 4px 0 rgba(252, 184, 39, 0.35), inset 0 0 0 2px rgba(252, 184, 39, 0.45)",
+      "cardBase": "0 8px 20px rgba(48, 33, 39, 0.06)",
+      "cardHover": "0 14px 26px rgba(48, 33, 39, 0.12)",
+      "tenantForm": "0 12px 24px rgba(48, 33, 39, 0.1)"
+    },
+    "motionMeta": {
+      "easeGentle": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "easeStandard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "fast": "220ms",
+      "base": "280ms",
+      "reveal": "0.56s cubic-bezier(0.22, 1, 0.36, 1)",
+      "reducedMotion": "Respect prefers-reduced-motion with nonessential transitions disabled."
+    },
+    "componentRules": {
+      "buttons": "Use .wr-cta-join.wf-btn for primary route CTAs with pill radius, yellow fill, orange edge, sheen, and lift.",
+      "sections": "Prefer wf-bg-peach, wf-bg-cyan, wf-bg-salmon, wf-bg-white, and wf-bg-dark for long-form page rhythm.",
+      "cards": "Use 16px or 20px radii, soft borders, restrained shadows, and hover lift only when the card is interactive or emphasized.",
+      "forms": "Use .wf-tenant-form, .wf-tenant-input, .wf-field-error, native disabled state, and .wf-btn--loading for conversion forms.",
+      "sourceToPage": "Build only route body content; do not add navbar, header, or footer unless explicitly requested."
+    },
+    "dos": [
+      "Reuse /design-system-template-page as the component reference before creating new website routes.",
+      "Preserve exact source text for source-to-page work.",
+      "Use Cloudinary images or intentional placeholders.",
+      "Maintain WCAG AA intent, visible focus, keyboard usability, reduced motion support, and responsive behavior."
+    ],
+    "donts": [
+      "Do not make pages feel like generic SaaS templates.",
+      "Do not use sterile blue or purple gradient pages, vague AI-looking layouts, or empty startup polish.",
+      "Do not add navbar, header, or footer to route bodies when the shell already provides them.",
+      "Do not use side-stripe borders, gradient text, decorative glassmorphism, or hero-metric templates as default moves."
+    ]
+  }
+}

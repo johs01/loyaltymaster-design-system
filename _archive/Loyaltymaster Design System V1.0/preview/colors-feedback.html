@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; }
+.item { border-radius: 12px; padding: 12px; display:flex; flex-direction:column; gap:4px; border: 1px solid transparent; }
+.dot { width: 10px; height: 10px; border-radius: 99px; }
+.lbl { font-size: 12px; font-weight: 700; letter-spacing: -0.15px; }
+.h { font-family: ui-monospace, Menlo, monospace; font-size: 10px; opacity: .75; }
+</style></head><body>
+<div class="grid">
+  <div class="item" style="background:#fde8e4;color:#d94f3a;border-color:rgba(217,79,58,.22)"><div class="dot" style="background:#d94f3a"></div><span class="lbl">Error</span><span class="h">#D94F3A · #FDE8E4</span></div>
+  <div class="item" style="background:#fef4dc;color:#c48a12;border-color:rgba(196,138,18,.22)"><div class="dot" style="background:#c48a12"></div><span class="lbl">Warning</span><span class="h">#C48A12 · #FEF4DC</span></div>
+  <div class="item" style="background:#e4f5f1;color:#2e8e7a;border-color:rgba(46,142,122,.22)"><div class="dot" style="background:#2e8e7a"></div><span class="lbl">Success</span><span class="h">#2E8E7A · #E4F5F1</span></div>
+  <div class="item" style="background:#e6f1f5;color:#3a7a94;border-color:rgba(58,122,148,.22)"><div class="dot" style="background:#3a7a94"></div><span class="lbl">Info</span><span class="h">#3A7A94 · #E6F1F5</span></div>
+</div>
+</body></html>

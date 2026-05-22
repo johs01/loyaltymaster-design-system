@@ -1,0 +1,290 @@
+/* SYSTEM: REMY — Core Design Tokens & Utilities */
+
+/* ─── Google Fonts ─────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;500;900&family=Onest:wght@400;500;600;700&display=swap");
+
+/* ─── Rodger Bold (display numbers / prices) ──────────────────────────────── */
+@font-face {
+  font-family: "Rodger Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/RodgerTest-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger Bold Placeholder";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("/assets/RodgerTest-Bold.otf") format("opentype");
+}
+
+/* ─── Design Tokens ────────────────────────────────────────────────────────── */
+:root {
+  /* Color palette – light mode */
+  --wr-ink: #302127;
+  --wr-text-muted: #979093;
+  --wr-text-subtle: #bfb8bc;
+  --wr-white: #ffffff;
+
+  /* Section backgrounds */
+  --wr-bg-peach: #fef0e9;
+  --wr-bg-cyan: #eaf5f8;
+  --wr-bg-salmon: #fde9e2;
+  --wr-bg-panel-gray: #f4eff2;
+  --wr-bg-panel-light: #faf8f9;
+
+  /* Accent palette */
+  --wr-accent-orange: #f37d39;
+  --wr-accent-blue: #4c93af;
+  --wr-accent-yellow: #fcb827;
+  --wr-accent-yellow-soft: #fdd564;
+  --wr-tag-yellow: #fff3c4;
+  --wr-bg-yellow: #fef9e6;
+
+  /* Shadows */
+  --wr-shadow-badge: 0 7px 0 0 rgba(48, 33, 39, 0.82);
+  --wr-shadow-email: 0 4px 0 rgba(252, 184, 39, 0.35),
+    inset 0 0 0 2px rgba(252, 184, 39, 0.45);
+
+  /* Border radii */
+  --wr-r-pill: 999px;
+  --wr-r-12: 12px;
+  --wr-r-16: 16px;
+  --wr-r-20: 20px;
+  --wr-r-8: 8px;
+}
+
+/* ─── Base Reset ────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--wr-ink);
+  background: var(--wr-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Page wrapper ──────────────────────────────────────────────────────────── */
+.wr-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--wr-white);
+  color: var(--wr-ink);
+}
+
+/* ─── Containers ────────────────────────────────────────────────────────────── */
+.wr-container--main {
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  padding-inline: 48px;
+}
+
+.wr-container--focus {
+  width: min(100%, 840px);
+  margin-inline: auto;
+  padding-inline: 48px;
+}
+
+.wr-container--cta {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding-inline: 48px;
+}
+
+/* ─── Typography ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.wr-h1 {
+  margin: 0;
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-size: clamp(40px, 5.6vw, 72px);
+  line-height: 1.03;
+  letter-spacing: clamp(-0.5px, -0.012em, -0.8px);
+  font-weight: 700;
+  color: var(--wr-ink);
+}
+
+.wr-h2 {
+  margin: 0;
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: clamp(-0.3px, -0.01em, -0.6px);
+  font-weight: 700;
+  color: var(--wr-ink);
+}
+
+.wr-h3 {
+  margin: 0;
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-size: clamp(22px, 2.8vw, 36px);
+  line-height: 1.1;
+  letter-spacing: clamp(-0.2px, -0.008em, -0.4px);
+  font-weight: 700;
+  color: var(--wr-ink);
+}
+
+.wr-text-body {
+  margin: 0;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 20px;
+  line-height: 1.56;
+  letter-spacing: -0.4px;
+  font-weight: 400;
+  color: var(--wr-ink);
+}
+
+/* ─── Display Font ─────────────────────────────────────────────────────────── */
+/* Used for large display numbers: stats, pricing values                        */
+:root {
+  --wr-font-display: "Rodger Bold", "Rodger Bold Placeholder",
+    Arial, sans-serif;
+}
+
+/* ─── CTA Join Button ───────────────────────────────────────────────────────── */
+.wr-cta-join {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  border-radius: var(--wr-r-pill);
+  padding: 0 28px;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ─── Process Cards ─────────────────────────────────────────────────────────── */
+.wr-card-process {
+  position: relative;
+  border-radius: var(--wr-r-20);
+  border: 1px solid rgba(151, 144, 147, 0.26);
+  background: var(--wr-white);
+  box-shadow: 0 8px 20px rgba(48, 33, 39, 0.06);
+  padding: 26px 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.wr-card-process--orange {
+  background: var(--wr-bg-peach);
+  border-color: rgba(243, 125, 57, 0.22);
+}
+
+.wr-card-process--blue {
+  background: var(--wr-bg-cyan);
+  border-color: rgba(76, 147, 175, 0.22);
+}
+
+.wr-card-process--yellow {
+  background: var(--wr-bg-yellow);
+  border-color: rgba(252, 184, 39, 0.28);
+}
+
+/* ─── Pill Step ─────────────────────────────────────────────────────────────── */
+.wr-pill-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wr-pill-step__title {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.42px;
+  font-weight: 700;
+  color: var(--wr-ink);
+}
+
+/* ─── Responsive: Tablet / Laptop ──────────────────────────────────────────── */
+@media (min-width: 800px) and (max-width: 1399.98px) {
+  .wr-container--main,
+  .wr-container--focus,
+  .wr-container--cta {
+    padding-inline: 32px;
+  }
+
+  .wr-text-body {
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: -0.36px;
+  }
+
+  .wr-pill-step__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .wr-card-process {
+    padding: 22px 20px;
+  }
+}
+
+/* ─── Responsive: Mobile ────────────────────────────────────────────────────── */
+@media (max-width: 799.98px) {
+  .wr-container--main,
+  .wr-container--focus,
+  .wr-container--cta {
+    padding-inline: 20px;
+  }
+
+  .wr-text-body {
+    font-size: 16px;
+    line-height: 1.56;
+    letter-spacing: -0.32px;
+  }
+
+  .wr-h1 {
+    font-size: clamp(32px, 8.5vw, 44px);
+    letter-spacing: -0.4px;
+  }
+
+  .wr-h2 {
+    font-size: clamp(26px, 6.8vw, 38px);
+    letter-spacing: -0.3px;
+  }
+
+  .wr-h3 {
+    font-size: clamp(20px, 5.5vw, 28px);
+    letter-spacing: -0.2px;
+  }
+
+  .wr-pill-step__title {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.32px;
+  }
+
+  .wr-card-process {
+    border-radius: var(--wr-r-16);
+    padding: 18px 16px;
+    gap: 12px;
+  }
+}

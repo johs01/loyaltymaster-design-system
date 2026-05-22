@@ -1,0 +1,117 @@
+/* =============================================
+   Foot Traffic On Demand — Page-Specific Styles
+   All colors use CSS custom properties for
+   automatic dark-mode support.
+   ============================================= */
+
+/* ---------- Hero CTA row ---------- */
+.ftd-hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.ftd-hero-mobile-media {
+  display: none;
+}
+
+/* ---------- Point card stack ---------- */
+.ftd-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.ftd-point {
+  padding: 20px 22px;
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-white);
+  color: var(--wr-ink);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  margin: 0;
+  box-shadow: 0 8px 20px rgba(48, 33, 39, 0.06);
+  transition:
+    transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.ftd-point:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(48, 33, 39, 0.12);
+}
+
+/* ---------- Strategy eyebrow ---------- */
+.ftd-strategy-eyebrow {
+  color: var(--wr-accent-orange);
+}
+
+/* ---------- Capabilities 2x2 grid ---------- */
+.ftd-cap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 40px;
+}
+
+/* ---------- CTA hint (below final CTA) ---------- */
+.ftd-cta-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  color: var(--wr-text-muted);
+}
+
+.ftd-cta-hint-emoji {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* ---------- Dark mode refinements ---------- */
+html[data-theme="dark"] .ftd-point {
+  border-color: rgba(255, 248, 251, 0.14);
+  background: var(--wr-bg-panel-light);
+}
+
+/* ---------- Responsive: Mobile ---------- */
+@media (max-width: 799.98px) {
+  .ftd-hero-mobile-media {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .ftd-hero-desktop-media {
+    display: none;
+  }
+
+  .ftd-cap-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .ftd-point {
+    padding: 16px 18px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .ftd-hero-cta-row {
+    gap: 12px;
+    margin-top: 22px;
+  }
+}

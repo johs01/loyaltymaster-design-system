@@ -1,0 +1,9 @@
+Pre-Flight - New Page Creation
+
+I want this folder to be the start of creating a single source of truth for the design system used for Loyalty Master and its sub-domains, example sendpush.loyaltymaster.com
+
+When web pages get designed by any large language model, be it Claude, be it Codex, be it Gemini, I want them, after we created this folder with all this information, the idea is that we will end up creating a design system skills for loyaltymaster. 
+
+Imagine we make new website pages, we create new product pages, or explanation pages, or documentation, or brochures, or whatever. I want this as the single source of truth so that there's no misunderstanding about the design system for Loyaltymaster. 
+
+If anything in the design system gets changed, and then we will rerun the circle again to make sure everything is updated, or even which might be a better idea is to make sure that the current design system gets documented, documented 100% as well as it needs to be future-proof. We need to work out how it will stay future-proof as small little things change. That is the general idea and the start idea of this folder.

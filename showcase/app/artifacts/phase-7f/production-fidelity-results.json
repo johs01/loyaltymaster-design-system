@@ -1,0 +1,2012 @@
+{
+  "phase": "7F",
+  "generatedAt": "2026-05-20T07:10:21.210Z",
+  "browserName": "chromium",
+  "deviceScaleFactor": 1,
+  "localBaseUrl": "http://127.0.0.1:4179",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1400
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1200
+    }
+  ],
+  "targetCount": 20,
+  "resultCount": 40,
+  "gatedComponentCount": 20,
+  "passedComponentCount": 20,
+  "failedCount": 0,
+  "liveResponseMetadata": [
+    {
+      "url": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "finalUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "status": 200,
+      "ok": true,
+      "date": "Wed, 20 May 2026 07:08:52 GMT",
+      "etag": "W/\"ce901b7294fc5b70c6f6c1ee0eff459e\"",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "vercelCache": "HIT",
+      "matchedPath": "/design-system-template-page",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://sendpush.loyaltymaster.com/",
+      "finalUrl": "https://sendpush.loyaltymaster.com/",
+      "status": 200,
+      "ok": true,
+      "date": "Wed, 20 May 2026 07:08:57 GMT",
+      "etag": "W/\"ee952939c98403169e2da7c3ec579ff5\"",
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "vercelCache": "HIT",
+      "matchedPath": "/",
+      "contentType": "text/html; charset=utf-8"
+    }
+  ],
+  "results": [
+    {
+      "id": "billing-toggle-button",
+      "name": "Billing Toggle Button",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing .wf-pricing-toggle",
+      "localSelector": "[data-capture-target=\"billing-toggle-button\"] .wf-pricing-toggle",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "rawSourcePath": "Components/Billing Toggle Button/Billing Toggle Button.tsx",
+      "specPath": "specs/components/billing-toggle-button.md",
+      "libraryPath": "library/src/components/BillingToggleButton.tsx",
+      "screenshotPath": "assets/screenshots/billing-toggle-button.png",
+      "liveBox": {
+        "x": 573.05,
+        "y": 701.2,
+        "width": 293.91,
+        "height": 62,
+        "aspect": 4.7404
+      },
+      "localBox": {
+        "x": 572.7,
+        "y": 170.56,
+        "width": 294.58,
+        "height": 62,
+        "aspect": 4.7513
+      },
+      "compareWidth": 296,
+      "compareHeight": 63,
+      "meanDelta": 0.050545,
+      "mismatchRatio": 0.194337,
+      "widthDeltaRatio": 0.00228,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0.010806,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/billing-toggle-button.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/billing-toggle-button.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/billing-toggle-button.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/billing-toggle-button.png"
+      }
+    },
+    {
+      "id": "button-email",
+      "name": "Button Email",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero .wf-email-cta",
+      "localSelector": "[data-capture-target=\"button-email\"] .wf-email-cta",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/MarketingPrimitives.tsx",
+      "rawSourcePath": "Components/Button Email/Button Email.tsx",
+      "specPath": "specs/components/button-email.md",
+      "libraryPath": "library/src/components/ButtonEmail.tsx",
+      "screenshotPath": "assets/screenshots/button-email.png",
+      "liveBox": {
+        "x": 128,
+        "y": 819.38,
+        "width": 568,
+        "height": 78,
+        "aspect": 7.2821
+      },
+      "localBox": {
+        "x": 12,
+        "y": 107.5,
+        "width": 568,
+        "height": 78,
+        "aspect": 7.2821
+      },
+      "compareWidth": 568,
+      "compareHeight": 79,
+      "meanDelta": 0.024424,
+      "mismatchRatio": 0.10316,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/button-email.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/button-email.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/button-email.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/button-email.png"
+      }
+    },
+    {
+      "id": "comparison-table",
+      "name": "Comparison Table",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#comparison",
+      "localSelector": "[data-capture-target=\"comparison-table\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ComparisonSection.tsx",
+      "rawSourcePath": "Components/Comparison Table/Comparison Table.tsx",
+      "specPath": "specs/components/comparison-table.md",
+      "libraryPath": "library/src/components/ComparisonTable.tsx",
+      "screenshotPath": "assets/screenshots/comparison-table.png",
+      "liveBox": {
+        "x": 0,
+        "y": 453.08,
+        "width": 1440,
+        "height": 605.59,
+        "aspect": 2.3778
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 599.59,
+        "aspect": 2.4016
+      },
+      "compareWidth": 1200,
+      "compareHeight": 606,
+      "meanDelta": 0.033822,
+      "mismatchRatio": 0.056302,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.009908,
+      "aspectDelta": 0.023795,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/comparison-table.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/comparison-table.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/comparison-table.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/comparison-table.png"
+      }
+    },
+    {
+      "id": "cta-trial-full-form",
+      "name": "CTA Trial Full Form",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#tenant-trial-cta",
+      "localSelector": "[data-capture-target=\"cta-trial-full-form\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "rawSourcePath": "Components/CTA Trial Full Form/CTA Trial Full Form.tsx",
+      "specPath": "specs/components/cta-trial-full-form.md",
+      "libraryPath": "library/src/components/CtaTrialFullForm.tsx",
+      "screenshotPath": "assets/screenshots/cta-trial-full-form.png",
+      "liveBox": {
+        "x": 0,
+        "y": 318.41,
+        "width": 1440,
+        "height": 874.56,
+        "aspect": 1.6465
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 909,
+        "aspect": 1.5842
+      },
+      "compareWidth": 1200,
+      "compareHeight": 909,
+      "meanDelta": 0.055657,
+      "mismatchRatio": 0.11745,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.03938,
+      "aspectDelta": 0.062384,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/cta-trial-full-form.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/cta-trial-full-form.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/cta-trial-full-form.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/cta-trial-full-form.png"
+      }
+    },
+    {
+      "id": "cta-with-button-email",
+      "name": "CTA with Button Email",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#final-cta",
+      "localSelector": "[data-capture-target=\"cta-with-button-email\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "rawSourcePath": "Components/CTA with Button Email/CTA with Button Email.tsx",
+      "specPath": "specs/components/cta-with-button-email.md",
+      "libraryPath": "library/src/components/CtaWithButtonEmail.tsx",
+      "screenshotPath": "assets/screenshots/cta-with-button-email.png",
+      "liveBox": {
+        "x": 0,
+        "y": 545.81,
+        "width": 1440,
+        "height": 420.59,
+        "aspect": 3.4237
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 421.59,
+        "aspect": 3.4156
+      },
+      "compareWidth": 1200,
+      "compareHeight": 422,
+      "meanDelta": 0.060477,
+      "mismatchRatio": 0.112747,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.002378,
+      "aspectDelta": 0.008121,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/cta-with-button-email.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/cta-with-button-email.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/cta-with-button-email.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/cta-with-button-email.png"
+      }
+    },
+    {
+      "id": "faq-accordion",
+      "name": "FAQ Accordion",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#faq",
+      "localSelector": "[data-capture-target=\"faq-accordion\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FaqSection.tsx",
+      "rawSourcePath": "Components/FAQ Accordion/FAQ Accordion.tsx",
+      "specPath": "specs/components/faq-accordion.md",
+      "libraryPath": "library/src/components/FaqAccordion.tsx",
+      "screenshotPath": "assets/screenshots/faq-accordion.png",
+      "liveBox": {
+        "x": 0,
+        "y": 379.94,
+        "width": 1440,
+        "height": 752.59,
+        "aspect": 1.9134
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 752.59,
+        "aspect": 1.9134
+      },
+      "compareWidth": 1200,
+      "compareHeight": 754,
+      "meanDelta": 0.010627,
+      "mismatchRatio": 0.023132,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/faq-accordion.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/faq-accordion.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/faq-accordion.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/faq-accordion.png"
+      }
+    },
+    {
+      "id": "feature-section-2-column-bullets-image",
+      "name": "Feature Section 2 Column Bullets Image",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#use-case-2",
+      "localSelector": "[data-capture-target=\"feature-section-2-column-bullets-image\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/UseCaseSection.tsx",
+      "rawSourcePath": "Components/Feature Section 2 Column Bullets Image/Feature Section 2 Column Bullets Image.tsx",
+      "specPath": "specs/components/feature-section-2-column-bullets-image.md",
+      "libraryPath": "library/src/components/FeatureSection2ColumnBulletsImage.tsx",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-bullets-image.png",
+      "liveBox": {
+        "x": 0,
+        "y": 387.73,
+        "width": 1440,
+        "height": 736,
+        "aspect": 1.9565
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 736,
+        "aspect": 1.9565
+      },
+      "compareWidth": 1200,
+      "compareHeight": 737,
+      "meanDelta": 0.013167,
+      "mismatchRatio": 0.022863,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/feature-section-2-column-bullets-image.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/feature-section-2-column-bullets-image.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/feature-section-2-column-bullets-image.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/feature-section-2-column-bullets-image.png"
+      }
+    },
+    {
+      "id": "feature-section-2-column-image",
+      "name": "Feature Section 2 Column Image",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#problem",
+      "localSelector": "[data-capture-target=\"feature-section-2-column-image\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProblemSection.tsx",
+      "rawSourcePath": "Components/Feature Section 2 Column Image/Feature Section 2 Column Image.tsx",
+      "specPath": "specs/components/feature-section-2-column-image.md",
+      "libraryPath": "library/src/components/FeatureSection2ColumnImage.tsx",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-image.png",
+      "liveBox": {
+        "x": 0,
+        "y": 312.23,
+        "width": 1440,
+        "height": 886.91,
+        "aspect": 1.6236
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 886.91,
+        "aspect": 1.6236
+      },
+      "compareWidth": 1200,
+      "compareHeight": 888,
+      "meanDelta": 0.012637,
+      "mismatchRatio": 0.024759,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/feature-section-2-column-image.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/feature-section-2-column-image.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/feature-section-2-column-image.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/feature-section-2-column-image.png"
+      }
+    },
+    {
+      "id": "features-grid",
+      "name": "Features Grid",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#features",
+      "localSelector": "[data-capture-target=\"features-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "rawSourcePath": "Components/Features Grid/Features Grid.tsx",
+      "specPath": "specs/components/features-grid.md",
+      "libraryPath": "library/src/components/FeaturesGrid.tsx",
+      "screenshotPath": "assets/screenshots/features-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 418.33,
+        "width": 1440,
+        "height": 675.78,
+        "aspect": 2.1309
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 687.78,
+        "aspect": 2.0937
+      },
+      "compareWidth": 1200,
+      "compareHeight": 688,
+      "meanDelta": 0.033376,
+      "mismatchRatio": 0.061485,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.017757,
+      "aspectDelta": 0.037178,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/features-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/features-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/features-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/features-grid.png"
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#site-footer",
+      "localSelector": "[data-capture-target=\"footer\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Footer.tsx",
+      "rawSourcePath": "Components/Footer/Footer.tsx",
+      "specPath": "specs/components/footer.md",
+      "libraryPath": "library/src/components/Footer.tsx",
+      "screenshotPath": "assets/screenshots/footer.png",
+      "liveBox": {
+        "x": 0,
+        "y": 917.97,
+        "width": 1440,
+        "height": 482,
+        "aspect": 2.9876
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 470,
+        "aspect": 3.0638
+      },
+      "compareWidth": 1200,
+      "compareHeight": 483,
+      "meanDelta": 0.017591,
+      "mismatchRatio": 0.05138,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.024896,
+      "aspectDelta": 0.076278,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/footer.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/footer.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/footer.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/footer.png"
+      }
+    },
+    {
+      "id": "geo-fence-use-case",
+      "name": "Geo Fence Use Case",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-strategy-2",
+      "localSelector": "[data-capture-target=\"geo-fence-use-case\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "rawSourcePath": "Components/Geo Fence Use Case/Geo Fence Use Case.tsx",
+      "specPath": "specs/components/geo-fence-use-case.md",
+      "libraryPath": "library/src/components/GeoFenceUseCase.tsx",
+      "screenshotPath": "assets/screenshots/geo-fence-use-case.png",
+      "liveBox": {
+        "x": 0,
+        "y": 388.3,
+        "width": 1440,
+        "height": 736,
+        "aspect": 1.9565
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 736,
+        "aspect": 1.9565
+      },
+      "compareWidth": 1200,
+      "compareHeight": 737,
+      "meanDelta": 0.018156,
+      "mismatchRatio": 0.045576,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/geo-fence-use-case.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/geo-fence-use-case.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/geo-fence-use-case.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/geo-fence-use-case.png"
+      }
+    },
+    {
+      "id": "hero-main-section",
+      "name": "Hero Main Section",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero",
+      "localSelector": "[data-capture-target=\"hero-main-section\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "rawSourcePath": "Components/Hero Main Section/Hero Main Section.tsx",
+      "specPath": "specs/components/hero-main-section.md",
+      "libraryPath": "library/src/components/HeroMainSection.tsx",
+      "screenshotPath": "assets/screenshots/hero-main-section.png",
+      "liveBox": {
+        "x": 0,
+        "y": 82,
+        "width": 1440,
+        "height": 899.38,
+        "aspect": 1.6011
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1002,
+        "aspect": 1.4371
+      },
+      "compareWidth": 1200,
+      "compareHeight": 1002,
+      "meanDelta": 0.087577,
+      "mismatchRatio": 0.198061,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.114101,
+      "aspectDelta": 0.163977,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/hero-main-section.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/hero-main-section.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/hero-main-section.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/hero-main-section.png"
+      }
+    },
+    {
+      "id": "image-grid",
+      "name": "Image Grid",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#logo-grid",
+      "localSelector": "[data-capture-target=\"image-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/LogoGrid.tsx",
+      "rawSourcePath": "Components/Image Grid/Image Grid.tsx",
+      "specPath": "specs/components/image-grid.md",
+      "libraryPath": "library/src/components/ImageGrid.tsx",
+      "screenshotPath": "assets/screenshots/image-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 1138.23,
+        "width": 1440,
+        "height": 262,
+        "aspect": 5.4962
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 262,
+        "aspect": 5.4962
+      },
+      "compareWidth": 1200,
+      "compareHeight": 263,
+      "meanDelta": 0.010234,
+      "mismatchRatio": 0.041356,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/image-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/image-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/image-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/image-grid.png"
+      }
+    },
+    {
+      "id": "image-strip",
+      "name": "Image Strip",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": ".wf-awards-strip",
+      "localSelector": "[data-capture-target=\"image-strip\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/AwardsStrip.tsx",
+      "rawSourcePath": "Components/Image Strip/Image Strip.tsx",
+      "specPath": "specs/components/image-strip.md",
+      "libraryPath": "library/src/components/ImageStrip.tsx",
+      "screenshotPath": "assets/screenshots/image-strip.png",
+      "liveBox": {
+        "x": 0,
+        "y": 981.38,
+        "width": 1440,
+        "height": 267.73,
+        "aspect": 5.3785
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 267.73,
+        "aspect": 5.3785
+      },
+      "compareWidth": 1200,
+      "compareHeight": 269,
+      "meanDelta": 0.018459,
+      "mismatchRatio": 0.063516,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/image-strip.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/image-strip.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/image-strip.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/image-strip.png"
+      }
+    },
+    {
+      "id": "navbar-glassmorphism",
+      "name": "Navbar Glassmorphism",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "header.wf-header",
+      "localSelector": "[data-capture-target=\"navbar-glassmorphism\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Nav.tsx",
+      "rawSourcePath": "Components/Navbar Glassmorphism/Navbar Glassmorphism.tsx",
+      "specPath": "specs/components/navbar-glassmorphism.md",
+      "libraryPath": "library/src/components/NavbarGlassmorphism.tsx",
+      "screenshotPath": "assets/screenshots/navbar-glassmorphism.png",
+      "liveBox": {
+        "x": 0,
+        "y": 12,
+        "width": 1440,
+        "height": 82,
+        "aspect": 17.561
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 82,
+        "aspect": 17.561
+      },
+      "compareWidth": 1200,
+      "compareHeight": 82,
+      "meanDelta": 0.051286,
+      "mismatchRatio": 0.079299,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/navbar-glassmorphism.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/navbar-glassmorphism.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/navbar-glassmorphism.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/navbar-glassmorphism.png"
+      }
+    },
+    {
+      "id": "pricing-section",
+      "name": "Pricing Section",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing",
+      "localSelector": "[data-capture-target=\"pricing-section\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "rawSourcePath": "Components/Pricing Section/Pricing Section.tsx",
+      "specPath": "specs/components/pricing-section.md",
+      "libraryPath": "library/src/components/PricingSection.tsx",
+      "screenshotPath": "assets/screenshots/pricing-section.png",
+      "liveBox": {
+        "x": 0,
+        "y": 238.23,
+        "width": 1440,
+        "height": 1036.14,
+        "aspect": 1.3898
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 1054.14,
+        "aspect": 1.366
+      },
+      "compareWidth": 1200,
+      "compareHeight": 1055,
+      "meanDelta": 0.055838,
+      "mismatchRatio": 0.113512,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.017372,
+      "aspectDelta": 0.023731,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/pricing-section.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/pricing-section.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/pricing-section.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/pricing-section.png"
+      }
+    },
+    {
+      "id": "process-steps",
+      "name": "Process Steps",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#process",
+      "localSelector": "[data-capture-target=\"process-steps\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProcessSection.tsx",
+      "rawSourcePath": "Components/Process Steps/Process Steps.tsx",
+      "specPath": "specs/components/process-steps.md",
+      "libraryPath": "library/src/components/ProcessSteps.tsx",
+      "screenshotPath": "assets/screenshots/process-steps.png",
+      "liveBox": {
+        "x": 0,
+        "y": 461.38,
+        "width": 1440,
+        "height": 589.56,
+        "aspect": 2.4425
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 629.56,
+        "aspect": 2.2873
+      },
+      "compareWidth": 1200,
+      "compareHeight": 630,
+      "meanDelta": 0.054331,
+      "mismatchRatio": 0.098487,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.067847,
+      "aspectDelta": 0.155188,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/process-steps.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/process-steps.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/process-steps.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/process-steps.png"
+      }
+    },
+    {
+      "id": "stats-card-strip",
+      "name": "Stats Card Strip",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#stats",
+      "localSelector": "[data-capture-target=\"stats-card-strip\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/StatsSection.tsx",
+      "rawSourcePath": "Components/Stats Card Strip/Stats Card Strip.tsx",
+      "specPath": "specs/components/stats-card-strip.md",
+      "libraryPath": "library/src/components/StatsCardStrip.tsx",
+      "screenshotPath": "assets/screenshots/stats-card-strip.png",
+      "liveBox": {
+        "x": 0,
+        "y": 658.23,
+        "width": 1440,
+        "height": 196,
+        "aspect": 7.3469
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 196,
+        "aspect": 7.3469
+      },
+      "compareWidth": 1200,
+      "compareHeight": 197,
+      "meanDelta": 0.008682,
+      "mismatchRatio": 0.023629,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/stats-card-strip.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/stats-card-strip.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/stats-card-strip.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/stats-card-strip.png"
+      }
+    },
+    {
+      "id": "testimonial-single",
+      "name": "Testimonial Single",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#testimonial-2",
+      "localSelector": "[data-capture-target=\"testimonial-single\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/TestimonialSection.tsx",
+      "rawSourcePath": "Components/Testimonial Single/Testimonial Single.tsx",
+      "specPath": "specs/components/testimonial-single.md",
+      "libraryPath": "library/src/components/TestimonialSingle.tsx",
+      "screenshotPath": "assets/screenshots/testimonial-single.png",
+      "liveBox": {
+        "x": 0,
+        "y": 489.73,
+        "width": 1440,
+        "height": 532.59,
+        "aspect": 2.7037
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 556.59,
+        "aspect": 2.5872
+      },
+      "compareWidth": 1200,
+      "compareHeight": 557,
+      "meanDelta": 0.046277,
+      "mismatchRatio": 0.082496,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.045063,
+      "aspectDelta": 0.116586,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/testimonial-single.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/testimonial-single.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/testimonial-single.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/testimonial-single.png"
+      }
+    },
+    {
+      "id": "testimonials-grid",
+      "name": "Testimonials Grid",
+      "viewport": "desktop",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#capabilities-testimonials",
+      "localSelector": "[data-capture-target=\"testimonials-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "rawSourcePath": "Components/Testimonials Grid/Testimonials Grid.tsx",
+      "specPath": "specs/components/testimonials-grid.md",
+      "libraryPath": "library/src/components/TestimonialsGrid.tsx",
+      "screenshotPath": "assets/screenshots/testimonials-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 450.11,
+        "width": 1440,
+        "height": 610.97,
+        "aspect": 2.3569
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 610.97,
+        "aspect": 2.3569
+      },
+      "compareWidth": 1200,
+      "compareHeight": 612,
+      "meanDelta": 0.017055,
+      "mismatchRatio": 0.052131,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/desktop/live/testimonials-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/desktop/local/testimonials-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/desktop/diffs/testimonials-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/desktop/side-by-side/testimonials-grid.png"
+      }
+    },
+    {
+      "id": "billing-toggle-button",
+      "name": "Billing Toggle Button",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing .wf-pricing-toggle",
+      "localSelector": "[data-capture-target=\"billing-toggle-button\"] .wf-pricing-toggle",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "rawSourcePath": "Components/Billing Toggle Button/Billing Toggle Button.tsx",
+      "specPath": "specs/components/billing-toggle-button.md",
+      "libraryPath": "library/src/components/BillingToggleButton.tsx",
+      "screenshotPath": "assets/screenshots/billing-toggle-button.png",
+      "liveBox": {
+        "x": 35,
+        "y": 595.77,
+        "width": 320,
+        "height": 48,
+        "aspect": 6.6667
+      },
+      "localBox": {
+        "x": 35,
+        "y": 254,
+        "width": 320,
+        "height": 48,
+        "aspect": 6.6667
+      },
+      "compareWidth": 320,
+      "compareHeight": 49,
+      "meanDelta": 0.031669,
+      "mismatchRatio": 0.09375,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/billing-toggle-button.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/billing-toggle-button.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/billing-toggle-button.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/billing-toggle-button.png"
+      }
+    },
+    {
+      "id": "button-email",
+      "name": "Button Email",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero .wf-email-cta",
+      "localSelector": "[data-capture-target=\"button-email\"] .wf-email-cta",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/MarketingPrimitives.tsx",
+      "rawSourcePath": "Components/Button Email/Button Email.tsx",
+      "specPath": "specs/components/button-email.md",
+      "libraryPath": "library/src/components/ButtonEmail.tsx",
+      "screenshotPath": "assets/screenshots/button-email.png",
+      "liveBox": {
+        "x": 35,
+        "y": 946.92,
+        "width": 320,
+        "height": 112,
+        "aspect": 2.8571
+      },
+      "localBox": {
+        "x": 35,
+        "y": 90.5,
+        "width": 320,
+        "height": 112,
+        "aspect": 2.8571
+      },
+      "compareWidth": 320,
+      "compareHeight": 113,
+      "meanDelta": 0.003966,
+      "mismatchRatio": 0.018805,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/button-email.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/button-email.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/button-email.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/button-email.png"
+      }
+    },
+    {
+      "id": "comparison-table",
+      "name": "Comparison Table",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#comparison",
+      "localSelector": "[data-capture-target=\"comparison-table\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ComparisonSection.tsx",
+      "rawSourcePath": "Components/Comparison Table/Comparison Table.tsx",
+      "specPath": "specs/components/comparison-table.md",
+      "libraryPath": "library/src/components/ComparisonTable.tsx",
+      "screenshotPath": "assets/screenshots/comparison-table.png",
+      "liveBox": {
+        "x": 0,
+        "y": 60.75,
+        "width": 390,
+        "height": 1165.66,
+        "aspect": 0.3346
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1193.66,
+        "aspect": 0.3267
+      },
+      "compareWidth": 390,
+      "compareHeight": 1194,
+      "meanDelta": 0.045315,
+      "mismatchRatio": 0.109015,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.024021,
+      "aspectDelta": 0.007848,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/comparison-table.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/comparison-table.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/comparison-table.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/comparison-table.png"
+      }
+    },
+    {
+      "id": "cta-trial-full-form",
+      "name": "CTA Trial Full Form",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#tenant-trial-cta",
+      "localSelector": "[data-capture-target=\"cta-trial-full-form\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "rawSourcePath": "Components/CTA Trial Full Form/CTA Trial Full Form.tsx",
+      "specPath": "specs/components/cta-trial-full-form.md",
+      "libraryPath": "library/src/components/CtaTrialFullForm.tsx",
+      "screenshotPath": "assets/screenshots/cta-trial-full-form.png",
+      "liveBox": {
+        "x": 0,
+        "y": 224.56,
+        "width": 390,
+        "height": 838.05,
+        "aspect": 0.4654
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1032.64,
+        "aspect": 0.3777
+      },
+      "compareWidth": 390,
+      "compareHeight": 1033,
+      "meanDelta": 0.068722,
+      "mismatchRatio": 0.165711,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.232194,
+      "aspectDelta": 0.087693,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/cta-trial-full-form.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/cta-trial-full-form.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/cta-trial-full-form.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/cta-trial-full-form.png"
+      }
+    },
+    {
+      "id": "cta-with-button-email",
+      "name": "CTA with Button Email",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#final-cta",
+      "localSelector": "[data-capture-target=\"cta-with-button-email\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "rawSourcePath": "Components/CTA with Button Email/CTA with Button Email.tsx",
+      "specPath": "specs/components/cta-with-button-email.md",
+      "libraryPath": "library/src/components/CtaWithButtonEmail.tsx",
+      "screenshotPath": "assets/screenshots/cta-with-button-email.png",
+      "liveBox": {
+        "x": 0,
+        "y": 450.31,
+        "width": 390,
+        "height": 387.25,
+        "aspect": 1.0071
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 397.66,
+        "aspect": 0.9807
+      },
+      "compareWidth": 390,
+      "compareHeight": 398,
+      "meanDelta": 0.053127,
+      "mismatchRatio": 0.116171,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.026882,
+      "aspectDelta": 0.026364,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/cta-with-button-email.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/cta-with-button-email.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/cta-with-button-email.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/cta-with-button-email.png"
+      }
+    },
+    {
+      "id": "faq-accordion",
+      "name": "FAQ Accordion",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#faq",
+      "localSelector": "[data-capture-target=\"faq-accordion\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FaqSection.tsx",
+      "rawSourcePath": "Components/FAQ Accordion/FAQ Accordion.tsx",
+      "specPath": "specs/components/faq-accordion.md",
+      "libraryPath": "library/src/components/FaqAccordion.tsx",
+      "screenshotPath": "assets/screenshots/faq-accordion.png",
+      "liveBox": {
+        "x": 0,
+        "y": 264.14,
+        "width": 390,
+        "height": 759.42,
+        "aspect": 0.5135
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 837.83,
+        "aspect": 0.4655
+      },
+      "compareWidth": 390,
+      "compareHeight": 838,
+      "meanDelta": 0.070417,
+      "mismatchRatio": 0.141068,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.10325,
+      "aspectDelta": 0.048062,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/faq-accordion.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/faq-accordion.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/faq-accordion.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/faq-accordion.png"
+      }
+    },
+    {
+      "id": "feature-section-2-column-bullets-image",
+      "name": "Feature Section 2 Column Bullets Image",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#use-case-2",
+      "localSelector": "[data-capture-target=\"feature-section-2-column-bullets-image\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/UseCaseSection.tsx",
+      "rawSourcePath": "Components/Feature Section 2 Column Bullets Image/Feature Section 2 Column Bullets Image.tsx",
+      "specPath": "specs/components/feature-section-2-column-bullets-image.md",
+      "libraryPath": "library/src/components/FeatureSection2ColumnBulletsImage.tsx",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-bullets-image.png",
+      "liveBox": {
+        "x": 0,
+        "y": 242.45,
+        "width": 390,
+        "height": 803.08,
+        "aspect": 0.4856
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 970.75,
+        "aspect": 0.4018
+      },
+      "compareWidth": 390,
+      "compareHeight": 971,
+      "meanDelta": 0.118775,
+      "mismatchRatio": 0.322726,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.208784,
+      "aspectDelta": 0.083879,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/feature-section-2-column-bullets-image.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/feature-section-2-column-bullets-image.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/feature-section-2-column-bullets-image.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/feature-section-2-column-bullets-image.png"
+      }
+    },
+    {
+      "id": "feature-section-2-column-image",
+      "name": "Feature Section 2 Column Image",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#problem",
+      "localSelector": "[data-capture-target=\"feature-section-2-column-image\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProblemSection.tsx",
+      "rawSourcePath": "Components/Feature Section 2 Column Image/Feature Section 2 Column Image.tsx",
+      "specPath": "specs/components/feature-section-2-column-image.md",
+      "libraryPath": "library/src/components/FeatureSection2ColumnImage.tsx",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-image.png",
+      "liveBox": {
+        "x": 0,
+        "y": 146.33,
+        "width": 390,
+        "height": 995.2,
+        "aspect": 0.3919
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1172.61,
+        "aspect": 0.3326
+      },
+      "compareWidth": 390,
+      "compareHeight": 1173,
+      "meanDelta": 0.108603,
+      "mismatchRatio": 0.261759,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.178266,
+      "aspectDelta": 0.05929,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/feature-section-2-column-image.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/feature-section-2-column-image.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/feature-section-2-column-image.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/feature-section-2-column-image.png"
+      }
+    },
+    {
+      "id": "features-grid",
+      "name": "Features Grid",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#features",
+      "localSelector": "[data-capture-target=\"features-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "rawSourcePath": "Components/Features Grid/Features Grid.tsx",
+      "specPath": "specs/components/features-grid.md",
+      "libraryPath": "library/src/components/FeaturesGrid.tsx",
+      "screenshotPath": "assets/screenshots/features-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 59.66,
+        "width": 390,
+        "height": 1169.13,
+        "aspect": 0.3336
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1408.03,
+        "aspect": 0.277
+      },
+      "compareWidth": 390,
+      "compareHeight": 1200,
+      "meanDelta": 0.068324,
+      "mismatchRatio": 0.134406,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.20434,
+      "aspectDelta": 0.056599,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/features-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/features-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/features-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/features-grid.png"
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#site-footer",
+      "localSelector": "[data-capture-target=\"footer\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Footer.tsx",
+      "rawSourcePath": "Components/Footer/Footer.tsx",
+      "specPath": "specs/components/footer.md",
+      "libraryPath": "library/src/components/Footer.tsx",
+      "screenshotPath": "assets/screenshots/footer.png",
+      "liveBox": {
+        "x": 0,
+        "y": 204.61,
+        "width": 390,
+        "height": 995.19,
+        "aspect": 0.3919
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1179,
+        "aspect": 0.3308
+      },
+      "compareWidth": 390,
+      "compareHeight": 1179,
+      "meanDelta": 0.049693,
+      "mismatchRatio": 0.130413,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.184698,
+      "aspectDelta": 0.061096,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/footer.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/footer.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/footer.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/footer.png"
+      }
+    },
+    {
+      "id": "geo-fence-use-case",
+      "name": "Geo Fence Use Case",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-strategy-2",
+      "localSelector": "[data-capture-target=\"geo-fence-use-case\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "rawSourcePath": "Components/Geo Fence Use Case/Geo Fence Use Case.tsx",
+      "specPath": "specs/components/geo-fence-use-case.md",
+      "libraryPath": "library/src/components/GeoFenceUseCase.tsx",
+      "screenshotPath": "assets/screenshots/geo-fence-use-case.png",
+      "liveBox": {
+        "x": 0,
+        "y": 239.38,
+        "width": 390,
+        "height": 810.19,
+        "aspect": 0.4814
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 899.19,
+        "aspect": 0.4337
+      },
+      "compareWidth": 390,
+      "compareHeight": 900,
+      "meanDelta": 0.115162,
+      "mismatchRatio": 0.299291,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.109851,
+      "aspectDelta": 0.047645,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/geo-fence-use-case.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/geo-fence-use-case.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/geo-fence-use-case.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/geo-fence-use-case.png"
+      }
+    },
+    {
+      "id": "hero-main-section",
+      "name": "Hero Main Section",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero",
+      "localSelector": "[data-capture-target=\"hero-main-section\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "rawSourcePath": "Components/Hero Main Section/Hero Main Section.tsx",
+      "specPath": "specs/components/hero-main-section.md",
+      "libraryPath": "library/src/components/HeroMainSection.tsx",
+      "screenshotPath": "assets/screenshots/hero-main-section.png",
+      "liveBox": {
+        "x": 0,
+        "y": 72,
+        "width": 390,
+        "height": 1042.92,
+        "aspect": 0.3739
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1165.55,
+        "aspect": 0.3346
+      },
+      "compareWidth": 390,
+      "compareHeight": 1166,
+      "meanDelta": 0.150556,
+      "mismatchRatio": 0.369695,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.117583,
+      "aspectDelta": 0.039344,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/hero-main-section.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/hero-main-section.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/hero-main-section.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/hero-main-section.png"
+      }
+    },
+    {
+      "id": "image-grid",
+      "name": "Image Grid",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#logo-grid",
+      "localSelector": "[data-capture-target=\"image-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/LogoGrid.tsx",
+      "rawSourcePath": "Components/Image Grid/Image Grid.tsx",
+      "specPath": "specs/components/image-grid.md",
+      "libraryPath": "library/src/components/ImageGrid.tsx",
+      "screenshotPath": "assets/screenshots/image-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 362.33,
+        "width": 390,
+        "height": 564,
+        "aspect": 0.6915
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 666,
+        "aspect": 0.5856
+      },
+      "compareWidth": 390,
+      "compareHeight": 666,
+      "meanDelta": 0.049552,
+      "mismatchRatio": 0.140344,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.180851,
+      "aspectDelta": 0.105904,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/image-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/image-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/image-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/image-grid.png"
+      }
+    },
+    {
+      "id": "image-strip",
+      "name": "Image Strip",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": ".wf-awards-strip",
+      "localSelector": "[data-capture-target=\"image-strip\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/AwardsStrip.tsx",
+      "rawSourcePath": "Components/Image Strip/Image Strip.tsx",
+      "specPath": "specs/components/image-strip.md",
+      "libraryPath": "library/src/components/ImageStrip.tsx",
+      "screenshotPath": "assets/screenshots/image-strip.png",
+      "liveBox": {
+        "x": 0,
+        "y": 704.92,
+        "width": 390,
+        "height": 494.81,
+        "aspect": 0.7882
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 494.81,
+        "aspect": 0.7882
+      },
+      "compareWidth": 390,
+      "compareHeight": 496,
+      "meanDelta": 0.018961,
+      "mismatchRatio": 0.078128,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/image-strip.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/image-strip.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/image-strip.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/image-strip.png"
+      }
+    },
+    {
+      "id": "navbar-glassmorphism",
+      "name": "Navbar Glassmorphism",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "header.wf-header",
+      "localSelector": "[data-capture-target=\"navbar-glassmorphism\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Nav.tsx",
+      "rawSourcePath": "Components/Navbar Glassmorphism/Navbar Glassmorphism.tsx",
+      "specPath": "specs/components/navbar-glassmorphism.md",
+      "libraryPath": "library/src/components/NavbarGlassmorphism.tsx",
+      "screenshotPath": "assets/screenshots/navbar-glassmorphism.png",
+      "liveBox": {
+        "x": 0,
+        "y": 8,
+        "width": 390,
+        "height": 72,
+        "aspect": 5.4167
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 72,
+        "aspect": 5.4167
+      },
+      "compareWidth": 390,
+      "compareHeight": 72,
+      "meanDelta": 0.057599,
+      "mismatchRatio": 0.105769,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0,
+      "aspectDelta": 0,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/navbar-glassmorphism.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/navbar-glassmorphism.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/navbar-glassmorphism.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/navbar-glassmorphism.png"
+      }
+    },
+    {
+      "id": "pricing-section",
+      "name": "Pricing Section",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing",
+      "localSelector": "[data-capture-target=\"pricing-section\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "rawSourcePath": "Components/Pricing Section/Pricing Section.tsx",
+      "specPath": "specs/components/pricing-section.md",
+      "libraryPath": "library/src/components/PricingSection.tsx",
+      "screenshotPath": "assets/screenshots/pricing-section.png",
+      "liveBox": {
+        "x": 0,
+        "y": -236.08,
+        "width": 390,
+        "height": 1761.02,
+        "aspect": 0.2215
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 2077.11,
+        "aspect": 0.1878
+      },
+      "compareWidth": 390,
+      "compareHeight": 1200,
+      "meanDelta": 0.106246,
+      "mismatchRatio": 0.233598,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.179493,
+      "aspectDelta": 0.033702,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/pricing-section.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/pricing-section.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/pricing-section.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/pricing-section.png"
+      }
+    },
+    {
+      "id": "process-steps",
+      "name": "Process Steps",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#process",
+      "localSelector": "[data-capture-target=\"process-steps\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProcessSection.tsx",
+      "rawSourcePath": "Components/Process Steps/Process Steps.tsx",
+      "specPath": "specs/components/process-steps.md",
+      "libraryPath": "library/src/components/ProcessSteps.tsx",
+      "screenshotPath": "assets/screenshots/process-steps.png",
+      "liveBox": {
+        "x": 0,
+        "y": 257.94,
+        "width": 390,
+        "height": 771.2,
+        "aspect": 0.5057
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 973.97,
+        "aspect": 0.4004
+      },
+      "compareWidth": 390,
+      "compareHeight": 974,
+      "meanDelta": 0.097587,
+      "mismatchRatio": 0.2074,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.262928,
+      "aspectDelta": 0.105282,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/process-steps.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/process-steps.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/process-steps.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/process-steps.png"
+      }
+    },
+    {
+      "id": "stats-card-strip",
+      "name": "Stats Card Strip",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#stats",
+      "localSelector": "[data-capture-target=\"stats-card-strip\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/StatsSection.tsx",
+      "rawSourcePath": "Components/Stats Card Strip/Stats Card Strip.tsx",
+      "specPath": "specs/components/stats-card-strip.md",
+      "libraryPath": "library/src/components/StatsCardStrip.tsx",
+      "screenshotPath": "assets/screenshots/stats-card-strip.png",
+      "liveBox": {
+        "x": 0,
+        "y": 509.33,
+        "width": 390,
+        "height": 270,
+        "aspect": 1.4444
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 260,
+        "aspect": 1.5
+      },
+      "compareWidth": 390,
+      "compareHeight": 271,
+      "meanDelta": 0.039864,
+      "mismatchRatio": 0.083508,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.037037,
+      "aspectDelta": 0.055556,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/stats-card-strip.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/stats-card-strip.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/stats-card-strip.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/stats-card-strip.png"
+      }
+    },
+    {
+      "id": "testimonial-single",
+      "name": "Testimonial Single",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#testimonial-2",
+      "localSelector": "[data-capture-target=\"testimonial-single\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/TestimonialSection.tsx",
+      "rawSourcePath": "Components/Testimonial Single/Testimonial Single.tsx",
+      "specPath": "specs/components/testimonial-single.md",
+      "libraryPath": "library/src/components/TestimonialSingle.tsx",
+      "screenshotPath": "assets/screenshots/testimonial-single.png",
+      "liveBox": {
+        "x": 0,
+        "y": 402.81,
+        "width": 390,
+        "height": 482.84,
+        "aspect": 0.8077
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 516.84,
+        "aspect": 0.7546
+      },
+      "compareWidth": 390,
+      "compareHeight": 517,
+      "meanDelta": 0.088515,
+      "mismatchRatio": 0.172891,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.070417,
+      "aspectDelta": 0.053135,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/testimonial-single.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/testimonial-single.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/testimonial-single.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/testimonial-single.png"
+      }
+    },
+    {
+      "id": "testimonials-grid",
+      "name": "Testimonials Grid",
+      "viewport": "mobile",
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#capabilities-testimonials",
+      "localSelector": "[data-capture-target=\"testimonials-grid\"] .lm-ds",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "rawSourcePath": "Components/Testimonials Grid/Testimonials Grid.tsx",
+      "specPath": "specs/components/testimonials-grid.md",
+      "libraryPath": "library/src/components/TestimonialsGrid.tsx",
+      "screenshotPath": "assets/screenshots/testimonials-grid.png",
+      "liveBox": {
+        "x": 0,
+        "y": 151.78,
+        "width": 390,
+        "height": 984.97,
+        "aspect": 0.396
+      },
+      "localBox": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 905.78,
+        "aspect": 0.4306
+      },
+      "compareWidth": 390,
+      "compareHeight": 986,
+      "meanDelta": 0.080246,
+      "mismatchRatio": 0.187775,
+      "widthDeltaRatio": 0,
+      "heightDeltaRatio": 0.080398,
+      "aspectDelta": 0.034617,
+      "thresholds": {
+        "maxMeanDelta": 0.18,
+        "maxMismatchRatio": 0.62,
+        "maxWidthDeltaRatio": 0.22,
+        "maxHeightDeltaRatio": 0.3,
+        "maxAspectDelta": 0.22
+      },
+      "passed": true,
+      "failureReasons": [],
+      "artifacts": {
+        "live": "showcase/app/artifacts/phase-7f/mobile/live/testimonials-grid.png",
+        "local": "showcase/app/artifacts/phase-7f/mobile/local/testimonials-grid.png",
+        "diff": "showcase/app/artifacts/phase-7f/mobile/diffs/testimonials-grid.png",
+        "sideBySide": "showcase/app/artifacts/phase-7f/mobile/side-by-side/testimonials-grid.png"
+      }
+    }
+  ]
+}

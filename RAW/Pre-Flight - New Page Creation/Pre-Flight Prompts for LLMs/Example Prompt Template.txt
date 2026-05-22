@@ -1,0 +1,14 @@
+Yaml
+
+Generate documentation for a design system component with these properties:
+Component Type: {button}
+Variant: {primary}
+Size: {large}
+Color Token: {$primary-orange}
+Typography: {Gotham-Bold, 16px}
+Padding: {16px 32px}
+Include:
+  - Description (2-3 sentences)
+  - When to use
+  - Accessibility notes
+  - Dev notes

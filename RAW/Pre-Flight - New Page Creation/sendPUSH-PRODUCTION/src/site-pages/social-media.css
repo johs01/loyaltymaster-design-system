@@ -1,0 +1,229 @@
+/* =============================================
+   Social Media Page — Page-Specific Styles
+   All colors use CSS custom properties for
+   automatic dark-mode support.
+   ============================================= */
+
+/* ---------- Highlight callout (italic insight line) ---------- */
+.sm-highlight {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(76, 147, 175, 0.32);
+  background: rgba(76, 147, 175, 0.08);
+}
+
+.sm-highlight-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--wr-r-pill);
+  background: var(--wr-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.sm-highlight-icon svg {
+  width: 13px;
+  height: 13px;
+  color: #fff;
+}
+
+.sm-highlight-text {
+  color: var(--wr-ink);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- Step number pill ---------- */
+.sm-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--wr-r-pill);
+  background: var(--wr-accent-orange);
+  color: #fff;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+/* ---------- Industries grid ---------- */
+.sm-industries-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ---------- Hero centered layout ---------- */
+.sm-hero-centered {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+/* ---------- Secondary CTA link ---------- */
+.sm-link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  color: var(--wr-accent-orange);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-top: 8px;
+}
+
+.sm-link-cta:hover {
+  opacity: 0.78;
+}
+
+/* ---------- Testimonial single card ---------- */
+.sm-testimonial-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: var(--wr-r-20);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.sm-testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.sm-testimonial-stars {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.sm-testimonial-star {
+  color: var(--wr-accent-yellow);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sm-testimonial-quote {
+  position: relative;
+  z-index: 1;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.35px;
+  font-style: italic;
+  color: var(--wr-ink);
+  margin: 0 0 24px;
+}
+
+.sm-testimonial-person {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sm-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--wr-r-pill);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--wr-bg-panel-gray);
+}
+
+.sm-testimonial-info {
+  text-align: left;
+}
+
+.sm-testimonial-name {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--wr-ink);
+  margin: 0 0 4px;
+}
+
+.sm-testimonial-role {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--wr-text-muted);
+  margin: 0;
+}
+
+/* ---------- Dark mode refinements ---------- */
+html[data-theme="dark"] .sm-highlight {
+  border-color: rgba(76, 147, 175, 0.28);
+  background: rgba(76, 147, 175, 0.06);
+}
+
+html[data-theme="dark"] .sm-testimonial-card {
+  border-color: rgba(255, 248, 251, 0.14);
+}
+
+/* ---------- Responsive: Tablet ---------- */
+@media (max-width: 1399.98px) {
+  .sm-industries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm-link-cta {
+    font-size: 16px;
+  }
+}
+
+/* ---------- Responsive: Mobile ---------- */
+@media (max-width: 799.98px) {
+  .sm-industries-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sm-highlight {
+    padding: 16px;
+    margin-top: 18px;
+  }
+
+  .sm-testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .sm-testimonial-quote {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .sm-link-cta {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,49 @@
+
+Documentation best practices (templates). Industry and UX experts recommend documenting each component’s rules in a consistent template. Typical sections are:
+
+Overview/Purpose: What the component is and why it exists (e.g. “PrimaryButton = main call-to-action button on a screen”).
+Usage guidelines: When to use it, often called Do’s, and when not to use it (Don’ts). For example, one guide advises documenting “what can be used together, what cannot be combined… [and] scenarios where the component should not be used”
+. Another advises including a “Do’s and Don’ts” list plus ideal contexts for use
+.
+Visual specs: Color, typography, spacing, and state rules (often linked to design tokens).
+Examples: Screenshots of correct vs incorrect usage.
+Related components: Allowed combinations (e.g. allowable parent/child patterns like “PrimaryButton can go in a HeroSection or Modal” or grouping components like ButtonGroup).
+
+
+Summarizing, most mature design systems indeed include rules like the example. A “PrimaryButton” guideline might say: Purpose = main CTA; Style = brand color background, white text, fixed radius/padding; Allowed in places like hero banners, forms, cards; Not allowed in running text or alongside another PrimaryButton; Use only in pairs (with secondary or ghost buttons), and so on. By following published patterns (IBM Carbon, GOV.UK, USWDS, Atlassian, Shopify, etc.), you can create comprehensive do/​don’t tables and templates to enforce such rules
+
+
+AND SOME EKSTRA RULES TO TAKE INTO ACCOUNT AND MAKE NOTE OFF:
+Design-system component rules exist in many guidelines. Many systems define purpose, style rules, and explicit “dos/don’ts” for each component. For example, IBM’s Carbon design docs say a Primary Button is “for the principal call to action” and emphasize “each page should have only one primary button… Any remaining calls to action should be lower-emphasis”. Similarly, Red Hat’s system warns that each page gets only one primary and all others “should be represented as lower emphasis”. Most guidelines also forbid certain uses – e.g. IBM and Atlassian explicitly say do not use buttons for navigation (use links instead). The UK’s GOV.UK system echoes this: use the button for main actions (“start”, “save and continue”) and “avoid using multiple default buttons on a single page” so users aren’t confused. In short, Usage rules (when/where a component is appropriate) are common: primary buttons for key CTAs, secondary buttons only alongside a primary, etc., and forbidden uses like inside body text or footers.
+Visual and styling rules. Design docs also spell out exact styling tokens. They’ll say, for instance, that primary buttons use the brand’s primary color with white text and a fixed border-radius, padding and font. For example, Atlassian’s color palette notes “Primary button uses the brand color role” (white text on brand blue)
+. The U.S. Web Design System defines tokens like $theme-button-border-radius and $theme-button-font-family to lock in consistent shape and typography
+. Guidelines often add tips like “use outline style for secondary actions” or specific hover/focus styles. For instance, USWDS advises using a distinct style (e.g. a larger or bold outline) to highlight the main action
+. In practice you see rules like “background = primary color, text = white, border-radius = component token, padding = spacing token,” and approved hover/active styles. These visual rules ensure every button “looks like a button” and matches the brand palette and theme (so users instantly recognize it as a CTA).
+“Do’s and Don’ts” (Allowed vs. Blocked uses). Many design systems explicitly list best and worst practices. For example, USWDS’s button page has sections “When to use” (important actions like Download/Sign Up) and “When to consider something else” (if it’s just a page link, use a text link instead)
+. IBM’s Carbon docs have “When not to use: do not use buttons as navigational elements; use links for page navigation”
+. Atlassian’s AUI docs similarly say “Try to avoid usage of buttons for navigation”
+. These are clear blocked uses. Other examples: Atlassian warns against using two primary buttons together, IBM shows imagery and text “Do not use two high‑emphasis buttons in a button group”
+. UX best-practice articles echo this: one authority advises “Don’t have more than one primary action button on the screen at a time”
+ to avoid overwhelming the user. Conversely, allowed uses are often illustrated: for instance, Shopify’s Polaris docs describe using buttons for “form submission”, “primary actions like ‘Save changes’”, and “secondary actions like ‘Cancel’”
+.
+Composition and pairing. Guidelines also cover which components belong together. For example, many systems note that buttons in a related set should be grouped. Shopify Polaris explicitly recommends a ButtonGroup for “multiple related buttons”
+. IBM Carbon discusses grouping by emphasis: a high‑emphasis (primary) button is often paired with a medium (secondary) and low (ghost/tertiary) button in toolbars or dialogs
+, but never two primaries together
+. Atlassian’s guidelines list typical contexts: “Use buttons as triggers for actions in forms, toolbars, dialog footers, and as stand‑alone action triggers”
+. (By implication, don’t put a CTA button in a purely navigational menu or as a plain link list in a footer.) In other words, systems specify allowed pairings (e.g. “button + form”, “button group of related CTAs”) and forbidden pairings (“button next to another primary”, “button inside paragraph text”).
+Documentation best practices (templates). Industry and UX experts recommend documenting each component’s rules in a consistent template. Typical sections are:
+Overview/Purpose: What the component is and why it exists (e.g. “PrimaryButton = main call-to-action button on a screen”).
+Usage guidelines: When to use it, often called Do’s, and when not to use it (Don’ts). For example, one guide advises documenting “what can be used together, what cannot be combined… [and] scenarios where the component should not be used”
+. Another advises including a “Do’s and Don’ts” list plus ideal contexts for use
+.
+Visual specs: Color, typography, spacing, and state rules (often linked to design tokens).
+Examples: Screenshots of correct vs incorrect usage.
+Related components: Allowed combinations (e.g. allowable parent/child patterns like “PrimaryButton can go in a HeroSection or Modal” or grouping components like ButtonGroup).
+Summarizing, most mature design systems indeed include rules like the example. A “PrimaryButton” guideline might say: Purpose = main CTA; Style = brand color background, white text, fixed radius/padding; Allowed in places like hero banners, forms, cards; Not allowed in running text or alongside another PrimaryButton; Use only in pairs (with secondary or ghost buttons), and so on. By following published patterns (IBM Carbon, GOV.UK, USWDS, Atlassian, Shopify, etc.), you can create comprehensive do/​don’t tables and templates to enforce such rules
+.
+
+Sources: Official design system docs and UX literature all show these patterns. For instance: IBM Carbon’s button docs (usage rules above)
+; Shopify Polaris/USWDS guidelines
+; Atlassian AUI and color docs
+; and expert advice on documentation structure
+. These confirm that “allowed/blocked use” and detailed style rules for each component are standard practice.

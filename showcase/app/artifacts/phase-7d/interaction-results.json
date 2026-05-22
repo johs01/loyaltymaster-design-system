@@ -1,0 +1,2788 @@
+{
+  "generatedAt": "2026-05-20T07:08:21.240Z",
+  "phase": "7E",
+  "liveMetadata": {
+    "status": 200,
+    "url": "https://sendpush.loyaltymaster.com/design-system-template-page",
+    "date": "Wed, 20 May 2026 07:07:09 GMT",
+    "etag": "\"ce901b7294fc5b70c6f6c1ee0eff459e\"",
+    "cache": "HIT",
+    "matchedPath": "/design-system-template-page",
+    "contentLength": "66323"
+  },
+  "runtime": {
+    "browserName": "chromium",
+    "browserVersion": "148.0.7778.168",
+    "os": "Darwin 25.4.0 arm64",
+    "localUrl": "http://127.0.0.1:4178",
+    "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page"
+  },
+  "results": [
+    {
+      "id": "billing-toggle-button",
+      "name": "Billing Toggle Button",
+      "liveSection": "#pricing",
+      "rawPath": "Components/Billing Toggle Button/Billing Toggle Button.tsx",
+      "specStates": [
+        "- hover: the available option may strengthen contrast or elevation using approved motion timing.",
+        "- focus: each option must show a visible keyboard focus indicator.",
+        "- active: selection change must be immediate and announced through state.",
+        "- disabled: only use when pricing cannot be changed; preserve readable labels."
+      ],
+      "rawEvidence": [
+        "L39: <button type=\"button\" aria-pressed={isMonthly} onClick={() => handleToggle('monthly')} className={cn('flex min-h-[44px] flex-1 items-center justify-center rounded-full px-4', 'text-[15px] transition-all duration-300 curs",
+        "L43: <button type=\"button\" aria-pressed={isYearly} onClick={() => handleToggle('yearly')} className={cn('flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full px-4', 'text-[15px] transition-all duration-30"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#pricing",
+        "targetSelector": ".wf-pricing-toggle-btn:not(.is-active)",
+        "focusSelector": ".wf-pricing-toggle-btn:not(.is-active)",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-active.png",
+          "state": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-pricing-toggle-btn:not(.is-active)",
+            "before": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": [
+              "borderColor",
+              "boxShadow",
+              "color",
+              "outlineColor",
+              "outlineOffset",
+              "outlineStyle",
+              "outlineWidth",
+              "textDecorationColor",
+              "transform"
+            ]
+          }
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"billing-toggle-button\"]",
+        "targetSelector": ".wf-pricing-toggle-btn:not(.is-active)",
+        "focusSelector": ".wf-pricing-toggle-btn:not(.is-active)",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-active.png",
+          "state": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-pricing-toggle-btn:not(.is-active)",
+            "before": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly 30% OFF",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly 30% OFF",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": [
+              "borderColor",
+              "color",
+              "outlineColor",
+              "outlineStyle",
+              "outlineWidth",
+              "textDecorationColor",
+              "transform"
+            ]
+          }
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-active.png",
+        "state": "showcase/app/artifacts/phase-7d/live/billing-toggle-button-state.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-active.png",
+        "state": "showcase/app/artifacts/phase-7d/local/billing-toggle-button-state.png"
+      },
+      "liveSummary": "hover changed (borderColor, color, outlineColor, textDecorationColor, transform); focus visible; active changed (borderColor, color, outlineColor, outlineOffset, outlineStyle, outlineWidth, textDecorationColor, transform); state {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null}]",
+      "localSummary": "hover changed (borderColor, color, outlineColor, textDecorationColor, transform); focus visible; active changed (borderColor, color, outlineColor, outlineStyle, outlineWidth, textDecorationColor, transform); state {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly 30% OFF\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly 30% OFF\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null}]",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "button-email",
+      "name": "Button Email",
+      "liveSection": "#hero .wf-email-cta",
+      "rawPath": "Components/Button Email/Button Email.tsx",
+      "specStates": [
+        "- hover: button can lift or deepen using approved primary button treatment.",
+        "- focus: input and button both need visible focus states.",
+        "- active: button press must feel immediate and preserve layout.",
+        "- disabled: disable submit while validating or submitting."
+      ],
+      "rawEvidence": [
+        "L102: <form onSubmit={handleSubmit} className=\"relative z-10 flex w-full flex-col gap-2 rounded-[2rem] border-2 border-[#fcb827]/60 bg-white/70 p-1.5 shadow-[0_6px_12px_0_rgba(48,33,39,0.08)] backdrop-blur-sm transition-all du",
+        "L104: <input id=\"hero-email\" type=\"email\" required value={email} onChange={e => setEmail(e.target.value)} placeholder=\"name@email.com\" className=\"min-h-[62px] w-full flex-1 rounded-full bg-[#f4eff2] px-6 text-lg font-medium tr",
+        "L105: <button type=\"submit\" className=\"group relative isolate flex min-h-[62px] w-full shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#f37d39]/30 bg-[#fcb827] px-8 text-[20px] font-bold tracki",
+        "L118: <div className=\"relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[20px] border border-[#979093]/20 bg-white/40 shadow-xl backdrop-blur-sm transition-transform duration-500 hover:scal"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#hero .wf-email-cta",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/button-email-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/button-email-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/button-email-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/button-email-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"button-email\"]",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/button-email-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/button-email-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/button-email-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/button-email-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/button-email-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/button-email-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/button-email-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/button-email-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/button-email-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/button-email-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/button-email-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/button-email-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "comparison-table",
+      "name": "Comparison Table",
+      "liveSection": "#comparison",
+      "rawPath": "Components/Comparison Table/Comparison Table.tsx",
+      "specStates": [
+        "- hover: optional row emphasis may be subtle and must not obscure text.",
+        "- focus: interactive links, if any, need visible focus."
+      ],
+      "rawEvidence": [
+        "L138: {data.map((row, rowIndex) => <tr key={rowIndex} className=\"transition-colors hover:bg-black/[0.02]\">",
+        "L162: hover:translate-y-[-2px] hover:shadow-[0px_7px_0px_0px_#f37d39,0px_12px_20px_0px_rgba(48,33,39,0.15)]",
+        "L163: active:translate-y-[3px] active:shadow-[0px_2px_0px_0px_#f37d39,0px_4px_8px_0px_rgba(48,33,39,0.1)]",
+        "L166: <span className=\"absolute inset-0 w-full h-full opacity-60 pointer-events-none transition-transform duration-700 -translate-x-full group-hover:translate-x-full\" style={{"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#comparison",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/comparison-table-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/comparison-table-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/comparison-table-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/comparison-table-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"comparison-table\"]",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/comparison-table-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/comparison-table-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/comparison-table-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/comparison-table-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/comparison-table-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/comparison-table-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/comparison-table-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/comparison-table-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/comparison-table-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/comparison-table-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/comparison-table-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/comparison-table-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "cta-trial-full-form",
+      "name": "CTA Trial Full Form",
+      "liveSection": "#tenant-trial-cta",
+      "rawPath": "Components/CTA Trial Full Form/CTA Trial Full Form.tsx",
+      "specStates": [
+        "- hover: submit action follows primary button treatment.",
+        "- focus: every field and control must have visible focus.",
+        "- disabled: disable submit only while validation or submission is active."
+      ],
+      "rawEvidence": [
+        "L106: <button type=\"button\" onClick={() => setIsSuccess(false)} className=\"mt-6 text-sm font-bold text-[#979093] hover:text-[#302127] transition-colors\">",
+        "L115: <input id=\"fullName\" name=\"fullName\" type=\"text\" autoComplete=\"name\" required placeholder=\"Jane Smith\" className=\"w-full min-h-[56px] bg-[#FAF8F9] text-[#302127] text-[18px] font-medium border border-[#979093]/35 rounded",
+        "L122: <input id=\"businessName\" name=\"businessName\" type=\"text\" autoComplete=\"organization\" required placeholder=\"Acme Wellness Studio\" className=\"w-full min-h-[56px] bg-[#FAF8F9] text-[#302127] text-[18px] font-medium border b",
+        "L129: <input id=\"businessEmail\" name=\"businessEmail\" type=\"email\" autoComplete=\"email\" required placeholder=\"name@business.com\" className=\"w-full min-h-[56px] bg-[#FAF8F9] text-[#302127] text-[18px] font-medium border border-[",
+        "L136: <input id=\"businessLocation\" name=\"businessLocation\" type=\"text\" autoComplete=\"address-level2\" required placeholder=\"City, State, Country\" className=\"w-full min-h-[56px] bg-[#FAF8F9] text-[#302127] text-[18px] font-mediu",
+        "L143: <input id=\"businessWebsite\" name=\"businessWebsite\" type=\"url\" autoComplete=\"url\" placeholder=\"https://example.com\" aria-describedby=\"website-help\" className=\"w-full min-h-[56px] bg-[#FAF8F9] text-[#302127] text-[18px] fo",
+        "L151: <button type=\"submit\" disabled={isSubmitting} className=\"group w-full min-h-[58px] bg-[#FCB827] text-[#2A1F16] text-[20px] font-bold tracking-[-0.4px] rounded-full border border-[#F37D39]/30 shadow-[0_5px_0_0_#F37D39,0_8",
+        "L152: <span className=\"absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] pointer-events-none\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#tenant-trial-cta",
+        "targetSelector": ".wf-tenant-submit",
+        "focusSelector": ".lm-trial-form .lm-input",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-hover.png",
+          "active": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"cta-trial-full-form\"]",
+        "targetSelector": ".lm-trial-form .lm-button",
+        "focusSelector": ".lm-trial-form .lm-input",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-hover.png",
+        "active": "showcase/app/artifacts/phase-7d/live/cta-trial-full-form-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/cta-trial-full-form-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus not visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "localSummary": "hover changed (boxShadow, transform); focus visible; active changed (boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "cta-with-button-email",
+      "name": "CTA with Button Email",
+      "liveSection": "#final-cta .wf-email-cta",
+      "rawPath": "Components/CTA with Button Email/CTA with Button Email.tsx",
+      "specStates": [
+        "- hover: primary action uses approved hover treatment.",
+        "- focus: input and button focus must be visible."
+      ],
+      "rawEvidence": [
+        "L35: <form onSubmit={handleSubmit} className=\"relative flex flex-col sm:flex-row items-center w-full max-w-[640px] gap-2 p-[6px] bg-white/70 shadow-[0_6px_12px_0_rgba(48,33,39,0.08)] border-2 border-[#fcb827]/60 rounded-[32px",
+        "L47: <input id=\"wf-email-final\" type=\"email\" name=\"email\" value={email} onChange={e => setEmail(e.target.value)} autoComplete=\"email\" placeholder=\"name@email.com\" required className=\"w-full sm:flex-1 min-w-0 min-h-[54px] sm:m",
+        "L49: <motion.button whileHover={{",
+        "L51: }} whileTap={{"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#final-cta .wf-email-cta",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"cta-with-button-email\"]",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/cta-with-button-email-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/cta-with-button-email-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "faq-accordion",
+      "name": "FAQ Accordion",
+      "liveSection": "#faq",
+      "rawPath": "Components/FAQ Accordion/FAQ Accordion.tsx",
+      "specStates": [
+        "- hover: question row and item shell strengthen affordance with approved panel and border treatment.",
+        "- focus: trigger must have visible keyboard focus.",
+        "- disabled: not applicable for normal FAQ content."
+      ],
+      "rawEvidence": [
+        "L76: }} className={`overflow-hidden rounded-2xl border transition-colors duration-300 ${isOpen ? 'border-[#f37d39]/30 bg-[#fbfcfd] shadow-[0_10px_18px_0_rgba(48,33,39,0.1)]' : 'border-[#979093]/30 bg-[#faf8f9] hover:border-[#",
+        "L77: <button id={`faq-header-${index}`} aria-expanded={isOpen} aria-controls={`faq-panel-${index}`} onClick={() => toggleAccordion(index)} className=\"flex w-full cursor-pointer items-center justify-between p-[18px_20px] text-"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#faq",
+        "targetSelector": ".wf-faq-item",
+        "focusSelector": ".wf-faq-trigger[aria-expanded=\"false\"]",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/faq-accordion-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/faq-accordion-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/faq-accordion-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/faq-accordion-active.png",
+          "state": "showcase/app/artifacts/phase-7d/live/faq-accordion-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "opacity",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-faq-trigger[aria-expanded=\"false\"]",
+            "before": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "How quickly can I launch my first campaign?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I import customers from my current tools?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Will this work for multiple locations?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "How do you handle opt-outs and compliance?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Do I need technical support to set this up?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I measure actual revenue impact?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "How quickly can I launch my first campaign?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I import customers from my current tools?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Will this work for multiple locations?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "How do you handle opt-outs and compliance?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Do I need technical support to set this up?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I measure actual revenue impact?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": []
+          }
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"faq-accordion\"]",
+        "targetSelector": ".wf-faq-item",
+        "focusSelector": ".wf-faq-trigger[aria-expanded=\"false\"]",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/faq-accordion-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/faq-accordion-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/faq-accordion-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/faq-accordion-active.png",
+          "state": "showcase/app/artifacts/phase-7d/local/faq-accordion-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-faq-trigger[aria-expanded=\"false\"]",
+            "before": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "How quickly can I launch my first campaign?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I import customers from my current tools?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Will this work for multiple locations?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "How do you handle opt-outs and compliance?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Do I need technical support to set this up?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I measure actual revenue impact?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "How quickly can I launch my first campaign?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I import customers from my current tools?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Will this work for multiple locations?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "How do you handle opt-outs and compliance?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Do I need technical support to set this up?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Can I measure actual revenue impact?",
+                "className": "wf-faq-trigger",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": [
+              "outlineColor",
+              "outlineOffset",
+              "outlineStyle",
+              "outlineWidth"
+            ]
+          }
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/faq-accordion-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/faq-accordion-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/faq-accordion-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/faq-accordion-active.png",
+        "state": "showcase/app/artifacts/phase-7d/live/faq-accordion-state.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/faq-accordion-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/faq-accordion-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/faq-accordion-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/faq-accordion-active.png",
+        "state": "showcase/app/artifacts/phase-7d/local/faq-accordion-state.png"
+      },
+      "liveSummary": "hover changed (backgroundColor, borderColor, boxShadow, opacity, transform); focus not visible; active changed (backgroundColor, borderColor, boxShadow, opacity, transform); state {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"How quickly can I launch my first campaign?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I import customers from my current tools?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Will this work for multiple locations?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"How do you handle opt-outs and compliance?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Do I need technical support to set this up?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I measure actual revenue impact?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"How quickly can I launch my first campaign?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I import customers from my current tools?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Will this work for multiple locations?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"How do you handle opt-outs and compliance?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Do I need technical support to set this up?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I measure actual revenue impact?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}]",
+      "localSummary": "hover changed (backgroundColor, borderColor, boxShadow, transform); focus visible; active changed (backgroundColor, borderColor, boxShadow, transform); state {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"How quickly can I launch my first campaign?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I import customers from my current tools?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Will this work for multiple locations?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"How do you handle opt-outs and compliance?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Do I need technical support to set this up?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I measure actual revenue impact?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"How quickly can I launch my first campaign?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I import customers from my current tools?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Will this work for multiple locations?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"How do you handle opt-outs and compliance?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Do I need technical support to set this up?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Can I measure actual revenue impact?\",\"className\":\"wf-faq-trigger\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}]",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "feature-section-2-column-bullets-image",
+      "name": "Feature Section 2 Column Bullets Image",
+      "liveSection": "#use-case-2",
+      "rawPath": "Components/Feature Section 2 Column Bullets Image/Feature Section 2 Column Bullets Image.tsx",
+      "specStates": [
+        "- hover: static section, no required hover state.",
+        "- focus: links or buttons inside the section need visible focus."
+      ],
+      "rawEvidence": [
+        "L79: }} whileHover={{",
+        "L81: }} whileTap={{",
+        "L86: <span className=\"absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#use-case-2",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"feature-section-2-column-bullets-image\"]",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-bullets-image-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-bullets-image-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "feature-section-2-column-image",
+      "name": "Feature Section 2 Column Image",
+      "liveSection": "#problem",
+      "rawPath": "Components/Feature Section 2 Column Image/Feature Section 2 Column Image.tsx",
+      "specStates": [
+        "- hover: static section, no required hover state.",
+        "- focus: any links or controls need visible focus."
+      ],
+      "rawEvidence": [
+        "L79: }} className=\"bg-white/75 rounded-2xl p-4 md:px-[18px] md:py-4 shadow-[inset_0_0_0_1px_rgba(151,144,147,0.15)] hover:bg-white transition-colors duration-300\">",
+        "L92: }} className=\"group relative inline-flex items-center justify-center min-h-[58px] px-7 bg-[#FCB827] text-[#2A1F16] font-bold text-[20px] leading-[20px] tracking-[-0.4px] rounded-full border border-[#F37D39]/30 shadow-[0_",
+        "L93: <span className=\"absolute inset-0 bg-[linear-gradient(112deg,transparent_14%,rgba(255,255,255,0.34)_44%,transparent_68%)] opacity-60 pointer-events-none translate-x-[-100%] group-hover:translate-x-[100%] transition-trans"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#problem",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"feature-section-2-column-image\"]",
+        "targetSelector": ".wr-cta-join",
+        "focusSelector": ".wr-cta-join",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/feature-section-2-column-image-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/feature-section-2-column-image-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "features-grid",
+      "name": "Features Grid",
+      "liveSection": "#features",
+      "rawPath": "Components/Features Grid/Features Grid.tsx",
+      "specStates": [
+        "- hover: card emphasis uses the approved subtle overlay and lift treatment from the live template page.",
+        "- focus: cards are focusable only when they contain links or actions."
+      ],
+      "rawEvidence": [
+        "L102: <span className=\"absolute inset-0 rounded-[16px] bg-gradient-to-b from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-240 ease-out pointer-events-none\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#features",
+        "targetSelector": "article",
+        "focusSelector": "article",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/features-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/features-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/features-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/features-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "backgroundColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "backgroundColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"features-grid\"]",
+        "targetSelector": ".wf-feature-card",
+        "focusSelector": ".wf-feature-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/features-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/features-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/features-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/features-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/features-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/features-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/features-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/features-grid-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/features-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/features-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/features-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/features-grid-active.png"
+      },
+      "liveSummary": "hover changed (backgroundColor, boxShadow, opacity, transform); focus not visible; active changed (backgroundColor, boxShadow, opacity, transform); state not applicable",
+      "localSummary": "hover changed (boxShadow, transform); focus not visible; active changed (boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "liveSection": "#site-footer",
+      "rawPath": "Components/Footer/Footer.tsx",
+      "specStates": [
+        "- hover: links use approved text or accent treatment.",
+        "- focus: all links need visible focus."
+      ],
+      "rawEvidence": [
+        "L68: <a href=\"#\" onClick={e => e.preventDefault()} className=\"inline-flex items-center text-[15px] font-medium leading-[18px] tracking-[-0.2px] text-[#979093] transition-colors duration-200 ease-out hover:text-[#302127]\">",
+        "L167: }} onMouseEnter={e => {",
+        "L170: }} onMouseLeave={e => {",
+        "L221: <a href=\"#\" onClick={e => e.preventDefault()} className=\"text-[#979093] transition-colors hover:text-[#302127]\">",
+        "L230: <a href=\"#\" onClick={e => e.preventDefault()} className=\"text-[#979093] transition-colors hover:text-[#302127]\">",
+        "L253: {legalLinks.map(link => <a key={link.label} href=\"#\" onClick={e => e.preventDefault()} className=\"text-[14px] font-medium leading-4 tracking-[-0.2px] text-[#979093] transition-colors hover:text-[#302127]\">"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#site-footer",
+        "targetSelector": ".wf-footer-cta",
+        "focusSelector": ".wf-footer-link",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/footer-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/footer-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/footer-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/footer-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"footer\"]",
+        "targetSelector": ".wf-footer-cta",
+        "focusSelector": ".wf-footer-link",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/footer-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/footer-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/footer-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/footer-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/footer-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/footer-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/footer-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/footer-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/footer-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/footer-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/footer-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/footer-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "geo-fence-use-case",
+      "name": "Geo Fence Use Case",
+      "liveSection": "#use-case-2",
+      "rawPath": "Components/Geo Fence Use Case/Geo Fence Use Case.tsx",
+      "specStates": [
+        "- hover: static section, no required hover state.",
+        "- focus: links or actions inside the section require visible focus."
+      ],
+      "rawEvidence": [
+        "L91: }} whileHover={{",
+        "L93: }} whileTap={{",
+        "L98: <span className=\"absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#use-case-2",
+        "targetSelector": ".wf-placeholder--has-image",
+        "focusSelector": ".wf-placeholder--has-image",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"geo-fence-use-case\"]",
+        "targetSelector": ".wf-placeholder--has-image",
+        "focusSelector": ".wf-placeholder--has-image",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/geo-fence-use-case-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/geo-fence-use-case-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus not visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus not visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "hero-main-section",
+      "name": "Hero Main Section",
+      "liveSection": "#hero",
+      "rawPath": "Components/Hero Main Section/Hero Main Section.tsx",
+      "specStates": [
+        "- hover: CTA uses approved primary button hover.",
+        "- focus: CTA and links have visible focus."
+      ],
+      "rawEvidence": [
+        "L92: <form onSubmit={handleSubmit} className=\"relative z-10 flex w-full flex-col gap-2 rounded-[2rem] border-2 border-[#fcb827]/60 bg-white/70 p-1.5 shadow-[0_6px_12px_0_rgba(48,33,39,0.08)] backdrop-blur-sm transition-all du",
+        "L94: <input id=\"hero-email\" type=\"email\" required value={email} onChange={e => setEmail(e.target.value)} placeholder=\"name@email.com\" className=\"min-h-[62px] w-full flex-1 rounded-full bg-[#f4eff2] px-6 text-lg font-medium tr",
+        "L95: <button type=\"submit\" className=\"group relative isolate flex min-h-[62px] w-full shrink-0 items-center justify-center overflow-hidden rounded-full border border-[#f37d39]/30 bg-[#fcb827] px-8 text-[20px] font-bold tracki",
+        "L108: <div className=\"relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[20px] border border-[#979093]/20 bg-white/40 shadow-xl backdrop-blur-sm transition-transform duration-500 hover:scal"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#hero",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/hero-main-section-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/hero-main-section-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/hero-main-section-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/hero-main-section-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"hero-main-section\"]",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/hero-main-section-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/hero-main-section-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/hero-main-section-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/hero-main-section-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/hero-main-section-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/hero-main-section-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/hero-main-section-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/hero-main-section-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/hero-main-section-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/hero-main-section-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/hero-main-section-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/hero-main-section-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "image-grid",
+      "name": "Image Grid",
+      "liveSection": "#logo-grid",
+      "rawPath": "Components/Image Grid/Image Grid.tsx",
+      "specStates": [
+        "- hover: logo tiles use the approved restrained lift, shadow, and image-scale treatment without cropping essential marks.",
+        "- focus: only linked images receive focus."
+      ],
+      "rawEvidence": [
+        "L123: {logos.map(logo => <motion.li key={logo.id} variants={itemVariants} className=\"relative min-h-[84px] bg-white flex items-center justify-center border border-[#979093]/[0.26] rounded-2xl shadow-[0_8px_20px_0_rgba(48,33,39",
+        "L124: <img src={logo.url} alt={logo.name} loading=\"lazy\" className=\"block max-w-full max-h-[42px] object-contain relative z-10 transition-transform duration-300 group-hover:scale-105\" />",
+        "L125: <span className=\"absolute inset-0 block bg-gradient-to-b from-white/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0 pointer-events-none\" aria-hidden=\"true\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#logo-grid",
+        "targetSelector": ".wf-logo-card",
+        "focusSelector": ".wf-logo-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/image-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/image-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/image-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/image-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"image-grid\"]",
+        "targetSelector": ".wf-logo-card",
+        "focusSelector": ".wf-logo-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/image-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/image-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/image-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/image-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/image-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/image-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/image-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/image-grid-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/image-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/image-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/image-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/image-grid-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow); focus not visible; active changed (borderColor, boxShadow); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus not visible; active changed (borderColor, boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "image-strip",
+      "name": "Image Strip",
+      "liveSection": ".wf-awards-strip",
+      "rawPath": "Components/Image Strip/Image Strip.tsx",
+      "specStates": [
+        "- hover: optional emphasis must stay restrained.",
+        "- focus: only linked images receive focus."
+      ],
+      "rawEvidence": [],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": ".wf-awards-strip",
+        "targetSelector": ".wf-award-badge",
+        "focusSelector": ".wf-award-badge",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/image-strip-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/image-strip-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/image-strip-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/image-strip-active.png"
+        },
+        "interactions": {
+          "hoverChanged": false,
+          "hoverChangedProperties": [],
+          "focusVisible": false,
+          "focusChangedProperties": [],
+          "activeChanged": false,
+          "activeChangedProperties": [],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"image-strip\"]",
+        "targetSelector": ".wf-award-badge",
+        "focusSelector": ".wf-award-badge",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/image-strip-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/image-strip-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/image-strip-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/image-strip-active.png"
+        },
+        "interactions": {
+          "hoverChanged": false,
+          "hoverChangedProperties": [],
+          "focusVisible": false,
+          "focusChangedProperties": [],
+          "activeChanged": false,
+          "activeChangedProperties": [],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/image-strip-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/image-strip-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/image-strip-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/image-strip-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/image-strip-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/image-strip-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/image-strip-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/image-strip-active.png"
+      },
+      "liveSummary": "hover unchanged (none); focus not visible; active unchanged (none); state not applicable",
+      "localSummary": "hover unchanged (none); focus not visible; active unchanged (none); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "navbar-glassmorphism",
+      "name": "Navbar Glassmorphism",
+      "liveSection": "header.wf-header",
+      "rawPath": "Components/Navbar Glassmorphism/Navbar Glassmorphism.tsx",
+      "specStates": [
+        "- hover: links and controls follow approved motion timing and restrained accent treatment.",
+        "- focus: every nav link and menu control has visible focus.",
+        "- active: active path is indicated without color alone.",
+        "- mobile-open: panel is accessible and dismissible."
+      ],
+      "rawEvidence": [
+        "L21: active: true",
+        "L238: <button ref={productButtonRef} type=\"button\" onMouseEnter={() => {",
+        "L241: }} onMouseLeave={() => {",
+        "L265: }} onMouseEnter={handleDropdownMouseEnter} onMouseLeave={handleDropdownMouseLeave} className=\"absolute top-[calc(100%+16px)] z-[999]\" style={{",
+        "L329: }} onMouseEnter={e => {",
+        "L331: }} onMouseLeave={e => {",
+        "L400: }} onMouseEnter={e => {",
+        "L402: }} onMouseLeave={e => {",
+        "L467: }} onMouseEnter={e => {",
+        "L469: }} onMouseLeave={e => {",
+        "L482: return <button key={item.label} type=\"button\" onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)} onFocus={() => setHoveredIndex(i)} onBlur={() => setHoveredIndex(null)} className=\"relative",
+        "L486: return <a key={item.label} href=\"\" onClick={e => e.preventDefault()} onMouseEnter={() => setHoveredIndex(i)} onMouseLeave={() => setHoveredIndex(null)} onFocus={() => setHoveredIndex(i)} onBlur={() => setHoveredIndex(nul",
+        "L495: <button type=\"button\" onClick={() => setIsDark(v => !v)} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} aria-pressed={isDark} className=\"relative flex items-center justify-center cursor-pointer\" sty",
+        "L545: <button type=\"button\" onClick={() => setMobileOpen(v => !v)} aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} aria-controls=\"wfMobileMenu\" className=\"lg:hidden relative flex items-center ju",
+        "L622: }} className=\"flex items-center justify-between rounded-xl px-4 py-3 hover:bg-white/40 transition-colors\" style={{"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "header.wf-header",
+        "targetSelector": ".wf-nav-links button:not(.is-active)",
+        "focusSelector": ".wf-nav-links a",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-active.png",
+          "state": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-state.png"
+        },
+        "interactions": {
+          "hoverChanged": false,
+          "hoverChangedProperties": [],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-mobile-menu-toggle",
+            "before": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(255, 255, 255, 0.54)"
+            },
+            "after": {
+              "ariaExpanded": "true",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "rgba(255, 255, 255, 0.54)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "Switch to dark mode",
+                "className": "wf-theme-icon-toggle",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Open menu",
+                "className": "wf-mobile-menu-toggle",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "Switch to dark mode",
+                "className": "wf-theme-icon-toggle",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Close menu",
+                "className": "wf-mobile-menu-toggle",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": []
+          }
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"navbar-glassmorphism\"]",
+        "targetSelector": ".wf-nav-links a:not(.is-active)",
+        "focusSelector": ".wf-nav-links a",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-active.png",
+          "state": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "textDecorationColor",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "color",
+            "outlineColor",
+            "textDecorationColor",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-mobile-menu-toggle",
+            "before": {
+              "ariaExpanded": "false",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "color(srgb 1 1 1 / 0.86)"
+            },
+            "after": {
+              "ariaExpanded": "true",
+              "ariaPressed": null,
+              "ariaCurrent": null,
+              "color": "rgb(48, 33, 39)",
+              "backgroundColor": "color(srgb 1 1 1 / 0.86)"
+            },
+            "beforeStates": [
+              {
+                "tag": "a",
+                "text": "Product",
+                "className": "is-active",
+                "ariaExpanded": null,
+                "ariaPressed": null,
+                "ariaCurrent": "page"
+              },
+              {
+                "tag": "button",
+                "text": "Switch to dark mode",
+                "className": "wf-theme-icon-toggle",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Open menu",
+                "className": "wf-mobile-menu-toggle",
+                "ariaExpanded": "false",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "a",
+                "text": "Product",
+                "className": "is-active",
+                "ariaExpanded": null,
+                "ariaPressed": null,
+                "ariaCurrent": "page"
+              },
+              {
+                "tag": "button",
+                "text": "Switch to dark mode",
+                "className": "wf-theme-icon-toggle",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Close menu",
+                "className": "wf-mobile-menu-toggle",
+                "ariaExpanded": "true",
+                "ariaPressed": null,
+                "ariaCurrent": null
+              },
+              {
+                "tag": "a",
+                "text": "Product",
+                "className": "wf-footer-link",
+                "ariaExpanded": null,
+                "ariaPressed": null,
+                "ariaCurrent": "page"
+              }
+            ],
+            "changedProperties": [
+              "borderColor",
+              "boxShadow",
+              "transform"
+            ]
+          }
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-active.png",
+        "state": "showcase/app/artifacts/phase-7d/live/navbar-glassmorphism-state.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-active.png",
+        "state": "showcase/app/artifacts/phase-7d/local/navbar-glassmorphism-state.png"
+      },
+      "liveSummary": "hover unchanged (none); focus visible; active changed (borderColor, color, outlineColor, textDecorationColor, transform); state {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(255, 255, 255, 0.54)\"} -> {\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"rgba(255, 255, 255, 0.54)\"}; state-list [{\"tag\":\"button\",\"text\":\"Switch to dark mode\",\"className\":\"wf-theme-icon-toggle\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Open menu\",\"className\":\"wf-mobile-menu-toggle\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"Switch to dark mode\",\"className\":\"wf-theme-icon-toggle\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Close menu\",\"className\":\"wf-mobile-menu-toggle\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null}]",
+      "localSummary": "hover changed (borderColor, color, outlineColor, textDecorationColor, transform); focus visible; active changed (borderColor, color, outlineColor, textDecorationColor, transform); state {\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"color(srgb 1 1 1 / 0.86)\"} -> {\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null,\"color\":\"rgb(48, 33, 39)\",\"backgroundColor\":\"color(srgb 1 1 1 / 0.86)\"}; state-list [{\"tag\":\"a\",\"text\":\"Product\",\"className\":\"is-active\",\"ariaExpanded\":null,\"ariaPressed\":null,\"ariaCurrent\":\"page\"},{\"tag\":\"button\",\"text\":\"Switch to dark mode\",\"className\":\"wf-theme-icon-toggle\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Open menu\",\"className\":\"wf-mobile-menu-toggle\",\"ariaExpanded\":\"false\",\"ariaPressed\":null,\"ariaCurrent\":null}] -> [{\"tag\":\"a\",\"text\":\"Product\",\"className\":\"is-active\",\"ariaExpanded\":null,\"ariaPressed\":null,\"ariaCurrent\":\"page\"},{\"tag\":\"button\",\"text\":\"Switch to dark mode\",\"className\":\"wf-theme-icon-toggle\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Close menu\",\"className\":\"wf-mobile-menu-toggle\",\"ariaExpanded\":\"true\",\"ariaPressed\":null,\"ariaCurrent\":null},{\"tag\":\"a\",\"text\":\"Product\",\"className\":\"wf-footer-link\",\"ariaExpanded\":null,\"ariaPressed\":null,\"ariaCurrent\":\"page\"}]",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "pricing-section",
+      "name": "Pricing Section",
+      "liveSection": "#pricing",
+      "rawPath": "Components/Pricing Section/Pricing Section.tsx",
+      "specStates": [
+        "- hover: plan actions use approved button/card hover treatment.",
+        "- focus: plan actions and billing controls have visible focus.",
+        "- active: selected cadence changes prices consistently."
+      ],
+      "rawEvidence": [
+        "L99: <button type=\"button\" aria-pressed={!isYearly} onClick={() => setIsYearly(false)} className={`flex min-h-[48px] items-center justify-center rounded-full px-5 text-[16px] font-bold transition-all duration-300 ${!isYearly ",
+        "L102: <button type=\"button\" aria-pressed={isYearly} onClick={() => setIsYearly(true)} className={`flex min-h-[48px] items-center justify-center gap-2 rounded-full px-5 text-[16px] font-bold transition-all duration-300 ${isYear",
+        "L154: <a href=\"#\" onClick={e => e.preventDefault()} className=\"group relative flex min-h-[52px] w-full items-center justify-center overflow-hidden rounded-full border border-[#f37d39]/30 bg-[#fcb827] px-5 text-[16px] font-bold",
+        "L156: <span className=\"pointer-events-none absolute inset-0 opacity-60 transition-transform duration-300 group-hover:translate-x-4\" style={{",
+        "L185: <a href=\"#\" onClick={e => e.preventDefault()} className=\"inline-flex min-h-[50px] items-center justify-center rounded-full border border-[#979093]/30 bg-white px-8 text-[16px] font-bold text-[#302127] transition-colors h"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#pricing",
+        "targetSelector": ".wf-pricing-card-cta",
+        "focusSelector": ".wf-pricing-card-cta",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/pricing-section-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/pricing-section-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/pricing-section-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/pricing-section-active.png",
+          "state": "showcase/app/artifacts/phase-7d/live/pricing-section-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-pricing-toggle-btn:not(.is-active)",
+            "before": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": [
+              "boxShadow"
+            ]
+          }
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"pricing-section\"]",
+        "targetSelector": ".wf-pricing-card-cta",
+        "focusSelector": ".wf-pricing-card-cta",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/pricing-section-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/pricing-section-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/pricing-section-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/pricing-section-active.png",
+          "state": "showcase/app/artifacts/phase-7d/local/pricing-section-state.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": {
+            "selector": ".wf-pricing-toggle-btn:not(.is-active)",
+            "before": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "after": {
+              "ariaExpanded": null,
+              "ariaPressed": "false",
+              "ariaCurrent": null,
+              "color": "rgb(151, 144, 147)",
+              "backgroundColor": "rgba(0, 0, 0, 0)"
+            },
+            "beforeStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              }
+            ],
+            "afterStates": [
+              {
+                "tag": "button",
+                "text": "Monthly",
+                "className": "wf-pricing-toggle-btn",
+                "ariaExpanded": null,
+                "ariaPressed": "false",
+                "ariaCurrent": null
+              },
+              {
+                "tag": "button",
+                "text": "Yearly30% OFF",
+                "className": "wf-pricing-toggle-btn is-active",
+                "ariaExpanded": null,
+                "ariaPressed": "true",
+                "ariaCurrent": null
+              }
+            ],
+            "changedProperties": []
+          }
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/pricing-section-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/pricing-section-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/pricing-section-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/pricing-section-active.png",
+        "state": "showcase/app/artifacts/phase-7d/live/pricing-section-state.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/pricing-section-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/pricing-section-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/pricing-section-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/pricing-section-active.png",
+        "state": "showcase/app/artifacts/phase-7d/local/pricing-section-state.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null}]",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"} -> {\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null,\"color\":\"rgb(151, 144, 147)\",\"backgroundColor\":\"rgba(0, 0, 0, 0)\"}; state-list [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null}] -> [{\"tag\":\"button\",\"text\":\"Monthly\",\"className\":\"wf-pricing-toggle-btn\",\"ariaExpanded\":null,\"ariaPressed\":\"false\",\"ariaCurrent\":null},{\"tag\":\"button\",\"text\":\"Yearly30% OFF\",\"className\":\"wf-pricing-toggle-btn is-active\",\"ariaExpanded\":null,\"ariaPressed\":\"true\",\"ariaCurrent\":null}]",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "process-steps",
+      "name": "Process Steps",
+      "liveSection": "#process",
+      "rawPath": "Components/Process Steps/Process Steps.tsx",
+      "specStates": [
+        "- hover: optional card emphasis must stay subtle.",
+        "- focus: cards are focusable only if interactive."
+      ],
+      "rawEvidence": [
+        "L114: return <motion.article key={step.id} variants={itemVariants} className={cn(\"relative rounded-[20px] p-[26px] px-6 flex flex-col gap-[14px]\", \"shadow-[0_8px_20px_0_rgba(48,33,39,0.06)] border-[1px] transition-all hover:-t",
+        "L143: <form onSubmit={handleSubmit} className=\"flex flex-col sm:flex-row items-center gap-[8px] p-[6px] bg-white/75 backdrop-blur-sm border-[2px] border-[#FCB827]/60 rounded-[32px] sm:rounded-full shadow-[0_6px_12px_0_rgba(48,",
+        "L147: <input id=\"email-capture\" type=\"email\" value={email} onChange={e => setEmail(e.target.value)} placeholder=\"name@email.com\" required disabled={isSubmitted} className=\"flex-1 w-full min-h-[62px] px-[24px] bg-[#F4EFF2] roun",
+        "L148: <motion.button type=\"submit\" disabled={isSubmitted} initial=\"rest\" whileHover={isSubmitted ? \"rest\" : \"hover\"} whileTap={isSubmitted ? \"rest\" : \"tap\"} variants={{",
+        "L153: hover: {",
+        "L161: }} className=\"group relative overflow-hidden flex items-center justify-center shrink-0 w-full sm:w-auto min-h-[62px] px-[26px] bg-[#FCB827] text-[#2A1F16] font-bold text-[20px] leading-[20px] tracking-tight rounded-full ",
+        "L164: hover: {"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#process",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/process-steps-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/process-steps-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/process-steps-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/process-steps-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"process-steps\"]",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/process-steps-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/process-steps-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/process-steps-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/process-steps-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/process-steps-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/process-steps-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/process-steps-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/process-steps-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/process-steps-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/process-steps-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/process-steps-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/process-steps-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "stats-card-strip",
+      "name": "Stats Card Strip",
+      "liveSection": "#stats",
+      "rawPath": "Components/Stats Card Strip/Stats Card Strip.tsx",
+      "specStates": [
+        "- hover: proof cards use the approved subtle lift and overlay treatment from the live template page.",
+        "- focus: only linked cards receive focus."
+      ],
+      "rawEvidence": [
+        "L53: {statsData.map((stat, index) => <motion.article key={index} variants={itemVariants} className=\"relative bg-white rounded-[20px] shadow-[0_8px_20px_0_rgba(48,33,39,0.06)] text-center p-6 group overflow-hidden hover:-trans",
+        "L61: <span className=\"absolute inset-0 bg-gradient-to-b from-white/40 to-transparent opacity-0 transition-opacity duration-200 ease-out group-hover:opacity-100 rounded-[20px] pointer-events-none\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#stats",
+        "targetSelector": ".wf-stat-card",
+        "focusSelector": ".wf-stat-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/stats-card-strip-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/stats-card-strip-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/stats-card-strip-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/stats-card-strip-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"stats-card-strip\"]",
+        "targetSelector": ".wf-stat-card",
+        "focusSelector": ".wf-stat-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/stats-card-strip-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/stats-card-strip-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/stats-card-strip-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/stats-card-strip-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/stats-card-strip-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/stats-card-strip-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/stats-card-strip-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/stats-card-strip-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/stats-card-strip-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/stats-card-strip-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/stats-card-strip-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/stats-card-strip-active.png"
+      },
+      "liveSummary": "hover changed (boxShadow, opacity, transform); focus not visible; active changed (boxShadow, opacity, transform); state not applicable",
+      "localSummary": "hover changed (boxShadow, transform); focus not visible; active changed (boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "testimonial-single",
+      "name": "Testimonial Single",
+      "liveSection": "#testimonial-2",
+      "rawPath": "Components/Testimonial Single/Testimonial Single.tsx",
+      "specStates": [
+        "- hover: the approved email CTA button uses the primary hover/active treatment.",
+        "- focus: the email input and CTA button must show visible keyboard focus."
+      ],
+      "rawEvidence": [
+        "L100: <form onSubmit={handleSubmit} className=\"flex flex-col sm:flex-row items-center gap-2 w-full bg-white/72 shadow-[0_6px_12px_rgba(48,33,39,0.08)] border-2 border-[#fcb827]/62 rounded-[32px] sm:rounded-[999px] p-1.5 transi",
+        "L104: <input id=\"email-proof\" type=\"email\" name=\"email\" autoComplete=\"email\" required value={email} onChange={e => setEmail(e.target.value)} placeholder={ctaPlaceholder} className=\"flex-1 w-full min-h-[56px] sm:min-h-[62px] te",
+        "L105: <button type=\"submit\" className=\"w-full sm:w-auto relative group overflow-hidden flex items-center justify-center min-h-[56px] sm:min-h-[62px] bg-[#fcb827] text-[#2a1f16] text-[18px] sm:text-[20px] font-bold px-8 rounded",
+        "L107: <span className=\"absolute inset-0 w-full h-full bg-[linear-gradient(112deg,transparent_14%,rgba(255,255,255,0.34)_44%,transparent_68%)] opacity-64 pointer-events-none transform translate-x-[-100%] group-hover:translate-x"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#testimonial-2",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/testimonial-single-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/testimonial-single-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/testimonial-single-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/testimonial-single-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"testimonial-single\"]",
+        "targetSelector": ".wf-email-cta__button",
+        "focusSelector": ".wf-email-cta__button",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/testimonial-single-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/testimonial-single-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/testimonial-single-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/testimonial-single-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": true,
+          "focusChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "borderColor",
+            "boxShadow",
+            "outlineColor",
+            "outlineOffset",
+            "outlineStyle",
+            "outlineWidth",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/testimonial-single-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/testimonial-single-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/testimonial-single-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/testimonial-single-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/testimonial-single-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/testimonial-single-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/testimonial-single-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/testimonial-single-active.png"
+      },
+      "liveSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "localSummary": "hover changed (borderColor, boxShadow, transform); focus visible; active changed (borderColor, boxShadow, outlineColor, outlineOffset, outlineStyle, outlineWidth, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    },
+    {
+      "id": "testimonials-grid",
+      "name": "Testimonials Grid",
+      "liveSection": "#capabilities-testimonials",
+      "rawPath": "Components/Testimonials Grid/Testimonials Grid.tsx",
+      "specStates": [
+        "- hover: testimonial cards use the approved subtle overlay/elevation treatment from the live template page.",
+        "- focus: only linked cards receive focus."
+      ],
+      "rawEvidence": [
+        "L115: <div className=\"pointer-events-none absolute inset-0 rounded-[16px] bg-gradient-to-b from-white/40 to-transparent opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100\" />"
+      ],
+      "liveAudit": {
+        "found": true,
+        "rootSelector": "#capabilities-testimonials",
+        "targetSelector": "article",
+        "focusSelector": "article",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/live/testimonials-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/live/testimonials-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/live/testimonials-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/live/testimonials-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "opacity",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "localAudit": {
+        "found": true,
+        "rootSelector": "[data-capture-target=\"testimonials-grid\"]",
+        "targetSelector": ".wf-cap-testimonial-card",
+        "focusSelector": ".wf-cap-testimonial-card",
+        "screenshots": {
+          "default": "showcase/app/artifacts/phase-7d/local/testimonials-grid-default.png",
+          "hover": "showcase/app/artifacts/phase-7d/local/testimonials-grid-hover.png",
+          "focus": "showcase/app/artifacts/phase-7d/local/testimonials-grid-focus.png",
+          "active": "showcase/app/artifacts/phase-7d/local/testimonials-grid-active.png"
+        },
+        "interactions": {
+          "hoverChanged": true,
+          "hoverChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "focusVisible": false,
+          "focusChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "activeChanged": true,
+          "activeChangedProperties": [
+            "backgroundColor",
+            "borderColor",
+            "boxShadow",
+            "transform"
+          ],
+          "stateResult": null
+        }
+      },
+      "liveScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/live/testimonials-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/live/testimonials-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/live/testimonials-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/live/testimonials-grid-active.png"
+      },
+      "localScreenshots": {
+        "default": "showcase/app/artifacts/phase-7d/local/testimonials-grid-default.png",
+        "hover": "showcase/app/artifacts/phase-7d/local/testimonials-grid-hover.png",
+        "focus": "showcase/app/artifacts/phase-7d/local/testimonials-grid-focus.png",
+        "active": "showcase/app/artifacts/phase-7d/local/testimonials-grid-active.png"
+      },
+      "liveSummary": "hover changed (backgroundColor, borderColor, boxShadow, opacity, transform); focus not visible; active changed (backgroundColor, borderColor, boxShadow, opacity, transform); state not applicable",
+      "localSummary": "hover changed (backgroundColor, borderColor, boxShadow, transform); focus not visible; active changed (backgroundColor, borderColor, boxShadow, transform); state not applicable",
+      "classification": "Pass",
+      "recommendation": "No Phase 7D fix needed; keep this component in interaction regression coverage."
+    }
+  ]
+}

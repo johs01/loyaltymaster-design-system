@@ -1,0 +1,840 @@
+{
+  "$schema": "./components.schema.json",
+  "name": "Loyaltymaster Component Registry",
+  "version": "0.1.0",
+  "phase": "Phase 2",
+  "description": "Machine-readable registry for the 20 approved Wave 1 component snapshots. Clean library implementations are planned for Phase 4.",
+  "rules": {
+    "sourceOfTruth": "Use /design-system-template-page and production Remy patterns as canonical. /Components is raw snapshot reference only.",
+    "doNotImportRawSnapshots": true,
+    "libraryStatus": "planned",
+    "defaultStack": "Next.js 16 App Router, React 18, TypeScript 5.5, Tailwind 3",
+    "defaultClientBoundary": "server",
+    "interactiveComponentsDeclareClientBoundary": true
+  },
+  "components": [
+    {
+      "id": "billing-toggle-button",
+      "name": "Billing Toggle Button",
+      "category": "pricing-control",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Monthly/yearly billing toggle control for pricing sections.",
+      "whenToUse": "Use when a pricing view needs a clear two-state billing cadence selector.",
+      "whenNotToUse": "Do not use as a generic tab control or unrelated segmented control.",
+      "screenshotPath": "assets/screenshots/billing-toggle-button.png",
+      "rawSourcePath": "Components/Billing Toggle Button/Billing Toggle Button.tsx",
+      "libraryPath": "library/src/components/BillingToggleButton.tsx",
+      "tokensUsed": [
+        "component.button.primary",
+        "color.accent.yellow",
+        "color.accent.orange",
+        "dimension.radius.pill",
+        "motion.duration.base"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "enum": [
+              "monthly",
+              "yearly"
+            ]
+          },
+          "onChange": {
+            "description": "Callback receiving the selected billing cadence."
+          }
+        },
+        "required": [
+          "value",
+          "onChange"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/billing-toggle-button.md"
+    },
+    {
+      "id": "button-email",
+      "name": "Button Email",
+      "category": "conversion-control",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Email capture CTA shell pairing an email field with primary action.",
+      "whenToUse": "Use for high-intent email capture moments inside hero, CTA, or testimonial sections.",
+      "whenNotToUse": "Do not use for multi-field trial forms or low-priority newsletter forms.",
+      "screenshotPath": "assets/screenshots/button-email.png",
+      "rawSourcePath": "Components/Button Email/Button Email.tsx",
+      "libraryPath": "library/src/components/ButtonEmail.tsx",
+      "tokensUsed": [
+        "component.input.tenant",
+        "component.button.primary",
+        "shadow.formShell",
+        "dimension.radius.pill",
+        "color.accent.yellow"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "placeholder": {
+            "type": "string"
+          },
+          "buttonLabel": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Submit handler for the email value."
+          }
+        },
+        "required": [
+          "buttonLabel",
+          "onSubmit"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/button-email.md"
+    },
+    {
+      "id": "comparison-table",
+      "name": "Comparison Table",
+      "category": "proof-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Comparison section for positioning sendPUSH against less direct customer-reach channels.",
+      "whenToUse": "Use when the page must explain why direct customer messaging is stronger than social-only reach.",
+      "whenNotToUse": "Do not use as a dense feature matrix with many technical rows.",
+      "screenshotPath": "assets/screenshots/comparison-table.png",
+      "rawSourcePath": "Components/Comparison Table/Comparison Table.tsx",
+      "libraryPath": "library/src/components/ComparisonTable.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.background.cyan",
+        "color.surface.white",
+        "shadow.cardBase"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/comparison-table.md"
+    },
+    {
+      "id": "cta-trial-full-form",
+      "name": "CTA Trial Full Form",
+      "category": "conversion-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Full trial signup CTA with multiple labeled fields and validation-ready layout.",
+      "whenToUse": "Use for final or dedicated trial conversion sections where the visitor is ready to submit details.",
+      "whenNotToUse": "Do not use in compact hero areas where a single email CTA is enough.",
+      "screenshotPath": "assets/screenshots/cta-trial-full-form.png",
+      "rawSourcePath": "Components/CTA Trial Full Form/CTA Trial Full Form.tsx",
+      "libraryPath": "library/src/components/CtaTrialFullForm.tsx",
+      "tokensUsed": [
+        "component.input.tenant",
+        "component.button.primary",
+        "shadow.formShell",
+        "color.background.peach",
+        "dimension.radius.cardSecondary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "submitLabel": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Submit handler for the trial form."
+          }
+        },
+        "required": [
+          "submitLabel",
+          "onSubmit"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/cta-trial-full-form.md"
+    },
+    {
+      "id": "cta-with-button-email",
+      "name": "CTA with Button Email",
+      "category": "conversion-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Compact CTA section with email capture and primary action.",
+      "whenToUse": "Use near the end of a page for a direct conversion push without a full form.",
+      "whenNotToUse": "Do not use when the page needs detailed business information before submission.",
+      "screenshotPath": "assets/screenshots/cta-with-button-email.png",
+      "rawSourcePath": "Components/CTA with Button Email/CTA with Button Email.tsx",
+      "libraryPath": "library/src/components/CtaWithButtonEmail.tsx",
+      "tokensUsed": [
+        "component.input.tenant",
+        "component.button.primary",
+        "color.background.dark",
+        "typography.headline"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "buttonLabel": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/cta-with-button-email.md"
+    },
+    {
+      "id": "faq-accordion",
+      "name": "FAQ Accordion",
+      "category": "support-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Accessible accordion for frequently asked questions.",
+      "whenToUse": "Use for common objections and practical setup questions.",
+      "whenNotToUse": "Do not use for long documentation or policy content.",
+      "screenshotPath": "assets/screenshots/faq-accordion.png",
+      "rawSourcePath": "Components/FAQ Accordion/FAQ Accordion.tsx",
+      "libraryPath": "library/src/components/FaqAccordion.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "dimension.radius.inputCompact",
+        "color.surface.panelLight",
+        "motion.duration.base"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "question": {
+                  "type": "string"
+                },
+                "answer": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "question",
+                "answer"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "defaultOpenIndex": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/faq-accordion.md"
+    },
+    {
+      "id": "feature-section-2-column-bullets-image",
+      "name": "Feature Section 2 Column Bullets Image",
+      "category": "feature-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Two-column feature section with bullets and an image/visual container.",
+      "whenToUse": "Use for one clear use case that benefits from a short checklist and visual proof.",
+      "whenNotToUse": "Do not use for broad feature grids or final CTAs.",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-bullets-image.png",
+      "rawSourcePath": "Components/Feature Section 2 Column Bullets Image/Feature Section 2 Column Bullets Image.tsx",
+      "libraryPath": "library/src/components/FeatureSection2ColumnBulletsImage.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.background.salmon",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "bullets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "image": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "heading",
+          "bullets"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/feature-section-2-column-bullets-image.md"
+    },
+    {
+      "id": "feature-section-2-column-image",
+      "name": "Feature Section 2 Column Image",
+      "category": "feature-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Two-column feature section with copy and visual container.",
+      "whenToUse": "Use for a focused product capability where the image carries part of the explanation.",
+      "whenNotToUse": "Do not use when multiple equivalent features should be compared side by side.",
+      "screenshotPath": "assets/screenshots/feature-section-2-column-image.png",
+      "rawSourcePath": "Components/Feature Section 2 Column Image/Feature Section 2 Column Image.tsx",
+      "libraryPath": "library/src/components/FeatureSection2ColumnImage.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.background.peach",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "image": {
+            "type": "object"
+          },
+          "reversed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "heading",
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/feature-section-2-column-image.md"
+    },
+    {
+      "id": "features-grid",
+      "name": "Features Grid",
+      "category": "feature-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Grid of feature cards for scan-friendly capability overviews.",
+      "whenToUse": "Use for a bounded set of distinct capabilities with short labels and copy.",
+      "whenNotToUse": "Do not use as an endless same-sized card grid; keep it purposeful and limited.",
+      "screenshotPath": "assets/screenshots/features-grid.png",
+      "rawSourcePath": "Components/Features Grid/Features Grid.tsx",
+      "libraryPath": "library/src/components/FeaturesGrid.tsx",
+      "tokensUsed": [
+        "typography.title",
+        "typography.body",
+        "color.surface.panelLight",
+        "shadow.cardBase",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/features-grid.md"
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "category": "shell",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Light card site footer shell with brand, links, contact details, CTA, and legal navigation.",
+      "whenToUse": "Use as part of the app shell, not inside page-body generated content.",
+      "whenNotToUse": "Do not add to source-to-page route bodies when the shell already provides it.",
+      "screenshotPath": "assets/screenshots/footer.png",
+      "rawSourcePath": "Components/Footer/Footer.tsx",
+      "libraryPath": "library/src/components/Footer.tsx",
+      "tokensUsed": [
+        "fontFamily.wordmark",
+        "typography.body",
+        "color.surface.white",
+        "color.surface.panelLight",
+        "color.accent.orange"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "brandLabel": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "contactItems": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "cta": {
+            "type": "object"
+          },
+          "legalLinks": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "copyright": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/footer.md"
+    },
+    {
+      "id": "geo-fence-use-case",
+      "name": "Geo Fence Use Case",
+      "category": "use-case-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Use-case section for geo-aware messaging and location-based customer return campaigns.",
+      "whenToUse": "Use when the page needs a concrete location-aware messaging scenario.",
+      "whenNotToUse": "Do not use as a generic button component; it was previously mislabeled and corrected in Phase 1.",
+      "screenshotPath": "assets/screenshots/geo-fence-use-case.png",
+      "rawSourcePath": "Components/Geo Fence Use Case/Geo Fence Use Case.tsx",
+      "libraryPath": "library/src/components/GeoFenceUseCase.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.background.salmon",
+        "color.accent.yellow",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "bullets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "image": {
+            "type": "object"
+          },
+          "action": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/geo-fence-use-case.md"
+    },
+    {
+      "id": "hero-main-section",
+      "name": "Hero Main Section",
+      "category": "hero-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Primary first-screen marketing hero with value proposition, CTA, checklist, and visual area.",
+      "whenToUse": "Use as the first major section of a sendPUSH marketing page.",
+      "whenNotToUse": "Do not use for mid-page sections or document layouts.",
+      "screenshotPath": "assets/screenshots/hero-main-section.png",
+      "rawSourcePath": "Components/Hero Main Section/Hero Main Section.tsx",
+      "libraryPath": "library/src/components/HeroMainSection.tsx",
+      "tokensUsed": [
+        "typography.display",
+        "typography.body",
+        "component.button.primary",
+        "color.background.peach",
+        "shadow.cardBase"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "primaryAction": {
+            "type": "object"
+          },
+          "emailPlaceholder": {
+            "type": "string"
+          },
+          "emailButtonLabel": {
+            "type": "string"
+          },
+          "showEmailCapture": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "heading",
+          "primaryAction"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/hero-main-section.md"
+    },
+    {
+      "id": "image-grid",
+      "name": "Image Grid",
+      "category": "media-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Structured partner/logo proof grid for integration and platform trust marks.",
+      "whenToUse": "Use when approved partner, platform, payment, compliance, or integration logos need organized proof display.",
+      "whenNotToUse": "Do not use for full-bleed photo backgrounds, arbitrary photo galleries, or decorative stock imagery.",
+      "screenshotPath": "assets/screenshots/image-grid.png",
+      "rawSourcePath": "Components/Image Grid/Image Grid.tsx",
+      "libraryPath": "library/src/components/ImageGrid.tsx",
+      "tokensUsed": [
+        "dimension.radius.cardPrimary",
+        "shadow.cardBase",
+        "color.surface.white",
+        "dimension.spacing.md"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "images"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/image-grid.md"
+    },
+    {
+      "id": "image-strip",
+      "name": "Image Strip",
+      "category": "media-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Horizontal image strip for compact visual rhythm.",
+      "whenToUse": "Use for a small set of related rounded images or visual proof points.",
+      "whenNotToUse": "Do not use as a logo strip; partner logos use dedicated logo patterns.",
+      "screenshotPath": "assets/screenshots/image-strip.png",
+      "rawSourcePath": "Components/Image Strip/Image Strip.tsx",
+      "libraryPath": "library/src/components/ImageStrip.tsx",
+      "tokensUsed": [
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.md",
+        "color.surface.white"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "images"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/image-strip.md"
+    },
+    {
+      "id": "navbar-glassmorphism",
+      "name": "Navbar Glassmorphism",
+      "category": "shell",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Sticky glass navigation shell with responsive mobile panel and cursor-tracked highlight.",
+      "whenToUse": "Use only as the site shell navigation treatment.",
+      "whenNotToUse": "Do not copy this glass treatment into page-body cards, heroes, or generic panels.",
+      "screenshotPath": "assets/screenshots/navbar-glassmorphism.png",
+      "rawSourcePath": "Components/Navbar Glassmorphism/Navbar Glassmorphism.tsx",
+      "libraryPath": "library/src/components/NavbarGlassmorphism.tsx",
+      "tokensUsed": [
+        "fontFamily.wordmark",
+        "typography.label",
+        "color.accent.orange",
+        "motion.duration.base",
+        "shadow.cardBase"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "activePath": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/navbar-glassmorphism.md"
+    },
+    {
+      "id": "pricing-section",
+      "name": "Pricing Section",
+      "category": "pricing-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "client",
+      "description": "Pricing cards with monthly/yearly state and pro emphasis.",
+      "whenToUse": "Use where the visitor needs to compare plans and move toward trial signup.",
+      "whenNotToUse": "Do not use for non-commercial comparison tables.",
+      "screenshotPath": "assets/screenshots/pricing-section.png",
+      "rawSourcePath": "Components/Pricing Section/Pricing Section.tsx",
+      "libraryPath": "library/src/components/PricingSection.tsx",
+      "tokensUsed": [
+        "typography.stat",
+        "component.card.primary",
+        "component.button.primary",
+        "color.accent.yellow",
+        "color.background.peach"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "plans": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "defaultCadence": {
+            "type": "string",
+            "enum": [
+              "monthly",
+              "yearly"
+            ]
+          }
+        },
+        "required": [
+          "plans"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/pricing-section.md"
+    },
+    {
+      "id": "process-steps",
+      "name": "Process Steps",
+      "category": "process-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Numbered process cards explaining setup or campaign flow.",
+      "whenToUse": "Use to show a small sequence of practical steps.",
+      "whenNotToUse": "Do not use for unordered feature lists.",
+      "screenshotPath": "assets/screenshots/process-steps.png",
+      "rawSourcePath": "Components/Process Steps/Process Steps.tsx",
+      "libraryPath": "library/src/components/ProcessSteps.tsx",
+      "tokensUsed": [
+        "typography.headline",
+        "typography.title",
+        "color.background.salmon",
+        "shadow.cardBase",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "steps"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/process-steps.md"
+    },
+    {
+      "id": "stats-card-strip",
+      "name": "Stats Card Strip",
+      "category": "proof-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Compact strip of stat cards for proof and momentum.",
+      "whenToUse": "Use for a short set of measurable business outcomes.",
+      "whenNotToUse": "Do not use for long analytics dashboards.",
+      "screenshotPath": "assets/screenshots/stats-card-strip.png",
+      "rawSourcePath": "Components/Stats Card Strip/Stats Card Strip.tsx",
+      "libraryPath": "library/src/components/StatsCardStrip.tsx",
+      "tokensUsed": [
+        "typography.stat",
+        "typography.body",
+        "color.surface.panelLight",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "stats": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "stats"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/stats-card-strip.md"
+    },
+    {
+      "id": "testimonial-single",
+      "name": "Testimonial Single",
+      "category": "proof-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Dark proof section spotlighting one or two customer proof quotes.",
+      "whenToUse": "Use to spotlight one or two credible local-business proof points with high emphasis.",
+      "whenNotToUse": "Do not use when a broader grid of three or more voices needs equal weight.",
+      "screenshotPath": "assets/screenshots/testimonial-single.png",
+      "rawSourcePath": "Components/Testimonial Single/Testimonial Single.tsx",
+      "libraryPath": "library/src/components/TestimonialSingle.tsx",
+      "tokensUsed": [
+        "typography.body",
+        "color.background.dark",
+        "color.surface.white",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "quote": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "testimonials": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/testimonial-single.md"
+    },
+    {
+      "id": "testimonials-grid",
+      "name": "Testimonials Grid",
+      "category": "proof-section",
+      "status": "raw-snapshot",
+      "clientBoundary": "server",
+      "description": "Grid of testimonial cards for broader proof.",
+      "whenToUse": "Use when several customer voices reinforce the same business outcome.",
+      "whenNotToUse": "Do not use as a generic feature-card grid.",
+      "screenshotPath": "assets/screenshots/testimonials-grid.png",
+      "rawSourcePath": "Components/Testimonials Grid/Testimonials Grid.tsx",
+      "libraryPath": "library/src/components/TestimonialsGrid.tsx",
+      "tokensUsed": [
+        "typography.body",
+        "color.surface.panelLight",
+        "color.surface.white",
+        "shadow.cardBase",
+        "dimension.radius.cardPrimary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "specPath": "specs/components/testimonials-grid.md"
+    }
+  ]
+}

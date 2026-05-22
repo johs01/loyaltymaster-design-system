@@ -1,0 +1,48 @@
+# gitleaks configuration
+# https://github.com/gitleaks/gitleaks
+#
+# Scans staged / committed files for secret-shaped strings. Run locally via the
+# .githooks/pre-commit hook; run in CI via the gitleaks-action GitHub Action.
+#
+# See SECURITY.md for full policy.
+
+title = "sendPUSH-PRODUCTION gitleaks config"
+
+[extend]
+# Start from the bundled defaults (AWS, GCP, Azure, Stripe, Slack, GitHub, ...)
+useDefault = true
+
+# Project-specific rules on top of the defaults.
+
+[[rules]]
+id = "cloudinary-url"
+description = "Cloudinary URL with API key and secret"
+regex = '''cloudinary://[A-Za-z0-9_-]+:[A-Za-z0-9_-]+@[A-Za-z0-9_-]+'''
+tags = ["cloudinary", "secret"]
+
+[[rules]]
+id = "cloudinary-api-secret"
+description = "Cloudinary API secret"
+regex = '''CLOUDINARY_API_SECRET\s*=\s*[A-Za-z0-9_-]{20,}'''
+tags = ["cloudinary", "secret"]
+
+[[rules]]
+id = "vite-prefixed-secret"
+description = "VITE_*-prefixed variable with secret-shaped name (would ship to browser)"
+regex = '''VITE_[A-Z0-9_]*(SECRET|PRIVATE_KEY|SERVICE_ROLE|ACCESS_TOKEN|PASSWORD|PASSPHRASE|DATABASE_URL|DB_URL|CONNECTION_STRING|WEBHOOK_SECRET)[A-Z0-9_]*\s*=\s*\S+'''
+tags = ["taxonomy"]
+
+[allowlist]
+description = "Allowlist documented examples and local-only files"
+paths = [
+  '''(?i)SECURITY\.md''',
+  '''(?i)\.env\.example''',
+  '''(?i)api/README\.md''',
+  '''node_modules/''',
+  '''dist/''',
+]
+
+# Allow public client-side variables which are meant to be public.
+regexes = [
+  '''NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME''',
+]

@@ -1,0 +1,5 @@
+Loyaltymaster pages must be built from approved components only.
+
+The AI may arrange approved components in new ways.
+
+The AI may not invent new design styles, colors, buttons, cards, CTAs, headers, or layout patterns unless the user is updating the design system itself.

@@ -1,0 +1,135 @@
+
+This gives the AI clear rules:
+
+“This block can go with that block.”
+“This block must never go with that block.”
+
+Example: Component: PrimaryButton
+
+Purpose:
+Used for the main action on a page or section.
+
+Visual rules:
+- Background: Loyaltymaster primary color
+- Text: white
+- Border radius: approved button radius
+- Padding: approved button spacing
+- Font: approved button font
+- Hover state: approved hover style
+- Mobile: full width only inside forms or stacked CTA blocks
+
+Allowed use:
+- Hero sections
+- CTA sections
+- Pricing cards
+- Lead forms
+- Sales sections
+
+Blocked use:
+- Inside long blog body text
+- As a repeated list item action
+- Next to another PrimaryButton
+- In footer link groups
+
+Allowed pairings:
+- HeroSection
+- CTASection
+- PricingCard
+- LeadCaptureForm
+
+Blocked pairings:
+- BlogParagraph
+- FooterLinkGroup
+- LegalTextBlock
+
+AND OR:
+
+---
+id: button.primary
+name: Primary Button
+status: approved
+version: 1.0.0
+component_type: button
+allowed_domains:
+  - loyaltymaster.com
+  - sendpush.loyaltymaster.com
+  - blog.loyaltymaster.com
+blocked_domains: []
+allowed_with:
+  - hero.main
+  - hero.sendpush
+  - section.cta
+  - card.pricing
+  - form.lead-capture
+blocked_with:
+  - button.primary
+  - footer.main
+  - blog.article-body
+props:
+  label:
+    type: string
+    max_length: 24
+    required: true
+  href:
+    type: string
+    required: false
+  variant:
+    type: enum
+    values:
+      - primary
+---
+
+# Primary Button
+
+## Purpose
+
+Use this for the main action in a section.
+
+## Visual rules
+
+- Use the primary Loyaltymaster brand color from `design.md`.
+- Use the approved button radius from `design.md`.
+- Use approved spacing from `design.md`.
+- Text must be short and action-based.
+- Do not create a custom button style.
+
+## Allowed use
+
+- Main hero action
+- CTA section action
+- Pricing card action
+- Lead form submit action
+
+## Not allowed
+
+- Do not place next to another Primary Button.
+- Do not use inside blog body text.
+- Do not use in footer link groups.
+- Do not use for low-priority actions.
+
+## Content rules
+
+Good labels:
+
+- Start free
+- Book a demo
+- Create a pass
+- Try SendPush
+
+Bad labels:
+
+- Click here
+- Submit
+- Read more
+- More information
+
+## Mobile rules
+
+- Full width inside forms.
+- Normal width inside hero sections unless the layout stacks.
+
+## AI instruction
+
+When the user asks for a main CTA, use `button.primary`.  
+Do not invent a new button.  
+Do not change the color, radius, padding, or hover style.

@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { padding: 16px 22px; flex-direction:column; align-items:stretch; gap: 4px; }
+.item { border-top: 1px solid rgba(151,144,147,0.22); padding: 10px 4px; display:flex; justify-content:space-between; align-items:center; }
+.item:first-child { border-top: none; }
+.q { font-family: var(--wr-font-body); font-weight:700; font-size: 14px; letter-spacing:-0.2px; color: var(--wr-ink); }
+.a { font-size: 12px; color: var(--wr-text-muted); margin: 6px 0 0; line-height: 1.5; }
+.chev { width: 28px; height: 28px; border-radius: 99px; border: 1px solid rgba(151,144,147,0.28); display:grid; place-items:center; color: var(--wr-text-muted); }
+.open .chev { transform: rotate(180deg); color: var(--wr-accent-orange); border-color: rgba(243,125,57,0.32); }
+</style></head><body>
+<div class="item open" style="flex-direction:column;align-items:stretch">
+  <div style="display:flex;justify-content:space-between;align-items:center"><span class="q">Do I need a credit card to start?</span><span class="chev">▾</span></div>
+  <p class="a">No — every sendPUSH plan starts with a free 14-day trial. No credit card required.</p>
+</div>
+<div class="item"><span class="q">Can I import existing contacts?</span><span class="chev">▾</span></div>
+<div class="item"><span class="q">Does it integrate with my POS?</span><span class="chev">▾</span></div>
+</body></html>

@@ -1,0 +1,150 @@
+{
+  "site": {
+    "baseUrl": "https://sendpush.loyaltymaster.com",
+    "siteName": "sendPUSH | Loyaltymaster",
+    "brandName": "sendPUSH",
+    "organizationName": "Loyaltymaster",
+    "logoUrl": "https://res.cloudinary.com/loyaltymaster/image/upload/f_auto,q_auto/image_placeholder-640-square_twvooa",
+    "defaultOgImageUrl": "https://res.cloudinary.com/loyaltymaster/image/upload/f_auto,q_auto/image_placeholder-640-square_twvooa"
+  },
+  "routes": [
+    {
+      "path": "/",
+      "title": "Turn Slow Business Hours into Revenue | sendPUSH | Loyaltymaster",
+      "description": "Use geo-fenced push notifications to send timely offers when customers are near your location and turn quiet business hours into booked revenue.",
+      "h1": "How to Turn a Slow Afternoon Into Your Busiest Day of the Week",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "monthly",
+      "priority": 1,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [{ "name": "Home", "path": "/" }],
+      "schemaTypes": ["Organization", "SoftwareApplication", "Service", "BreadcrumbList"]
+    },
+    {
+      "path": "/design-system-template-page",
+      "title": "Design System Template Page | sendPUSH | Loyaltymaster",
+      "description": "Build your direct customer list, automate outreach, and send high-converting campaigns. sendPUSH helps B2B teams turn customer attention into repeat revenue.",
+      "h1": "Design System Template Page",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "monthly",
+      "priority": 0.5,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Design System Template Page", "path": "/design-system-template-page" }
+      ],
+      "schemaTypes": ["Organization", "SoftwareApplication", "Service", "BreadcrumbList"]
+    },
+    {
+      "path": "/loyalty",
+      "title": "Digital Loyalty Cards for Customer Retention | sendPUSH | Loyaltymaster",
+      "description": "Create digital loyalty cards that keep customers coming back. sendPUSH helps B2B teams launch loyalty programs, track engagement, and automate rewards.",
+      "h1": "Launch Digital Loyalty Cards That Customers Actually Use",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Loyalty Cards", "path": "/loyalty" }
+      ],
+      "schemaTypes": ["Organization", "SoftwareApplication", "Service", "BreadcrumbList"]
+    },
+    {
+      "path": "/bring-back-customers",
+      "title": "Customer Retention Strategies for B2B Teams | sendPUSH | Loyaltymaster",
+      "description": "Bring back lost customers with automated win-back campaigns. sendPUSH helps businesses re-engage inactive customers and increase repeat visits.",
+      "h1": "Bring Back Customers Who Have Gone Quiet",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Customer Retention", "path": "/bring-back-customers" }
+      ],
+      "schemaTypes": ["Organization", "SoftwareApplication", "Service", "BreadcrumbList"]
+    },
+    {
+      "path": "/social-media",
+      "title": "Social Media vs Direct Messaging for Business Growth | sendPUSH | Loyaltymaster",
+      "description": "Compare social media reach with direct customer messaging. See why businesses use sendPUSH to own their audience and improve campaign visibility.",
+      "h1": "Stop Renting Your Audience From Social Media",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Social Media vs. Direct", "path": "/social-media" }
+      ],
+      "schemaTypes": ["Organization", "SoftwareApplication", "Service", "BreadcrumbList"]
+    },
+    {
+      "path": "/style-guide",
+      "title": "sendPUSH Design System | Loyaltymaster",
+      "description": "Internal design system reference for sendPUSH.",
+      "h1": "sendPUSH | Loyaltymaster Design System",
+      "robots": "noindex, nofollow",
+      "sitemap": false,
+      "changefreq": "yearly",
+      "priority": 0,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [{ "name": "Style Guide", "path": "/style-guide" }],
+      "schemaTypes": []
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy Policy | sendPUSH | Loyaltymaster",
+      "description": "Privacy information for businesses and prospects using the sendPUSH website and trial request forms.",
+      "h1": "Privacy Policy",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Privacy Policy", "path": "/privacy" }
+      ],
+      "schemaTypes": ["Organization", "BreadcrumbList"]
+    },
+    {
+      "path": "/terms",
+      "title": "Terms of Service | sendPUSH | Loyaltymaster",
+      "description": "Terms information for businesses and prospects using the sendPUSH website and trial request forms.",
+      "h1": "Terms of Service",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Terms of Service", "path": "/terms" }
+      ],
+      "schemaTypes": ["Organization", "BreadcrumbList"]
+    },
+    {
+      "path": "/cookies",
+      "title": "Cookie Policy | sendPUSH | Loyaltymaster",
+      "description": "Cookie information for visitors using the sendPUSH website.",
+      "h1": "Cookie Policy",
+      "robots": "index, follow",
+      "sitemap": true,
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "lastmod": "2026-04-24",
+      "breadcrumbs": [
+        { "name": "Home", "path": "/" },
+        { "name": "Cookie Policy", "path": "/cookies" }
+      ],
+      "schemaTypes": ["Organization", "BreadcrumbList"]
+    }
+  ]
+}

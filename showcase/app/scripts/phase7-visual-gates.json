@@ -1,0 +1,206 @@
+{
+  "version": "phase-7c",
+  "metric": "Phase 7C native component capture compared to intentionally regenerated canonical references after local Rodger and Onest font parity. meanDelta is average RGB distance. mismatchRatio is the share of pixels with RGB distance above 0.08. Width, height, aspect, browser runtime, font readiness, deviceScaleFactor, and screenshot timing metadata are gated so layout or runtime drift cannot be hidden.",
+  "components": {
+    "billing-toggle-button": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "billing-toggle-button is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "button-email": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "button-email is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "comparison-table": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "comparison-table is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "cta-trial-full-form": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "cta-trial-full-form is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "cta-with-button-email": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "cta-with-button-email is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "faq-accordion": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "faq-accordion is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "feature-section-2-column-bullets-image": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "feature-section-2-column-bullets-image is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "feature-section-2-column-image": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "feature-section-2-column-image is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "features-grid": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "features-grid is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "footer": {
+      "classification": "Phase 7C regenerated reference and gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "footer is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "geo-fence-use-case": {
+      "classification": "Phase 7C regenerated reference and gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "geo-fence-use-case is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "hero-main-section": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "hero-main-section is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "image-grid": {
+      "classification": "Phase 7C regenerated reference and gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "image-grid is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "image-strip": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "image-strip is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "navbar-glassmorphism": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "navbar-glassmorphism is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "pricing-section": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "pricing-section is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "process-steps": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "process-steps is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "stats-card-strip": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "stats-card-strip is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "testimonial-single": {
+      "classification": "Phase 7C regenerated reference and gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "testimonial-single is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    },
+    "testimonials-grid": {
+      "classification": "Phase 7C font/runtime parity gated",
+      "gate": true,
+      "maxMeanDelta": 0.001,
+      "maxMismatchRatio": 0.003,
+      "notes": "testimonials-grid is gated against the intentionally regenerated Phase 7C canonical reference with local Rodger/Onest font parity, Chromium runtime metadata, deviceScaleFactor 1, and zero allowed geometry drift.",
+      "maxWidthDeltaRatio": 0,
+      "maxHeightDeltaRatio": 0,
+      "maxAspectDelta": 0
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "version": "phase-7f",
+  "metric": "Phase 7F production fidelity capture compares live sendPUSH runtime sections against local library specimens at desktop and mobile viewports.",
+  "viewports": [
+    { "name": "desktop", "width": 1440, "height": 1400 },
+    { "name": "mobile", "width": 390, "height": 1200 }
+  ],
+  "defaultThresholds": {
+    "maxMeanDelta": 0.18,
+    "maxMismatchRatio": 0.62,
+    "maxWidthDeltaRatio": 0.22,
+    "maxHeightDeltaRatio": 0.3,
+    "maxAspectDelta": 0.22
+  },
+  "components": {
+    "billing-toggle-button": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing .wf-pricing-toggle",
+      "localSelector": "[data-capture-target=\"billing-toggle-button\"] .wf-pricing-toggle",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "notes": "Billing toggle is judged against the live pricing cadence control."
+    },
+    "button-email": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero .wf-email-cta",
+      "localSelector": "[data-capture-target=\"button-email\"] .wf-email-cta",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/MarketingPrimitives.tsx",
+      "notes": "Standalone email CTA uses the same primitive as the home hero."
+    },
+    "comparison-table": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#comparison",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ComparisonSection.tsx",
+      "notes": "Full comparison section is gated, not only the table element."
+    },
+    "cta-trial-full-form": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#tenant-trial-cta",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "notes": "Trial form remains part of the production-fidelity map even though it was not in the user-named mismatch list."
+    },
+    "cta-with-button-email": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#final-cta",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
+      "notes": "Final dark CTA section is gated as a full section."
+    },
+    "faq-accordion": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#faq",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FaqSection.tsx",
+      "notes": "FAQ rows are judged in their default rendered state."
+    },
+    "feature-section-2-column-bullets-image": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#use-case-2",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/UseCaseSection.tsx",
+      "notes": "Right-column image frame hover and section geometry are part of the target."
+    },
+    "feature-section-2-column-image": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#problem",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProblemSection.tsx",
+      "notes": "Problem split section is the production equivalent for this registry component."
+    },
+    "features-grid": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#features",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "notes": "Capabilities grid is gated as a full section."
+    },
+    "footer": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#site-footer",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Footer.tsx",
+      "notes": "Footer uses the production sendPUSH | Loyaltymaster wordmark structure."
+    },
+    "geo-fence-use-case": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-strategy-2",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "notes": "Home page geo-fence strategy section is authoritative."
+    },
+    "hero-main-section": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": "#ftd-hero",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "notes": "Home page hero is authoritative for this phase."
+    },
+    "image-grid": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#logo-grid",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/LogoGrid.tsx",
+      "notes": "Partner logo grid is the approved image-grid interpretation."
+    },
+    "image-strip": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/",
+      "liveSelector": ".wf-awards-strip",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/AwardsStrip.tsx",
+      "notes": "Awards strip from the home page is authoritative."
+    },
+    "navbar-glassmorphism": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "header.wf-header",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Nav.tsx",
+      "notes": "Navigation shell and sendPUSH | Loyaltymaster wordmark are gated."
+    },
+    "pricing-section": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#pricing",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
+      "notes": "Full pricing section is gated, including aligned buttons."
+    },
+    "process-steps": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#process",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProcessSection.tsx",
+      "notes": "Process cards and bottom CTA are gated as one section."
+    },
+    "stats-card-strip": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#stats",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/StatsSection.tsx",
+      "notes": "Stats card strip is gated against the live four-card row."
+    },
+    "testimonial-single": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#testimonial-2",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/TestimonialSection.tsx",
+      "notes": "Dark proof section with email CTA is authoritative."
+    },
+    "testimonials-grid": {
+      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveSelector": "#capabilities-testimonials",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
+      "notes": "Card proof grid is gated against the live capabilities testimonials section."
+    }
+  }
+}

@@ -1,0 +1,71 @@
+/*
+ * Loyaltymaster/sendPUSH Phase 2 generated token output.
+ * Source of truth: tokens/design-tokens.json
+ */
+
+:root {
+  --lm-color-ink: #302127;
+  --lm-color-text-muted: #979093;
+  --lm-color-text-subtle: #bfb8bc;
+  --lm-color-surface-white: #ffffff;
+  --lm-color-surface-panel-light: #faf8f9;
+  --lm-color-surface-panel-gray: #f4eff2;
+  --lm-color-background-peach: #fef0e9;
+  --lm-color-background-cyan: #eaf5f8;
+  --lm-color-background-salmon: #fde9e2;
+  --lm-color-background-dark: #302127;
+  --lm-color-background-yellow: #fef9e6;
+  --lm-color-dark-warm: #1A1519;
+  --lm-color-dark-deep: #141015;
+  --lm-color-accent-yellow: #fcb827;
+  --lm-color-accent-yellow-soft: #fdd564;
+  --lm-color-accent-orange: #f37d39;
+  --lm-color-accent-blue: #4c93af;
+  --lm-color-accent-tag-yellow: #fff3c4;
+  --lm-color-feedback-error: #d94f3a;
+  --lm-color-feedback-warning: #c48a12;
+  --lm-color-feedback-success: #2e8e7a;
+  --lm-color-feedback-info: #3a7a94;
+
+  --lm-font-display: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  --lm-font-stat: "Rodger", "Rodger Regular", Arial, sans-serif;
+  --lm-font-body: "Onest", "Onest Placeholder", sans-serif;
+  --lm-font-wordmark: "Lato", sans-serif;
+
+  --lm-radius-pill: 999px;
+  --lm-radius-card-primary: 20px;
+  --lm-radius-card-secondary: 16px;
+  --lm-radius-input-tenant: 16px;
+  --lm-radius-input-compact: 12px;
+  --lm-radius-badge: 8px;
+  --lm-radius-brand-dot: 7px;
+  --lm-radius-check-dot: 6px;
+
+  --lm-spacing-xs: 8px;
+  --lm-spacing-sm: 12px;
+  --lm-spacing-md: 18px;
+  --lm-spacing-lg: 24px;
+  --lm-spacing-xl: 48px;
+  --lm-spacing-section-mobile-y: 56px;
+  --lm-spacing-section-tablet-y: 72px;
+  --lm-spacing-section-desktop-y: 84px;
+
+  --lm-shadow-card-base: 0 8px 20px rgba(48, 33, 39, 0.06);
+  --lm-shadow-card-hover: 0 14px 26px rgba(48, 33, 39, 0.12);
+  --lm-shadow-badge: 0 7px 0 0 rgba(48, 33, 39, 0.82);
+  --lm-shadow-form-shell: 0 12px 24px rgba(48, 33, 39, 0.1);
+
+  --lm-motion-duration-fast: 220ms;
+  --lm-motion-duration-base: 280ms;
+  --lm-motion-duration-reveal: 560ms;
+  --lm-motion-easing-gentle: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --lm-motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --lm-motion-easing-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --lm-container-main: 1280px;
+  --lm-container-focus: 840px;
+  --lm-container-cta: 640px;
+  --lm-container-padding-desktop: 48px;
+  --lm-container-padding-tablet: 32px;
+  --lm-container-padding-mobile: 20px;
+}

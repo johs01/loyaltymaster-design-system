@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+    font-weight: 700;
+  }
+}
+
+.wf-image-fill {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: inherit;
+}
+
+/* ── Local SEO: NAP Block ── */
+.wf-nap-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.wf-nap-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--wr-ink);
+}
+.wf-nap-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.wf-nap-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--wr-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.wf-nap-item:hover {
+  color: var(--wr-accent-orange);
+}
+.wf-nap-item svg {
+  flex-shrink: 0;
+  color: var(--wr-accent-orange);
+}
+
+/* ── Local SEO: Hero Banner ── */
+.wf-local-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: var(--wr-bg-panel-light);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wr-text-muted);
+  letter-spacing: -0.2px;
+}
+.wf-local-banner svg {
+  color: var(--wr-accent-orange);
+  flex-shrink: 0;
+}
+
+/* ── Local SEO: Service Area Grid ── */
+.wf-service-area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.wf-service-area-card {
+  padding: 28px 24px;
+  border-radius: var(--wr-r-16, 16px);
+  background: var(--wr-bg-panel-light);
+  transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.wf-service-area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(48, 33, 39, 0.06);
+}
+.wf-service-area-name {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  color: var(--wr-ink);
+  margin-bottom: 8px;
+}
+.wf-service-area-desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--wr-text-muted);
+  letter-spacing: -0.2px;
+}
+
+/* ── Local SEO: Find Us / Map Section ── */
+.wf-find-us-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.wf-map-container {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--wr-r-16, 16px);
+  overflow: hidden;
+  background: var(--wr-bg-panel-gray);
+}
+.wf-find-us-details {
+  display: flex;
+  flex-direction: column;
+}
+.wf-find-us-card {
+  padding: 32px;
+  background: var(--wr-white);
+  border-radius: var(--wr-r-16, 16px);
+  box-shadow: 0 8px 20px rgba(48, 33, 39, 0.06);
+}
+.wf-find-us-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px;
+  border-radius: var(--wr-r-pill, 999px);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--wr-accent-yellow);
+  color: var(--wf-cta-conv-text, #2a1f16);
+  box-shadow: 0 3px 0 rgba(48, 33, 39, 0.12);
+}
+.wf-find-us-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 rgba(48, 33, 39, 0.12);
+}
+.wf-find-us-btn--outline {
+  background: transparent;
+  color: var(--wr-ink);
+  border: 1.5px solid var(--wr-text-subtle);
+  box-shadow: none;
+}
+.wf-find-us-btn--outline:hover {
+  border-color: var(--wr-accent-orange);
+  color: var(--wr-accent-orange);
+  box-shadow: none;
+}
+
+/* ── Responsive: Tablet ── */
+@media (max-width: 1399.98px) {
+  .wf-service-area-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .wf-find-us-grid {
+    grid-template-columns: 1fr;
+  }
+  .wf-map-container {
+    height: 320px;
+  }
+}
+
+/* ── Responsive: Mobile ── */
+@media (max-width: 799.98px) {
+  .wf-service-area-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .wf-service-area-card {
+    padding: 20px 18px;
+  }
+  .wf-local-banner {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+  .wf-nap-items {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .wf-find-us-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .wf-map-container {
+    height: 260px;
+  }
+  .wf-find-us-card {
+    padding: 24px 20px;
+  }
+}

@@ -1,0 +1,13 @@
+Documenting Components for LLMs
+For an AI to properly use your design system, each component needs thorough documentation, including:
+
+Component API (Props): List each prop/attribute, type, default value, and purpose. E.g. variant: 'primary' | 'secondary' – determines button style.
+Usage Examples: Code snippets or Storybook stories showing how to use the component in different states (normal, hover, disabled). LLMs can read these examples as part of context.
+Visual Reference: Annotated images or diagrams showing component anatomy. Since LLMs are text-based, include alt-text captions or a textual description of the appearance. (E.g. “Primary Button: orange background, white text, 16px padding”).
+Variants/States: Describe each variant (e.g. sizes, colors, states) in text. Holladay suggests defining states explicitly, not just visual; for instance appearance="danger" instead of raw color codes
+.
+Accessibility Notes: Include ARIA roles, required contrast ratio (tokens help here), and any keyboard behavior. For example: “Ensures 4.5:1 contrast by using $color-primary-dark on white text”.
+Tokens Usage: Reference which design tokens the component uses. For instance, “Button background uses $brand-orange token; font uses font-heading-16”. This lets the LLM map design values to defined tokens.
+Usage Guidelines: Describe when to use this component versus others (dos and don’ts), often via MD or dedicated doc sections
+.
+Test Cases: If available, include the results of unit or visual tests (e.g. “passes a11y audit” or “responsive across breakpoints”). At least, ensure tests exist in CI for regression checking.

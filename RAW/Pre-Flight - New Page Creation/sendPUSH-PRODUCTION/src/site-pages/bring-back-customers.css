@@ -1,0 +1,802 @@
+/* =============================================
+   Bring Back Customers — Page-Specific Styles
+   All colors use CSS custom properties for
+   automatic dark-mode support.
+   ============================================= */
+
+/* ---------- Pain point number ---------- */
+.bbc-pain-number {
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: var(--wr-accent-orange);
+  opacity: 0.25;
+  margin: 0 0 12px;
+}
+
+/* ---------- Warning tag pill ---------- */
+.bbc-warning-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--wr-r-pill);
+  background: var(--wr-tag-yellow);
+  color: var(--wr-ink);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Callout box ---------- */
+.bbc-callout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+}
+
+.bbc-callout-emoji {
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.bbc-callout-text {
+  color: var(--wr-text-muted);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ---------- Transition label (Before -> After) ---------- */
+.bbc-transition {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  font-weight: 500;
+  color: var(--wr-text-muted);
+}
+
+.bbc-transition-arrow {
+  color: var(--wr-accent-orange);
+}
+
+/* ---------- Checkmark callout ---------- */
+.bbc-check-callout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(76, 147, 175, 0.32);
+  background: rgba(76, 147, 175, 0.08);
+}
+
+.bbc-check-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--wr-r-pill);
+  background: var(--wr-accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.bbc-check-icon svg {
+  width: 13px;
+  height: 13px;
+  color: #fff;
+}
+
+.bbc-check-text {
+  color: var(--wr-ink);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ---------- Hero mockup ---------- */
+.bbc-hero-mockup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.bbc-mock-card {
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bbc-mock-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.bbc-mock-card--paper {
+  opacity: 0.72;
+}
+
+.bbc-mock-card-brand {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--wr-ink);
+}
+
+.bbc-mock-card-detail {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: -0.2px;
+  color: var(--wr-text-muted);
+}
+
+.bbc-mock-card-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: var(--wr-r-pill);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.1px;
+}
+
+.bbc-mock-card-badge--lost {
+  background: rgba(243, 125, 57, 0.15);
+  color: var(--wr-accent-orange);
+}
+
+.bbc-mock-card-badge--progress {
+  background: rgba(76, 147, 175, 0.12);
+  color: var(--wr-accent-blue);
+}
+
+.bbc-mock-stamps {
+  font-family: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--wr-accent-orange);
+}
+
+.bbc-mock-stamps span {
+  font-size: 14px;
+  color: var(--wr-text-muted);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+}
+
+.bbc-mock-person {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bbc-mock-person-name {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--wr-ink);
+}
+
+.bbc-mock-person-sub {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--wr-text-muted);
+}
+
+.bbc-mock-notif {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: var(--wr-r-12);
+  background: var(--wr-white);
+  border: 1px solid rgba(151, 144, 147, 0.18);
+}
+
+.bbc-mock-notif-icon {
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.bbc-mock-notif-body {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--wr-ink);
+  font-weight: 500;
+}
+
+.bbc-mock-notif-meta {
+  font-size: 11px;
+  color: var(--wr-text-subtle);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ---------- Wallet card mockup ---------- */
+.bbc-wallet-mockup {
+  max-width: 380px;
+  margin: 0 auto;
+  border-radius: var(--wr-r-20);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bbc-wallet-mockup::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.bbc-wallet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bbc-wallet-footer {
+  padding-top: 14px;
+  border-top: 1px solid rgba(151, 144, 147, 0.18);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--wr-text-subtle);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ---------- Customer database mockup ---------- */
+.bbc-database-mockup {
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: var(--wr-r-20);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  overflow: hidden;
+  position: relative;
+}
+
+.bbc-database-mockup::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.bbc-db-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(151, 144, 147, 0.14);
+  position: relative;
+  z-index: 1;
+}
+
+.bbc-db-row:last-child {
+  border-bottom: none;
+}
+
+.bbc-db-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--wr-r-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.bbc-db-avatar--orange { background: var(--wr-accent-orange); }
+.bbc-db-avatar--blue { background: var(--wr-accent-blue); }
+.bbc-db-avatar--yellow { background: var(--wr-accent-yellow); color: var(--wr-ink); }
+
+.bbc-db-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bbc-db-name {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--wr-ink);
+  margin: 0 0 4px;
+}
+
+.bbc-db-meta {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--wr-text-muted);
+  margin: 0;
+}
+
+.bbc-db-status {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: var(--wr-r-pill);
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.bbc-db-status--active {
+  background: rgba(76, 147, 175, 0.14);
+  color: var(--wr-accent-blue);
+}
+
+.bbc-db-status--overdue {
+  background: rgba(243, 125, 57, 0.14);
+  color: var(--wr-accent-orange);
+}
+
+.bbc-db-status--vip {
+  background: rgba(252, 184, 39, 0.18);
+  color: var(--wr-accent-yellow);
+}
+
+.bbc-db-status--new {
+  background: rgba(76, 147, 175, 0.14);
+  color: var(--wr-accent-blue);
+}
+
+.bbc-db-status--winback {
+  background: rgba(243, 125, 57, 0.14);
+  color: var(--wr-accent-orange);
+}
+
+/* ---------- Notification cards mockup ---------- */
+.bbc-notifs-mockup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.bbc-notif-card {
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.24s ease-out;
+}
+
+.bbc-notif-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(48, 33, 39, 0.08);
+}
+
+.bbc-notif-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.bbc-notif-emoji {
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.bbc-notif-content {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bbc-notif-biz {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--wr-ink);
+  margin: 0 0 6px;
+}
+
+.bbc-notif-title {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--wr-ink);
+  margin: 0 0 4px;
+}
+
+.bbc-notif-desc {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--wr-text-muted);
+  margin: 0;
+}
+
+/* ---------- Automation flow mockup ---------- */
+.bbc-auto-mockup {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bbc-auto-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px 20px;
+  border-radius: var(--wr-r-16);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.bbc-auto-step::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.bbc-auto-connector {
+  width: 2px;
+  height: 18px;
+  margin-left: 30px;
+  background: rgba(151, 144, 147, 0.28);
+}
+
+.bbc-auto-emoji {
+  flex-shrink: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.bbc-auto-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.bbc-auto-label {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--wr-accent-orange);
+  text-transform: uppercase;
+  letter-spacing: -0.1px;
+  margin: 0 0 6px;
+}
+
+.bbc-auto-value {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--wr-ink);
+  margin: 0;
+}
+
+.bbc-auto-cycle {
+  margin-top: 16px;
+  text-align: center;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1;
+  color: var(--wr-text-subtle);
+  letter-spacing: -0.2px;
+}
+
+/* ---------- Secondary CTA link ---------- */
+.bbc-link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  color: var(--wr-accent-orange);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-top: 8px;
+}
+
+.bbc-link-cta:hover {
+  opacity: 0.78;
+}
+
+/* ---------- Testimonial single card ---------- */
+.bbc-testimonial-card {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: var(--wr-r-20);
+  border: 1px solid rgba(151, 144, 147, 0.22);
+  background: var(--wr-bg-panel-light);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bbc-testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--wf-card-sheen-gradient);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.bbc-testimonial-stars {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.bbc-testimonial-star {
+  color: var(--wr-accent-yellow);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bbc-testimonial-quote {
+  position: relative;
+  z-index: 1;
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.35px;
+  font-style: italic;
+  color: var(--wr-ink);
+  margin: 0 0 24px;
+}
+
+.bbc-testimonial-person {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bbc-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--wr-r-pill);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--wr-bg-panel-gray);
+}
+
+.bbc-testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bbc-testimonial-info {
+  text-align: left;
+}
+
+.bbc-testimonial-name {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--wr-ink);
+  margin: 0 0 4px;
+}
+
+.bbc-testimonial-role {
+  font-family: "Onest", "Onest Placeholder", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--wr-text-muted);
+  margin: 0;
+}
+
+/* ---------- Dark mode refinements ---------- */
+html[data-theme="dark"] .bbc-callout {
+  border-color: rgba(255, 248, 251, 0.14);
+}
+
+html[data-theme="dark"] .bbc-check-callout {
+  border-color: rgba(76, 147, 175, 0.28);
+  background: rgba(76, 147, 175, 0.06);
+}
+
+html[data-theme="dark"] .bbc-mock-card,
+html[data-theme="dark"] .bbc-wallet-mockup,
+html[data-theme="dark"] .bbc-database-mockup,
+html[data-theme="dark"] .bbc-notif-card,
+html[data-theme="dark"] .bbc-auto-step,
+html[data-theme="dark"] .bbc-testimonial-card {
+  border-color: rgba(255, 248, 251, 0.14);
+}
+
+html[data-theme="dark"] .bbc-mock-notif {
+  border-color: rgba(255, 248, 251, 0.12);
+}
+
+html[data-theme="dark"] .bbc-db-row {
+  border-color: rgba(255, 248, 251, 0.08);
+}
+
+html[data-theme="dark"] .bbc-auto-connector {
+  background: rgba(255, 248, 251, 0.16);
+}
+
+html[data-theme="dark"] .bbc-wallet-mockup .bbc-wallet-footer {
+  border-color: rgba(255, 248, 251, 0.12);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1399.98px) {
+  .bbc-hero-mockup {
+    max-width: 420px;
+  }
+
+  .bbc-pain-number {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 799.98px) {
+  .bbc-industries-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bbc-hero-mockup {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .bbc-mock-card {
+    padding: 16px 14px;
+    gap: 10px;
+  }
+
+  .bbc-pain-number {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .bbc-warning-tag {
+    font-size: 13px;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+
+  .bbc-callout,
+  .bbc-check-callout {
+    padding: 16px;
+    margin-top: 18px;
+  }
+
+  .bbc-wallet-mockup {
+    max-width: 100%;
+    padding: 22px 18px;
+  }
+
+  .bbc-database-mockup {
+    max-width: 100%;
+  }
+
+  .bbc-db-row {
+    padding: 12px 16px;
+  }
+
+  .bbc-notifs-mockup {
+    max-width: 100%;
+  }
+
+  .bbc-auto-mockup {
+    max-width: 100%;
+  }
+
+  .bbc-testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .bbc-testimonial-quote {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .bbc-link-cta {
+    font-size: 16px;
+  }
+}

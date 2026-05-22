@@ -1,0 +1,228 @@
+/* ============================================================================
+   sendPUSH | Loyaltymaster — Colors + Type foundations
+   Extracted from sendPUSH-PRODUCTION (withremy.css + wireframe-remy.css).
+   Load this once in the <head> of any artifact built against the brand.
+   ============================================================================ */
+
+/* ─── Fonts ───────────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap");
+
+/* Rodger — full family (100 Thin → 900 Black, italics) */
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 100; font-display: swap; src: url("assets/fonts/RodgerTest-Thin.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 100; font-display: swap; src: url("assets/fonts/RodgerTest-ThinItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 200; font-display: swap; src: url("assets/fonts/RodgerTest-ExtraLight.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 200; font-display: swap; src: url("assets/fonts/RodgerTest-ExtraLightItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 300; font-display: swap; src: url("assets/fonts/RodgerTest-Light.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 300; font-display: swap; src: url("assets/fonts/RodgerTest-LightItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/RodgerTest-Regular.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 400; font-display: swap; src: url("assets/fonts/RodgerTest-Italic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 500; font-display: swap; src: url("assets/fonts/RodgerTest-Medium.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 500; font-display: swap; src: url("assets/fonts/RodgerTest-MediumItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/RodgerTest-Semibold.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 600; font-display: swap; src: url("assets/fonts/RodgerTest-SemiboldItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 700; font-display: swap; src: url("assets/fonts/RodgerTest-Bold.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 700; font-display: swap; src: url("assets/fonts/RodgerTest-BoldItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 800; font-display: swap; src: url("assets/fonts/RodgerTest-ExtraBold.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 800; font-display: swap; src: url("assets/fonts/RodgerTest-ExtraBoldItalic.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: normal; font-weight: 900; font-display: swap; src: url("assets/fonts/RodgerTest-Black.otf") format("opentype"); }
+@font-face { font-family: "Rodger"; font-style: italic; font-weight: 900; font-display: swap; src: url("assets/fonts/RodgerTest-BlackItalic.otf") format("opentype"); }
+
+/* Back-compat aliases — some files reference "Rodger Bold" directly */
+@font-face { font-family: "Rodger Bold"; font-style: normal; font-weight: 700; font-display: swap; src: url("assets/fonts/RodgerTest-Bold.otf") format("opentype"); }
+@font-face { font-family: "Rodger Bold Placeholder"; font-style: normal; font-weight: 700; font-display: block; src: url("assets/fonts/RodgerTest-Bold.otf") format("opentype"); }
+
+/* ─── Core Tokens (light) ─────────────────────────────────────────────────── */
+:root {
+  /* ink / text */
+  --wr-ink:           #302127;
+  --wr-text-muted:    #979093;
+  --wr-text-subtle:   #bfb8bc;
+  --wf-on-dark:       #ffffff;
+  --wf-on-dark-muted: rgba(255,255,255,0.8);
+  --wf-cta-conv-text: #2a1f16; /* label color that stays on yellow in both modes */
+
+  /* surfaces */
+  --wr-white:          #ffffff;
+  --wr-bg-peach:       #fef0e9;
+  --wr-bg-cyan:        #eaf5f8;
+  --wr-bg-salmon:      #fde9e2;
+  --wr-bg-panel-gray:  #f4eff2;
+  --wr-bg-panel-light: #faf8f9;
+  --wr-bg-yellow:      #fef9e6;
+  --wf-section-dark-bg:#302127;
+  --wf-hover-bg-subtle:#fbfcfd;
+
+  /* accents */
+  --wr-accent-orange:       #f37d39;
+  --wr-accent-blue:         #4c93af;
+  --wr-accent-yellow:       #fcb827;
+  --wr-accent-yellow-soft:  #fdd564;
+  --wr-tag-yellow:          #fff3c4;
+
+  /* feedback */
+  --wf-feedback-error:     #d94f3a;
+  --wf-feedback-error-bg:  #fde8e4;
+  --wf-feedback-warning:   #c48a12;
+  --wf-feedback-warning-bg:#fef4dc;
+  --wf-feedback-success:   #2e8e7a;
+  --wf-feedback-success-bg:#e4f5f1;
+  --wf-feedback-info:      #3a7a94;
+  --wf-feedback-info-bg:   #e6f1f5;
+
+  /* radius */
+  --wr-r-pill: 999px;
+  --wr-r-20: 20px;
+  --wr-r-16: 16px;
+  --wr-r-12: 12px;
+  --wr-r-8:  8px;
+
+  /* shadows */
+  --wr-shadow-badge: 0 7px 0 0 rgba(48,33,39,0.82);
+  --wr-shadow-email: 0 4px 0 rgba(252,184,39,0.35), inset 0 0 0 2px rgba(252,184,39,0.45);
+  --wr-shadow-card-base:  0 8px 20px rgba(48,33,39,0.06);
+  --wr-shadow-card-hover: 0 14px 26px rgba(48,33,39,0.12);
+
+  /* motion */
+  --wf-motion-ease-gentle:   cubic-bezier(0.2, 0.8, 0.2, 1);
+  --wf-motion-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --wf-motion-fast: 220ms;
+  --wf-motion-base: 280ms;
+  --wf-cta-lift-hover:  -1.5px;
+  --wf-cta-lift-active: -0.75px;
+
+  /* typography families */
+  --wr-font-display: "Rodger", "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
+  --wr-font-body:    "Onest", "Onest Placeholder", sans-serif;
+
+  /* containers */
+  --wr-container-main:  1280px;
+  --wr-container-focus: 840px;
+  --wr-container-cta:   640px;
+}
+
+/* ─── Dark mode ───────────────────────────────────────────────────────────── */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --wr-ink:           #f5edf1;
+  --wr-text-muted:    #d0c3c9;
+  --wr-text-subtle:   #a99ca3;
+  --wr-white:         #1a1519;
+  --wr-bg-peach:      #231c21;
+  --wr-bg-cyan:       #1b252b;
+  --wr-bg-salmon:     #281f1c;
+  --wr-bg-panel-gray: #2c252b;
+  --wr-bg-panel-light:#221b20;
+  --wr-bg-yellow:     #2a2318;
+  --wf-section-dark-bg:#141015;
+  --wf-hover-bg-subtle:rgba(255,248,251,0.06);
+  --wr-accent-orange:      #ff9d63;
+  --wr-accent-blue:        #72bdd9;
+  --wr-accent-yellow:      #ffd25d;
+  --wr-accent-yellow-soft: #ffe58a;
+  --wr-tag-yellow:         #5a4a1f;
+  --wf-on-dark: #fff8fb;
+  --wf-on-dark-muted: rgba(255,248,251,0.8);
+  --wf-feedback-error: #f27c6a;   --wf-feedback-error-bg: #2d1c1a;
+  --wf-feedback-warning: #f0b840; --wf-feedback-warning-bg: #2a2318;
+  --wf-feedback-success: #5cc4ae; --wf-feedback-success-bg: #192825;
+  --wf-feedback-info: #6db5d0;    --wf-feedback-info-bg: #1a2328;
+  --wr-shadow-badge: 0 7px 0 0 #100d10;
+  --wr-shadow-email: 0 4px 0 rgba(255,210,93,0.35), inset 0 0 0 2px rgba(255,210,93,0.45);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--wr-font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--wr-ink);
+  background: var(--wr-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Semantic Type Scale (use these directly) ────────────────────────────── */
+h1, .wr-h1 {
+  margin: 0;
+  font-family: var(--wr-font-display);
+  font-weight: 700;
+  font-size: clamp(40px, 5.6vw, 72px);
+  line-height: 1.03;
+  letter-spacing: clamp(-0.5px, -0.012em, -0.8px);
+  color: var(--wr-ink);
+}
+h2, .wr-h2 {
+  margin: 0;
+  font-family: var(--wr-font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: clamp(-0.3px, -0.01em, -0.6px);
+  color: var(--wr-ink);
+}
+h3, .wr-h3 {
+  margin: 0;
+  font-family: var(--wr-font-display);
+  font-weight: 700;
+  font-size: clamp(22px, 2.8vw, 36px);
+  line-height: 1.1;
+  letter-spacing: clamp(-0.2px, -0.008em, -0.4px);
+  color: var(--wr-ink);
+}
+.wr-text-body {
+  margin: 0;
+  font-family: var(--wr-font-body);
+  font-size: 20px;
+  line-height: 1.56;
+  letter-spacing: -0.4px;
+  font-weight: 400;
+  color: var(--wr-ink);
+}
+.wf-eyebrow {
+  margin: 0 0 14px;
+  font-family: var(--wr-font-body);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  color: var(--wr-accent-orange);
+}
+.wf-stat-value {
+  font-family: var(--wr-font-display);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+  color: var(--wr-ink);
+}
+.wf-stat-label {
+  font-family: var(--wr-font-body);
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.3px;
+  color: var(--wr-text-muted);
+  font-weight: 500;
+}
+code, .wr-code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: var(--wr-bg-panel-gray);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--wr-ink);
+}
+
+/* ─── Containers ──────────────────────────────────────────────────────────── */
+.wr-container--main  { width: min(100%, var(--wr-container-main));  margin-inline: auto; padding-inline: 48px; }
+.wr-container--focus { width: min(100%, var(--wr-container-focus)); margin-inline: auto; padding-inline: 48px; }
+.wr-container--cta   { width: min(100%, var(--wr-container-cta));   margin-inline: auto; padding-inline: 48px; }
+
+@media (max-width: 799.98px) {
+  .wr-container--main, .wr-container--focus, .wr-container--cta { padding-inline: 20px; }
+  .wr-text-body { font-size: 16px; letter-spacing: -0.32px; }
+  .wr-h1 { font-size: clamp(32px,8.5vw,44px); letter-spacing: -0.4px; }
+  .wr-h2 { font-size: clamp(26px,6.8vw,38px); letter-spacing: -0.3px; }
+  .wr-h3 { font-size: clamp(20px,5.5vw,28px); letter-spacing: -0.2px; }
+}

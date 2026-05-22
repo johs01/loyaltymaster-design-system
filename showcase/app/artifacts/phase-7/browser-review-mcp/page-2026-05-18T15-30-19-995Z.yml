@@ -1,0 +1,1005 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: Loyaltymaster Phase 5
+    - heading "Component showcase and rendered smoke verification" [level=1] [ref=e6]
+    - paragraph [ref=e7]: Every Wave 1 registry component is rendered from the Phase 4 React library beside its approved screenshot reference.
+  - navigation "Component index" [ref=e8]:
+    - link "Billing Toggle Button" [ref=e9] [cursor=pointer]:
+      - /url: "#billing-toggle-button"
+    - link "Button Email" [ref=e10] [cursor=pointer]:
+      - /url: "#button-email"
+    - link "Comparison Table" [ref=e11] [cursor=pointer]:
+      - /url: "#comparison-table"
+    - link "CTA Trial Full Form" [ref=e12] [cursor=pointer]:
+      - /url: "#cta-trial-full-form"
+    - link "CTA with Button Email" [ref=e13] [cursor=pointer]:
+      - /url: "#cta-with-button-email"
+    - link "FAQ Accordion" [ref=e14] [cursor=pointer]:
+      - /url: "#faq-accordion"
+    - link "Feature Section 2 Column Bullets Image" [ref=e15] [cursor=pointer]:
+      - /url: "#feature-section-2-column-bullets-image"
+    - link "Feature Section 2 Column Image" [ref=e16] [cursor=pointer]:
+      - /url: "#feature-section-2-column-image"
+    - link "Features Grid" [ref=e17] [cursor=pointer]:
+      - /url: "#features-grid"
+    - link "Footer" [ref=e18] [cursor=pointer]:
+      - /url: "#footer"
+    - link "Geo Fence Use Case" [ref=e19] [cursor=pointer]:
+      - /url: "#geo-fence-use-case"
+    - link "Hero Main Section" [ref=e20] [cursor=pointer]:
+      - /url: "#hero-main-section"
+    - link "Image Grid" [ref=e21] [cursor=pointer]:
+      - /url: "#image-grid"
+    - link "Image Strip" [ref=e22] [cursor=pointer]:
+      - /url: "#image-strip"
+    - link "Navbar Glassmorphism" [ref=e23] [cursor=pointer]:
+      - /url: "#navbar-glassmorphism"
+    - link "Pricing Section" [ref=e24] [cursor=pointer]:
+      - /url: "#pricing-section"
+    - link "Process Steps" [ref=e25] [cursor=pointer]:
+      - /url: "#process-steps"
+    - link "Stats Card Strip" [ref=e26] [cursor=pointer]:
+      - /url: "#stats-card-strip"
+    - link "Testimonial Single" [ref=e27] [cursor=pointer]:
+      - /url: "#testimonial-single"
+    - link "Testimonials Grid" [ref=e28] [cursor=pointer]:
+      - /url: "#testimonials-grid"
+  - region "Component specimens" [ref=e29]:
+    - article [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - paragraph [ref=e33]: pricing-control
+          - heading "Billing Toggle Button" [level=2] [ref=e34]
+          - paragraph [ref=e35]: Monthly/yearly billing toggle control for pricing sections.
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - term [ref=e38]: Component ID
+            - definition [ref=e39]: billing-toggle-button
+          - generic [ref=e40]:
+            - term [ref=e41]: Boundary
+            - definition [ref=e42]: client
+          - generic [ref=e43]:
+            - term [ref=e44]: Spec
+            - definition [ref=e45]: specs/components/billing-toggle-button.md
+          - generic [ref=e46]:
+            - term [ref=e47]: Library
+            - definition [ref=e48]: library/src/components/BillingToggleButton.tsx
+          - generic [ref=e49]:
+            - term [ref=e50]: Screenshot
+            - definition [ref=e51]: assets/screenshots/billing-toggle-button.png
+      - generic [ref=e52]:
+        - region "Billing Toggle Button live render" [ref=e53]:
+          - generic [ref=e54]: Live library render
+          - group "Billing cadence" [ref=e56]:
+            - button "Monthly" [pressed] [ref=e57] [cursor=pointer]
+            - button "Yearly 30% OFF" [ref=e58] [cursor=pointer]
+        - region "Billing Toggle Button approved screenshot" [ref=e59]:
+          - generic [ref=e60]: Approved screenshot reference
+          - img "Billing Toggle Button approved screenshot" [ref=e61]
+    - article [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: conversion-control
+          - heading "Button Email" [level=2] [ref=e66]
+          - paragraph [ref=e67]: Email capture CTA shell pairing an email field with primary action.
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - term [ref=e70]: Component ID
+            - definition [ref=e71]: button-email
+          - generic [ref=e72]:
+            - term [ref=e73]: Boundary
+            - definition [ref=e74]: client
+          - generic [ref=e75]:
+            - term [ref=e76]: Spec
+            - definition [ref=e77]: specs/components/button-email.md
+          - generic [ref=e78]:
+            - term [ref=e79]: Library
+            - definition [ref=e80]: library/src/components/ButtonEmail.tsx
+          - generic [ref=e81]:
+            - term [ref=e82]: Screenshot
+            - definition [ref=e83]: assets/screenshots/button-email.png
+      - generic [ref=e84]:
+        - region "Button Email live render" [ref=e85]:
+          - generic [ref=e86]: Live library render
+          - generic [ref=e89]:
+            - generic [ref=e90]: Email address
+            - textbox "Email address Email address" [ref=e91]:
+              - /placeholder: name@email.com
+            - button "Start Free in 2 Minutes" [ref=e92] [cursor=pointer]
+        - region "Button Email approved screenshot" [ref=e93]:
+          - generic [ref=e94]: Approved screenshot reference
+          - img "Button Email approved screenshot" [ref=e95]
+    - article [ref=e96]:
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: proof-section
+          - heading "Comparison Table" [level=2] [ref=e100]
+          - paragraph [ref=e101]: Comparison section for positioning sendPUSH against less direct customer-reach channels.
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - term [ref=e104]: Component ID
+            - definition [ref=e105]: comparison-table
+          - generic [ref=e106]:
+            - term [ref=e107]: Boundary
+            - definition [ref=e108]: server
+          - generic [ref=e109]:
+            - term [ref=e110]: Spec
+            - definition [ref=e111]: specs/components/comparison-table.md
+          - generic [ref=e112]:
+            - term [ref=e113]: Library
+            - definition [ref=e114]: library/src/components/ComparisonTable.tsx
+          - generic [ref=e115]:
+            - term [ref=e116]: Screenshot
+            - definition [ref=e117]: assets/screenshots/comparison-table.png
+      - generic [ref=e118]:
+        - region "Comparison Table live render" [ref=e119]:
+          - generic [ref=e120]: Live library render
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - heading "See How SetupFlow Beats Generic Campaign Tools" [level=2] [ref=e125]
+              - paragraph [ref=e126]: Compare direct loyalty messaging with rented campaign channels.
+            - table [ref=e129]:
+              - rowgroup [ref=e130]:
+                - row "Need sendPUSH Social-only channels" [ref=e131]:
+                  - columnheader "Need" [ref=e132]
+                  - columnheader "sendPUSH" [ref=e133]
+                  - columnheader "Social-only channels" [ref=e134]
+              - rowgroup [ref=e135]:
+                - row "Customer ownership Yes No" [ref=e136]:
+                  - rowheader "Customer ownership" [ref=e137]
+                  - cell "Yes" [ref=e138]
+                  - cell "No" [ref=e139]
+                - row "Push-ready action Built in Manual" [ref=e140]:
+                  - rowheader "Push-ready action" [ref=e141]
+                  - cell "Built in" [ref=e142]
+                  - cell "Manual" [ref=e143]
+                - row "Clear ROI Tracked Hard to prove" [ref=e144]:
+                  - rowheader "Clear ROI" [ref=e145]
+                  - cell "Tracked" [ref=e146]
+                  - cell "Hard to prove" [ref=e147]
+                - row "Repeat visits Designed for it Easy to lose" [ref=e148]:
+                  - rowheader "Repeat visits" [ref=e149]
+                  - cell "Designed for it" [ref=e150]
+                  - cell "Easy to lose" [ref=e151]
+        - region "Comparison Table approved screenshot" [ref=e152]:
+          - generic [ref=e153]: Approved screenshot reference
+          - img "Comparison Table approved screenshot" [ref=e154]
+    - article [ref=e155]:
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - paragraph [ref=e158]: conversion-section
+          - heading "CTA Trial Full Form" [level=2] [ref=e159]
+          - paragraph [ref=e160]: Full trial signup CTA with multiple labeled fields and validation-ready layout.
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - term [ref=e163]: Component ID
+            - definition [ref=e164]: cta-trial-full-form
+          - generic [ref=e165]:
+            - term [ref=e166]: Boundary
+            - definition [ref=e167]: client
+          - generic [ref=e168]:
+            - term [ref=e169]: Spec
+            - definition [ref=e170]: specs/components/cta-trial-full-form.md
+          - generic [ref=e171]:
+            - term [ref=e172]: Library
+            - definition [ref=e173]: library/src/components/CtaTrialFullForm.tsx
+          - generic [ref=e174]:
+            - term [ref=e175]: Screenshot
+            - definition [ref=e176]: assets/screenshots/cta-trial-full-form.png
+      - generic [ref=e177]:
+        - region "CTA Trial Full Form live render" [ref=e178]:
+          - generic [ref=e179]: Live library render
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - heading "Start Your Tenant Trial in Minutes" [level=2] [ref=e184]
+              - paragraph [ref=e185]: Launch a loyalty campaign without rebuilding your whole stack.
+            - generic [ref=e186]:
+              - generic [ref=e187]:
+                - text: Name
+                - textbox "Name" [ref=e188]
+              - generic [ref=e189]:
+                - text: Email
+                - textbox "Email" [ref=e190]
+              - generic [ref=e191]:
+                - text: Business
+                - textbox "Business" [ref=e192]
+              - button "Start 30-Day Trial" [ref=e193] [cursor=pointer]
+        - region "CTA Trial Full Form approved screenshot" [ref=e194]:
+          - generic [ref=e195]: Approved screenshot reference
+          - img "CTA Trial Full Form approved screenshot" [ref=e196]
+    - article [ref=e197]:
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - paragraph [ref=e200]: conversion-section
+          - heading "CTA with Button Email" [level=2] [ref=e201]
+          - paragraph [ref=e202]: Compact CTA section with email capture and primary action.
+        - generic [ref=e203]:
+          - generic [ref=e204]:
+            - term [ref=e205]: Component ID
+            - definition [ref=e206]: cta-with-button-email
+          - generic [ref=e207]:
+            - term [ref=e208]: Boundary
+            - definition [ref=e209]: client
+          - generic [ref=e210]:
+            - term [ref=e211]: Spec
+            - definition [ref=e212]: specs/components/cta-with-button-email.md
+          - generic [ref=e213]:
+            - term [ref=e214]: Library
+            - definition [ref=e215]: library/src/components/CtaWithButtonEmail.tsx
+          - generic [ref=e216]:
+            - term [ref=e217]: Screenshot
+            - definition [ref=e218]: assets/screenshots/cta-with-button-email.png
+      - generic [ref=e219]:
+        - region "CTA with Button Email live render" [ref=e220]:
+          - generic [ref=e221]: Live library render
+          - generic [ref=e224]:
+            - generic [ref=e225]:
+              - heading "Stop Losing Customers to Silence." [level=2] [ref=e226]
+              - paragraph [ref=e227]: Turn every customer interaction into repeat revenue with direct messaging you control.
+            - generic [ref=e229]:
+              - generic [ref=e230]: Email address
+              - textbox "name@email.com" [ref=e231]
+              - button "Get Your First Campaign Ready" [ref=e232] [cursor=pointer]
+        - region "CTA with Button Email approved screenshot" [ref=e233]:
+          - generic [ref=e234]: Approved screenshot reference
+          - img "CTA with Button Email approved screenshot" [ref=e235]
+    - article [ref=e236]:
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - paragraph [ref=e239]: support-section
+          - heading "FAQ Accordion" [level=2] [ref=e240]
+          - paragraph [ref=e241]: Accessible accordion for frequently asked questions.
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - term [ref=e244]: Component ID
+            - definition [ref=e245]: faq-accordion
+          - generic [ref=e246]:
+            - term [ref=e247]: Boundary
+            - definition [ref=e248]: client
+          - generic [ref=e249]:
+            - term [ref=e250]: Spec
+            - definition [ref=e251]: specs/components/faq-accordion.md
+          - generic [ref=e252]:
+            - term [ref=e253]: Library
+            - definition [ref=e254]: library/src/components/FaqAccordion.tsx
+          - generic [ref=e255]:
+            - term [ref=e256]: Screenshot
+            - definition [ref=e257]: assets/screenshots/faq-accordion.png
+      - generic [ref=e258]:
+        - region "FAQ Accordion live render" [ref=e259]:
+          - generic [ref=e260]: Live library render
+          - generic [ref=e263]:
+            - heading "Common questions" [level=2] [ref=e265]
+            - generic [ref=e266]:
+              - generic [ref=e267]:
+                - heading "How quickly can I launch my first campaign?" [level=3] [ref=e268]:
+                  - button "How quickly can I launch my first campaign?" [expanded] [ref=e269] [cursor=pointer]:
+                    - generic [ref=e270]: How quickly can I launch my first campaign?
+                    - generic [ref=e271]: "-"
+                - region "How quickly can I launch my first campaign?" [ref=e272]:
+                  - paragraph [ref=e273]: Most teams can prepare the first list and message in minutes.
+              - heading "Can I import customers from my current tools?" [level=3] [ref=e275]:
+                - button "Can I import customers from my current tools?" [ref=e276] [cursor=pointer]:
+                  - generic [ref=e277]: Can I import customers from my current tools?
+                  - generic [ref=e278]: +
+              - heading "Will this work for multiple locations?" [level=3] [ref=e280]:
+                - button "Will this work for multiple locations?" [ref=e281] [cursor=pointer]:
+                  - generic [ref=e282]: Will this work for multiple locations?
+                  - generic [ref=e283]: +
+              - heading "How do you handle opt-outs and compliance?" [level=3] [ref=e285]:
+                - button "How do you handle opt-outs and compliance?" [ref=e286] [cursor=pointer]:
+                  - generic [ref=e287]: How do you handle opt-outs and compliance?
+                  - generic [ref=e288]: +
+              - heading "Do I need technical support to set this up?" [level=3] [ref=e290]:
+                - button "Do I need technical support to set this up?" [ref=e291] [cursor=pointer]:
+                  - generic [ref=e292]: Do I need technical support to set this up?
+                  - generic [ref=e293]: +
+              - heading "Can I measure actual revenue impact?" [level=3] [ref=e295]:
+                - button "Can I measure actual revenue impact?" [ref=e296] [cursor=pointer]:
+                  - generic [ref=e297]: Can I measure actual revenue impact?
+                  - generic [ref=e298]: +
+        - region "FAQ Accordion approved screenshot" [ref=e299]:
+          - generic [ref=e300]: Approved screenshot reference
+          - img "FAQ Accordion approved screenshot" [ref=e301]
+    - article [ref=e302]:
+      - generic [ref=e303]:
+        - generic [ref=e304]:
+          - paragraph [ref=e305]: feature-section
+          - heading "Feature Section 2 Column Bullets Image" [level=2] [ref=e306]
+          - paragraph [ref=e307]: Two-column feature section with bullets and an image/visual container.
+        - generic [ref=e308]:
+          - generic [ref=e309]:
+            - term [ref=e310]: Component ID
+            - definition [ref=e311]: feature-section-2-column-bullets-image
+          - generic [ref=e312]:
+            - term [ref=e313]: Boundary
+            - definition [ref=e314]: server
+          - generic [ref=e315]:
+            - term [ref=e316]: Spec
+            - definition [ref=e317]: specs/components/feature-section-2-column-bullets-image.md
+          - generic [ref=e318]:
+            - term [ref=e319]: Library
+            - definition [ref=e320]: library/src/components/FeatureSection2ColumnBulletsImage.tsx
+          - generic [ref=e321]:
+            - term [ref=e322]: Screenshot
+            - definition [ref=e323]: assets/screenshots/feature-section-2-column-bullets-image.png
+      - generic [ref=e324]:
+        - region "Feature Section 2 Column Bullets Image live render" [ref=e325]:
+          - generic [ref=e326]: Live library render
+          - generic [ref=e329]:
+            - generic [ref=e330]:
+              - generic [ref=e331]:
+                - paragraph [ref=e332]: Use case 02
+                - heading "Capture Nearby Customers with Geo-Fenced Messaging" [level=2] [ref=e333]
+                - paragraph [ref=e334]: Reach customers while intent is high with offers based on proximity and behavior.
+              - list [ref=e335]:
+                - listitem [ref=e336]: Set radius-based campaign zones in minutes.
+                - listitem [ref=e337]: Suppress repeat sends to avoid fatigue.
+                - listitem [ref=e338]: Track visits and redemptions from each zone.
+            - img "Customer loyalty campaign visual placeholder" [ref=e339]
+        - region "Feature Section 2 Column Bullets Image approved screenshot" [ref=e340]:
+          - generic [ref=e341]: Approved screenshot reference
+          - img "Feature Section 2 Column Bullets Image approved screenshot" [ref=e342]
+    - article [ref=e343]:
+      - generic [ref=e344]:
+        - generic [ref=e345]:
+          - paragraph [ref=e346]: feature-section
+          - heading "Feature Section 2 Column Image" [level=2] [ref=e347]
+          - paragraph [ref=e348]: Two-column feature section with copy and visual container.
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - term [ref=e351]: Component ID
+            - definition [ref=e352]: feature-section-2-column-image
+          - generic [ref=e353]:
+            - term [ref=e354]: Boundary
+            - definition [ref=e355]: server
+          - generic [ref=e356]:
+            - term [ref=e357]: Spec
+            - definition [ref=e358]: specs/components/feature-section-2-column-image.md
+          - generic [ref=e359]:
+            - term [ref=e360]: Library
+            - definition [ref=e361]: library/src/components/FeatureSection2ColumnImage.tsx
+          - generic [ref=e362]:
+            - term [ref=e363]: Screenshot
+            - definition [ref=e364]: assets/screenshots/feature-section-2-column-image.png
+      - generic [ref=e365]:
+        - region "Feature Section 2 Column Image live render" [ref=e366]:
+          - generic [ref=e367]: Live library render
+          - generic [ref=e370]:
+            - generic [ref=e372]:
+              - paragraph [ref=e373]: The real problem
+              - heading "Your Messages to Your Customers Aren't Getting Through." [level=2] [ref=e374]
+              - paragraph [ref=e375]: Inboxes are overloaded, algorithms hide your posts, and missed follow-ups cost revenue.
+            - img "Customer loyalty campaign visual placeholder" [ref=e376]
+        - region "Feature Section 2 Column Image approved screenshot" [ref=e377]:
+          - generic [ref=e378]: Approved screenshot reference
+          - img "Feature Section 2 Column Image approved screenshot" [ref=e379]
+    - article [ref=e380]:
+      - generic [ref=e381]:
+        - generic [ref=e382]:
+          - paragraph [ref=e383]: feature-section
+          - heading "Features Grid" [level=2] [ref=e384]
+          - paragraph [ref=e385]: Grid of feature cards for scan-friendly capability overviews.
+        - generic [ref=e386]:
+          - generic [ref=e387]:
+            - term [ref=e388]: Component ID
+            - definition [ref=e389]: features-grid
+          - generic [ref=e390]:
+            - term [ref=e391]: Boundary
+            - definition [ref=e392]: server
+          - generic [ref=e393]:
+            - term [ref=e394]: Spec
+            - definition [ref=e395]: specs/components/features-grid.md
+          - generic [ref=e396]:
+            - term [ref=e397]: Library
+            - definition [ref=e398]: library/src/components/FeaturesGrid.tsx
+          - generic [ref=e399]:
+            - term [ref=e400]: Screenshot
+            - definition [ref=e401]: assets/screenshots/features-grid.png
+      - generic [ref=e402]:
+        - region "Features Grid live render" [ref=e403]:
+          - generic [ref=e404]: Live library render
+          - generic [ref=e407]:
+            - generic [ref=e408]:
+              - paragraph [ref=e409]: Capabilities
+              - heading "All the Power, None of the Complexity" [level=2] [ref=e410]
+              - paragraph [ref=e411]: Built for fast-moving teams that want results without extra tools.
+            - generic [ref=e412]:
+              - generic [ref=e414]:
+                - heading "Smart Segments" [level=3] [ref=e417]
+                - paragraph [ref=e418]: Group customers by recency, spend, visit habits, and campaign response.
+              - generic [ref=e420]:
+                - heading "Behavior Triggers" [level=3] [ref=e423]
+                - paragraph [ref=e424]: Launch message flows based on customer actions in real time.
+              - generic [ref=e426]:
+                - heading "Campaign Calendar" [level=3] [ref=e429]
+                - paragraph [ref=e430]: Plan seasonal offers and auto-activate them on schedule.
+              - generic [ref=e432]:
+                - heading "Geo Messaging" [level=3] [ref=e435]
+                - paragraph [ref=e436]: Send localized offers when customers are near your business.
+              - generic [ref=e438]:
+                - heading "Revenue Tracking" [level=3] [ref=e441]
+                - paragraph [ref=e442]: Measure conversions and attributed revenue from every campaign.
+              - generic [ref=e444]:
+                - heading "One Inbox" [level=3] [ref=e447]
+                - paragraph [ref=e448]: Review responses, opt-outs, and follow-up tasks in one place.
+        - region "Features Grid approved screenshot" [ref=e449]:
+          - generic [ref=e450]: Approved screenshot reference
+          - img "Features Grid approved screenshot" [ref=e451]
+    - article [ref=e452]:
+      - generic [ref=e453]:
+        - generic [ref=e454]:
+          - paragraph [ref=e455]: shell
+          - heading "Footer" [level=2] [ref=e456]
+          - paragraph [ref=e457]: Light card site footer shell with brand, links, contact details, CTA, and legal navigation.
+        - generic [ref=e458]:
+          - generic [ref=e459]:
+            - term [ref=e460]: Component ID
+            - definition [ref=e461]: footer
+          - generic [ref=e462]:
+            - term [ref=e463]: Boundary
+            - definition [ref=e464]: server
+          - generic [ref=e465]:
+            - term [ref=e466]: Spec
+            - definition [ref=e467]: specs/components/footer.md
+          - generic [ref=e468]:
+            - term [ref=e469]: Library
+            - definition [ref=e470]: library/src/components/Footer.tsx
+          - generic [ref=e471]:
+            - term [ref=e472]: Screenshot
+            - definition [ref=e473]: assets/screenshots/footer.png
+      - generic [ref=e474]:
+        - region "Footer live render" [ref=e475]:
+          - generic [ref=e476]: Live library render
+          - generic [ref=e480]:
+            - generic [ref=e481]:
+              - generic [ref=e482]:
+                - link "sendPUSH | Loyaltymaster" [ref=e483] [cursor=pointer]:
+                  - /url: /
+                - paragraph [ref=e484]: Loyaltymaster helps B2B teams run reminders, offers, and follow-ups from one place.
+                - link "Book a Demo" [ref=e485] [cursor=pointer]:
+                  - /url: /contact
+              - navigation "Product footer links" [ref=e486]:
+                - heading "Product" [level=3] [ref=e487]
+                - list [ref=e488]:
+                  - listitem [ref=e489]:
+                    - link "Pricing" [ref=e490] [cursor=pointer]:
+                      - /url: /pricing
+                  - listitem [ref=e491]:
+                    - link "Use Cases" [ref=e492] [cursor=pointer]:
+                      - /url: /use-cases
+                  - listitem [ref=e493]:
+                    - link "FAQ" [ref=e494] [cursor=pointer]:
+                      - /url: /faq
+                  - listitem [ref=e495]:
+                    - link "Loyalty Cards" [ref=e496] [cursor=pointer]:
+                      - /url: /loyalty-cards
+                  - listitem [ref=e497]:
+                    - link "Customer Retention" [ref=e498] [cursor=pointer]:
+                      - /url: /customer-retention
+                  - listitem [ref=e499]:
+                    - link "Social Media vs. Direct" [ref=e500] [cursor=pointer]:
+                      - /url: /social-media-vs-direct
+              - navigation "Company footer links" [ref=e501]:
+                - heading "Company" [level=3] [ref=e502]
+                - list [ref=e503]:
+                  - listitem [ref=e504]:
+                    - link "Contact us" [ref=e505] [cursor=pointer]:
+                      - /url: /contact
+                  - listitem [ref=e506]:
+                    - link "Our Blog" [ref=e507] [cursor=pointer]:
+                      - /url: /blog
+                  - listitem [ref=e508]:
+                    - link "What we do" [ref=e509] [cursor=pointer]:
+                      - /url: /what-we-do
+                  - listitem [ref=e510]:
+                    - link "Our Mission Statement" [ref=e511] [cursor=pointer]:
+                      - /url: /mission
+                  - listitem [ref=e512]:
+                    - link "Our details" [ref=e513] [cursor=pointer]:
+                      - /url: /details
+              - navigation "Documents footer links" [ref=e514]:
+                - heading "Documents" [level=3] [ref=e515]
+                - list [ref=e516]:
+                  - listitem [ref=e517]:
+                    - link "Acceptable Use Policy" [ref=e518] [cursor=pointer]:
+                      - /url: /acceptable-use-policy
+                  - listitem [ref=e519]:
+                    - link "Subscription Agreement" [ref=e520] [cursor=pointer]:
+                      - /url: /subscription-agreement
+              - generic [ref=e521]:
+                - heading "Contact" [level=3] [ref=e522]
+                - list [ref=e523]:
+                  - listitem [ref=e524]:
+                    - link "+27 (82) 702-9134" [ref=e525] [cursor=pointer]:
+                      - /url: tel:+27827029134
+                  - listitem [ref=e526]:
+                    - link "admin@loyaltymaster.com" [ref=e527] [cursor=pointer]:
+                      - /url: mailto:admin@loyaltymaster.com
+                  - listitem [ref=e528]: Pharos Ave, Plettenberg Bay, WC 6600
+            - generic [ref=e529]:
+              - navigation "Legal navigation" [ref=e530]:
+                - link "Privacy Policy" [ref=e531] [cursor=pointer]:
+                  - /url: /privacy
+                - link "Terms of Use" [ref=e532] [cursor=pointer]:
+                  - /url: /terms
+                - link "Cookie Policy" [ref=e533] [cursor=pointer]:
+                  - /url: /cookies
+              - paragraph [ref=e534]: © 2026 Loyaltymaster. All rights reserved.
+        - region "Footer approved screenshot" [ref=e535]:
+          - generic [ref=e536]: Approved screenshot reference
+          - img "Footer approved screenshot" [ref=e537]
+    - article [ref=e538]:
+      - generic [ref=e539]:
+        - generic [ref=e540]:
+          - paragraph [ref=e541]: use-case-section
+          - heading "Geo Fence Use Case" [level=2] [ref=e542]
+          - paragraph [ref=e543]: Use-case section for geo-aware messaging and location-based customer return campaigns.
+        - generic [ref=e544]:
+          - generic [ref=e545]:
+            - term [ref=e546]: Component ID
+            - definition [ref=e547]: geo-fence-use-case
+          - generic [ref=e548]:
+            - term [ref=e549]: Boundary
+            - definition [ref=e550]: server
+          - generic [ref=e551]:
+            - term [ref=e552]: Spec
+            - definition [ref=e553]: specs/components/geo-fence-use-case.md
+          - generic [ref=e554]:
+            - term [ref=e555]: Library
+            - definition [ref=e556]: library/src/components/GeoFenceUseCase.tsx
+          - generic [ref=e557]:
+            - term [ref=e558]: Screenshot
+            - definition [ref=e559]: assets/screenshots/geo-fence-use-case.png
+      - generic [ref=e560]:
+        - region "Geo Fence Use Case live render" [ref=e561]:
+          - generic [ref=e562]: Live library render
+          - generic [ref=e565]:
+            - generic [ref=e566]:
+              - generic [ref=e567]:
+                - paragraph [ref=e568]: Use case 02
+                - heading "Capture Nearby Customers with Geo-Fenced Messaging" [level=2] [ref=e569]
+                - paragraph [ref=e570]: Reach customers while intent is high with offers based on proximity and behavior.
+              - list [ref=e571]:
+                - listitem [ref=e572]: Set radius-based campaign zones in minutes.
+                - listitem [ref=e573]: Suppress repeat sends to avoid fatigue.
+                - listitem [ref=e574]: Track visits and redemptions from each zone.
+              - link "See Geo Tools" [ref=e575] [cursor=pointer]:
+                - /url: /geo-fence
+            - img "Customer reading a nearby offer push notification" [ref=e577]
+        - region "Geo Fence Use Case approved screenshot" [ref=e578]:
+          - generic [ref=e579]: Approved screenshot reference
+          - img "Geo Fence Use Case approved screenshot" [ref=e580]
+    - article [ref=e581]:
+      - generic [ref=e582]:
+        - generic [ref=e583]:
+          - paragraph [ref=e584]: hero-section
+          - heading "Hero Main Section" [level=2] [ref=e585]
+          - paragraph [ref=e586]: Primary first-screen marketing hero with value proposition, CTA, checklist, and visual area.
+        - generic [ref=e587]:
+          - generic [ref=e588]:
+            - term [ref=e589]: Component ID
+            - definition [ref=e590]: hero-main-section
+          - generic [ref=e591]:
+            - term [ref=e592]: Boundary
+            - definition [ref=e593]: server
+          - generic [ref=e594]:
+            - term [ref=e595]: Spec
+            - definition [ref=e596]: specs/components/hero-main-section.md
+          - generic [ref=e597]:
+            - term [ref=e598]: Library
+            - definition [ref=e599]: library/src/components/HeroMainSection.tsx
+          - generic [ref=e600]:
+            - term [ref=e601]: Screenshot
+            - definition [ref=e602]: assets/screenshots/hero-main-section.png
+      - generic [ref=e603]:
+        - region "Hero Main Section live render" [ref=e604]:
+          - generic [ref=e605]: Live library render
+          - generic [ref=e608]:
+            - generic [ref=e609]:
+              - paragraph [ref=e610]: Customer messaging system
+              - heading "Have Your Own Customer List. Message Them Anytime - Free." [level=1] [ref=e611]
+              - paragraph [ref=e612]: Build your direct customer list, automate outreach, and send high-converting campaigns without relying on social algorithms.
+              - generic [ref=e613]:
+                - generic [ref=e614]: Email address
+                - textbox "Email address" [ref=e615]:
+                  - /placeholder: name@email.com
+                - button "Start Free in 2 Minutes" [ref=e616] [cursor=pointer]
+              - list [ref=e617]:
+                - listitem [ref=e618]: Own your audience and contact data from day one.
+                - listitem [ref=e619]: Trigger reminders, offers, and follow-ups in minutes.
+                - listitem [ref=e620]: Keep customers engaged with timely personalized updates.
+            - img "Customer messaging platform dashboard" [ref=e622]
+        - region "Hero Main Section approved screenshot" [ref=e623]:
+          - generic [ref=e624]: Approved screenshot reference
+          - img "Hero Main Section approved screenshot" [ref=e625]
+    - article [ref=e626]:
+      - generic [ref=e627]:
+        - generic [ref=e628]:
+          - paragraph [ref=e629]: media-section
+          - heading "Image Grid" [level=2] [ref=e630]
+          - paragraph [ref=e631]: Structured partner/logo proof grid for integration and platform trust marks.
+        - generic [ref=e632]:
+          - generic [ref=e633]:
+            - term [ref=e634]: Component ID
+            - definition [ref=e635]: image-grid
+          - generic [ref=e636]:
+            - term [ref=e637]: Boundary
+            - definition [ref=e638]: server
+          - generic [ref=e639]:
+            - term [ref=e640]: Spec
+            - definition [ref=e641]: specs/components/image-grid.md
+          - generic [ref=e642]:
+            - term [ref=e643]: Library
+            - definition [ref=e644]: library/src/components/ImageGrid.tsx
+          - generic [ref=e645]:
+            - term [ref=e646]: Screenshot
+            - definition [ref=e647]: assets/screenshots/image-grid.png
+      - generic [ref=e648]:
+        - region "Image Grid live render" [ref=e649]:
+          - generic [ref=e650]: Live library render
+          - region "Trusted platform and integration partners" [ref=e652]:
+            - generic [ref=e653]:
+              - paragraph [ref=e655]: Powering the world's most focused product teams
+              - generic [ref=e656]:
+                - generic [ref=e657]:
+                  - img "Google"
+                - generic [ref=e658]:
+                  - img "Stripe"
+                - generic [ref=e659]:
+                  - img "Google Pay"
+                - generic [ref=e660]:
+                  - img "Apple Pay"
+                - generic [ref=e661]:
+                  - img "AWS"
+                - generic [ref=e662]:
+                  - img "DigitalOcean"
+                - generic [ref=e663]:
+                  - img "Clover"
+                - generic [ref=e664]:
+                  - img "TouchBistro"
+                - generic [ref=e665]:
+                  - img "Toast"
+                - generic [ref=e666]:
+                  - img "Make"
+                - generic [ref=e667]:
+                  - img "Zapier"
+                - generic [ref=e668]:
+                  - img "GDPR ready"
+        - region "Image Grid approved screenshot" [ref=e669]:
+          - generic [ref=e670]: Approved screenshot reference
+          - img "Image Grid approved screenshot" [ref=e671]
+    - article [ref=e672]:
+      - generic [ref=e673]:
+        - generic [ref=e674]:
+          - paragraph [ref=e675]: media-section
+          - heading "Image Strip" [level=2] [ref=e676]
+          - paragraph [ref=e677]: Horizontal image strip for compact visual rhythm.
+        - generic [ref=e678]:
+          - generic [ref=e679]:
+            - term [ref=e680]: Component ID
+            - definition [ref=e681]: image-strip
+          - generic [ref=e682]:
+            - term [ref=e683]: Boundary
+            - definition [ref=e684]: server
+          - generic [ref=e685]:
+            - term [ref=e686]: Spec
+            - definition [ref=e687]: specs/components/image-strip.md
+          - generic [ref=e688]:
+            - term [ref=e689]: Library
+            - definition [ref=e690]: library/src/components/ImageStrip.tsx
+          - generic [ref=e691]:
+            - term [ref=e692]: Screenshot
+            - definition [ref=e693]: assets/screenshots/image-strip.png
+      - generic [ref=e694]:
+        - region "Image Strip live render" [ref=e695]:
+          - generic [ref=e696]: Live library render
+          - region "Related images" [ref=e698]:
+            - generic [ref=e700]:
+              - generic:
+                - img "Industry awards 1 to 3"
+              - generic:
+                - img "Industry awards 4 to 6"
+              - generic:
+                - img "Industry awards 7 to 9"
+        - region "Image Strip approved screenshot" [ref=e701]:
+          - generic [ref=e702]: Approved screenshot reference
+          - img "Image Strip approved screenshot" [ref=e703]
+    - article [ref=e704]:
+      - generic [ref=e705]:
+        - generic [ref=e706]:
+          - paragraph [ref=e707]: shell
+          - heading "Navbar Glassmorphism" [level=2] [ref=e708]
+          - paragraph [ref=e709]: Sticky glass navigation shell with responsive mobile panel and cursor-tracked highlight.
+        - generic [ref=e710]:
+          - generic [ref=e711]:
+            - term [ref=e712]: Component ID
+            - definition [ref=e713]: navbar-glassmorphism
+          - generic [ref=e714]:
+            - term [ref=e715]: Boundary
+            - definition [ref=e716]: client
+          - generic [ref=e717]:
+            - term [ref=e718]: Spec
+            - definition [ref=e719]: specs/components/navbar-glassmorphism.md
+          - generic [ref=e720]:
+            - term [ref=e721]: Library
+            - definition [ref=e722]: library/src/components/NavbarGlassmorphism.tsx
+          - generic [ref=e723]:
+            - term [ref=e724]: Screenshot
+            - definition [ref=e725]: assets/screenshots/navbar-glassmorphism.png
+      - generic [ref=e726]:
+        - region "Navbar Glassmorphism live render" [ref=e727]:
+          - generic [ref=e728]: Live library render
+          - navigation "Main navigation" [ref=e730]:
+            - generic [ref=e731]:
+              - link "sendPUSH | Loyaltymaster" [ref=e732] [cursor=pointer]:
+                - /url: /
+              - generic [ref=e733]:
+                - link "Product" [ref=e734] [cursor=pointer]:
+                  - /url: /product
+                - link "Pricing" [ref=e735] [cursor=pointer]:
+                  - /url: /pricing
+                - link "FAQ" [ref=e736] [cursor=pointer]:
+                  - /url: /faq
+                - link "Start Free" [ref=e737] [cursor=pointer]:
+                  - /url: "#cta-trial-full-form"
+        - region "Navbar Glassmorphism approved screenshot" [ref=e738]:
+          - generic [ref=e739]: Approved screenshot reference
+          - img "Navbar Glassmorphism approved screenshot" [ref=e740]
+    - article [ref=e741]:
+      - generic [ref=e742]:
+        - generic [ref=e743]:
+          - paragraph [ref=e744]: pricing-section
+          - heading "Pricing Section" [level=2] [ref=e745]
+          - paragraph [ref=e746]: Pricing cards with monthly/yearly state and pro emphasis.
+        - generic [ref=e747]:
+          - generic [ref=e748]:
+            - term [ref=e749]: Component ID
+            - definition [ref=e750]: pricing-section
+          - generic [ref=e751]:
+            - term [ref=e752]: Boundary
+            - definition [ref=e753]: client
+          - generic [ref=e754]:
+            - term [ref=e755]: Spec
+            - definition [ref=e756]: specs/components/pricing-section.md
+          - generic [ref=e757]:
+            - term [ref=e758]: Library
+            - definition [ref=e759]: library/src/components/PricingSection.tsx
+          - generic [ref=e760]:
+            - term [ref=e761]: Screenshot
+            - definition [ref=e762]: assets/screenshots/pricing-section.png
+      - generic [ref=e763]:
+        - region "Pricing Section live render" [ref=e764]:
+          - generic [ref=e765]: Live library render
+          - generic [ref=e768]:
+            - generic [ref=e769]:
+              - heading "Pricing That Scales With Your Campaign Goals" [level=2] [ref=e770]
+              - paragraph [ref=e771]: Start lean, scale when your campaigns need more audiences, automations, and locations.
+            - group "Billing cadence" [ref=e773]:
+              - button "Monthly" [pressed] [ref=e774] [cursor=pointer]
+              - button "Yearly" [ref=e775] [cursor=pointer]
+            - generic [ref=e776]:
+              - generic [ref=e778]:
+                - generic [ref=e779]:
+                  - heading "Starter" [level=3] [ref=e780]
+                  - paragraph [ref=e781]: For local businesses that want one clear return-visit campaign.
+                - strong [ref=e782]: $19
+                - list [ref=e783]:
+                  - listitem [ref=e784]: Single campaign
+                  - listitem [ref=e785]: Basic wallet pass
+                  - listitem [ref=e786]: Email support
+                - link "Choose Starter" [ref=e787] [cursor=pointer]:
+                  - /url: "#cta-trial-full-form"
+              - generic [ref=e789]:
+                - generic [ref=e790]:
+                  - heading "Pro" [level=3] [ref=e791]
+                  - paragraph [ref=e792]: For businesses running active repeat-visit campaigns.
+                - strong [ref=e793]: $49
+                - list [ref=e794]:
+                  - listitem [ref=e795]: Advanced campaigns
+                  - listitem [ref=e796]: Offer guidance
+                  - listitem [ref=e797]: Priority support
+                - link "Choose Pro" [ref=e798] [cursor=pointer]:
+                  - /url: "#cta-trial-full-form"
+                - paragraph [ref=e799]: Recommended
+              - generic [ref=e801]:
+                - generic [ref=e802]:
+                  - heading "Enterprise" [level=3] [ref=e803]
+                  - paragraph [ref=e804]: For multi-location teams that need rollout support.
+                - strong [ref=e805]: Contact us
+                - list [ref=e806]:
+                  - listitem [ref=e807]: Multi-location setup
+                  - listitem [ref=e808]: Campaign planning
+                  - listitem [ref=e809]: Dedicated review
+                - link "Talk to us" [ref=e810] [cursor=pointer]:
+                  - /url: "#cta-with-button-email"
+        - region "Pricing Section approved screenshot" [ref=e811]:
+          - generic [ref=e812]: Approved screenshot reference
+          - img "Pricing Section approved screenshot" [ref=e813]
+    - article [ref=e814]:
+      - generic [ref=e815]:
+        - generic [ref=e816]:
+          - paragraph [ref=e817]: process-section
+          - heading "Process Steps" [level=2] [ref=e818]
+          - paragraph [ref=e819]: Numbered process cards explaining setup or campaign flow.
+        - generic [ref=e820]:
+          - generic [ref=e821]:
+            - term [ref=e822]: Component ID
+            - definition [ref=e823]: process-steps
+          - generic [ref=e824]:
+            - term [ref=e825]: Boundary
+            - definition [ref=e826]: server
+          - generic [ref=e827]:
+            - term [ref=e828]: Spec
+            - definition [ref=e829]: specs/components/process-steps.md
+          - generic [ref=e830]:
+            - term [ref=e831]: Library
+            - definition [ref=e832]: library/src/components/ProcessSteps.tsx
+          - generic [ref=e833]:
+            - term [ref=e834]: Screenshot
+            - definition [ref=e835]: assets/screenshots/process-steps.png
+      - generic [ref=e836]:
+        - region "Process Steps live render" [ref=e837]:
+          - generic [ref=e838]: Live library render
+          - generic [ref=e841]:
+            - generic [ref=e842]:
+              - paragraph [ref=e843]: Simple process
+              - heading "Our Solution Is Stupidly Simple to Use and Insanely Effective" [level=2] [ref=e844]
+            - generic [ref=e845]:
+              - generic [ref=e847]:
+                - generic [ref=e848]: "1"
+                - heading "Connect Your Contacts" [level=3] [ref=e849]
+                - paragraph [ref=e850]: Import your existing list and map customer tags in a few clicks.
+              - generic [ref=e852]:
+                - generic [ref=e853]: "2"
+                - heading "Turn On Automations" [level=3] [ref=e854]
+                - paragraph [ref=e855]: Choose campaign templates for reminders, promos, and reactivation.
+              - generic [ref=e857]:
+                - generic [ref=e858]: "3"
+                - heading "Track Revenue Lift" [level=3] [ref=e859]
+                - paragraph [ref=e860]: Monitor campaign performance and optimize every week.
+        - region "Process Steps approved screenshot" [ref=e861]:
+          - generic [ref=e862]: Approved screenshot reference
+          - img "Process Steps approved screenshot" [ref=e863]
+    - article [ref=e864]:
+      - generic [ref=e865]:
+        - generic [ref=e866]:
+          - paragraph [ref=e867]: proof-section
+          - heading "Stats Card Strip" [level=2] [ref=e868]
+          - paragraph [ref=e869]: Compact strip of stat cards for proof and momentum.
+        - generic [ref=e870]:
+          - generic [ref=e871]:
+            - term [ref=e872]: Component ID
+            - definition [ref=e873]: stats-card-strip
+          - generic [ref=e874]:
+            - term [ref=e875]: Boundary
+            - definition [ref=e876]: server
+          - generic [ref=e877]:
+            - term [ref=e878]: Spec
+            - definition [ref=e879]: specs/components/stats-card-strip.md
+          - generic [ref=e880]:
+            - term [ref=e881]: Library
+            - definition [ref=e882]: library/src/components/StatsCardStrip.tsx
+          - generic [ref=e883]:
+            - term [ref=e884]: Screenshot
+            - definition [ref=e885]: assets/screenshots/stats-card-strip.png
+      - generic [ref=e886]:
+        - region "Stats Card Strip live render" [ref=e887]:
+          - generic [ref=e888]: Live library render
+          - generic [ref=e891]:
+            - generic [ref=e893]:
+              - strong [ref=e894]: 95%
+              - paragraph [ref=e895]: Message deliverability
+            - generic [ref=e897]:
+              - strong [ref=e898]: +28%
+              - paragraph [ref=e899]: Repeat customer visits
+            - generic [ref=e901]:
+              - strong [ref=e902]: 3x
+              - paragraph [ref=e903]: Faster follow-ups
+            - generic [ref=e905]:
+              - strong [ref=e906]: 35%
+              - paragraph [ref=e907]: More booking recoveries
+        - region "Stats Card Strip approved screenshot" [ref=e908]:
+          - generic [ref=e909]: Approved screenshot reference
+          - img "Stats Card Strip approved screenshot" [ref=e910]
+    - article [ref=e911]:
+      - generic [ref=e912]:
+        - generic [ref=e913]:
+          - paragraph [ref=e914]: proof-section
+          - heading "Testimonial Single" [level=2] [ref=e915]
+          - paragraph [ref=e916]: Dark proof section spotlighting one or two customer proof quotes.
+        - generic [ref=e917]:
+          - generic [ref=e918]:
+            - term [ref=e919]: Component ID
+            - definition [ref=e920]: testimonial-single
+          - generic [ref=e921]:
+            - term [ref=e922]: Boundary
+            - definition [ref=e923]: server
+          - generic [ref=e924]:
+            - term [ref=e925]: Spec
+            - definition [ref=e926]: specs/components/testimonial-single.md
+          - generic [ref=e927]:
+            - term [ref=e928]: Library
+            - definition [ref=e929]: library/src/components/TestimonialSingle.tsx
+          - generic [ref=e930]:
+            - term [ref=e931]: Screenshot
+            - definition [ref=e932]: assets/screenshots/testimonial-single.png
+      - generic [ref=e933]:
+        - region "Testimonial Single live render" [ref=e934]:
+          - generic [ref=e935]: Live library render
+          - generic [ref=e938]:
+            - generic [ref=e939]:
+              - paragraph [ref=e940]: More proof
+              - heading "What Real Customers Are Saying" [level=2] [ref=e941]
+            - article [ref=e942]:
+              - figure "Noah T. - Clinic Manager" [ref=e943]:
+                - blockquote [ref=e944]: We booked 17 extra appointments in one weekend from a single campaign.
+                - generic [ref=e945]:
+                  - strong [ref=e946]: Noah T.
+                  - generic [ref=e947]: "- Clinic Manager"
+              - figure "Kayla S. - Salon Owner" [ref=e948]:
+                - blockquote [ref=e949]: Setup took less than an hour, and now our reminders run automatically every day.
+                - generic [ref=e950]:
+                  - strong [ref=e951]: Kayla S.
+                  - generic [ref=e952]: "- Salon Owner"
+        - region "Testimonial Single approved screenshot" [ref=e953]:
+          - generic [ref=e954]: Approved screenshot reference
+          - img "Testimonial Single approved screenshot" [ref=e955]
+    - article [ref=e956]:
+      - generic [ref=e957]:
+        - generic [ref=e958]:
+          - paragraph [ref=e959]: proof-section
+          - heading "Testimonials Grid" [level=2] [ref=e960]
+          - paragraph [ref=e961]: Grid of testimonial cards for broader proof.
+        - generic [ref=e962]:
+          - generic [ref=e963]:
+            - term [ref=e964]: Component ID
+            - definition [ref=e965]: testimonials-grid
+          - generic [ref=e966]:
+            - term [ref=e967]: Boundary
+            - definition [ref=e968]: server
+          - generic [ref=e969]:
+            - term [ref=e970]: Spec
+            - definition [ref=e971]: specs/components/testimonials-grid.md
+          - generic [ref=e972]:
+            - term [ref=e973]: Library
+            - definition [ref=e974]: library/src/components/TestimonialsGrid.tsx
+          - generic [ref=e975]:
+            - term [ref=e976]: Screenshot
+            - definition [ref=e977]: assets/screenshots/testimonials-grid.png
+      - generic [ref=e978]:
+        - region "Testimonials Grid live render" [ref=e979]:
+          - generic [ref=e980]: Live library render
+          - generic [ref=e983]:
+            - generic [ref=e984]:
+              - paragraph [ref=e985]: Customer feedback
+              - heading "Loved by Teams Worldwide" [level=2] [ref=e986]
+              - paragraph [ref=e987]: See what local teams are saying about how SetupFlow improves response rates, reduces manual work, and keeps customers coming back.
+            - generic [ref=e988]:
+              - figure "Maya Rivera Operations Lead, Riverfront Wellness" [ref=e990]:
+                - img "5 out of 5 stars" [ref=e991]: ★★★★★
+                - blockquote [ref=e992]: SetupFlow gave us one place to run reminders, promos, and follow-ups. We filled more open slots in the first few weeks without adding extra admin work.
+                - generic [ref=e993]:
+                  - generic [ref=e994]: MR
+                  - generic [ref=e995]:
+                    - strong [ref=e996]: Maya Rivera
+                    - generic [ref=e997]: Operations Lead, Riverfront Wellness
+              - figure "Jordan Patel Owner, Northside Auto Care" [ref=e999]:
+                - img "5 out of 5 stars" [ref=e1000]: ★★★★★
+                - blockquote [ref=e1001]: We switched from manual texting to SetupFlow and saw campaign response jump fast. The team launches offers in minutes and tracks real impact each week.
+                - generic [ref=e1002]:
+                  - generic [ref=e1003]: JP
+                  - generic [ref=e1004]:
+                    - strong [ref=e1005]: Jordan Patel
+                    - generic [ref=e1006]: Owner, Northside Auto Care
+              - figure "Elena Brooks General Manager, Elm Street Clinic" [ref=e1008]:
+                - img "5 out of 5 stars" [ref=e1009]: ★★★★★
+                - blockquote [ref=e1010]: The automations are simple to set up and the reporting is clear. It helped us keep patients engaged and reduce missed appointments month over month.
+                - generic [ref=e1011]:
+                  - generic [ref=e1012]: EB
+                  - generic [ref=e1013]:
+                    - strong [ref=e1014]: Elena Brooks
+                    - generic [ref=e1015]: General Manager, Elm Street Clinic
+        - region "Testimonials Grid approved screenshot" [ref=e1016]:
+          - generic [ref=e1017]: Approved screenshot reference
+          - img "Testimonials Grid approved screenshot" [ref=e1018]

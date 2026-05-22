@@ -1,0 +1,44 @@
+Here is an example of what a machine-readable marketing brief looks like using structured Markdown. 
+
+This format replaces vague, subjective prose with explicit constraints and exact component mappings that an LLM can easily parse and execute:
+
+```markdown
+# Marketing Brief: Enterprise CRM Landing Page
+
+## 1. Page Metadata
+- **Page Title:** Next-Gen CRM Platform
+- **Route/Slug:** `/enterprise-crm`
+- **Target Persona:** Enterprise Sales Directors
+- **Primary Goal:** Book a demo
+- **Secondary Goal:** Newsletter signup
+
+## 2. Global Page Constraints
+- **Layout Constraints:** Use existing `MarketingPageLayout` shell; standard header/footer; max width 1200px.
+- **Tone of Voice:** Calm, direct, professional. 
+- **Copy Constraints:** Max 8 words for headlines. Banned words: "revolutionary", "game-changing".
+
+## 3. Sections
+
+### Section 1: Hero
+- **section_id:** `hero-main`
+- **component_name:** `HeroPrimary`
+- **variant:** `with-email-capture`
+- **goal:** Immediately communicate the value proposition and capture an email.
+- **primary_content:**
+  - **heading text:** "Close deals faster with intelligent workflows."
+  - **subheading text:** "The CRM built for modern enterprise teams."
+- **interactions:** Primary CTA scrolls to the pricing section.
+
+### Section 2: Feature Comparison
+- **section_id:** `feature-comparison`
+- **component_name:** `FeatureComparisonList`
+- **variant:** `three-column`
+- **goal:** Make it obvious that we outperform legacy tools on automation.
+- **primary_content:**
+  - **heading text:** "Why we outperform legacy tools."
+- **supporting_content:** Include the `G2-Leader-Badge` asset next to the heading.
+```
+
+By explicitly linking each section of the marketing document to a specific `component_name` and `variant` (like `FeatureComparisonList`), the LLM no longer has to guess how to structure the page. It can simply look up that component's rules in your design system and populate it with the provided content.
+
+Are you ready to look at how to set up the `AGENTS.md` orchestration file to tie this all together?

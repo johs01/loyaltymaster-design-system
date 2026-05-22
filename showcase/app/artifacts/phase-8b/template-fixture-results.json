@@ -1,0 +1,76 @@
+{
+  "phase": "8B",
+  "generatedAt": "2026-05-20T11:13:50.206Z",
+  "fixtureCount": 2,
+  "viewportCount": 2,
+  "results": [
+    {
+      "fixture": "web-page",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4188/template-tests/web-page",
+      "expectedComponents": [
+        "hero-main-section",
+        "feature-section-2-column-image",
+        "feature-section-2-column-bullets-image",
+        "image-strip",
+        "comparison-table",
+        "cta-with-button-email"
+      ],
+      "screenshot": "showcase/app/artifacts/phase-8b/web-page-desktop.png",
+      "passed": true
+    },
+    {
+      "fixture": "web-page",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4188/template-tests/web-page",
+      "expectedComponents": [
+        "hero-main-section",
+        "feature-section-2-column-image",
+        "feature-section-2-column-bullets-image",
+        "image-strip",
+        "comparison-table",
+        "cta-with-button-email"
+      ],
+      "screenshot": "showcase/app/artifacts/phase-8b/web-page-mobile.png",
+      "passed": true
+    },
+    {
+      "fixture": "landing-page",
+      "viewport": "desktop",
+      "url": "http://127.0.0.1:4188/template-tests/landing-page",
+      "expectedComponents": [
+        "hero-main-section",
+        "button-email",
+        "features-grid",
+        "process-steps",
+        "stats-card-strip",
+        "testimonials-grid",
+        "pricing-section",
+        "testimonial-single",
+        "faq-accordion",
+        "cta-with-button-email"
+      ],
+      "screenshot": "showcase/app/artifacts/phase-8b/landing-page-desktop.png",
+      "passed": true
+    },
+    {
+      "fixture": "landing-page",
+      "viewport": "mobile",
+      "url": "http://127.0.0.1:4188/template-tests/landing-page",
+      "expectedComponents": [
+        "hero-main-section",
+        "button-email",
+        "features-grid",
+        "process-steps",
+        "stats-card-strip",
+        "testimonials-grid",
+        "pricing-section",
+        "testimonial-single",
+        "faq-accordion",
+        "cta-with-button-email"
+      ],
+      "screenshot": "showcase/app/artifacts/phase-8b/landing-page-mobile.png",
+      "passed": true
+    }
+  ]
+}

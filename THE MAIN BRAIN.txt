@@ -1,0 +1,22 @@
+Loyaltymaster should use an AI-agent-ready design system built around DESIGN.md, PRODUCT.md, and AGENTS.md.
+
+DESIGN.md defines the visual identity, design tokens, and base component design rules.
+
+PRODUCT.md defines the product, audience, subdomains, claims, offers, and content rules.
+
+AGENTS.md tells Codex, Claude, Gemini, and other agents how to read and apply those files.
+
+The full Lego system lives in a component registry and component rule files. Each component has a name, code source, props, visual rules, allowed use cases, blocked use cases, allowed pairings, blocked pairings, and version.
+
+AI may compose approved components. AI may not invent new design.
+
+A validation step runs before Vercel deploys. It checks the AI’s code against the Loyaltymaster component registry and rule files. If a component is used in the wrong place, the build fails with a clear rule error.
+
+design.md      = visual brand system
+product.md     = product, audience, offers, subdomains, claims
+agents.md      = AI operating rules
+components/    = one markdown rule file per component
+GitHub         = version control
+manual testing = paste files into Claude/Codex and judge output
+
+This version is clean, update-friendly, and practical. Start here. Then later, once the manual test results are good, you can add automated checks.

@@ -1,0 +1,27 @@
+# Loyaltymaster AI Agent Rules
+
+Before creating or editing any UI:
+
+1. Read DESIGN.md.
+2. Read PRODUCT.md.
+3. Read design-system/component-registry.json.
+4. For every component used, read its rule file from design-system/component-rules/.
+5. Do not create new visual styles unless asked.
+6. Do not create new components if an approved component already exists.
+7. Use approved React/Tailwind components.
+8. Validate component pairings before writing code.
+9. Use CSS variables and design tokens only.
+10. If a rule conflicts, component-specific rules beat general rules.
+
+MORE IDEAS:
+
+A structured prompt that tells Claude Code or Codex or similar AI LLM Tool to:
+
+Read design.md, product.md, agents.md, components/_template.md
+Optionally read a TSX file path you provide
+Run an interactive workflow: suggest a component name (with reasoning), ask you a fixed set of questions about rules/pairings/blocked uses, then write a complete .md file with YAML frontmatter + body to components/{Name}.md
+Update components/_index.md automatically with the new entry
+Stop and ask before committing — never auto-commit
+
+Deliverable 3: The _template.md spec format
+The canonical structure every component file follows — YAML frontmatter with the machine-readable rules, markdown body with the human-readable context, examples section at the bottom.

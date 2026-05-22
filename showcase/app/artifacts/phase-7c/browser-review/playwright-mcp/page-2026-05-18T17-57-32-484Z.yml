@@ -1,0 +1,16 @@
+- main [ref=e3]:
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - paragraph [ref=e8]: Customer messaging system
+      - heading "Have Your Own Customer List. Message Them Anytime - Free." [level=1] [ref=e9]
+      - paragraph [ref=e10]: Build your direct customer list, automate outreach, and send high-converting campaigns without relying on social algorithms.
+      - generic [ref=e11]:
+        - generic [ref=e12]: Email address
+        - textbox "Email address" [ref=e13]:
+          - /placeholder: name@email.com
+        - button "Start Free in 2 Minutes" [ref=e14] [cursor=pointer]
+      - list [ref=e15]:
+        - listitem [ref=e16]: Own your audience and contact data from day one.
+        - listitem [ref=e17]: Trigger reminders, offers, and follow-ups in minutes.
+        - listitem [ref=e18]: Keep customers engaged with timely personalized updates.
+    - img "Customer messaging platform dashboard" [ref=e20]

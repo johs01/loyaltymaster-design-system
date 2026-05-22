@@ -1,0 +1,1245 @@
+<!doctype html>
+<!-- SYSTEM: REMY -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wireframe Test | WithRemy Design System</title>
+    <meta
+      name="description"
+      content="Standalone wireframe conversion test built with the WithRemy design system."
+    />
+    <script>
+      (() => {
+        const key = "wf-theme-mode";
+        const valid = new Set(["light", "dark"]);
+        let mode = "";
+
+        try {
+          const stored = window.localStorage.getItem(key);
+          if (valid.has(stored)) {
+            mode = stored;
+          }
+        } catch (_error) {
+          mode = "";
+        }
+
+        const systemDark =
+          window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const resolved = mode || (systemDark ? "dark" : "light");
+
+        const root = document.documentElement;
+        root.setAttribute("data-theme-mode", resolved);
+        root.setAttribute("data-theme", resolved);
+        root.style.colorScheme = resolved;
+      })();
+    </script>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23FCB827'/%3E%3Cpath d='M24 10v28M10 24h28' stroke='%23302127' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="design-system/withremy/withremy.css" />
+    <link rel="stylesheet" href="wireframe-remy.css" />
+    <script defer src="wireframe-remy.js"></script>
+  </head>
+  <body class="wr-page wf-page">
+    <a class="wf-skip-link" href="#hero">Skip to hero</a>
+
+    <header class="wf-header">
+      <div class="wr-container--main wf-nav-shell" id="wfNav">
+        <div class="wf-nav-glass wf-nav-glass--filter" aria-hidden="true"></div>
+        <div class="wf-nav-glass wf-nav-glass--overlay" aria-hidden="true"></div>
+        <div class="wf-nav-glass wf-nav-glass--specular" aria-hidden="true"></div>
+        <div class="wf-nav-content">
+          <a class="wf-brand" href="#hero" aria-label="sendPUSH | Loyaltymaster home">
+            <span class="wf-brand-dot" aria-hidden="true"></span>
+            <span>sendPUSH | Loyaltymaster</span>
+          </a>
+          <nav class="wf-nav-links" aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#comparison">Comparison</a>
+            <a href="#process">How It Works</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+          <div class="wf-theme-switcher">
+            <button
+              id="wfThemeToggle"
+              class="wf-theme-icon-toggle"
+              type="button"
+              data-theme-target="dark"
+              aria-label="Switch to dark mode"
+              aria-pressed="false"
+            >
+              <span class="wf-theme-icon-toggle__sun" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8" />
+                  <path
+                    d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <span class="wf-theme-icon-toggle__moon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 1 0 10.5 10.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <a class="wr-cta-join wf-btn wf-btn--small" href="#tenant-trial-cta">
+            <span class="wr-cta-join__label">Start Free</span>
+          </a>
+          <button
+            class="wf-mobile-menu-toggle"
+            id="wfMobileMenuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="wfMobileMenu"
+            aria-expanded="false"
+          >
+            <span class="wf-mobile-menu-toggle__line" aria-hidden="true"></span>
+            <span class="wf-mobile-menu-toggle__line" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <div id="wfMobileMenu" class="wf-mobile-menu" aria-hidden="true" hidden>
+        <button
+          class="wf-mobile-menu-backdrop"
+          type="button"
+          data-mobile-menu-close
+          aria-label="Close menu"
+          tabindex="-1"
+        ></button>
+
+        <aside
+          class="wf-mobile-menu-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          tabindex="-1"
+        >
+          <div class="wf-mobile-menu-glass wf-mobile-menu-glass--filter" aria-hidden="true"></div>
+          <div class="wf-mobile-menu-glass wf-mobile-menu-glass--overlay" aria-hidden="true"></div>
+          <div class="wf-mobile-menu-glass wf-mobile-menu-glass--specular" aria-hidden="true"></div>
+
+          <div class="wf-mobile-menu-content">
+            <div class="wf-mobile-menu-head">
+              <a class="wf-brand" href="#hero" aria-label="sendPUSH | Loyaltymaster home">
+                <span class="wf-brand-dot" aria-hidden="true"></span>
+                <span>sendPUSH | Loyaltymaster</span>
+              </a>
+              <button
+                class="wf-mobile-menu-close"
+                type="button"
+                data-mobile-menu-close
+                aria-label="Close menu"
+              >
+                <span class="wf-mobile-menu-close__line" aria-hidden="true"></span>
+                <span class="wf-mobile-menu-close__line" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="wf-mobile-theme-switcher" aria-label="Theme mode">
+              <p class="wf-mobile-theme-label">Theme</p>
+              <button
+                id="wfMobileThemeToggle"
+                class="wf-theme-icon-toggle wf-mobile-theme-icon-toggle"
+                type="button"
+                data-theme-target="dark"
+                aria-label="Switch to dark mode"
+                aria-pressed="false"
+              >
+                <span class="wf-theme-icon-toggle__sun" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8" />
+                    <path
+                      d="M12 2.5v2.3M12 19.2v2.3M21.5 12h-2.3M4.8 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9 5.3 5.3"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="wf-theme-icon-toggle__moon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 1 0 10.5 10.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <nav class="wf-mobile-menu-links" aria-label="Mobile navigation links">
+              <a href="#features">Features</a>
+              <a href="#comparison">Comparison</a>
+              <a href="#process">How It Works</a>
+              <a href="#faq">FAQ</a>
+            </nav>
+
+            <a class="wf-mobile-menu-cta" href="#tenant-trial-cta">Start Free</a>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="wf-section wf-bg-peach">
+        <div class="wr-container--main wf-hero-grid">
+          <div class="reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Customer messaging system</p>
+            <h1 class="wr-h1 wf-heading-hero">
+              Have Your Own Customer List. Message Them Anytime - Free.
+            </h1>
+            <p class="wr-text-body wf-hero-copy">
+              Build your direct customer list, automate outreach, and send high-converting campaigns without relying
+              on social algorithms.
+            </p>
+            <ul class="wf-checklist">
+              <li>Own your audience and contact data from day one.</li>
+              <li>Trigger reminders, offers, and follow-ups in minutes.</li>
+              <li>Keep customers engaged with timely personalized updates.</li>
+            </ul>
+            <div class="wf-email-cta" role="group" aria-label="Start Free in 2 Minutes email capture">
+              <label class="wf-visually-hidden" for="wf-email-hero">Email address</label>
+              <input
+                class="wf-email-cta__input"
+                id="wf-email-hero"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="name@email.com"
+              />
+              <a class="wf-email-cta__button" href="#tenant-trial-cta">Start Free in 2 Minutes</a>
+            </div>
+          </div>
+
+          <div class="reveal" data-reveal-order="1">
+            <div class="wf-placeholder wf-placeholder--landscape" data-label="Hero image placeholder · 16:10"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="logo-grid" class="wf-section wf-bg-peach wf-section-tight wf-logo-strip">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-logo-strip-copy">Powering the world&apos;s most focused product teams</p>
+          </div>
+          <ul class="wf-logo-grid" aria-label="Trusted platform and integration partners">
+            <li class="wf-logo-card reveal" data-reveal-order="1">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Google logo.webp"
+                alt="Google"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="2">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Stripe Payment.webp"
+                alt="Stripe"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="3">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Google Pay Logo.webp"
+                alt="Google Pay"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="4">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Apple Pay Logo.webp"
+                alt="Apple Pay"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="5">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/AWS.webp"
+                alt="AWS"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="6">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Digital Ocean.webp"
+                alt="DigitalOcean"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="7">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Clover POS Logo.webp"
+                alt="Clover POS"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="8">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Touch Bistro.webp"
+                alt="TouchBistro"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="9">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Toast integrated with Loyaltymaster.webp"
+                alt="Toast integrated with Loyaltymaster"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="10">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Loyaltymaster is Make Ready.webp"
+                alt="Loyaltymaster is Make ready"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="11">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/Loyaltymaster is Zapier Ready.webp"
+                alt="Loyaltymaster is Zapier ready"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+            <li class="wf-logo-card reveal" data-reveal-order="12">
+              <img
+                class="wf-logo-image"
+                src="assets/remy/GDPR Ready.webp"
+                alt="GDPR ready"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="stats" class="wf-section wf-bg-white wf-section-tight">
+        <div class="wr-container--main wf-stats-grid">
+          <article class="wf-stat-card reveal" data-reveal-order="0">
+            <p class="wf-stat-value">95%</p>
+            <p class="wf-stat-label">Message deliverability</p>
+          </article>
+          <article class="wf-stat-card reveal" data-reveal-order="1">
+            <p class="wf-stat-value">+28%</p>
+            <p class="wf-stat-label">Repeat customer visits</p>
+          </article>
+          <article class="wf-stat-card reveal" data-reveal-order="2">
+            <p class="wf-stat-value">3x</p>
+            <p class="wf-stat-label">Faster follow-ups</p>
+          </article>
+          <article class="wf-stat-card reveal" data-reveal-order="3">
+            <p class="wf-stat-value">35%</p>
+            <p class="wf-stat-label">More booking recoveries</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="problem" class="wf-section wf-bg-cyan">
+        <div class="wr-container--main wf-split">
+          <div class="reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">The real problem</p>
+            <h2 class="wr-h2 wf-heading-section">
+              Your Messages to Your Customers Aren't Getting Through.
+            </h2>
+            <ol class="wf-number-list">
+              <li>
+                <h3 class="wf-number-title">Inboxes are overloaded</h3>
+                <p class="wr-text-body">Your updates compete with dozens of promotions every day.</p>
+              </li>
+              <li>
+                <h3 class="wf-number-title">Algorithms hide your posts</h3>
+                <p class="wr-text-body">Most of your audience never sees social updates in time to act.</p>
+              </li>
+              <li>
+                <h3 class="wf-number-title">Missed follow-ups cost revenue</h3>
+                <p class="wr-text-body">No-shows, empty slots, and quiet periods stack up each week.</p>
+              </li>
+            </ol>
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">See How It Works</span>
+            </a>
+          </div>
+          <div class="reveal" data-reveal-order="1">
+            <div class="wf-placeholder wf-placeholder--landscape" data-label="Problem visual placeholder · 16:10"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonial-1" class="wf-section wf-bg-white">
+        <div class="wr-container--focus">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Customer feedback</p>
+            <h2 class="wr-h2 wf-heading-center">What Business Owners Are Saying</h2>
+          </div>
+          <article class="wf-testimonial-card reveal" data-reveal-order="1">
+            <p class="wf-quote">
+              "We stopped chasing social reach and started building direct conversations. In the first month alone,
+              we filled 23 otherwise empty appointments."
+            </p>
+            <p class="wf-quote-author">Mia R. - Studio Owner</p>
+          </article>
+          <div class="wf-center reveal" data-reveal-order="2">
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">Read More Stories</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-case-1" class="wf-section wf-bg-salmon">
+        <div class="wr-container--main wf-split wf-split-reverse">
+          <div class="reveal" data-reveal-order="1">
+            <div class="wf-placeholder wf-placeholder--landscape" data-label="Use case visual placeholder · 16:10"></div>
+          </div>
+          <div class="reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Use case 01</p>
+            <h2 class="wr-h3">Fill Last-Minute Sales and Activity Lulls</h2>
+            <p class="wr-text-body">Trigger time-sensitive messages when business slows down, not days later.</p>
+            <ul class="wf-checklist">
+              <li>Auto-send offers during low-traffic windows.</li>
+              <li>Target customers near your location.</li>
+              <li>Bring back recent no-shows with one click.</li>
+            </ul>
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">Launch Local Campaign</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-case-2" class="wf-section wf-bg-white">
+        <div class="wr-container--main wf-split wf-split-reverse">
+          <div class="reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Use case 02</p>
+            <h2 class="wr-h3">Capture Nearby Customers with Geo-Fenced Messaging</h2>
+            <p class="wr-text-body">
+              Reach customers while intent is high with offers based on proximity and behavior.
+            </p>
+            <ul class="wf-checklist">
+              <li>Set radius-based campaign zones in minutes.</li>
+              <li>Suppress repeat sends to avoid fatigue.</li>
+              <li>Track visits and redemptions from each zone.</li>
+            </ul>
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">See Geo Tools</span>
+            </a>
+          </div>
+          <div class="reveal" data-reveal-order="1">
+            <div class="wf-placeholder wf-placeholder--landscape" data-label="Geo-fence visual placeholder · 16:10"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-case-3" class="wf-section wf-bg-peach">
+        <div class="wr-container--main wf-split wf-split-reverse">
+          <div class="reveal" data-reveal-order="1">
+            <div
+              class="wf-placeholder wf-placeholder--landscape"
+              data-label="Appointment flow placeholder · 16:10"
+            ></div>
+          </div>
+          <div class="reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Use case 03</p>
+            <h2 class="wr-h3">Fill Last-Minute Appointment Spots</h2>
+            <p class="wr-text-body">Recover cancellations fast with automated waitlist and flash-offer sequences.</p>
+            <ul class="wf-checklist">
+              <li>Send opening alerts to likely responders first.</li>
+              <li>Promote add-on services in the same message.</li>
+              <li>Close open slots before they impact daily revenue.</li>
+            </ul>
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">Recover Lost Slots</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonial-2" class="wf-section wf-bg-dark">
+        <div class="wr-container--focus">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow wf-eyebrow-dark">More proof</p>
+            <h2 class="wr-h2 wf-heading-center wf-heading-dark">What Real Customers Are Saying</h2>
+          </div>
+          <article class="wf-testimonial-card wf-testimonial-card-dark reveal" data-reveal-order="1">
+            <p class="wf-quote wf-quote-dark">
+              "We booked 17 extra appointments in one weekend from a single campaign."
+            </p>
+            <p class="wf-quote-author wf-quote-author-dark">Noah T. - Clinic Manager</p>
+            <p class="wf-quote wf-quote-dark">
+              "Setup took less than an hour, and now our reminders run automatically every day."
+            </p>
+            <p class="wf-quote-author wf-quote-author-dark">Kayla S. - Salon Owner</p>
+          </article>
+          <div class="wf-center reveal" data-reveal-order="2">
+            <div class="wf-email-cta" role="group" aria-label="Start Free Trial email capture">
+              <label class="wf-visually-hidden" for="wf-email-proof">Email address</label>
+              <input
+                class="wf-email-cta__input"
+                id="wf-email-proof"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="name@email.com"
+              />
+              <a class="wf-email-cta__button" href="#tenant-trial-cta">Start Free Trial</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="wf-section wf-bg-white">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Capabilities</p>
+            <h2 class="wr-h2 wf-heading-center">All the Power, None of the Complexity</h2>
+            <p class="wr-text-body wf-center-subtext">Built for fast-moving teams that want results without extra tools.</p>
+          </div>
+          <div class="wf-feature-grid">
+            <article class="wf-feature-card reveal" data-reveal-order="1">
+              <span class="wf-feature-icon wf-feature-icon--orange" aria-hidden="true"></span>
+              <h3>Smart Segments</h3>
+              <p>Group customers by recency, spend, visit habits, and campaign response.</p>
+            </article>
+            <article class="wf-feature-card reveal" data-reveal-order="2">
+              <span class="wf-feature-icon wf-feature-icon--blue" aria-hidden="true"></span>
+              <h3>Behavior Triggers</h3>
+              <p>Launch message flows based on customer actions in real time.</p>
+            </article>
+            <article class="wf-feature-card reveal" data-reveal-order="3">
+              <span class="wf-feature-icon wf-feature-icon--yellow" aria-hidden="true"></span>
+              <h3>Campaign Calendar</h3>
+              <p>Plan seasonal offers and auto-activate them on schedule.</p>
+            </article>
+            <article class="wf-feature-card reveal" data-reveal-order="4">
+              <span class="wf-feature-icon wf-feature-icon--blue" aria-hidden="true"></span>
+              <h3>Geo Messaging</h3>
+              <p>Send localized offers when customers are near your business.</p>
+            </article>
+            <article class="wf-feature-card reveal" data-reveal-order="5">
+              <span class="wf-feature-icon wf-feature-icon--orange" aria-hidden="true"></span>
+              <h3>Revenue Tracking</h3>
+              <p>Measure conversions and attributed revenue from every campaign.</p>
+            </article>
+            <article class="wf-feature-card reveal" data-reveal-order="6">
+              <span class="wf-feature-icon wf-feature-icon--yellow" aria-hidden="true"></span>
+              <h3>One Inbox</h3>
+              <p>Review responses, opt-outs, and follow-up tasks in one place.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities-testimonials" class="wf-section wf-bg-white wf-cap-testimonials">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Customer feedback</p>
+            <h2 class="wr-h2 wf-heading-center">Loved by Teams Worldwide</h2>
+            <p class="wr-text-body wf-cap-testimonials-subtext">
+              See what local teams are saying about how sendPUSH | Loyaltymaster improves response rates, reduces manual work, and
+              keeps customers coming back.
+            </p>
+          </div>
+          <div class="wf-cap-testimonials-grid">
+            <article class="wf-cap-testimonial-card reveal" data-reveal-order="1">
+              <div class="wf-cap-testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+              </div>
+              <p class="wf-cap-testimonial-quote">
+                "sendPUSH | Loyaltymaster gave us one place to run reminders, promos, and follow-ups. We filled more open slots in
+                the first few weeks without adding extra admin work."
+              </p>
+              <div class="wf-cap-testimonial-person">
+                <div class="wf-cap-testimonial-avatar" aria-hidden="true">MR</div>
+                <div class="wf-cap-testimonial-meta">
+                  <p class="wf-quote-author">Maya Rivera</p>
+                  <p class="wf-cap-testimonial-role">Operations Lead, Riverfront Wellness</p>
+                </div>
+              </div>
+            </article>
+            <article class="wf-cap-testimonial-card reveal" data-reveal-order="2">
+              <div class="wf-cap-testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+              </div>
+              <p class="wf-cap-testimonial-quote">
+                "We switched from manual texting to sendPUSH | Loyaltymaster and saw campaign response jump fast. The team launches
+                offers in minutes and tracks real impact each week."
+              </p>
+              <div class="wf-cap-testimonial-person">
+                <div class="wf-cap-testimonial-avatar" aria-hidden="true">JP</div>
+                <div class="wf-cap-testimonial-meta">
+                  <p class="wf-quote-author">Jordan Patel</p>
+                  <p class="wf-cap-testimonial-role">Owner, Northside Auto Care</p>
+                </div>
+              </div>
+            </article>
+            <article class="wf-cap-testimonial-card reveal" data-reveal-order="3">
+              <div class="wf-cap-testimonial-stars" role="img" aria-label="5 out of 5 stars">
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+                <span class="wf-cap-testimonial-star" aria-hidden="true">★</span>
+              </div>
+              <p class="wf-cap-testimonial-quote">
+                "The automations are simple to set up and the reporting is clear. It helped us keep patients engaged
+                and reduce missed appointments month over month."
+              </p>
+              <div class="wf-cap-testimonial-person">
+                <div class="wf-cap-testimonial-avatar" aria-hidden="true">EB</div>
+                <div class="wf-cap-testimonial-meta">
+                  <p class="wf-quote-author">Elena Brooks</p>
+                  <p class="wf-cap-testimonial-role">General Manager, Elm Street Clinic</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="comparison" class="wf-section wf-bg-cyan">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Comparison</p>
+            <h2 class="wr-h2 wf-heading-center">See How sendPUSH | Loyaltymaster Beats Generic Campaign Tools</h2>
+          </div>
+          <div class="wf-table-wrap reveal" data-reveal-order="1">
+            <table class="wf-compare-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>sendPUSH | Loyaltymaster</th>
+                  <th>Bulk SMS App</th>
+                  <th>Email Tool</th>
+                  <th>Manual Follow-Up</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Feature">Geo-fenced targeting</td>
+                  <td data-label="sendPUSH | Loyaltymaster">Yes</td>
+                  <td data-label="Bulk SMS App">No</td>
+                  <td data-label="Email Tool">No</td>
+                  <td data-label="Manual Follow-Up">No</td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">Behavior automations</td>
+                  <td data-label="sendPUSH | Loyaltymaster">Yes</td>
+                  <td data-label="Bulk SMS App">Limited</td>
+                  <td data-label="Email Tool">Limited</td>
+                  <td data-label="Manual Follow-Up">No</td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">Revenue attribution</td>
+                  <td data-label="sendPUSH | Loyaltymaster">Yes</td>
+                  <td data-label="Bulk SMS App">No</td>
+                  <td data-label="Email Tool">No</td>
+                  <td data-label="Manual Follow-Up">No</td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">Fast setup</td>
+                  <td data-label="sendPUSH | Loyaltymaster">Under 1 hour</td>
+                  <td data-label="Bulk SMS App">2-3 days</td>
+                  <td data-label="Email Tool">1-2 days</td>
+                  <td data-label="Manual Follow-Up">Ongoing</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="wf-center reveal" data-reveal-order="2">
+            <a class="wr-cta-join wf-btn" href="#tenant-trial-cta">
+              <span class="wr-cta-join__label">See Pricing and Plans</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="wf-section wf-bg-white wf-pricing">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Pricing</p>
+            <h2 class="wr-h2 wf-heading-center">Pricing That Scales With Your Campaign Goals</h2>
+            <p class="wr-text-body wf-pricing-subtext">
+              Start lean, scale when your audience and campaign volume grow. Every plan includes sendPUSH | Loyaltymaster templates,
+              automation tools, and performance reporting.
+            </p>
+          </div>
+
+          <div class="wf-center wf-pricing-toggle-wrap reveal" data-reveal-order="1">
+            <div class="wf-pricing-toggle" role="group" aria-label="Billing period">
+              <button
+                class="wf-pricing-toggle-btn is-active"
+                type="button"
+                data-pricing-toggle="monthly"
+                aria-pressed="true"
+              >
+                Monthly
+              </button>
+              <button class="wf-pricing-toggle-btn" type="button" data-pricing-toggle="yearly" aria-pressed="false">
+                <span>Yearly</span>
+                <span class="wf-pricing-toggle-badge">30% OFF</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="wf-pricing-grid">
+            <article class="wf-pricing-card reveal" data-reveal-order="2">
+              <div class="wf-pricing-card-top">
+                <h3 class="wf-pricing-plan-name">Starter</h3>
+                <p class="wf-pricing-plan-copy">
+                  For independent operators who want reliable customer messaging without team overhead.
+                </p>
+                <div class="wf-pricing-value-block">
+                  <div class="wf-pricing-value-row">
+                    <div class="wf-pricing-value-viewport">
+                      <div class="wf-pricing-value-stack" data-pricing-stack="starter" style="transform: translateY(0%);">
+                        <span class="wf-pricing-value">$19</span>
+                        <span class="wf-pricing-value">$13</span>
+                      </div>
+                    </div>
+                    <span class="wf-pricing-period">/month</span>
+                  </div>
+                  <p class="wf-pricing-billed">
+                    Billed
+                    <span class="wf-pricing-billed-label">monthly</span>
+                    .
+                  </p>
+                </div>
+              </div>
+
+              <div class="wf-pricing-card-bottom">
+                <a class="wf-pricing-card-cta" href="#tenant-trial-cta">Get Started with Starter</a>
+                <ul class="wf-pricing-list">
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Message templates for promotions, reminders, and follow-ups.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Up to 8 active customer campaigns at a time.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Performance dashboard with delivery and response tracking.</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="wf-pricing-card wf-pricing-card--pro reveal" data-reveal-order="3">
+              <div class="wf-pricing-card-top">
+                <div class="wf-pricing-card-head">
+                  <h3 class="wf-pricing-plan-name">Pro</h3>
+                  <span class="wf-pricing-popular">Most popular</span>
+                </div>
+                <p class="wf-pricing-plan-copy">
+                  Built for growing teams that need advanced automation, segmentation, and collaboration controls.
+                </p>
+                <div class="wf-pricing-value-block">
+                  <div class="wf-pricing-value-row">
+                    <div class="wf-pricing-value-viewport">
+                      <div class="wf-pricing-value-stack" data-pricing-stack="pro" style="transform: translateY(0%);">
+                        <span class="wf-pricing-value">$49</span>
+                        <span class="wf-pricing-value">$39</span>
+                      </div>
+                    </div>
+                    <span class="wf-pricing-period">/month</span>
+                  </div>
+                  <p class="wf-pricing-billed">
+                    Billed
+                    <span class="wf-pricing-billed-label">monthly</span>
+                    , per workspace.
+                  </p>
+                </div>
+              </div>
+
+              <div class="wf-pricing-card-bottom">
+                <a class="wf-pricing-card-cta wf-pricing-card-cta--pro" href="#tenant-trial-cta">Upgrade to Pro</a>
+                <ul class="wf-pricing-list">
+                  <li>
+                    <span class="wf-pricing-list-dot wf-pricing-list-dot--pro" aria-hidden="true"></span>
+                    <span>Unlimited campaigns, segments, and reusable automations.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot wf-pricing-list-dot--pro" aria-hidden="true"></span>
+                    <span>Higher-volume outreach with deeper conversion reporting.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot wf-pricing-list-dot--pro" aria-hidden="true"></span>
+                    <span>Team roles, approval flow, and advanced campaign controls.</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="wf-pricing-card reveal" data-reveal-order="4">
+              <div class="wf-pricing-card-top">
+                <h3 class="wf-pricing-plan-name">Enterprise</h3>
+                <p class="wf-pricing-plan-copy">
+                  For multi-location organizations that need custom workflows, tighter governance, and priority support.
+                </p>
+                <div class="wf-pricing-value-block">
+                  <p class="wf-pricing-contact">Contact us</p>
+                  <p class="wf-pricing-contact-note">
+                    We will tailor pricing to your customer volume, security requirements, and rollout timeline.
+                  </p>
+                </div>
+              </div>
+
+              <div class="wf-pricing-card-bottom">
+                <a class="wf-pricing-card-cta" href="#tenant-trial-cta">Talk to Sales</a>
+                <ul class="wf-pricing-list">
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Unlimited workspaces, users, and customer records.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Compliance, security review, and dedicated onboarding support.</span>
+                  </li>
+                  <li>
+                    <span class="wf-pricing-list-dot" aria-hidden="true"></span>
+                    <span>Custom integrations, API access, and service-level agreements.</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="wf-center wf-pricing-details reveal" data-reveal-order="5">
+            <a class="wf-pricing-details-link" href="#faq">View all billing details</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="wf-section wf-bg-salmon">
+        <div class="wr-container--main">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">Simple process</p>
+            <h2 class="wr-h2 wf-heading-center">Our Solution Is Stupidly Simple to Use and Insanely Effective</h2>
+          </div>
+          <div class="wf-process-grid">
+            <article class="wr-card-process wr-card-process--orange reveal" data-reveal-order="1">
+              <div class="wr-pill-step">
+                <span class="wf-step-badge wf-step-badge--orange">1</span>
+                <span class="wr-pill-step__title">Connect Your Contacts</span>
+              </div>
+              <p class="wr-text-body">Import your existing list and map customer tags in a few clicks.</p>
+            </article>
+            <article class="wr-card-process wr-card-process--blue reveal" data-reveal-order="2">
+              <div class="wr-pill-step">
+                <span class="wf-step-badge wf-step-badge--blue">2</span>
+                <span class="wr-pill-step__title">Turn On Automations</span>
+              </div>
+              <p class="wr-text-body">Choose campaign templates for reminders, promos, and reactivation.</p>
+            </article>
+            <article class="wr-card-process wr-card-process--yellow reveal" data-reveal-order="3">
+              <div class="wr-pill-step">
+                <span class="wf-step-badge wf-step-badge--yellow">3</span>
+                <span class="wr-pill-step__title">Track Revenue Lift</span>
+              </div>
+              <p class="wr-text-body">Monitor campaign performance and optimize every week.</p>
+            </article>
+          </div>
+          <div class="wf-center reveal" data-reveal-order="4">
+            <div class="wf-email-cta" role="group" aria-label="Start in Under 10 Minutes email capture">
+              <label class="wf-visually-hidden" for="wf-email-process">Email address</label>
+              <input
+                class="wf-email-cta__input"
+                id="wf-email-process"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="name@email.com"
+              />
+              <a class="wf-email-cta__button" href="#tenant-trial-cta">Start in Under 10 Minutes</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="wf-section wf-bg-white">
+        <div class="wr-container--focus">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">FAQ</p>
+            <h2 class="wr-h2 wf-heading-center">Frequently Asked Questions</h2>
+          </div>
+          <div class="wf-faq-list">
+            <details class="wf-faq-item reveal" data-reveal-order="1" open>
+              <summary>How quickly can I launch my first campaign?</summary>
+              <p>Most teams launch in under one hour using prebuilt flows and templates.</p>
+            </details>
+            <details class="wf-faq-item reveal" data-reveal-order="2">
+              <summary>Can I import customers from my current tools?</summary>
+              <p>Yes. CSV import and common integrations are supported for fast migration.</p>
+            </details>
+            <details class="wf-faq-item reveal" data-reveal-order="3">
+              <summary>Will this work for multiple locations?</summary>
+              <p>Yes. You can segment by location and run local campaigns from one account.</p>
+            </details>
+            <details class="wf-faq-item reveal" data-reveal-order="4">
+              <summary>How do you handle opt-outs and compliance?</summary>
+              <p>Built-in consent handling and auto opt-out management are included by default.</p>
+            </details>
+            <details class="wf-faq-item reveal" data-reveal-order="5">
+              <summary>Do I need technical support to set this up?</summary>
+              <p>No. Setup is no-code and designed for operators, marketers, and founders.</p>
+            </details>
+            <details class="wf-faq-item reveal" data-reveal-order="6">
+              <summary>Can I measure actual revenue impact?</summary>
+              <p>Yes. Dashboard reports tie messages to bookings, visits, and attributed revenue.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="final-cta" class="wf-section wf-bg-dark wf-final-cta">
+        <div class="wr-container--focus wf-center reveal" data-reveal-order="0">
+          <h2 class="wr-h2 wf-heading-dark">Stop Losing Customers to Silence.</h2>
+          <p class="wf-dark-subtext">
+            Turn every customer interaction into repeat revenue with direct messaging you control.
+          </p>
+          <div class="wf-email-cta" role="group" aria-label="Get Your First Campaign Ready email capture">
+            <label class="wf-visually-hidden" for="wf-email-final">Email address</label>
+            <input
+              class="wf-email-cta__input"
+              id="wf-email-final"
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="name@email.com"
+            />
+            <a class="wf-email-cta__button" href="#tenant-trial-cta">Get Your First Campaign Ready</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="tenant-trial-cta" class="wf-section wf-bg-peach wf-tenant-section">
+        <div class="wr-container--focus">
+          <div class="wf-center reveal" data-reveal-order="0">
+            <p class="wf-eyebrow">30-Day Trial</p>
+            <h2 class="wr-h2 wf-heading-center">Start Your Tenant Trial in Minutes</h2>
+            <p class="wr-text-body wf-tenant-subtext">
+              Complete this quick form to launch your 30-day trial and start messaging your customers with sendPUSH | Loyaltymaster.
+            </p>
+          </div>
+
+          <form id="wf-tenant-trial-form" class="wf-tenant-form reveal" data-reveal-order="1">
+            <div class="wf-tenant-form-grid">
+              <div class="wf-tenant-field">
+                <label class="wf-tenant-label" for="wf-tenant-name">Full Name <span aria-hidden="true">*</span></label>
+                <input
+                  class="wf-tenant-input"
+                  id="wf-tenant-name"
+                  name="fullName"
+                  type="text"
+                  autocomplete="name"
+                  required
+                  placeholder="Jane Smith"
+                />
+              </div>
+
+              <div class="wf-tenant-field">
+                <label class="wf-tenant-label" for="wf-tenant-business">Business Name <span aria-hidden="true">*</span></label>
+                <input
+                  class="wf-tenant-input"
+                  id="wf-tenant-business"
+                  name="businessName"
+                  type="text"
+                  autocomplete="organization"
+                  required
+                  placeholder="Acme Wellness Studio"
+                />
+              </div>
+
+              <div class="wf-tenant-field">
+                <label class="wf-tenant-label" for="wf-tenant-email">Business Email <span aria-hidden="true">*</span></label>
+                <input
+                  class="wf-tenant-input"
+                  id="wf-tenant-email"
+                  name="businessEmail"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  placeholder="name@business.com"
+                />
+              </div>
+
+              <div class="wf-tenant-field">
+                <label class="wf-tenant-label" for="wf-tenant-location"
+                  >Business Location <span aria-hidden="true">*</span></label
+                >
+                <input
+                  class="wf-tenant-input"
+                  id="wf-tenant-location"
+                  name="businessLocation"
+                  type="text"
+                  autocomplete="address-level2"
+                  required
+                  placeholder="City, State, Country"
+                />
+              </div>
+
+              <div class="wf-tenant-field wf-tenant-field--full">
+                <label class="wf-tenant-label" for="wf-tenant-website">Business Website</label>
+                <input
+                  class="wf-tenant-input"
+                  id="wf-tenant-website"
+                  name="businessWebsite"
+                  type="url"
+                  autocomplete="url"
+                  placeholder="https://example.com"
+                  aria-describedby="wf-tenant-website-help"
+                />
+                <p class="wf-tenant-help" id="wf-tenant-website-help">
+                  Optional - include this if your business has a website.
+                </p>
+              </div>
+            </div>
+
+            <div class="wf-tenant-actions">
+              <button class="wf-tenant-submit" type="submit">Start 30-Day Trial</button>
+            </div>
+
+            <p class="wf-tenant-success" id="wf-tenant-form-success" aria-live="polite" tabindex="-1" hidden></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer" class="wf-site-footer wf-bg-white">
+      <div class="wr-container--main">
+        <div class="wf-footer-shell reveal" data-reveal-order="0">
+          <div class="wf-footer-grid">
+            <div class="wf-footer-brand reveal" data-reveal-order="1">
+              <div class="wf-footer-brand-mark">
+                <a class="wf-brand" href="#" aria-label="sendPUSH | Loyaltymaster home">
+                  <span class="wf-brand-dot" aria-hidden="true"></span>
+                  <span>sendPUSH | Loyaltymaster</span>
+                </a>
+              </div>
+              <p class="wf-footer-copy">
+                sendPUSH | Loyaltymaster helps local teams run reminders, offers, and follow-ups from one place.
+              </p>
+              <div class="wf-footer-social" aria-label="Social links">
+                <a class="wf-footer-social-link" href="#" aria-label="Follow sendPUSH | Loyaltymaster on Facebook">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a class="wf-footer-social-link" href="#" aria-label="Follow sendPUSH | Loyaltymaster on X">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 4l11.733 16h4.267l-11.733-16z"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4 20l6.768-6.768m2.46-2.46l6.772-6.772"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+                <a class="wf-footer-social-link" href="#" aria-label="Follow sendPUSH | Loyaltymaster on Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2.5"
+                      y="2.5"
+                      width="19"
+                      height="19"
+                      rx="5"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                    />
+                    <path
+                      d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="reveal" data-reveal-order="2">
+              <h3 class="wf-footer-heading">Product</h3>
+              <ul class="wf-footer-list">
+                <li><a class="wf-footer-link" href="#">Automated Campaigns</a></li>
+                <li><a class="wf-footer-link" href="#">Smart Reminders</a></li>
+                <li><a class="wf-footer-link" href="#">Audience Segments</a></li>
+                <li><a class="wf-footer-link" href="#">Performance Reports</a></li>
+                <li><a class="wf-footer-link" href="#">Integrations</a></li>
+              </ul>
+            </div>
+
+            <div class="reveal" data-reveal-order="3">
+              <h3 class="wf-footer-heading">Company</h3>
+              <ul class="wf-footer-list">
+                <li><a class="wf-footer-link" href="#">About sendPUSH | Loyaltymaster</a></li>
+                <li><a class="wf-footer-link" href="#">Customer Stories</a></li>
+                <li><a class="wf-footer-link" href="#">Partner Program</a></li>
+                <li><a class="wf-footer-link" href="#">Careers</a></li>
+                <li><a class="wf-footer-link" href="#">Blog</a></li>
+              </ul>
+            </div>
+
+            <div class="reveal" data-reveal-order="4">
+              <h3 class="wf-footer-heading">Contact</h3>
+              <ul class="wf-footer-list">
+                <li class="wf-footer-contact-item">
+                  <svg
+                    class="wf-footer-contact-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>(555) 123-4567</span>
+                </li>
+                <li class="wf-footer-contact-item">
+                  <svg
+                    class="wf-footer-contact-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.6" />
+                    <path
+                      d="M22 7l-10 5L2 7"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>admin@loyaltymaster.com</span>
+                </li>
+                <li class="wf-footer-contact-item">
+                  <svg
+                    class="wf-footer-contact-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.6" />
+                  </svg>
+                  <span>Plettenberg Bay, WC</span>
+                </li>
+              </ul>
+              <a class="wf-footer-cta" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M8 2v4m8-4v4"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.7" />
+                  <path
+                    d="M3 10h18"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span>Book a Demo</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="wf-footer-bottom reveal" data-reveal-order="5">
+            <p class="wf-footer-meta">© 2026 sendPUSH | Loyaltymaster. All rights reserved.</p>
+            <div class="wf-footer-legal">
+              <a class="wf-footer-legal-link" href="#">Privacy Policy</a>
+              <a class="wf-footer-legal-link" href="#">Terms of Service</a>
+              <a class="wf-footer-legal-link" href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <p id="wfThemeLive" class="wf-visually-hidden" aria-live="polite"></p>
+  </body>
+</html>

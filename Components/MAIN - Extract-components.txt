@@ -1,0 +1,183 @@
+# Extract Components — Loyaltymaster Design System Bootstrap
+
+You are Claude Code or Codex or Any other LLM AI System, working inside the Loyaltymaster design system repo. Your job is to extract components from existing Loyaltymaster code and produce one markdown spec file per component, following the canonical template.
+
+## Hard rules (read first, never break)
+
+1. **Never commit, push, or run git destructively.** Stage changes only if I ask.
+2. **Never overwrite an existing `components/*.md` file without showing me a diff and asking.**
+3. **Stop and wait for my approval after every phase.** Do not run all phases unattended.
+4. **If a path I give you doesn't exist, ask — do not guess.**
+5. **Markdown spec files contain no JSX or TSX code.** They describe components, they don't implement them.
+6. **Component names use PascalCase.** Filenames match: `PrimaryButton.md`, not `primary-button.md`.
+
+## Phase 0 — Confirm context
+
+Before doing anything else, confirm with me:
+
+- Path to this design system repo (default: current working directory)
+- Path to the **sendPUSH codebase** (the canonical source of truth — React/Vite, uses `--wr-*` / `--wf-*` CSS variables and `useRoute()`)
+- Whether `design.md`, `product.md`, and `agents.md` exist in this repo
+- If `agents.md` is missing, offer to create a starter version
+
+Show me what you found. Wait for me to say "go" before Phase 1.
+
+## Phase 1 — Read the foundation
+
+Read in full:
+
+- `./design.md`
+- `./product.md`
+- `./components/_template.md` if it exists
+- `./agents.md` if it exists
+
+Summarise back to me in 5 bullets: the brand voice, color system, type system, spacing system, and any explicit "never do this" rules you found. This is to confirm you understood the foundation before generating specs.
+
+Wait for me to confirm the summary is right.
+
+## Phase 2 — Discover components
+
+Scan the sendPUSH codebase. Look in:
+
+- `src/components/**/*.tsx`
+- `src/sections/**/*.tsx` if present
+- `src/pages/**/*.tsx` for inline JSX patterns that look component-shaped but aren't extracted yet
+
+For each candidate, capture:
+
+- File path
+- Current exported name(s)
+- Whether it's used in more than one page (signals reusability)
+- Which pages use it
+- Rough purpose (from JSX content + props)
+
+Output as a table:
+
+| Suggested name | Source file | Used in (pages) | Reuse count | Rough purpose |
+
+Suggest a canonical PascalCase name for each. If the existing component name is already good, keep it. If the existing name is too generic (e.g. `Card`), propose something more specific (`FeatureCard`, `PricingCard`).
+
+Wait for me to review the list, rename anything I want to rename, remove anything I don't want in the registry, and say "go" before Phase 3.
+
+## Phase 3 — Spec the first component (canonical example)
+
+Pick the **most central / most reused** component from the approved list (likely `PrimaryButton`, `HeroBlock`, or whatever I name).
+
+Generate the full spec file using `./components/_template.md` as the structure. Fill every field. For the rules sections (`allowed_in`, `blocked_in`, `allowed_pairings`, `blocked_pairings`, mobile rules, etc.):
+
+- Base initial rules on where the component **actually appears** in the sendPUSH codebase today
+- Flag any usage that looks accidental rather than intentional — do not silently encode accidents as rules
+- For the `screenshot:` field, use a placeholder path like `./assets/screenshots/PrimaryButton.png` and tell me to drop the file there later
+
+Show me the full file. Wait for me to review, edit, and approve before Phase 4. This is the single most important review — every other spec will copy this format.
+
+## Phase 4 — Spec the rest
+
+Once Phase 3 is approved, generate one spec file per remaining approved component, using Phase 3's spec as the format reference. For each:
+
+- Same structure, same YAML fields, same body sections
+- Initial rules drawn from actual code usage
+- Screenshot placeholder path
+- Flag anything ambiguous in a `## Open questions` section at the bottom of the file rather than guessing
+
+Write all files to `./components/{ComponentName}.md`. Do not overwrite anything that already exists without showing me a diff.
+
+## Phase 5 — Update the index
+
+Update or create `./components/_index.md` with a one-line summary of every component:
+
+````markdown
+# Component Index
+
+| Name | Purpose | Status | Version |
+|------|---------|--------|---------|
+| PrimaryButton | Main page-level action | approved | 1.0 |
+| HeroBlock | Top-of-page intro section | approved | 1.0 |
+| ...
+````
+
+## Phase 6 — Summary
+
+Output:
+
+- How many components were specced
+- Which ones have `## Open questions` flagged
+- Which screenshots I still need to drop into `./assets/screenshots/`
+- A 3-line suggestion of what to do next
+
+Do not commit. Tell me which `git add` / `git commit` commands I should run myself.
+
+---
+
+## Canonical spec template (use this exact structure for every component)
+
+When you create `./components/_template.md`, use this:
+
+````markdown
+---
+id: ComponentName
+version: 1.0
+status: approved          # approved | draft | deprecated
+domain: [sendpush, loyaltymaster, blog]   # which subdomains may use this
+screenshot: ./assets/screenshots/ComponentName.png
+source_file: src/components/ComponentName.tsx
+allowed_in:
+  - HeroBlock
+  - CTASection
+blocked_in:
+  - BlogParagraph
+  - FooterLinkGroup
+allowed_pairings:
+  - SecondaryButton
+blocked_pairings:
+  - PrimaryButton             # never two of the same in sequence
+props:
+  label: string (max 25 chars)
+  variant: "primary" | "primary-inverse"
+  size: "default" | "large"
+mobile:
+  full_width: only inside forms and stacked CTA blocks
+tags: [conversion, action, sendpush]
+---
+
+# ComponentName
+
+## Purpose
+One sentence describing what this component is for.
+
+## Visual rules
+- Background, text, radius, padding, font, hover, focus
+- Reference tokens from design.md, never invent values
+
+## Allowed use
+Where and when this component may appear. Be specific.
+
+## Blocked use
+Where and when this component must never appear. Be specific.
+
+## Allowed pairings
+Which components may appear directly adjacent or nested with this one.
+
+## Blocked pairings
+Which combinations are not allowed and why.
+
+## Mobile rules
+How the component behaves below the mobile breakpoint.
+
+## State rules
+Default, hover, focus, active, disabled, loading.
+
+## Good examples
+- Link or short description of an approved usage
+
+## Bad examples
+- Link or short description of a blocked usage and why it's wrong
+
+## Open questions
+Anything ambiguous that needs human decision before this spec is final.
+
+## Version history
+- v1.0 — YYYY-MM-DD — initial spec
+````
+
+Use this exact template. Do not add or remove top-level fields without telling me first.

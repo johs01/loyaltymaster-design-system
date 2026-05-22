@@ -1,0 +1,15 @@
+[Design System Tokens]
+- color-brand-primary: #FF5722 (used for buttons, links)
+- color-background: #FFFFFF (page background)
+- font-family: "Open Sans, 400"
+- spacing: scale by 4px (4, 8, 16, 32px, ...)
+
+[Components]
+- Button: props { variant: "primary|secondary", size: "sm|md|lg", disabled: boolean }.
+    * Primary button uses color-brand-primary with white text, padding 16px 32px.
+- Card: props { image, title, description }. Use for content blocks.
+...
+[Constraints] 
+- Use only the tokens and components above.
+- Responsive at breakpoints 640px, 1024px.
+- Accessibility: 4.5:1 contrast for text.

@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { padding: 16px 22px; gap:10px; }
+.field { flex:1; display:flex; flex-direction:column; gap:6px; }
+label { font-family: var(--wr-font-body); font-weight:700; font-size:13px; letter-spacing:-0.2px; color: var(--wr-ink); }
+.inp { background: var(--wr-bg-panel-light); border: 1px solid rgba(151,144,147,0.36); border-radius: 12px; padding: 12px 14px; font-family: var(--wr-font-body); font-size:15px; color:var(--wr-ink); }
+.inp.err { border-color: #d94f3a; background: #fde8e4; }
+.err-msg { font-size: 11px; color: #d94f3a; font-weight: 500; }
+</style></head><body>
+<div class="field"><label>Business name</label><input class="inp" value="Riverfront Wellness"></div>
+<div class="field"><label>Email</label><input class="inp err" value="not-an-email"><span class="err-msg">Enter a valid email address.</span></div>
+</body></html>

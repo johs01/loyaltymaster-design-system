@@ -1,0 +1,76 @@
+---
+url: "https://impeccable.style/antipattern-examples/thick-border-cards"
+title: "Anti-Pattern: Left Border Accent Cards"
+---
+
+# Our Services
+
+Discover what we can do for your business
+
+🚀
+
+### Growth Strategy
+
+Accelerate your business growth with our proven strategies and expert guidance.
+
+Learn More
+
+💡
+
+### Innovation Lab
+
+Transform ideas into reality with our cutting-edge innovation services.
+
+Explore
+
+📊
+
+### Data Analytics
+
+Make data-driven decisions with our comprehensive analytics solutions.
+
+Get Started
+
+🎯
+
+### Marketing
+
+Reach your target audience effectively with our marketing expertise.
+
+Contact Us
+
+500+
+
+Clients
+
+98%
+
+Satisfaction
+
+24/7
+
+Support
+
+50+
+
+Countries
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+✦ side-tab accent border
+
+skipped heading level: <h1> "Our Services" followed by <h3> "Growth Strategy" (missing h2)
+
+◉×

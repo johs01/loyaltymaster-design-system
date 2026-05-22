@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { padding: 14px 22px; flex-direction:column; align-items:flex-start; gap:10px; }
+.row { display:flex; gap: 8px; align-items:center; width:100%; }
+.box { padding: 8px 12px; border-radius: 8px; background: var(--wr-bg-panel-gray); font-family: ui-monospace, Menlo, monospace; font-size:11px; color: var(--wr-ink);}
+.meta { color: var(--wr-text-muted); font-size:10px; }
+.bar { height: 8px; width: 100%; border-radius: 99px; background: var(--wr-bg-panel-gray); position:relative; overflow:hidden; }
+.fill { height: 100%; background: var(--wr-accent-orange); border-radius:99px; width: 40%; }
+</style></head><body>
+<div class="row"><span class="box">fast · 220ms</span><span class="box">base · 280ms</span><span class="box">reveal · 560ms</span></div>
+<div class="row"><span class="meta">easings →</span><span class="box">gentle (.2,.8,.2,1)</span><span class="box">standard (.4,0,.2,1)</span></div>
+<div class="bar"><div class="fill"></div></div>
+<span class="meta">reveal: opacity 0→1, translateY 24→0, stagger=order × 80ms</span>
+</body></html>

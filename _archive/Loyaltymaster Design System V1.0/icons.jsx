@@ -1,0 +1,26 @@
+// Inline SVG icon paths (Lucide-style, 1.7 stroke, rounded)
+const ICONS = {
+  bell: <><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></>,
+  wallet: <><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 11h18"/><circle cx="16" cy="15" r="1.2" fill="currentColor"/></>,
+  bolt: <path d="M13 2 3 14h9l-1 8 10-12h-9z"/>,
+  chart: <><path d="M3 20V10"/><path d="M9 20V4"/><path d="M15 20v-7"/><path d="M21 20v-4"/></>,
+  pin: <><path d="M12 22s7-7.6 7-13a7 7 0 0 0-14 0c0 5.4 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></>,
+  check: <path d="M4 12.5 9 17.5 20 6.5"/>,
+  arrow: <><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></>,
+  coffee: <><path d="M5 8h11v6a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 9h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 2v3M11 2v3"/></>,
+  scissors: <><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="m14.5 14.5 5.5 5.5"/><path d="M8.12 8.12 12 12"/></>,
+  pizza: <><path d="M14 8.5 12 4 4.5 6 4 8.5l9.5 9.5z"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="11" cy="13" r="1" fill="currentColor"/></>,
+  car: <><path d="M5 17h14M5 17a2 2 0 0 1-2-2v-2l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5v2a2 2 0 0 1-2 2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></>,
+  dumbbell: <><path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12"/></>,
+  shopping: <><path d="M5 7h14l-1.5 11a2 2 0 0 1-2 1.8h-7a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></>,
+  qr: <><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 17v4h-4M14 21v-4"/></>,
+  target: <><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></>,
+  layers: <><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></>,
+  zap: <path d="M13 2 3 14h9l-1 8 10-12h-9z"/>,
+  send: <><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></>,
+  spark: <><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></>,
+  lock: <><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></>,
+  apple: <path d="M16.5 12.5c0-2.7 2.2-4 2.3-4-1.3-1.8-3.2-2-3.9-2.1-1.7-.2-3.2.9-4.1.9s-2.2-.9-3.6-.9C5.3 6.5 3 8.1 3 11.5c0 1 .2 2 .5 3 .5 1.4 2.2 4.8 4 4.7 1 0 1.7-.7 3-.7s2 .7 3.1.7c1.8 0 3.4-3.4 3.9-4.8M14 4.6C14.7 3.8 15 2.8 15 2c-.9.1-2 .6-2.7 1.4-.6.7-1.2 1.7-1 2.6 1 .1 2-.5 2.7-1.4z"/>,
+  google: <><path d="M21 12c0 5-3.6 9-9 9s-9-4-9-9 4-9 9-9c2.5 0 4.6 1 6.2 2.5l-2.6 2.5C14.5 7 13.3 6.5 12 6.5c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5c2.6 0 4.5-1.5 5-3.5h-5V11h8.4c.1.4.1.8.1 1z"/></>,
+};
+window.ICONS = ICONS;

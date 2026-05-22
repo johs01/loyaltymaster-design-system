@@ -1,0 +1,236 @@
+/*
+ * Loyaltymaster canonical font runtime.
+ * Import before tokens.css and library/src/styles.css in rendered review apps.
+ */
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-ThinItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-ExtraLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-ExtraLightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Italic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-SemiboldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-ExtraBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-BlackItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/RodgerTest-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rodger Bold Placeholder";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("../assets/fonts/RodgerTest-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-100.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-200.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-600.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-700.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-800.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../assets/fonts/onest/Onest-900.ttf") format("truetype");
+}

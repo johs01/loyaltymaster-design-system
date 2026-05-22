@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { padding: 14px 22px; }
+.row { display:flex; gap: 8px; align-items: flex-end; flex-wrap:wrap; }
+.box { background: var(--wr-bg-panel-gray); display:flex; align-items:center; justify-content:center; color: var(--wr-ink); font-size: 11px; font-weight: 600; border: 1px solid rgba(151,144,147,0.22); }
+.meta { font-size: 10px; font-family: ui-monospace, Menlo, monospace; color: var(--wr-text-muted); margin-top: 8px; }
+</style></head><body>
+<div style="width:100%">
+  <div class="row">
+    <div class="box" style="width:44px;height:44px;border-radius:8px">8</div>
+    <div class="box" style="width:52px;height:52px;border-radius:12px">12</div>
+    <div class="box" style="width:62px;height:62px;border-radius:16px">16</div>
+    <div class="box" style="width:74px;height:74px;border-radius:20px">20</div>
+    <div class="box" style="width:90px;height:44px;border-radius:999px">pill 999</div>
+    <div class="box" style="width:14px;height:14px;border-radius:7px" title="brand dot"></div>
+  </div>
+  <p class="meta">radius tokens — 8 · 12 · 16 · 20 · pill — plus 7px brand-dot</p>
+</div>
+</body></html>
