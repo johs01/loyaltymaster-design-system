@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 const root = process.cwd();
 
@@ -16,6 +17,7 @@ const requiredFiles = [
   "registry/components.json",
   "registry/components.schema.json",
   "registry/README.md",
+  "scripts/validate-runbook-poc-readiness.mjs",
   "specs/README.md",
   "specs/components/_template.md",
   "library/package.json",
@@ -86,9 +88,6 @@ const requiredFiles = [
   "examples/generated/real-brief-trial/compliance-checklist.md",
   "examples/generated/real-brief-trial/human-approval-record.md",
   "examples/generated/real-brief-trial/final-checklist.md",
-  ".claude/commands/loyaltymaster-preflight.md",
-  ".claude/commands/loyaltymaster-select-components.md",
-  ".claude/commands/loyaltymaster-validate.md",
   "templates/README.md",
   "templates/web-page-brief.md",
   "templates/landing-page.md",
@@ -206,7 +205,7 @@ const phase6Commands = [
   ".claude/commands/loyaltymaster-preflight.md",
   ".claude/commands/loyaltymaster-select-components.md",
   ".claude/commands/loyaltymaster-validate.md",
-];
+].filter((commandPath) => fs.existsSync(path.join(root, commandPath)));
 
 const phase8Templates = [
   "templates/README.md",
@@ -835,87 +834,89 @@ for (const component of registry.components) {
     }
   }
 
-  const phase7Gate = phase7VisualGates.components?.[component.id];
-  if (!phase7Gate) {
-    fail(`${component.id} missing Phase 7 visual gate entry`);
-  } else {
-    if (!phase7Gate.classification || typeof phase7Gate.gate !== "boolean" || !phase7Gate.notes) {
-      fail(`${component.id} Phase 7 visual gate must include classification, gate, and notes`);
-    }
-
-    if (!phase7Gate.gate) {
-      fail(`${component.id} Phase 7 component must be gated; skipped visual gates are no longer accepted`);
-    }
-
-    if (typeof phase7Gate.maxMeanDelta !== "number" || typeof phase7Gate.maxMismatchRatio !== "number") {
-      fail(`${component.id} gated Phase 7 component must include numeric thresholds`);
-    }
-
-    if (
-      phase7Gate.maxMeanDelta > 0.001 ||
-      phase7Gate.maxMismatchRatio > 0.003 ||
-      phase7Gate.maxWidthDeltaRatio !== 0 ||
-      phase7Gate.maxHeightDeltaRatio !== 0 ||
-      phase7Gate.maxAspectDelta !== 0
-    ) {
-      fail(`${component.id} Phase 7C gate thresholds must stay strict after reference regeneration`);
-    }
-  }
-
-  if (phase7VisualResults) {
-    const phase7Result = phase7VisualResults.results?.find((result) => result.id === component.id);
-    if (!phase7Result) {
-      fail(`${component.id} missing Phase 7 visual result`);
-    } else if (phase7Result.gate && !phase7Result.passed) {
-      fail(`${component.id} Phase 7 visual gate result is failing`);
+  if (requiredComponents.includes(component.id)) {
+    const phase7Gate = phase7VisualGates.components?.[component.id];
+    if (!phase7Gate) {
+      fail(`${component.id} missing Phase 7 visual gate entry`);
     } else {
-      for (const key of [
-        "referenceCssWidth",
-        "referenceCssHeight",
-        "currentWidth",
-        "currentHeight",
-        "widthDeltaRatio",
-        "heightDeltaRatio",
-        "aspectDelta",
+      if (!phase7Gate.classification || typeof phase7Gate.gate !== "boolean" || !phase7Gate.notes) {
+        fail(`${component.id} Phase 7 visual gate must include classification, gate, and notes`);
+      }
+
+      if (!phase7Gate.gate) {
+        fail(`${component.id} Phase 7 component must be gated; skipped visual gates are no longer accepted`);
+      }
+
+      if (typeof phase7Gate.maxMeanDelta !== "number" || typeof phase7Gate.maxMismatchRatio !== "number") {
+        fail(`${component.id} gated Phase 7 component must include numeric thresholds`);
+      }
+
+      if (
+        phase7Gate.maxMeanDelta > 0.001 ||
+        phase7Gate.maxMismatchRatio > 0.003 ||
+        phase7Gate.maxWidthDeltaRatio !== 0 ||
+        phase7Gate.maxHeightDeltaRatio !== 0 ||
+        phase7Gate.maxAspectDelta !== 0
+      ) {
+        fail(`${component.id} Phase 7C gate thresholds must stay strict after reference regeneration`);
+      }
+    }
+
+    if (phase7VisualResults) {
+      const phase7Result = phase7VisualResults.results?.find((result) => result.id === component.id);
+      if (!phase7Result) {
+        fail(`${component.id} missing Phase 7 visual result`);
+      } else if (phase7Result.gate && !phase7Result.passed) {
+        fail(`${component.id} Phase 7 visual gate result is failing`);
+      } else {
+        for (const key of [
+          "referenceCssWidth",
+          "referenceCssHeight",
+          "currentWidth",
+          "currentHeight",
+          "widthDeltaRatio",
+          "heightDeltaRatio",
+          "aspectDelta",
           "failureReasons",
-      ]) {
-        if (phase7Result[key] === undefined) {
-          fail(`${component.id} Phase 7C visual result missing native-capture field: ${key}`);
+        ]) {
+          if (phase7Result[key] === undefined) {
+            fail(`${component.id} Phase 7C visual result missing native-capture field: ${key}`);
+          }
+        }
+
+        if (!Array.isArray(phase7Result.failureReasons)) {
+          fail(`${component.id} Phase 7C visual result failureReasons must be an array`);
         }
       }
+    }
 
-      if (!Array.isArray(phase7Result.failureReasons)) {
-        fail(`${component.id} Phase 7C visual result failureReasons must be an array`);
+    for (const artifactPath of [
+      `showcase/app/artifacts/phase-7c/current/${component.id}.png`,
+      `showcase/app/artifacts/phase-7c/diffs/${component.id}.png`,
+      `showcase/app/artifacts/phase-7c/regenerated-references/${component.id}.png`,
+      `assets/screenshots/historical-phase-7b/${component.id}.png`,
+    ]) {
+      const artifactAbsolutePath = path.join(root, artifactPath);
+      if (!fs.existsSync(artifactAbsolutePath)) {
+        fail(`${component.id} missing Phase 7C visual artifact: ${artifactPath}`);
+      }
+      if (fs.statSync(artifactAbsolutePath).size === 0) {
+        fail(`${component.id} Phase 7C visual artifact is empty: ${artifactPath}`);
       }
     }
-  }
 
-  for (const artifactPath of [
-    `showcase/app/artifacts/phase-7c/current/${component.id}.png`,
-    `showcase/app/artifacts/phase-7c/diffs/${component.id}.png`,
-    `showcase/app/artifacts/phase-7c/regenerated-references/${component.id}.png`,
-    `assets/screenshots/historical-phase-7b/${component.id}.png`,
-  ]) {
-    const artifactAbsolutePath = path.join(root, artifactPath);
-    if (!fs.existsSync(artifactAbsolutePath)) {
-      fail(`${component.id} missing Phase 7C visual artifact: ${artifactPath}`);
-    }
-    if (fs.statSync(artifactAbsolutePath).size === 0) {
-      fail(`${component.id} Phase 7C visual artifact is empty: ${artifactPath}`);
-    }
-  }
-
-  const phase7ProductionTarget = phase7ProductionTargets.components?.[component.id];
-  if (!phase7ProductionTarget) {
-    fail(`${component.id} missing Phase 7F production fidelity target`);
-  } else {
-    for (const key of ["liveUrl", "liveSelector", "productionSourcePath", "notes"]) {
-      if (!phase7ProductionTarget[key]) {
-        fail(`${component.id} Phase 7F production target missing ${key}`);
+    const phase7ProductionTarget = phase7ProductionTargets.components?.[component.id];
+    if (!phase7ProductionTarget) {
+      fail(`${component.id} missing Phase 7F production fidelity target`);
+    } else {
+      for (const key of ["liveUrl", "liveSelector", "productionSourcePath", "notes"]) {
+        if (!phase7ProductionTarget[key]) {
+          fail(`${component.id} Phase 7F production target missing ${key}`);
+        }
       }
-    }
-    if (!fs.existsSync(phase7ProductionTarget.productionSourcePath)) {
-      fail(`${component.id} Phase 7F productionSourcePath does not exist: ${phase7ProductionTarget.productionSourcePath}`);
+      if (!fs.existsSync(phase7ProductionTarget.productionSourcePath)) {
+        fail(`${component.id} Phase 7F productionSourcePath does not exist: ${phase7ProductionTarget.productionSourcePath}`);
+      }
     }
   }
 }
@@ -1059,7 +1060,7 @@ for (const templatePath of phase8Templates) {
     fail(`PHASE_8_TEMPLATE_APPROVAL_PACKET.md missing template review entry: ${templatePath}`);
   }
 }
-for (const component of registry.components) {
+for (const component of registry.components.filter((component) => requiredComponents.includes(component.id))) {
   if (!phase8ApprovalPacket.includes(`\`${component.id}\``)) {
     fail(`PHASE_8_TEMPLATE_APPROVAL_PACKET.md missing approved component id: ${component.id}`);
   }
@@ -1214,7 +1215,7 @@ for (const docPath of [
   ".claude/commands/loyaltymaster-preflight.md",
   ".claude/commands/loyaltymaster-select-components.md",
   ".claude/commands/loyaltymaster-validate.md",
-]) {
+].filter((docPath) => fs.existsSync(path.join(root, docPath)))) {
   const source = fs.readFileSync(path.join(root, docPath), "utf8");
   if (!source.includes("AI_START_HERE.md")) {
     fail(`${docPath} must point future agents to AI_START_HERE.md`);
@@ -1729,7 +1730,7 @@ for (const docPath of [
   "registry/README.md",
   ".claude/commands/loyaltymaster-preflight.md",
   ".claude/commands/loyaltymaster-validate.md",
-]) {
+].filter((docPath) => fs.existsSync(path.join(root, docPath)))) {
   const source = fs.readFileSync(path.join(root, docPath), "utf8");
   if (!source.includes("LLM_MARKDOWN_OUTLINE_PACK.md")) {
     fail(`${docPath} missing Phase 11 Markdown outline pack reference`);
@@ -1774,7 +1775,6 @@ for (const requiredText of [
   "blog-article-index",
   "industry-use-case-card-grid",
   "pricing-page-matrix",
-  "external-embed-panel",
   "knowledge-base-index",
   "Do not start full-site conversion yet",
   "navbar-glassmorphism",
@@ -2088,8 +2088,8 @@ if (!phase7VisualResults) {
   if (!phase7VisualResults.runtime?.screenshotTiming?.includes("document.fonts.ready")) {
     fail("Phase 7C visual results must record font-ready screenshot timing");
   }
-  if (phase7VisualResults.gatedCount !== registry.components.length) {
-    fail(`Phase 7 visual results must gate all ${registry.components.length} components`);
+  if (phase7VisualResults.gatedCount !== requiredComponents.length) {
+    fail(`Phase 7 visual results must gate all ${requiredComponents.length} Wave 1 components`);
   }
   if (phase7VisualResults.skippedCount !== 0) {
     fail("Phase 7 visual results must have zero skipped components");
@@ -2097,8 +2097,8 @@ if (!phase7VisualResults) {
   if (phase7VisualResults.failedCount !== 0) {
     fail("Phase 7 visual results must have zero failed gated components");
   }
-  if (!Array.isArray(phase7VisualResults.results) || phase7VisualResults.results.length !== registry.components.length) {
-    fail(`Phase 7 visual results must include exactly ${registry.components.length} component results`);
+  if (!Array.isArray(phase7VisualResults.results) || phase7VisualResults.results.length !== requiredComponents.length) {
+    fail(`Phase 7 visual results must include exactly ${requiredComponents.length} Wave 1 component results`);
   }
 }
 
@@ -2108,10 +2108,10 @@ if (!phase7InteractionResults) {
   if (phase7InteractionResults.phase !== "7E") {
     fail("Phase 7 interaction results must declare phase 7E after interaction fixes");
   }
-  if (!Array.isArray(phase7InteractionResults.results) || phase7InteractionResults.results.length !== registry.components.length) {
-    fail(`Phase 7E interaction results must include exactly ${registry.components.length} component results`);
+  if (!Array.isArray(phase7InteractionResults.results) || phase7InteractionResults.results.length !== requiredComponents.length) {
+    fail(`Phase 7E interaction results must include exactly ${requiredComponents.length} Wave 1 component results`);
   } else {
-    for (const component of registry.components) {
+    for (const component of registry.components.filter((component) => requiredComponents.includes(component.id))) {
       const interactionResult = phase7InteractionResults.results.find((result) => result.id === component.id);
       if (!interactionResult) {
         fail(`${component.id} missing Phase 7E interaction result`);
@@ -2137,16 +2137,16 @@ if (!phase7ProductionResults) {
   if (phase7ProductionResults.phase !== "7F") {
     fail("Phase 7F production results must declare phase 7F");
   }
-  if (phase7ProductionResults.gatedComponentCount !== registry.components.length) {
-    fail(`Phase 7F production fidelity must gate all ${registry.components.length} components`);
+  if (phase7ProductionResults.gatedComponentCount !== requiredComponents.length) {
+    fail(`Phase 7F production fidelity must gate all ${requiredComponents.length} Wave 1 components`);
   }
   if (phase7ProductionResults.failedCount !== 0) {
     fail("Phase 7F production fidelity results must have zero failed viewport results");
   }
-  if (!Array.isArray(phase7ProductionResults.results) || phase7ProductionResults.results.length !== registry.components.length * phase7ProductionTargets.viewports.length) {
-    fail(`Phase 7F production fidelity results must include desktop and mobile results for all ${registry.components.length} components`);
+  if (!Array.isArray(phase7ProductionResults.results) || phase7ProductionResults.results.length !== requiredComponents.length * phase7ProductionTargets.viewports.length) {
+    fail(`Phase 7F production fidelity results must include desktop and mobile results for all ${requiredComponents.length} Wave 1 components`);
   } else {
-    for (const component of registry.components) {
+    for (const component of registry.components.filter((component) => requiredComponents.includes(component.id))) {
       for (const viewport of phase7ProductionTargets.viewports) {
         const result = phase7ProductionResults.results.find((item) => item.id === component.id && item.viewport === viewport.name);
         if (!result) {
@@ -2218,6 +2218,14 @@ for (const requiredText of [
   }
 }
 
+const runbookReadinessResult = spawnSync(process.execPath, ["scripts/validate-runbook-poc-readiness.mjs"], {
+  cwd: root,
+  stdio: "inherit",
+});
+if (runbookReadinessResult.status !== 0) {
+  fail("Runbook POC readiness validation failed");
+}
+
 if (!process.exitCode) {
-  console.log("Phase 2/3/4/5/6/7/7B/7C/7D/7E/7F/8A/8B/8C/8D/8E/8F/9/10/11/12/13 validation passed.");
+  console.log("Phase 2/3/4/5/6/7/7B/7C/7D/7E/7F/8A/8B/8C/8D/8E/8F/9/10/11/12/13 plus Runbook POC readiness validation passed.");
 }

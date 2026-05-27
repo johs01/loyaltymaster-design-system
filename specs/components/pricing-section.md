@@ -2,7 +2,7 @@
 
 Component ID: `pricing-section`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `client`
 Category: `pricing-section`
 Library target: `library/src/components/PricingSection.tsx`
@@ -92,7 +92,25 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - Before using `pricing-section`, read this spec after reading `registry/components.json` and `tokens/design-tokens.json`.
 - Treat this file as the editable rule source. If a rule here changes, apply the changed rule to the next generated page or artifact.
-- Use `library/src/components/PricingSection.tsx` as the intended future import path once Phase 4 creates the clean library implementation.
+- Use `library/src/components/PricingSection.tsx` as the approved import path.
 - Never import from `Components/Pricing Section/Pricing Section.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `plans` (required): Approved plans content/input slot.
+- `defaultCadence` (optional): Approved defaultCadence content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="pricing-section"
+props:
+  # use only registry-approved props
+:::
+```

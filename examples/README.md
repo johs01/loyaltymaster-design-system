@@ -50,3 +50,7 @@ The Phase 10 real-brief trial is rendered at
 
 If a rule changes in a component spec, the next artifact must follow the
 changed rule even when an older example shows a previous usage.
+
+## Runbook POC Fixtures
+
+- examples/runbook-poc/ contains validation fixtures and diagnostic reports for the future Runbook A/B workflow. These are readiness tests, not final runbooks.

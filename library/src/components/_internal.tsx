@@ -28,6 +28,10 @@ export function ActionLink({ action, className }: { action: Action; className?: 
     );
   }
 
+  if (!action.onClick) {
+    return null;
+  }
+
   return (
     <button className={cn("wr-cta-join wf-btn", className)} type="button" onClick={action.onClick} aria-label={action.ariaLabel}>
       <span className="wr-cta-join__label">{action.label}</span>

@@ -2,7 +2,7 @@
 
 Component ID: `image-strip`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `media-section`
 Library target: `library/src/components/ImageStrip.tsx`
@@ -86,7 +86,24 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - Before using `image-strip`, read this spec after reading `registry/components.json` and `tokens/design-tokens.json`.
 - Treat this file as the editable rule source. If a rule here changes, apply the changed rule to the next generated page or artifact.
-- Use `library/src/components/ImageStrip.tsx` as the intended future import path once Phase 4 creates the clean library implementation.
+- Use `library/src/components/ImageStrip.tsx` as the approved import path.
 - Never import from `Components/Image Strip/Image Strip.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `images` (required): Approved images content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="image-strip"
+props:
+  # use only registry-approved props
+:::
+```

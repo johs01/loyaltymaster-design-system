@@ -131,6 +131,7 @@ approved templates and registry components before any TSX build.
 Run:
 
 ```bash
+node scripts/validate-runbook-poc-readiness.mjs
 node scripts/validate-phase2.mjs
 ```
 
@@ -157,3 +158,7 @@ For rendered template evidence, also run:
 ```bash
 cd showcase/app && npm run verify:templates
 ```
+
+## Runbook POC Readiness
+
+The registry is the authoritative component inventory for future Runbook A/B workflows. It currently covers 33 approved components, including the 13 promoted MagicPath handoff components. Runbooks must read this machine-readable registry instead of freezing component lists in prose.

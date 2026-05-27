@@ -2,7 +2,7 @@
 
 Component ID: `geo-fence-use-case`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `use-case-section`
 Library target: `library/src/components/GeoFenceUseCase.tsx`
@@ -91,7 +91,28 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - Before using `geo-fence-use-case`, read this spec after reading `registry/components.json` and `tokens/design-tokens.json`.
 - Treat this file as the editable rule source. If a rule here changes, apply the changed rule to the next generated page or artifact.
-- Use `library/src/components/GeoFenceUseCase.tsx` as the intended future import path once Phase 4 creates the clean library implementation.
+- Use `library/src/components/GeoFenceUseCase.tsx` as the approved import path.
 - Never import from `Components/Geo Fence Use Case/Geo Fence Use Case.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `heading` (optional): Approved heading content/input slot.
+- `body` (optional): Approved body content/input slot.
+- `bullets` (optional): Approved bullets content/input slot.
+- `image` (optional): Approved image content/input slot.
+- `action` (optional): Approved action content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="geo-fence-use-case"
+props:
+  # use only registry-approved props
+:::
+```

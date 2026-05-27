@@ -3,25 +3,65 @@
   "$id": "https://loyaltymaster.local/design-system/registry/components.schema.json",
   "title": "Loyaltymaster Component Registry",
   "type": "object",
-  "required": ["name", "version", "phase", "description", "rules", "components"],
+  "required": [
+    "name",
+    "version",
+    "phase",
+    "description",
+    "rules",
+    "components"
+  ],
   "additionalProperties": false,
   "properties": {
-    "$schema": { "type": "string" },
-    "name": { "type": "string" },
-    "version": { "type": "string" },
-    "phase": { "type": "string" },
-    "description": { "type": "string" },
+    "$schema": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "phase": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
     "rules": {
       "type": "object",
-      "required": ["sourceOfTruth", "doNotImportRawSnapshots", "libraryStatus", "defaultStack", "defaultClientBoundary", "interactiveComponentsDeclareClientBoundary"],
+      "required": [
+        "sourceOfTruth",
+        "doNotImportRawSnapshots",
+        "libraryStatus",
+        "defaultStack",
+        "defaultClientBoundary",
+        "interactiveComponentsDeclareClientBoundary"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sourceOfTruth": { "type": "string" },
-        "doNotImportRawSnapshots": { "type": "boolean" },
-        "libraryStatus": { "type": "string" },
-        "defaultStack": { "type": "string" },
-        "defaultClientBoundary": { "type": "string", "enum": ["server", "client"] },
-        "interactiveComponentsDeclareClientBoundary": { "type": "boolean" }
+        "sourceOfTruth": {
+          "type": "string"
+        },
+        "doNotImportRawSnapshots": {
+          "type": "boolean"
+        },
+        "libraryStatus": {
+          "type": "string"
+        },
+        "defaultStack": {
+          "type": "string"
+        },
+        "defaultClientBoundary": {
+          "type": "string",
+          "enum": [
+            "server",
+            "client"
+          ]
+        },
+        "interactiveComponentsDeclareClientBoundary": {
+          "type": "boolean"
+        }
       }
     },
     "components": {
@@ -43,30 +83,125 @@
           "rawSourcePath",
           "libraryPath",
           "tokensUsed",
-          "props"
+          "props",
+          "variants",
+          "slots",
+          "visualReferencePath",
+          "evidencePath",
+          "markdownCallSyntax"
         ],
         "additionalProperties": false,
         "properties": {
-          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
-          "name": { "type": "string" },
-          "category": { "type": "string" },
-          "status": { "type": "string", "enum": ["raw-snapshot", "planned", "stable", "deprecated"] },
-          "clientBoundary": { "type": "string", "enum": ["server", "client"] },
-          "description": { "type": "string" },
-          "whenToUse": { "type": "string" },
-          "whenNotToUse": { "type": "string" },
-          "screenshotPath": { "type": "string" },
-          "specPath": { "type": "string" },
-          "rawSourcePath": { "type": "string" },
-          "libraryPath": { "type": "string" },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "raw-snapshot",
+              "planned",
+              "stable",
+              "deprecated"
+            ]
+          },
+          "clientBoundary": {
+            "type": "string",
+            "enum": [
+              "server",
+              "client"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "whenToUse": {
+            "type": "string"
+          },
+          "whenNotToUse": {
+            "type": "string"
+          },
+          "screenshotPath": {
+            "type": "string"
+          },
+          "specPath": {
+            "type": "string"
+          },
+          "rawSourcePath": {
+            "type": "string"
+          },
+          "libraryPath": {
+            "type": "string"
+          },
           "tokensUsed": {
             "type": "array",
             "minItems": 1,
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "props": {
             "type": "object",
             "description": "JSON Schema object describing the future component props."
+          },
+          "variants": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "description"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "slots": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "required",
+                "description"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "visualReferencePath": {
+            "type": "string"
+          },
+          "evidencePath": {
+            "type": "string"
+          },
+          "markdownCallSyntax": {
+            "type": "string"
           }
         }
       }

@@ -2,7 +2,7 @@
 
 Component ID: `component-id`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 
 ## Purpose
 
@@ -20,6 +20,14 @@ State the component's job in one or two sentences.
 
 List the approved props and required fields. Do not add props without updating
 `registry/components.json` and the future library implementation.
+
+## Variants
+
+List every approved variant. Mark default explicitly.
+
+## Slots
+
+List every approved content, media, action, and children slot.
 
 ## States
 
@@ -50,6 +58,10 @@ may not be paired with.
 ## Design Rules
 
 Document the visual rules that keep this component on brand.
+
+## Markdown Call Syntax
+
+Provide the strict markdown component call syntax for layout outlines.
 
 ## AI Usage Contract
 
