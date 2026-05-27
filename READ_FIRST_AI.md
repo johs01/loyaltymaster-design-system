@@ -104,7 +104,9 @@ brand rules, tokens, approved components, and workflow.
   output.
 - `/.claude/commands/` contains repeatable AI workflow commands for preflight,
   component selection, and validation.
-- `/Components/` is raw snapshot reference only. Do not import from it.
+- `/Components/` is the approved component reference and visual handoff
+  inventory. Do not import runtime page code directly from it unless a later
+  implementation task explicitly promotes that code.
 - `_archive/` is historical material only. Do not import from it.
 - `RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/` is a production
   replica and stays untouched until a later production-adoption phase.

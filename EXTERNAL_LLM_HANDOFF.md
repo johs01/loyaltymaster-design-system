@@ -34,9 +34,10 @@ Never edit, import from, or copy runtime code from:
 
 - `/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION`
 - `RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/`
-- `/Components/`
+- `/Components/` when building runtime page code
 
-These are reference sources only. The canonical implementation is
+`/Components/` is the approved component reference and visual handoff
+inventory. The canonical implementation for current runtime imports is
 `library/src/components/`.
 
 ## Generated Proof Packages

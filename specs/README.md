@@ -26,11 +26,13 @@ using that component and apply the changed rule.
 - `tokens/design-tokens.json` answers which design values may be used.
 - `showcase/app/scripts/phase7f-production-targets.json` answers which live
   sendPUSH runtime target a component must match before production adoption.
-- `/Components/` is raw snapshot reference only and must not be imported from.
+- `/Components/` is approved component reference and visual handoff inventory;
+  runtime page code must still import from the clean library unless a later
+  implementation task explicitly promotes a handoff.
 
 ## Global Prohibitions
 
-- Do not import from `/Components/`.
+- Do not import runtime page code from `/Components/`.
 - Do not invent visual variants without approval.
 - Do not introduce unapproved colors, radii, shadows, spacing, motion, or type
   styles.

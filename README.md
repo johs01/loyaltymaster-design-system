@@ -25,7 +25,7 @@ Read these files first:
 - `specs/` - component and design-system specifications.
 - `templates/` - approved brief, outline, and compliance templates.
 - `examples/` - generated examples and proof packages.
-- `Components/` - raw component reference snapshots.
+- `Components/` - approved component reference snapshots and visual handoff archives.
 - `assets/` - visual references and design assets.
 - `RAW/` - source material and production reference exports.
 - `_archive/` - historical design-system reference material.

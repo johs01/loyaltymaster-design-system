@@ -96,7 +96,8 @@ approved templates and registry components before any TSX build.
 ## Rules
 
 - AI tools must request components by `id` or `name` from `components.json`.
-- Do not import from `/Components/`; it is raw snapshot reference only.
+- Do not import runtime page code from `/Components/`; it is approved reference
+  and visual handoff inventory.
 - Import implementation code from the current `libraryPath`.
 - Use `showcase/app` to review live renders beside approved screenshots.
 - Check the Phase 7C visual classification before claiming a component is

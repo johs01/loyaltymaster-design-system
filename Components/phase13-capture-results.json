@@ -1,0 +1,262 @@
+{
+  "phase": "13",
+  "capturedAt": "2026-05-22T13:26:02.911Z",
+  "results": [
+    {
+      "folder": "Article Body",
+      "url": "https://loyaltymaster.com/about-us/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 671828,
+      "path": "Components/Article Body/screenshots/about-us-desktop.png"
+    },
+    {
+      "folder": "Article Body",
+      "url": "https://loyaltymaster.com/about-us/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 75953,
+      "path": "Components/Article Body/screenshots/about-us-mobile.png"
+    },
+    {
+      "folder": "Article Body",
+      "url": "https://loyaltymaster.com/what-is-electronic-rewards/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 256234,
+      "path": "Components/Article Body/screenshots/what-is-electronic-rewards-desktop.png"
+    },
+    {
+      "folder": "Article Body",
+      "url": "https://loyaltymaster.com/what-is-electronic-rewards/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 121574,
+      "path": "Components/Article Body/screenshots/what-is-electronic-rewards-mobile.png"
+    },
+    {
+      "folder": "Legal Document Body",
+      "url": "https://loyaltymaster.com/privacy-policy/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 226848,
+      "path": "Components/Legal Document Body/screenshots/privacy-policy-desktop.png"
+    },
+    {
+      "folder": "Legal Document Body",
+      "url": "https://loyaltymaster.com/privacy-policy/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 85522,
+      "path": "Components/Legal Document Body/screenshots/privacy-policy-mobile.png"
+    },
+    {
+      "folder": "Legal Document Body",
+      "url": "https://loyaltymaster.com/terms-of-use/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 292737,
+      "path": "Components/Legal Document Body/screenshots/terms-of-use-desktop.png"
+    },
+    {
+      "folder": "Legal Document Body",
+      "url": "https://loyaltymaster.com/terms-of-use/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 88252,
+      "path": "Components/Legal Document Body/screenshots/terms-of-use-mobile.png"
+    },
+    {
+      "folder": "Contact Form Section",
+      "url": "https://loyaltymaster.com/contact-us/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 99502,
+      "path": "Components/Contact Form Section/screenshots/contact-us-desktop.png"
+    },
+    {
+      "folder": "Contact Form Section",
+      "url": "https://loyaltymaster.com/contact-us/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 59392,
+      "path": "Components/Contact Form Section/screenshots/contact-us-mobile.png"
+    },
+    {
+      "folder": "Newsletter Signup Section",
+      "url": "https://loyaltymaster.com/join-email-newsletter-form/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 141982,
+      "path": "Components/Newsletter Signup Section/screenshots/join-email-newsletter-form-desktop.png"
+    },
+    {
+      "folder": "Newsletter Signup Section",
+      "url": "https://loyaltymaster.com/join-email-newsletter-form/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 74547,
+      "path": "Components/Newsletter Signup Section/screenshots/join-email-newsletter-form-mobile.png"
+    },
+    {
+      "folder": "Booking Demo Request Section",
+      "url": "https://loyaltymaster.com/book-a-virtual-meeting/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 366766,
+      "path": "Components/Booking Demo Request Section/screenshots/book-a-virtual-meeting-desktop.png"
+    },
+    {
+      "folder": "Booking Demo Request Section",
+      "url": "https://loyaltymaster.com/book-a-virtual-meeting/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 76587,
+      "path": "Components/Booking Demo Request Section/screenshots/book-a-virtual-meeting-mobile.png"
+    },
+    {
+      "folder": "Branded Card Application Form",
+      "url": "https://loyaltymaster.com/get-your-own-customized-digital-reward-card/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 599502,
+      "path": "Components/Branded Card Application Form/screenshots/get-your-own-customized-digital-reward-card-desktop.png"
+    },
+    {
+      "folder": "Branded Card Application Form",
+      "url": "https://loyaltymaster.com/get-your-own-customized-digital-reward-card/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 100945,
+      "path": "Components/Branded Card Application Form/screenshots/get-your-own-customized-digital-reward-card-mobile.png"
+    },
+    {
+      "folder": "Thank You Confirmation Section",
+      "url": "https://loyaltymaster.com/thank-you-page-branded-card-application/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 572265,
+      "path": "Components/Thank You Confirmation Section/screenshots/thank-you-page-branded-card-application-desktop.png"
+    },
+    {
+      "folder": "Thank You Confirmation Section",
+      "url": "https://loyaltymaster.com/thank-you-page-branded-card-application/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 68425,
+      "path": "Components/Thank You Confirmation Section/screenshots/thank-you-page-branded-card-application-mobile.png"
+    },
+    {
+      "folder": "Thank You Confirmation Section",
+      "url": "https://loyaltymaster.com/thank-you-page-virtual-meeting/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 795161,
+      "path": "Components/Thank You Confirmation Section/screenshots/thank-you-page-virtual-meeting-desktop.png"
+    },
+    {
+      "folder": "Thank You Confirmation Section",
+      "url": "https://loyaltymaster.com/thank-you-page-virtual-meeting/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 81433,
+      "path": "Components/Thank You Confirmation Section/screenshots/thank-you-page-virtual-meeting-mobile.png"
+    },
+    {
+      "folder": "FAQ Index Search",
+      "url": "https://loyaltymaster.com/frequently-asked-questions-loyaltymaster/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 142226,
+      "path": "Components/FAQ Index Search/screenshots/frequently-asked-questions-loyaltymaster-desktop.png"
+    },
+    {
+      "folder": "FAQ Index Search",
+      "url": "https://loyaltymaster.com/frequently-asked-questions-loyaltymaster/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 55491,
+      "path": "Components/FAQ Index Search/screenshots/frequently-asked-questions-loyaltymaster-mobile.png"
+    },
+    {
+      "folder": "Blog Article Index",
+      "url": "https://loyaltymaster.com/blog/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 351475,
+      "path": "Components/Blog Article Index/screenshots/blog-desktop.png"
+    },
+    {
+      "folder": "Blog Article Index",
+      "url": "https://loyaltymaster.com/blog/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 167096,
+      "path": "Components/Blog Article Index/screenshots/blog-mobile.png"
+    },
+    {
+      "folder": "Industry Use Case Card Grid",
+      "url": "https://loyaltymaster.com/ideal-for/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 910161,
+      "path": "Components/Industry Use Case Card Grid/screenshots/ideal-for-desktop.png"
+    },
+    {
+      "folder": "Industry Use Case Card Grid",
+      "url": "https://loyaltymaster.com/ideal-for/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 146220,
+      "path": "Components/Industry Use Case Card Grid/screenshots/ideal-for-mobile.png"
+    },
+    {
+      "folder": "Pricing Page Matrix",
+      "url": "https://loyaltymaster.com/price-list/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 192615,
+      "path": "Components/Pricing Page Matrix/screenshots/price-list-desktop.png"
+    },
+    {
+      "folder": "Pricing Page Matrix",
+      "url": "https://loyaltymaster.com/price-list/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 62060,
+      "path": "Components/Pricing Page Matrix/screenshots/price-list-mobile.png"
+    },
+    {
+      "folder": "Knowledge Base Index",
+      "url": "https://loyaltymaster.com/encyclopedia/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 30365,
+      "path": "Components/Knowledge Base Index/screenshots/encyclopedia-desktop.png"
+    },
+    {
+      "folder": "Knowledge Base Index",
+      "url": "https://loyaltymaster.com/encyclopedia/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 26448,
+      "path": "Components/Knowledge Base Index/screenshots/encyclopedia-mobile.png"
+    },
+    {
+      "folder": "Coming Soon Section",
+      "url": "https://loyaltymaster.com/elementor-landing-page-143/",
+      "viewport": "desktop",
+      "status": 200,
+      "bytes": 50118,
+      "path": "Components/Coming Soon Section/screenshots/elementor-landing-page-143-desktop.png"
+    },
+    {
+      "folder": "Coming Soon Section",
+      "url": "https://loyaltymaster.com/elementor-landing-page-143/",
+      "viewport": "mobile",
+      "status": 200,
+      "bytes": 35458,
+      "path": "Components/Coming Soon Section/screenshots/elementor-landing-page-143-mobile.png"
+    }
+  ]
+}

@@ -122,6 +122,9 @@ const requiredFiles = [
   "PHASE_11_REPORT.md",
   "PHASE_12_CONVERSION_READINESS_AUDIT.md",
   "PHASE_12_REPORT.md",
+  "Components/README.md",
+  "Components/phase13-capture-results.json",
+  "PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md",
 ];
 
 const requiredComponents = [
@@ -490,6 +493,101 @@ const phase8GeneratedExamples = [
 ];
 
 const phase8DGeneratedExample = phase8GeneratedExamples[0];
+
+const phase13ApprovedComponents = [
+  {
+    folder: "Article Body",
+    proposedId: "article-body",
+    urls: [
+      "https://loyaltymaster.com/about-us/",
+      "https://loyaltymaster.com/what-is-electronic-rewards/",
+    ],
+    rejectedComponents: ["features-grid", "feature-section-2-column-image", "comparison-table"],
+  },
+  {
+    folder: "Legal Document Body",
+    proposedId: "legal-document-body",
+    urls: [
+      "https://loyaltymaster.com/privacy-policy/",
+      "https://loyaltymaster.com/terms-of-use/",
+    ],
+    rejectedComponents: ["features-grid", "comparison-table", "feature-section-2-column-image"],
+  },
+  {
+    folder: "Contact Form Section",
+    proposedId: "contact-form-section",
+    urls: ["https://loyaltymaster.com/contact-us/"],
+    rejectedComponents: ["cta-trial-full-form", "button-email", "cta-with-button-email"],
+  },
+  {
+    folder: "Newsletter Signup Section",
+    proposedId: "newsletter-signup-section",
+    urls: ["https://loyaltymaster.com/join-email-newsletter-form/"],
+    rejectedComponents: ["button-email", "cta-with-button-email", "cta-trial-full-form"],
+  },
+  {
+    folder: "Booking Demo Request Section",
+    proposedId: "booking-demo-request-section",
+    urls: ["https://loyaltymaster.com/book-a-virtual-meeting/"],
+    rejectedComponents: ["faq-accordion", "cta-with-button-email", "cta-trial-full-form"],
+  },
+  {
+    folder: "Branded Card Application Form",
+    proposedId: "branded-card-application-form",
+    urls: ["https://loyaltymaster.com/get-your-own-customized-digital-reward-card/"],
+    rejectedComponents: ["cta-trial-full-form", "cta-with-button-email", "features-grid"],
+  },
+  {
+    folder: "Thank You Confirmation Section",
+    proposedId: "thank-you-confirmation-section",
+    urls: [
+      "https://loyaltymaster.com/thank-you-page-branded-card-application/",
+      "https://loyaltymaster.com/thank-you-page-virtual-meeting/",
+    ],
+    rejectedComponents: ["testimonial-single", "cta-with-button-email", "features-grid"],
+  },
+  {
+    folder: "FAQ Index Search",
+    proposedId: "faq-index-search",
+    urls: ["https://loyaltymaster.com/frequently-asked-questions-loyaltymaster/"],
+    rejectedComponents: ["faq-accordion", "features-grid", "comparison-table"],
+  },
+  {
+    folder: "Blog Article Index",
+    proposedId: "blog-article-index",
+    urls: ["https://loyaltymaster.com/blog/"],
+    rejectedComponents: ["features-grid", "image-grid", "testimonials-grid"],
+  },
+  {
+    folder: "Industry Use Case Card Grid",
+    proposedId: "industry-use-case-card-grid",
+    urls: ["https://loyaltymaster.com/ideal-for/"],
+    rejectedComponents: ["features-grid", "image-grid", "geo-fence-use-case"],
+  },
+  {
+    folder: "Pricing Page Matrix",
+    proposedId: "pricing-page-matrix",
+    urls: ["https://loyaltymaster.com/price-list/"],
+    rejectedComponents: ["pricing-section", "billing-toggle-button", "comparison-table"],
+  },
+  {
+    folder: "Knowledge Base Index",
+    proposedId: "knowledge-base-index",
+    urls: ["https://loyaltymaster.com/encyclopedia/"],
+    rejectedComponents: ["features-grid", "faq-accordion", "image-grid"],
+  },
+  {
+    folder: "Coming Soon Section",
+    proposedId: "coming-soon-section",
+    urls: ["https://loyaltymaster.com/elementor-landing-page-143/"],
+    rejectedComponents: ["hero-main-section", "cta-with-button-email", "button-email"],
+  },
+];
+
+function phase13SlugFromUrl(url) {
+  const pathname = new URL(url).pathname.replace(/^\/+|\/+$/g, "") || "home";
+  return pathname.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase();
+}
 
 function fail(message) {
   console.error(`FAIL: ${message}`);
@@ -1754,6 +1852,162 @@ for (const requiredText of [
   }
 }
 
+const phase13RootReadme = fs.readFileSync(path.join(root, "Components/README.md"), "utf8");
+for (const requiredText of [
+  "single approved component inventory",
+  "Wave 1 production-extracted component snapshots",
+  "Approved MagicPath visual handoff archives",
+  "consumer-facing clean React component library",
+  "library/src/components",
+  "Article Body",
+  "Thank You Confirmation Section",
+]) {
+  if (!phase13RootReadme.includes(requiredText)) {
+    fail(`Components/README.md missing required Phase 13 rule: ${requiredText}`);
+  }
+}
+
+const phase13CaptureResults = readJson("Components/phase13-capture-results.json");
+if (phase13CaptureResults.phase !== "13") {
+  fail("Components/phase13-capture-results.json must declare phase 13");
+}
+if (!Array.isArray(phase13CaptureResults.results)) {
+  fail("Components/phase13-capture-results.json must include results array");
+}
+
+for (const draft of phase13ApprovedComponents) {
+  const folderPath = path.join(root, "Components", draft.folder);
+  if (!fs.existsSync(folderPath) || !fs.statSync(folderPath).isDirectory()) {
+    fail(`Missing Phase 13 approved component folder: Components/${draft.folder}`);
+    continue;
+  }
+
+  const requiredPhase13Files = [
+    "README.md",
+    "Source URLs.md",
+    "New Component Request.md",
+    "screenshots/desktop.png",
+    "screenshots/mobile.png",
+    "Production Ready/README.md",
+  ];
+
+  for (const fileName of requiredPhase13Files) {
+    const absolutePath = path.join(folderPath, fileName);
+    if (!fs.existsSync(absolutePath)) {
+      fail(`Components/${draft.folder} missing ${fileName}`);
+    } else if (fileName.endsWith(".png") && fs.statSync(absolutePath).size === 0) {
+      fail(`Components/${draft.folder}/${fileName} is empty`);
+    }
+  }
+
+  const readmePath = path.join(folderPath, "README.md");
+  const sourceUrlsPath = path.join(folderPath, "Source URLs.md");
+  const requestPath = path.join(folderPath, "New Component Request.md");
+  const readme = fs.readFileSync(readmePath, "utf8");
+  const sourceUrls = fs.readFileSync(sourceUrlsPath, "utf8");
+  const request = fs.readFileSync(requestPath, "utf8");
+  const combinedPhase13Text = `${readme}\n${sourceUrls}\n${request}`;
+
+  for (const requiredText of [
+    "Approval Status: Approved.",
+    "Request Status: Approved.",
+    draft.proposedId,
+    "templates/new-component-request.md",
+    "registry/components.json",
+    "tokens/design-tokens.json",
+    "specPath",
+    "libraryPath",
+    "screenshots/desktop.png",
+    "screenshots/mobile.png",
+  ]) {
+    if (!combinedPhase13Text.includes(requiredText)) {
+      fail(`Components/${draft.folder} missing required Phase 13 evidence: ${requiredText}`);
+    }
+  }
+
+  for (const forbiddenClaim of [
+    "Draft Status: Not approved for use.",
+    "Request Status: Draft - not approved for use.",
+    "not approved for LLM use",
+    "Do not use this draft component",
+    "This draft request does not approve implementation",
+  ]) {
+    if (combinedPhase13Text.includes(forbiddenClaim)) {
+      fail(`Components/${draft.folder} contains obsolete Phase 13 approval wording: ${forbiddenClaim}`);
+    }
+  }
+
+  for (const url of draft.urls) {
+    if (!combinedPhase13Text.includes(url)) {
+      fail(`Components/${draft.folder} missing source URL: ${url}`);
+    }
+
+    for (const viewport of ["desktop", "mobile"]) {
+      const screenshotPath = path.join(folderPath, "screenshots", `${phase13SlugFromUrl(url)}-${viewport}.png`);
+      if (!fs.existsSync(screenshotPath)) {
+        fail(`Components/${draft.folder} missing source-specific screenshot: screenshots/${phase13SlugFromUrl(url)}-${viewport}.png`);
+      } else if (fs.statSync(screenshotPath).size === 0) {
+        fail(`Components/${draft.folder} source-specific screenshot is empty: screenshots/${phase13SlugFromUrl(url)}-${viewport}.png`);
+      }
+
+      const result = phase13CaptureResults.results.find(
+        (item) => item.folder === draft.folder && item.url === url && item.viewport === viewport,
+      );
+      if (!result) {
+        fail(`Phase 13 capture results missing ${draft.folder} ${viewport} result for ${url}`);
+      } else {
+        if (result.status !== 200) {
+          fail(`Phase 13 capture result for ${draft.folder} ${viewport} returned HTTP ${result.status}`);
+        }
+        if (!result.bytes || result.bytes <= 0) {
+          fail(`Phase 13 capture result for ${draft.folder} ${viewport} has empty byte count`);
+        }
+      }
+    }
+  }
+
+  for (const rejectedId of draft.rejectedComponents) {
+    const rejectedComponent = registry.components.find((component) => component.id === rejectedId);
+    if (!rejectedComponent) {
+      fail(`Phase 13 approved component ${draft.folder} references unknown rejected component: ${rejectedId}`);
+      continue;
+    }
+
+    for (const requiredRejectedEvidence of [
+      rejectedComponent.id,
+      rejectedComponent.specPath,
+      rejectedComponent.libraryPath,
+    ]) {
+      if (!request.includes(requiredRejectedEvidence)) {
+        fail(`Components/${draft.folder}/New Component Request.md missing rejected-component evidence: ${requiredRejectedEvidence}`);
+      }
+    }
+  }
+}
+
+const phase13Report = fs.readFileSync(path.join(root, "PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md"), "utf8");
+for (const requiredText of [
+  "Components/",
+  "single approved",
+  "13",
+  "phase13-capture-results.json",
+  "desktop.png",
+  "mobile.png",
+  "MagicPath visual handoff archives",
+  "Phase 2/3/4/5/6/7/7B/7C/7D/7E/7F/8A/8B/8C/8D/8E/8F/9/10/11/12/13 validation passed.",
+  "Rating: 9/10",
+]) {
+  if (!phase13Report.includes(requiredText)) {
+    fail(`PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md missing required detail: ${requiredText}`);
+  }
+}
+
+for (const draft of phase13ApprovedComponents) {
+  if (!phase13Report.includes(draft.folder) || !phase13Report.includes(draft.proposedId)) {
+    fail(`PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md missing approved inventory entry: ${draft.folder}`);
+  }
+}
+
 const pricingSpec = fs.readFileSync(path.join(root, "specs/components/pricing-section.md"), "utf8");
 if (!pricingSpec.includes("Center the plan cards when the pricing recipe renders fewer than a full row")) {
   fail("pricing-section spec must document Phase 8C pricing card centering rule");
@@ -1965,5 +2219,5 @@ for (const requiredText of [
 }
 
 if (!process.exitCode) {
-  console.log("Phase 2/3/4/5/6/7/7B/7C/7D/7E/7F/8A/8B/8C/8D/8E/8F/9/10/11/12 validation passed.");
+  console.log("Phase 2/3/4/5/6/7/7B/7C/7D/7E/7F/8A/8B/8C/8D/8E/8F/9/10/11/12/13 validation passed.");
 }
