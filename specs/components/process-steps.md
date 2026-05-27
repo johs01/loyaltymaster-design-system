@@ -2,7 +2,7 @@
 
 Component ID: `process-steps`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `process-section`
 Library target: `library/src/components/ProcessSteps.tsx`
@@ -91,3 +91,20 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Process Steps/Process Steps.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `steps` (required): Approved steps content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="process-steps"
+props:
+  # use only registry-approved props
+:::
+```

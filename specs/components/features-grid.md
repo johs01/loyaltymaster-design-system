@@ -2,7 +2,7 @@
 
 Component ID: `features-grid`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `feature-section`
 Library target: `library/src/components/FeaturesGrid.tsx`
@@ -91,3 +91,20 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Features Grid/Features Grid.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `items` (required): Approved items content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="features-grid"
+props:
+  # use only registry-approved props
+:::
+```

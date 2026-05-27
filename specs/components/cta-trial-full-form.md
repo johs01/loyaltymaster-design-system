@@ -2,7 +2,7 @@
 
 Component ID: `cta-trial-full-form`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `client`
 Category: `conversion-section`
 Library target: `library/src/components/CtaTrialFullForm.tsx`
@@ -96,3 +96,22 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/CTA Trial Full Form/CTA Trial Full Form.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `heading` (optional): Approved heading content/input slot.
+- `submitLabel` (required): Approved submitLabel content/input slot.
+- `onSubmit` (required): Approved onSubmit content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="cta-trial-full-form"
+props:
+  # use only registry-approved props
+:::
+```

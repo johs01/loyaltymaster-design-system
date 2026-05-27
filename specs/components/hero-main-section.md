@@ -2,7 +2,7 @@
 
 Component ID: `hero-main-section`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `hero-section`
 Library target: `library/src/components/HeroMainSection.tsx`
@@ -98,3 +98,26 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Hero Main Section/Hero Main Section.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `eyebrow` (optional): Approved eyebrow content/input slot.
+- `heading` (required): Approved heading content/input slot.
+- `body` (optional): Approved body content/input slot.
+- `primaryAction` (required): Approved primaryAction content/input slot.
+- `emailPlaceholder` (optional): Approved emailPlaceholder content/input slot.
+- `emailButtonLabel` (optional): Approved emailButtonLabel content/input slot.
+- `showEmailCapture` (optional): Approved showEmailCapture content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="hero-main-section"
+props:
+  # use only registry-approved props
+:::
+```

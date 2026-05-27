@@ -20,6 +20,19 @@ import {
   StatsCardStrip,
   TestimonialSingle,
   TestimonialsGrid,
+  ArticleBody,
+  BlogArticleIndex,
+  BookingDemoRequestSection,
+  BrandedCardApplicationForm,
+  ComingSoonSection,
+  ContactFormSection,
+  FaqIndexSearch,
+  IndustryUseCaseCardGrid,
+  KnowledgeBaseIndex,
+  LegalDocumentBody,
+  NewsletterSignupSection,
+  PricingPageMatrix,
+  ThankYouConfirmationSection,
 } from "../../../library/src";
 import type { BillingCadence } from "../../../library/src";
 
@@ -371,4 +384,26 @@ export const specimens: ComponentSpecimen[] = [
       />
     ),
   },
+  {
+    id: "article-body",
+    render: () => (
+      <ArticleBody
+        title="What LoyaltyMaster Means for Repeat Business"
+        intro="A practical article body for story, explanation, and education pages."
+        image={placeholderImage}
+      />
+    ),
+  },
+  { id: "blog-article-index", render: () => <BlogArticleIndex /> },
+  { id: "booking-demo-request-section", render: () => <BookingDemoRequestSection /> },
+  { id: "branded-card-application-form", render: () => <BrandedCardApplicationForm /> },
+  { id: "coming-soon-section", render: () => <ComingSoonSection /> },
+  { id: "contact-form-section", render: () => <ContactFormSection /> },
+  { id: "faq-index-search", render: () => <FaqIndexSearch /> },
+  { id: "industry-use-case-card-grid", render: () => <IndustryUseCaseCardGrid /> },
+  { id: "knowledge-base-index", render: () => <KnowledgeBaseIndex /> },
+  { id: "legal-document-body", render: () => <LegalDocumentBody title="Privacy Policy" /> },
+  { id: "newsletter-signup-section", render: () => <NewsletterSignupSection /> },
+  { id: "pricing-page-matrix", render: () => <PricingPageMatrix /> },
+  { id: "thank-you-confirmation-section", render: () => <ThankYouConfirmationSection /> },
 ];

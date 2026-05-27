@@ -2,7 +2,7 @@
 
 Component ID: `button-email`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `client`
 Category: `conversion-control`
 Library target: `library/src/components/ButtonEmail.tsx`
@@ -96,3 +96,22 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Button Email/Button Email.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `placeholder` (optional): Approved placeholder content/input slot.
+- `buttonLabel` (required): Approved buttonLabel content/input slot.
+- `onSubmit` (required): Approved onSubmit content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="button-email"
+props:
+  # use only registry-approved props
+:::
+```

@@ -2,7 +2,7 @@
 
 Component ID: `testimonial-single`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `proof-section`
 Library target: `library/src/components/TestimonialSingle.tsx`
@@ -95,3 +95,25 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Testimonial Single/Testimonial Single.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `quote` (optional): Approved quote content/input slot.
+- `author` (optional): Approved author content/input slot.
+- `role` (optional): Approved role content/input slot.
+- `eyebrow` (optional): Approved eyebrow content/input slot.
+- `heading` (optional): Approved heading content/input slot.
+- `testimonials` (optional): Approved testimonials content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="testimonial-single"
+props:
+  # use only registry-approved props
+:::
+```

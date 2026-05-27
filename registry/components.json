@@ -1,23 +1,107 @@
 {
   "$schema": "./components.schema.json",
   "name": "Loyaltymaster Component Registry",
-  "version": "0.1.0",
-  "phase": "Phase 2",
-  "description": "Machine-readable registry for the 20 approved Wave 1 component snapshots. Clean library implementations are planned for Phase 4.",
+  "version": "0.2.0",
+  "phase": "Runbook POC readiness",
+  "description": "Machine-readable registry for the 33 approved LoyaltyMaster components: 20 Wave 1 library components plus 13 promoted MagicPath handoff components.",
   "rules": {
-    "sourceOfTruth": "Use /design-system-template-page and production Remy patterns as canonical. /Components is raw snapshot reference only.",
+    "sourceOfTruth": "Use registry/spec/library/showcase as canonical. /Components is approved evidence and handoff archive only.",
     "doNotImportRawSnapshots": true,
-    "libraryStatus": "planned",
+    "libraryStatus": "stable",
     "defaultStack": "Next.js 16 App Router, React 18, TypeScript 5.5, Tailwind 3",
     "defaultClientBoundary": "server",
     "interactiveComponentsDeclareClientBoundary": true
   },
   "components": [
     {
+      "id": "article-body",
+      "name": "Article Body",
+      "category": "content-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Long-form marketing, explainer, company story, and editorial body content with approved LoyaltyMaster prose rhythm.",
+      "whenToUse": "Use for narrative article, explainer, company story, and editorial pages that need readable body prose rather than cards or feature grids.",
+      "whenNotToUse": "Do not use for legal policies, searchable indexes, contact forms, or compact feature sections.",
+      "screenshotPath": "assets/screenshots/article-body.png",
+      "specPath": "specs/components/article-body.md",
+      "rawSourcePath": "Components/Article Body/Production Ready/ArticleBody.tsx",
+      "libraryPath": "library/src/components/ArticleBody.tsx",
+      "visualReferencePath": "assets/screenshots/article-body.png",
+      "evidencePath": "Components/Article Body",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"article-body\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "title",
+          "required": true,
+          "description": "Approved title slot for Article Body."
+        },
+        {
+          "name": "intro",
+          "required": false,
+          "description": "Approved intro slot for Article Body."
+        },
+        {
+          "name": "sections",
+          "required": false,
+          "description": "Approved sections slot for Article Body."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved image slot for Article Body."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action slot for Article Body."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "intro": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array"
+          },
+          "image": {
+            "type": "object"
+          },
+          "action": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
       "id": "billing-toggle-button",
       "name": "Billing Toggle Button",
       "category": "pricing-control",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Monthly/yearly billing toggle control for pricing sections.",
       "whenToUse": "Use when a pricing view needs a clear two-state billing cadence selector.",
@@ -52,13 +136,286 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/billing-toggle-button.md"
+      "specPath": "specs/components/billing-toggle-button.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "value",
+          "required": true,
+          "description": "Approved value content/input slot."
+        },
+        {
+          "name": "onChange",
+          "required": true,
+          "description": "Approved onChange content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/billing-toggle-button.png",
+      "evidencePath": "Components/Billing Toggle Button",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"billing-toggle-button\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "blog-article-index",
+      "name": "Blog Article Index",
+      "category": "index-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Blog and article collection index with approved cards, metadata, empty state, and archive navigation affordances.",
+      "whenToUse": "Use for blog, article archive, and editorial collection pages where repeated article cards need metadata and links.",
+      "whenNotToUse": "Do not use for knowledge-base categories, feature cards, testimonials, or industry use-case grids.",
+      "screenshotPath": "assets/screenshots/blog-article-index.png",
+      "specPath": "specs/components/blog-article-index.md",
+      "rawSourcePath": "Components/Blog Article Index/Production Ready/BlogArticleIndex.tsx",
+      "libraryPath": "library/src/components/BlogArticleIndex.tsx",
+      "visualReferencePath": "assets/screenshots/blog-article-index.png",
+      "evidencePath": "Components/Blog Article Index",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"blog-article-index\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Blog Article Index."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Blog Article Index."
+        },
+        {
+          "name": "articles",
+          "required": false,
+          "description": "Approved articles slot for Blog Article Index."
+        },
+        {
+          "name": "emptyMessage",
+          "required": false,
+          "description": "Approved emptyMessage slot for Blog Article Index."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "articles": {
+            "type": "array"
+          },
+          "emptyMessage": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "booking-demo-request-section",
+      "name": "Booking Demo Request Section",
+      "category": "conversion-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Demo or virtual meeting booking body section with scheduling action, expectation copy, and support notes.",
+      "whenToUse": "Use when the page asks visitors to book a demo, call, walkthrough, or virtual meeting.",
+      "whenNotToUse": "Do not use for trial signup, contact messages, newsletter capture, or generic email CTAs.",
+      "screenshotPath": "assets/screenshots/booking-demo-request-section.png",
+      "specPath": "specs/components/booking-demo-request-section.md",
+      "rawSourcePath": "Components/Booking Demo Request Section/Production Ready/BookingDemoRequestSection.tsx",
+      "libraryPath": "library/src/components/BookingDemoRequestSection.tsx",
+      "visualReferencePath": "assets/screenshots/booking-demo-request-section.png",
+      "evidencePath": "Components/Booking Demo Request Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"booking-demo-request-section\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Booking Demo Request Section."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Booking Demo Request Section."
+        },
+        {
+          "name": "expectations",
+          "required": false,
+          "description": "Approved expectations slot for Booking Demo Request Section."
+        },
+        {
+          "name": "bookingAction",
+          "required": false,
+          "description": "Approved bookingAction slot for Booking Demo Request Section."
+        },
+        {
+          "name": "embedLabel",
+          "required": false,
+          "description": "Approved embedLabel slot for Booking Demo Request Section."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "expectations": {
+            "type": "array"
+          },
+          "bookingAction": {
+            "type": "object"
+          },
+          "embedLabel": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "branded-card-application-form",
+      "name": "Branded Card Application Form",
+      "category": "conversion-form",
+      "status": "stable",
+      "clientBoundary": "client",
+      "description": "Branded digital reward card application form with proof copy and application-specific fields.",
+      "whenToUse": "Use for pages collecting branded-card application details and business card customization requests.",
+      "whenNotToUse": "Do not use for general contact, newsletter signup, trial signup, or booking requests.",
+      "screenshotPath": "assets/screenshots/branded-card-application-form.png",
+      "specPath": "specs/components/branded-card-application-form.md",
+      "rawSourcePath": "Components/Branded Card Application Form/Production Ready/BrandedCardApplicationForm.tsx",
+      "libraryPath": "library/src/components/BrandedCardApplicationForm.tsx",
+      "visualReferencePath": "assets/screenshots/branded-card-application-form.png",
+      "evidencePath": "Components/Branded Card Application Form",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"branded-card-application-form\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Branded Card Application Form."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Branded Card Application Form."
+        },
+        {
+          "name": "features",
+          "required": false,
+          "description": "Approved features slot for Branded Card Application Form."
+        },
+        {
+          "name": "fields",
+          "required": false,
+          "description": "Approved fields slot for Branded Card Application Form."
+        },
+        {
+          "name": "submitLabel",
+          "required": false,
+          "description": "Approved submitLabel slot for Branded Card Application Form."
+        },
+        {
+          "name": "onSubmit",
+          "required": false,
+          "description": "Approved onSubmit slot for Branded Card Application Form."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "features": {
+            "type": "array"
+          },
+          "fields": {
+            "type": "array"
+          },
+          "submitLabel": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "button-email",
       "name": "Button Email",
       "category": "conversion-control",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Email capture CTA shell pairing an email field with primary action.",
       "whenToUse": "Use for high-intent email capture moments inside hero, CTA, or testimonial sections.",
@@ -92,13 +449,115 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/button-email.md"
+      "specPath": "specs/components/button-email.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "placeholder",
+          "required": false,
+          "description": "Approved placeholder content/input slot."
+        },
+        {
+          "name": "buttonLabel",
+          "required": true,
+          "description": "Approved buttonLabel content/input slot."
+        },
+        {
+          "name": "onSubmit",
+          "required": true,
+          "description": "Approved onSubmit content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/button-email.png",
+      "evidencePath": "Components/Button Email",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"button-email\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "coming-soon-section",
+      "name": "Coming Soon Section",
+      "category": "status-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Coming-soon or maintenance page body pattern with status copy, launch note, and optional CTA.",
+      "whenToUse": "Use for approved coming-soon, maintenance, or temporary holding pages that still need LoyaltyMaster styling.",
+      "whenNotToUse": "Do not use for product heroes, pricing, article bodies, or full conversion forms.",
+      "screenshotPath": "assets/screenshots/coming-soon-section.png",
+      "specPath": "specs/components/coming-soon-section.md",
+      "rawSourcePath": "Components/Coming Soon Section/Production Ready/ComingSoonSection.tsx",
+      "libraryPath": "library/src/components/ComingSoonSection.tsx",
+      "visualReferencePath": "assets/screenshots/coming-soon-section.png",
+      "evidencePath": "Components/Coming Soon Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"coming-soon-section\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Coming Soon Section."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Coming Soon Section."
+        },
+        {
+          "name": "launchNote",
+          "required": false,
+          "description": "Approved launchNote slot for Coming Soon Section."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action slot for Coming Soon Section."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "launchNote": {
+            "type": "string"
+          },
+          "action": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "comparison-table",
       "name": "Comparison Table",
       "category": "proof-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Comparison section for positioning sendPUSH against less direct customer-reach channels.",
       "whenToUse": "Use when the page must explain why direct customer messaging is stronger than social-only reach.",
@@ -128,13 +587,134 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/comparison-table.md"
+      "specPath": "specs/components/comparison-table.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "rows",
+          "required": false,
+          "description": "Approved rows content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/comparison-table.png",
+      "evidencePath": "Components/Comparison Table",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"comparison-table\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "contact-form-section",
+      "name": "Contact Form Section",
+      "category": "conversion-form",
+      "status": "stable",
+      "clientBoundary": "client",
+      "description": "Contact page form with message fields, contact details, consent copy, and support routing.",
+      "whenToUse": "Use for contact-us pages that collect a message or route visitors to the right business contact path.",
+      "whenNotToUse": "Do not use for trial signup, branded-card applications, newsletter signup, or demo booking embeds.",
+      "screenshotPath": "assets/screenshots/contact-form-section.png",
+      "specPath": "specs/components/contact-form-section.md",
+      "rawSourcePath": "Components/Contact Form Section/Production Ready/ContactFormSection.tsx",
+      "libraryPath": "library/src/components/ContactFormSection.tsx",
+      "visualReferencePath": "assets/screenshots/contact-form-section.png",
+      "evidencePath": "Components/Contact Form Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"contact-form-section\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Contact Form Section."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Contact Form Section."
+        },
+        {
+          "name": "contactItems",
+          "required": false,
+          "description": "Approved contactItems slot for Contact Form Section."
+        },
+        {
+          "name": "fields",
+          "required": false,
+          "description": "Approved fields slot for Contact Form Section."
+        },
+        {
+          "name": "submitLabel",
+          "required": false,
+          "description": "Approved submitLabel slot for Contact Form Section."
+        },
+        {
+          "name": "consentText",
+          "required": false,
+          "description": "Approved consentText slot for Contact Form Section."
+        },
+        {
+          "name": "onSubmit",
+          "required": false,
+          "description": "Approved onSubmit slot for Contact Form Section."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "contactItems": {
+            "type": "array"
+          },
+          "fields": {
+            "type": "array"
+          },
+          "submitLabel": {
+            "type": "string"
+          },
+          "consentText": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "cta-trial-full-form",
       "name": "CTA Trial Full Form",
       "category": "conversion-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Full trial signup CTA with multiple labeled fields and validation-ready layout.",
       "whenToUse": "Use for final or dedicated trial conversion sections where the visitor is ready to submit details.",
@@ -168,13 +748,39 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/cta-trial-full-form.md"
+      "specPath": "specs/components/cta-trial-full-form.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "submitLabel",
+          "required": true,
+          "description": "Approved submitLabel content/input slot."
+        },
+        {
+          "name": "onSubmit",
+          "required": true,
+          "description": "Approved onSubmit content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/cta-trial-full-form.png",
+      "evidencePath": "Components/CTA Trial Full Form",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"cta-trial-full-form\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "cta-with-button-email",
       "name": "CTA with Button Email",
       "category": "conversion-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Compact CTA section with email capture and primary action.",
       "whenToUse": "Use near the end of a page for a direct conversion push without a full form.",
@@ -203,13 +809,39 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/cta-with-button-email.md"
+      "specPath": "specs/components/cta-with-button-email.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "buttonLabel",
+          "required": false,
+          "description": "Approved buttonLabel content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/cta-with-button-email.png",
+      "evidencePath": "Components/CTA with Button Email",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"cta-with-button-email\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "faq-accordion",
       "name": "FAQ Accordion",
       "category": "support-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Accessible accordion for frequently asked questions.",
       "whenToUse": "Use for common objections and practical setup questions.",
@@ -255,13 +887,110 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/faq-accordion.md"
+      "specPath": "specs/components/faq-accordion.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "items",
+          "required": true,
+          "description": "Approved items content/input slot."
+        },
+        {
+          "name": "defaultOpenIndex",
+          "required": false,
+          "description": "Approved defaultOpenIndex content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/faq-accordion.png",
+      "evidencePath": "Components/FAQ Accordion",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"faq-accordion\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "faq-index-search",
+      "name": "FAQ Index Search",
+      "category": "support-section",
+      "status": "stable",
+      "clientBoundary": "client",
+      "description": "Full FAQ index with search and category grouping for broad support pages.",
+      "whenToUse": "Use for searchable FAQ landing pages that need categories and multiple question groups.",
+      "whenNotToUse": "Do not use when a simple in-page objection section can use faq-accordion.",
+      "screenshotPath": "assets/screenshots/faq-index-search.png",
+      "specPath": "specs/components/faq-index-search.md",
+      "rawSourcePath": "Components/FAQ Index Search/Production Ready/FAQIndexSearch.tsx",
+      "libraryPath": "library/src/components/FaqIndexSearch.tsx",
+      "visualReferencePath": "assets/screenshots/faq-index-search.png",
+      "evidencePath": "Components/FAQ Index Search",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"faq-index-search\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for FAQ Index Search."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for FAQ Index Search."
+        },
+        {
+          "name": "categories",
+          "required": false,
+          "description": "Approved categories slot for FAQ Index Search."
+        },
+        {
+          "name": "searchPlaceholder",
+          "required": false,
+          "description": "Approved searchPlaceholder slot for FAQ Index Search."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "categories": {
+            "type": "array"
+          },
+          "searchPlaceholder": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "feature-section-2-column-bullets-image",
       "name": "Feature Section 2 Column Bullets Image",
       "category": "feature-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Two-column feature section with bullets and an image/visual container.",
       "whenToUse": "Use for one clear use case that benefits from a short checklist and visual proof.",
@@ -300,13 +1029,44 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/feature-section-2-column-bullets-image.md"
+      "specPath": "specs/components/feature-section-2-column-bullets-image.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "bullets",
+          "required": true,
+          "description": "Approved bullets content/input slot."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved image content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/feature-section-2-column-bullets-image.png",
+      "evidencePath": "Components/Feature Section 2 Column Bullets Image",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"feature-section-2-column-bullets-image\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "feature-section-2-column-image",
       "name": "Feature Section 2 Column Image",
       "category": "feature-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Two-column feature section with copy and visual container.",
       "whenToUse": "Use for a focused product capability where the image carries part of the explanation.",
@@ -342,13 +1102,44 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/feature-section-2-column-image.md"
+      "specPath": "specs/components/feature-section-2-column-image.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": true,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved image content/input slot."
+        },
+        {
+          "name": "reversed",
+          "required": false,
+          "description": "Approved reversed content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/feature-section-2-column-image.png",
+      "evidencePath": "Components/Feature Section 2 Column Image",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"feature-section-2-column-image\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "features-grid",
       "name": "Features Grid",
       "category": "feature-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Grid of feature cards for scan-friendly capability overviews.",
       "whenToUse": "Use for a bounded set of distinct capabilities with short labels and copy.",
@@ -378,13 +1169,29 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/features-grid.md"
+      "specPath": "specs/components/features-grid.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "items",
+          "required": true,
+          "description": "Approved items content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/features-grid.png",
+      "evidencePath": "Components/Features Grid",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"features-grid\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "footer",
       "name": "Footer",
       "category": "shell",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Light card site footer shell with brand, links, contact details, CTA, and legal navigation.",
       "whenToUse": "Use as part of the app shell, not inside page-body generated content.",
@@ -435,13 +1242,59 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/footer.md"
+      "specPath": "specs/components/footer.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "brandLabel",
+          "required": false,
+          "description": "Approved brandLabel content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "columns",
+          "required": false,
+          "description": "Approved columns content/input slot."
+        },
+        {
+          "name": "contactItems",
+          "required": false,
+          "description": "Approved contactItems content/input slot."
+        },
+        {
+          "name": "cta",
+          "required": false,
+          "description": "Approved cta content/input slot."
+        },
+        {
+          "name": "legalLinks",
+          "required": false,
+          "description": "Approved legalLinks content/input slot."
+        },
+        {
+          "name": "copyright",
+          "required": false,
+          "description": "Approved copyright content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/footer.png",
+      "evidencePath": "Components/Footer",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"footer\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "geo-fence-use-case",
       "name": "Geo Fence Use Case",
       "category": "use-case-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Use-case section for geo-aware messaging and location-based customer return campaigns.",
       "whenToUse": "Use when the page needs a concrete location-aware messaging scenario.",
@@ -480,13 +1333,49 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/geo-fence-use-case.md"
+      "specPath": "specs/components/geo-fence-use-case.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "bullets",
+          "required": false,
+          "description": "Approved bullets content/input slot."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved image content/input slot."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/geo-fence-use-case.png",
+      "evidencePath": "Components/Geo Fence Use Case",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"geo-fence-use-case\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "hero-main-section",
       "name": "Hero Main Section",
       "category": "hero-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Primary first-screen marketing hero with value proposition, CTA, checklist, and visual area.",
       "whenToUse": "Use as the first major section of a sendPUSH marketing page.",
@@ -532,13 +1421,59 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/hero-main-section.md"
+      "specPath": "specs/components/hero-main-section.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
+          "name": "primaryAction",
+          "required": true,
+          "description": "Approved primaryAction content/input slot."
+        },
+        {
+          "name": "emailPlaceholder",
+          "required": false,
+          "description": "Approved emailPlaceholder content/input slot."
+        },
+        {
+          "name": "emailButtonLabel",
+          "required": false,
+          "description": "Approved emailButtonLabel content/input slot."
+        },
+        {
+          "name": "showEmailCapture",
+          "required": false,
+          "description": "Approved showEmailCapture content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/hero-main-section.png",
+      "evidencePath": "Components/Hero Main Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"hero-main-section\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "image-grid",
       "name": "Image Grid",
       "category": "media-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Structured partner/logo proof grid for integration and platform trust marks.",
       "whenToUse": "Use when approved partner, platform, payment, compliance, or integration logos need organized proof display.",
@@ -573,13 +1508,39 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/image-grid.md"
+      "specPath": "specs/components/image-grid.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "images",
+          "required": true,
+          "description": "Approved images content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/image-grid.png",
+      "evidencePath": "Components/Image Grid",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"image-grid\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "image-strip",
       "name": "Image Strip",
       "category": "media-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Horizontal image strip for compact visual rhythm.",
       "whenToUse": "Use for a small set of related rounded images or visual proof points.",
@@ -607,13 +1568,241 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/image-strip.md"
+      "specPath": "specs/components/image-strip.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "images",
+          "required": true,
+          "description": "Approved images content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/image-strip.png",
+      "evidencePath": "Components/Image Strip",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"image-strip\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "industry-use-case-card-grid",
+      "name": "Industry Use Case Card Grid",
+      "category": "index-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Image-led industry and use-case card grid for ideal-for and audience selection pages.",
+      "whenToUse": "Use for many-card industry, audience, or use-case index pages with repeated business categories.",
+      "whenNotToUse": "Do not use for generic feature grids, logo grids, article indexes, or testimonials.",
+      "screenshotPath": "assets/screenshots/industry-use-case-card-grid.png",
+      "specPath": "specs/components/industry-use-case-card-grid.md",
+      "rawSourcePath": "Components/Industry Use Case Card Grid/Production Ready/IndustryUseCaseCardGrid.tsx",
+      "libraryPath": "library/src/components/IndustryUseCaseCardGrid.tsx",
+      "visualReferencePath": "assets/screenshots/industry-use-case-card-grid.png",
+      "evidencePath": "Components/Industry Use Case Card Grid",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"industry-use-case-card-grid\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Industry Use Case Card Grid."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Industry Use Case Card Grid."
+        },
+        {
+          "name": "items",
+          "required": false,
+          "description": "Approved items slot for Industry Use Case Card Grid."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "knowledge-base-index",
+      "name": "Knowledge Base Index",
+      "category": "knowledge-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Knowledge-base and documentation index pattern for encyclopedia-style category navigation.",
+      "whenToUse": "Use for docs, help center, encyclopedia, and knowledge-base index pages.",
+      "whenNotToUse": "Do not use for blog archives, searchable FAQ pages, legal documents, or feature grids.",
+      "screenshotPath": "assets/screenshots/knowledge-base-index.png",
+      "specPath": "specs/components/knowledge-base-index.md",
+      "rawSourcePath": "Components/Knowledge Base Index/Production Ready/KnowledgeBaseIndex.tsx",
+      "libraryPath": "library/src/components/KnowledgeBaseIndex.tsx",
+      "visualReferencePath": "assets/screenshots/knowledge-base-index.png",
+      "evidencePath": "Components/Knowledge Base Index",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"knowledge-base-index\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Knowledge Base Index."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Knowledge Base Index."
+        },
+        {
+          "name": "categories",
+          "required": false,
+          "description": "Approved categories slot for Knowledge Base Index."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "categories": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "legal-document-body",
+      "name": "Legal Document Body",
+      "category": "legal-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Dense legal and policy document body layout for privacy, terms, cookies, acceptable use, and subscription agreements.",
+      "whenToUse": "Use for legal policy pages with clause headings, dates, and long-form legal prose.",
+      "whenNotToUse": "Do not use for marketing articles, blog posts, feature pages, or searchable support indexes.",
+      "screenshotPath": "assets/screenshots/legal-document-body.png",
+      "specPath": "specs/components/legal-document-body.md",
+      "rawSourcePath": "Components/Legal Document Body/Production Ready/LegalDocumentBody.tsx",
+      "libraryPath": "library/src/components/LegalDocumentBody.tsx",
+      "visualReferencePath": "assets/screenshots/legal-document-body.png",
+      "evidencePath": "Components/Legal Document Body",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"legal-document-body\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "title",
+          "required": true,
+          "description": "Approved title slot for Legal Document Body."
+        },
+        {
+          "name": "lastUpdated",
+          "required": false,
+          "description": "Approved lastUpdated slot for Legal Document Body."
+        },
+        {
+          "name": "intro",
+          "required": false,
+          "description": "Approved intro slot for Legal Document Body."
+        },
+        {
+          "name": "sections",
+          "required": false,
+          "description": "Approved sections slot for Legal Document Body."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "lastUpdated": {
+            "type": "string"
+          },
+          "intro": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "navbar-glassmorphism",
       "name": "Navbar Glassmorphism",
       "category": "shell",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Sticky glass navigation shell with responsive mobile panel and cursor-tracked highlight.",
       "whenToUse": "Use only as the site shell navigation treatment.",
@@ -637,13 +1826,213 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/navbar-glassmorphism.md"
+      "specPath": "specs/components/navbar-glassmorphism.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "activePath",
+          "required": false,
+          "description": "Approved activePath content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/navbar-glassmorphism.png",
+      "evidencePath": "Components/Navbar Glassmorphism",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"navbar-glassmorphism\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "newsletter-signup-section",
+      "name": "Newsletter Signup Section",
+      "category": "conversion-section",
+      "status": "stable",
+      "clientBoundary": "client",
+      "description": "Newsletter signup section with value copy, email capture, privacy note, and benefit list.",
+      "whenToUse": "Use for newsletter signup pages or sections where email capture needs context and privacy reassurance.",
+      "whenNotToUse": "Do not use for product trial capture, contact forms, branded-card applications, or booking requests.",
+      "screenshotPath": "assets/screenshots/newsletter-signup-section.png",
+      "specPath": "specs/components/newsletter-signup-section.md",
+      "rawSourcePath": "Components/Newsletter Signup Section/Production Ready/NewsletterSignupSection.tsx",
+      "libraryPath": "library/src/components/NewsletterSignupSection.tsx",
+      "visualReferencePath": "assets/screenshots/newsletter-signup-section.png",
+      "evidencePath": "Components/Newsletter Signup Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"newsletter-signup-section\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Newsletter Signup Section."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Newsletter Signup Section."
+        },
+        {
+          "name": "benefits",
+          "required": false,
+          "description": "Approved benefits slot for Newsletter Signup Section."
+        },
+        {
+          "name": "privacyNote",
+          "required": false,
+          "description": "Approved privacyNote slot for Newsletter Signup Section."
+        },
+        {
+          "name": "placeholder",
+          "required": false,
+          "description": "Approved placeholder slot for Newsletter Signup Section."
+        },
+        {
+          "name": "buttonLabel",
+          "required": false,
+          "description": "Approved buttonLabel slot for Newsletter Signup Section."
+        },
+        {
+          "name": "onSubmit",
+          "required": false,
+          "description": "Approved onSubmit slot for Newsletter Signup Section."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "benefits": {
+            "type": "array"
+          },
+          "privacyNote": {
+            "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "buttonLabel": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "pricing-page-matrix",
+      "name": "Pricing Page Matrix",
+      "category": "pricing-section",
+      "status": "stable",
+      "clientBoundary": "client",
+      "description": "Full pricing page matrix for monthly and yearly plan groups, feature lists, disclaimers, and plan comparison.",
+      "whenToUse": "Use for full pricing pages that require multiple plans, cadence switching, disclaimers, and purchase CTAs.",
+      "whenNotToUse": "Do not use for short pricing teasers or fewer-than-row pricing cards that pricing-section already handles.",
+      "screenshotPath": "assets/screenshots/pricing-page-matrix.png",
+      "specPath": "specs/components/pricing-page-matrix.md",
+      "rawSourcePath": "Components/Pricing Page Matrix/Production Ready/PricingPageMatrix.tsx",
+      "libraryPath": "library/src/components/PricingPageMatrix.tsx",
+      "visualReferencePath": "assets/screenshots/pricing-page-matrix.png",
+      "evidencePath": "Components/Pricing Page Matrix",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"pricing-page-matrix\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Pricing Page Matrix."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Pricing Page Matrix."
+        },
+        {
+          "name": "plans",
+          "required": false,
+          "description": "Approved plans slot for Pricing Page Matrix."
+        },
+        {
+          "name": "defaultCadence",
+          "required": false,
+          "description": "Approved defaultCadence slot for Pricing Page Matrix."
+        },
+        {
+          "name": "disclaimer",
+          "required": false,
+          "description": "Approved disclaimer slot for Pricing Page Matrix."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "plans": {
+            "type": "array"
+          },
+          "defaultCadence": {
+            "type": "string"
+          },
+          "disclaimer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "pricing-section",
       "name": "Pricing Section",
       "category": "pricing-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "client",
       "description": "Pricing cards with monthly/yearly state and pro emphasis.",
       "whenToUse": "Use where the visitor needs to compare plans and move toward trial signup.",
@@ -680,13 +2069,34 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/pricing-section.md"
+      "specPath": "specs/components/pricing-section.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "plans",
+          "required": true,
+          "description": "Approved plans content/input slot."
+        },
+        {
+          "name": "defaultCadence",
+          "required": false,
+          "description": "Approved defaultCadence content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/pricing-section.png",
+      "evidencePath": "Components/Pricing Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"pricing-section\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "process-steps",
       "name": "Process Steps",
       "category": "process-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Numbered process cards explaining setup or campaign flow.",
       "whenToUse": "Use to show a small sequence of practical steps.",
@@ -716,13 +2126,29 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/process-steps.md"
+      "specPath": "specs/components/process-steps.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "steps",
+          "required": true,
+          "description": "Approved steps content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/process-steps.png",
+      "evidencePath": "Components/Process Steps",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"process-steps\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "stats-card-strip",
       "name": "Stats Card Strip",
       "category": "proof-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Compact strip of stat cards for proof and momentum.",
       "whenToUse": "Use for a short set of measurable business outcomes.",
@@ -751,13 +2177,29 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/stats-card-strip.md"
+      "specPath": "specs/components/stats-card-strip.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "stats",
+          "required": true,
+          "description": "Approved stats content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/stats-card-strip.png",
+      "evidencePath": "Components/Stats Card Strip",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"stats-card-strip\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "testimonial-single",
       "name": "Testimonial Single",
       "category": "proof-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Dark proof section spotlighting one or two customer proof quotes.",
       "whenToUse": "Use to spotlight one or two credible local-business proof points with high emphasis.",
@@ -798,13 +2240,54 @@
         },
         "additionalProperties": false
       },
-      "specPath": "specs/components/testimonial-single.md"
+      "specPath": "specs/components/testimonial-single.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "quote",
+          "required": false,
+          "description": "Approved quote content/input slot."
+        },
+        {
+          "name": "author",
+          "required": false,
+          "description": "Approved author content/input slot."
+        },
+        {
+          "name": "role",
+          "required": false,
+          "description": "Approved role content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "testimonials",
+          "required": false,
+          "description": "Approved testimonials content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/testimonial-single.png",
+      "evidencePath": "Components/Testimonial Single",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"testimonial-single\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
       "id": "testimonials-grid",
       "name": "Testimonials Grid",
       "category": "proof-section",
-      "status": "raw-snapshot",
+      "status": "stable",
       "clientBoundary": "server",
       "description": "Grid of testimonial cards for broader proof.",
       "whenToUse": "Use when several customer voices reinforce the same business outcome.",
@@ -834,7 +2317,107 @@
         ],
         "additionalProperties": false
       },
-      "specPath": "specs/components/testimonials-grid.md"
+      "specPath": "specs/components/testimonials-grid.md",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default variant. Do not invent unregistered variants."
+        }
+      ],
+      "slots": [
+        {
+          "name": "items",
+          "required": true,
+          "description": "Approved items content/input slot."
+        }
+      ],
+      "visualReferencePath": "assets/screenshots/testimonials-grid.png",
+      "evidencePath": "Components/Testimonials Grid",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"testimonials-grid\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "thank-you-confirmation-section",
+      "name": "Thank You Confirmation Section",
+      "category": "confirmation-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Confirmation and next-steps body section for form, booking, and email-list thank-you pages.",
+      "whenToUse": "Use after a form, booking, branded-card application, or email-list submission to confirm receipt and explain next steps.",
+      "whenNotToUse": "Do not use as a generic CTA, testimonial, feature grid, or conversion form.",
+      "screenshotPath": "assets/screenshots/thank-you-confirmation-section.png",
+      "specPath": "specs/components/thank-you-confirmation-section.md",
+      "rawSourcePath": "Components/Thank You Confirmation Section/Production Ready/ThankYouConfirmationSection.tsx",
+      "libraryPath": "library/src/components/ThankYouConfirmationSection.tsx",
+      "visualReferencePath": "assets/screenshots/thank-you-confirmation-section.png",
+      "evidencePath": "Components/Thank You Confirmation Section",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"thank-you-confirmation-section\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "heading",
+          "required": true,
+          "description": "Approved heading slot for Thank You Confirmation Section."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body slot for Thank You Confirmation Section."
+        },
+        {
+          "name": "nextSteps",
+          "required": false,
+          "description": "Approved nextSteps slot for Thank You Confirmation Section."
+        },
+        {
+          "name": "primaryAction",
+          "required": false,
+          "description": "Approved primaryAction slot for Thank You Confirmation Section."
+        },
+        {
+          "name": "secondaryAction",
+          "required": false,
+          "description": "Approved secondaryAction slot for Thank You Confirmation Section."
+        }
+      ],
+      "tokensUsed": [
+        "typography.headline",
+        "typography.body",
+        "color.surface.white",
+        "color.background.peach",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "component.button.primary"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "nextSteps": {
+            "type": "array"
+          },
+          "primaryAction": {
+            "type": "object"
+          },
+          "secondaryAction": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "heading"
+        ],
+        "additionalProperties": false
+      }
     }
   ]
 }

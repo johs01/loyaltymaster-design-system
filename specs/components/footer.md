@@ -2,7 +2,7 @@
 
 Component ID: `footer`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `shell`
 Library target: `library/src/components/Footer.tsx`
@@ -96,3 +96,26 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Footer/Footer.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `brandLabel` (optional): Approved brandLabel content/input slot.
+- `body` (optional): Approved body content/input slot.
+- `columns` (optional): Approved columns content/input slot.
+- `contactItems` (optional): Approved contactItems content/input slot.
+- `cta` (optional): Approved cta content/input slot.
+- `legalLinks` (optional): Approved legalLinks content/input slot.
+- `copyright` (optional): Approved copyright content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="footer"
+props:
+  # use only registry-approved props
+:::
+```

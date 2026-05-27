@@ -1,0 +1,20 @@
+{
+  "artifactType": "production-page-patch-plan",
+  "targetRepository": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION",
+  "routePlaceholder": "<route>",
+  "pageSlugPlaceholder": "<page-slug>",
+  "pageNamePlaceholder": "<PageName>",
+  "targetFiles": [
+    "app/<route>/page.tsx",
+    "src/site-pages/<page-slug>/<PageName>Page.tsx",
+    "src/config/seoRoutes.json",
+    "src/next/SitePage.tsx"
+  ],
+  "componentImports": [
+    "hero-main-section",
+    "article-body",
+    "contact-form-section",
+    "thank-you-confirmation-section"
+  ],
+  "stopCondition": "Patch plan stops when files are ready to import into /Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION and validate with typecheck/build."
+}

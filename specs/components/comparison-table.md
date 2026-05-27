@@ -2,7 +2,7 @@
 
 Component ID: `comparison-table`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `proof-section`
 Library target: `library/src/components/ComparisonTable.tsx`
@@ -92,3 +92,21 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Comparison Table/Comparison Table.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `heading` (optional): Approved heading content/input slot.
+- `rows` (optional): Approved rows content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="comparison-table"
+props:
+  # use only registry-approved props
+:::
+```

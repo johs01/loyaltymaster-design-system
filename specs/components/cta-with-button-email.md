@@ -2,7 +2,7 @@
 
 Component ID: `cta-with-button-email`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `client`
 Category: `conversion-section`
 Library target: `library/src/components/CtaWithButtonEmail.tsx`
@@ -93,3 +93,22 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/CTA with Button Email/CTA with Button Email.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `heading` (optional): Approved heading content/input slot.
+- `body` (optional): Approved body content/input slot.
+- `buttonLabel` (optional): Approved buttonLabel content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="cta-with-button-email"
+props:
+  # use only registry-approved props
+:::
+```

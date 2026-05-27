@@ -2,7 +2,7 @@
 
 Component ID: `pricing-section`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `client`
 Category: `pricing-section`
 Library target: `library/src/components/PricingSection.tsx`
@@ -96,3 +96,21 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Pricing Section/Pricing Section.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `plans` (required): Approved plans content/input slot.
+- `defaultCadence` (optional): Approved defaultCadence content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="pricing-section"
+props:
+  # use only registry-approved props
+:::
+```

@@ -2,7 +2,7 @@
 
 Component ID: `image-grid`
 Registry: `registry/components.json`
-Status: `raw-snapshot`
+Status: `stable`
 Client boundary: `server`
 Category: `media-section`
 Library target: `library/src/components/ImageGrid.tsx`
@@ -92,3 +92,22 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Never import from `Components/Image Grid/Image Grid.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
+
+## Variants
+
+- `default`: Approved default variant. Do not invent unregistered variants.
+
+## Slots
+
+- `images` (required): Approved images content/input slot.
+- `heading` (optional): Approved heading content/input slot.
+- `body` (optional): Approved body content/input slot.
+
+## Markdown Call Syntax
+
+```markdown
+:::loyaltymaster-component id="image-grid"
+props:
+  # use only registry-approved props
+:::
+```
