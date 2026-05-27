@@ -31,7 +31,7 @@ Contact page form with message fields, contact details, consent copy, and suppor
 - `fields` (optional): array.
 - `submitLabel` (optional): string.
 - `consentText` (optional): string.
-- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline..
+- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline.
 
 ## Variants
 

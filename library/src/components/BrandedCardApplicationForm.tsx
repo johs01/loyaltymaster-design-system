@@ -26,7 +26,7 @@ export function BrandedCardApplicationForm({ id = "branded-card-application-form
         <div>
           <HeaderWithCopy eyebrow="Branded cards" heading={heading} body={body} align="left" />
           <ul className="lm-rb-list">
-            {features.map((feature) => <li key={feature}>{feature}</li>)}
+            {features.map((feature, featureIndex) => <li key={`feature-${featureIndex}`}>{feature}</li>)}
           </ul>
         </div>
         <SimpleForm fields={fields} submitLabel={submitLabel} consentText="Application details are used only to prepare the branded card request." onSubmit={onSubmit} />

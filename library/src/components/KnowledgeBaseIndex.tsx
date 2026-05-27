@@ -18,12 +18,12 @@ export function KnowledgeBaseIndex({ id = "knowledge-base-index", heading = "Loy
     <RunbookSection id={id} tone="white" className="lm-rb-knowledge">
       <HeaderWithCopy eyebrow="Knowledge base" heading={heading} body={body} />
       <div className="lm-rb-card-grid">
-        {categories.map((category) => (
-          <article key={category.title} className="lm-rb-card">
+        {categories.map((category, categoryIndex) => (
+          <article key={`category-${categoryIndex}`} className="lm-rb-card">
             <h3>{category.title}</h3>
             {category.body ? <p>{category.body}</p> : null}
             <ul className="lm-rb-plain-list">
-              {category.items.map((item) => <li key={item}>{item}</li>)}
+              {category.items.map((item, itemIndex) => <li key={`category-${categoryIndex}-item-${itemIndex}`}>{item}</li>)}
             </ul>
           </article>
         ))}

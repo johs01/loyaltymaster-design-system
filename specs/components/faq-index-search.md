@@ -28,7 +28,7 @@ Full FAQ index with search and category grouping for broad support pages.
 - `heading` (required): string.
 - `body` (optional): string.
 - `categories` (optional): array.
-- `searchPlaceholder` (optional): object.
+- `searchPlaceholder` (string, optional).
 
 ## Variants
 

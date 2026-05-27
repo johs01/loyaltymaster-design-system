@@ -977,7 +977,7 @@
             "type": "array"
           },
           "searchPlaceholder": {
-            "type": "object"
+            "type": "string"
           }
         },
         "required": [

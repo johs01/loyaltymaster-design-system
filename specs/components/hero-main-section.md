@@ -94,7 +94,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - Before using `hero-main-section`, read this spec after reading `registry/components.json` and `tokens/design-tokens.json`.
 - Treat this file as the editable rule source. If a rule here changes, apply the changed rule to the next generated page or artifact.
-- Use `library/src/components/HeroMainSection.tsx` as the intended future import path once Phase 4 creates the clean library implementation.
+- Use `library/src/components/HeroMainSection.tsx` as the approved import path.
 - Never import from `Components/Hero Main Section/Hero Main Section.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.
@@ -109,6 +109,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - `heading` (required): Approved heading content/input slot.
 - `body` (optional): Approved body content/input slot.
 - `primaryAction` (required): Approved primaryAction content/input slot.
+- `image` (optional): Approved image content/input slot.
 - `emailPlaceholder` (optional): Approved emailPlaceholder content/input slot.
 - `emailButtonLabel` (optional): Approved emailButtonLabel content/input slot.
 - `showEmailCapture` (optional): Approved showEmailCapture content/input slot.

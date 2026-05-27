@@ -23,7 +23,7 @@ export function ThankYouConfirmationSection({ id = "thank-you-confirmation-secti
         <HeaderWithCopy eyebrow="Confirmed" heading={heading} body={body} />
         <div className="lm-rb-step-grid">
           {nextSteps.map((step, index) => (
-            <article key={step.title} className="lm-rb-step-card">
+            <article key={`step-${index}`} className="lm-rb-step-card">
               <span>{index + 1}</span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>

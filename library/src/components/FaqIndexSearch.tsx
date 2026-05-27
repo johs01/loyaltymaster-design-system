@@ -30,11 +30,16 @@ export function FaqIndexSearch({ id = "faq-index-search", heading = "Find Loyalt
         <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={searchPlaceholder} type="search" />
       </label>
       <div className="lm-rb-card-grid">
-        {visibleCategories.map((category) => (
-          <article key={category.title} className="lm-rb-card">
+        {visibleCategories.length === 0 ? (
+          <article className="lm-rb-card" role="status" aria-live="polite">
+            <h3>No results found</h3>
+            <p>Try a different FAQ search term.</p>
+          </article>
+        ) : visibleCategories.map((category, categoryIndex) => (
+          <article key={`category-${categoryIndex}`} className="lm-rb-card">
             <h3>{category.title}</h3>
             <ul className="lm-rb-plain-list">
-              {category.items.map((item) => <li key={item}>{item}</li>)}
+              {category.items.map((item, itemIndex) => <li key={`category-${categoryIndex}-item-${itemIndex}`}>{item}</li>)}
             </ul>
           </article>
         ))}

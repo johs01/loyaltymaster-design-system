@@ -31,7 +31,7 @@ Newsletter signup section with value copy, email capture, privacy note, and bene
 - `privacyNote` (optional): string.
 - `placeholder` (optional): string.
 - `buttonLabel` (optional): string.
-- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline..
+- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline.
 
 ## Variants
 

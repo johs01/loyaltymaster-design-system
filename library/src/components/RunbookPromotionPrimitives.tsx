@@ -33,6 +33,10 @@ export interface GroupedList {
   items: string[];
 }
 
+function isActionableAction(action: Action | undefined): action is Action {
+  return Boolean(action && (action.href || action.onClick));
+}
+
 export function RunbookSection({
   id,
   tone = "white",
@@ -56,14 +60,14 @@ export function RunbookSection({
 export function BodyBlocks({ blocks }: { blocks: TextBlock[] }) {
   return (
     <div className="lm-rb-body-blocks">
-      {blocks.map((block, index) => (
-        <section key={block.heading ?? index} className="lm-rb-body-block">
+      {blocks.map((block, blockIndex) => (
+        <section key={`block-${blockIndex}`} className="lm-rb-body-block">
           {block.heading ? <h3>{block.heading}</h3> : null}
           {block.body ? <p>{block.body}</p> : null}
-          {block.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          {block.paragraphs?.map((paragraph, paragraphIndex) => <p key={`block-${blockIndex}-paragraph-${paragraphIndex}`}>{paragraph}</p>)}
           {block.bullets?.length ? (
             <ul className="lm-rb-list">
-              {block.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+              {block.bullets.map((bullet, bulletIndex) => <li key={`block-${blockIndex}-bullet-${bulletIndex}`}>{bullet}</li>)}
             </ul>
           ) : null}
         </section>
@@ -79,7 +83,7 @@ export function IndexedCardGrid({ cards, emptyMessage = "No approved items are a
 
   return (
     <div className="lm-rb-card-grid">
-      {cards.map((card) => {
+      {cards.map((card, cardIndex) => {
         const content = (
           <>
             {card.image ? <MediaFrame image={card.image} label={card.title} /> : null}
@@ -90,11 +94,11 @@ export function IndexedCardGrid({ cards, emptyMessage = "No approved items are a
         );
 
         return card.href ? (
-          <a key={card.title} className="lm-rb-card lm-rb-card--link" href={card.href}>
+          <a key={`card-${cardIndex}`} className="lm-rb-card lm-rb-card--link" href={card.href}>
             {content}
           </a>
         ) : (
-          <article key={card.title} className="lm-rb-card">
+          <article key={`card-${cardIndex}`} className="lm-rb-card">
             {content}
           </article>
         );
@@ -121,15 +125,15 @@ export function SimpleForm({
 
   return (
     <form className="lm-rb-form" onSubmit={handleSubmit}>
-      {fields.map((field) => (
-        <label key={field.name} className={field.type === "textarea" ? "lm-rb-field lm-rb-field--full" : "lm-rb-field"}>
+      {fields.map((field, fieldIndex) => (
+        <label key={`field-${fieldIndex}-${field.name}`} className={field.type === "textarea" ? "lm-rb-field lm-rb-field--full" : "lm-rb-field"}>
           <span>{field.label}{field.required ? " *" : ""}</span>
           {field.type === "textarea" ? (
             <textarea name={field.name} placeholder={field.placeholder} required={field.required} />
           ) : field.type === "select" ? (
             <select name={field.name} required={field.required} defaultValue="">
               <option value="" disabled>{field.placeholder ?? "Select an option"}</option>
-              {field.options?.map((option) => <option key={option} value={option}>{option}</option>)}
+              {field.options?.map((option, optionIndex) => <option key={`field-${fieldIndex}-option-${optionIndex}`} value={option}>{option}</option>)}
             </select>
           ) : (
             <input name={field.name} type={field.type ?? "text"} placeholder={field.placeholder} required={field.required} />
@@ -147,11 +151,11 @@ export function HeaderWithCopy({ eyebrow, heading, body, align = "center" }: { e
 }
 
 export function ActionRow({ actions }: { actions: Array<Action | undefined> }) {
-  const visibleActions = actions.filter((action): action is Action => Boolean(action));
+  const visibleActions = actions.filter(isActionableAction);
   if (visibleActions.length === 0) return null;
   return (
     <div className="lm-rb-actions">
-      {visibleActions.map((action) => <ActionLink key={action.label} action={action} />)}
+      {visibleActions.map((action, actionIndex) => <ActionLink key={`action-${actionIndex}`} action={action} />)}
     </div>
   );
 }

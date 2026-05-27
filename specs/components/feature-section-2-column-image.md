@@ -90,7 +90,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - Before using `feature-section-2-column-image`, read this spec after reading `registry/components.json` and `tokens/design-tokens.json`.
 - Treat this file as the editable rule source. If a rule here changes, apply the changed rule to the next generated page or artifact.
-- Use `library/src/components/FeatureSection2ColumnImage.tsx` as the intended future import path once Phase 4 creates the clean library implementation.
+- Use `library/src/components/FeatureSection2ColumnImage.tsx` as the approved import path.
 - Never import from `Components/Feature Section 2 Column Image/Feature Section 2 Column Image.tsx`; it remains a raw visual/code snapshot.
 - Use only the approved props, states, tokens, accessibility rules, and composition rules listed here.
 - Stop before creating a new variant or parallel component unless the registry and this spec are updated first.

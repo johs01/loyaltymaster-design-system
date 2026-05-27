@@ -30,7 +30,7 @@ Branded digital reward card application form with proof copy and application-spe
 - `features` (optional): array.
 - `fields` (optional): array.
 - `submitLabel` (optional): string.
-- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline..
+- `onSubmit` (optional): Client-side submit handler. Production forms must wire to the host website form pipeline.
 
 ## Variants
 

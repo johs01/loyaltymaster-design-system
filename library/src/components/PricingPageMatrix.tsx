@@ -41,14 +41,14 @@ export function PricingPageMatrix({ id = "pricing-page-matrix", heading = "Choos
         <button type="button" aria-pressed={cadence === "yearly"} onClick={() => setCadence("yearly")}>Yearly</button>
       </div>
       <div className="lm-rb-card-grid lm-rb-card-grid--pricing">
-        {plans.map((plan) => (
-          <article key={plan.name} className={plan.highlighted ? "lm-rb-card lm-rb-card--highlighted" : "lm-rb-card"}>
+        {plans.map((plan, planIndex) => (
+          <article key={`plan-${planIndex}`} className={plan.highlighted ? "lm-rb-card lm-rb-card--highlighted" : "lm-rb-card"}>
             <p className="lm-rb-meta">{plan.highlighted ? "Recommended" : "Plan"}</p>
             <h3>{plan.name}</h3>
             {plan.description ? <p>{plan.description}</p> : null}
             <div className="lm-rb-price">{cadence === "yearly" ? plan.yearlyPrice ?? plan.monthlyPrice : plan.monthlyPrice}</div>
             <ul className="lm-rb-list">
-              {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
+              {plan.features.map((feature, featureIndex) => <li key={`plan-${planIndex}-feature-${featureIndex}`}>{feature}</li>)}
             </ul>
             <ActionLink action={plan.action} />
           </article>

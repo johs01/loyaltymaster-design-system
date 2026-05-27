@@ -131,6 +131,7 @@ approved templates and registry components before any TSX build.
 Run:
 
 ```bash
+node scripts/validate-runbook-poc-readiness.mjs
 node scripts/validate-phase2.mjs
 ```
 

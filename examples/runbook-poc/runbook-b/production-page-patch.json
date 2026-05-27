@@ -1,6 +1,6 @@
 {
   "artifactType": "production-page-patch-plan",
-  "targetRepository": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION",
+  "targetRepository": "{{TARGET_REPOSITORY}}",
   "routePlaceholder": "<route>",
   "pageSlugPlaceholder": "<page-slug>",
   "pageNamePlaceholder": "<PageName>",
@@ -16,5 +16,5 @@
     "contact-form-section",
     "thank-you-confirmation-section"
   ],
-  "stopCondition": "Patch plan stops when files are ready to import into /Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION and validate with typecheck/build."
+  "stopCondition": "Patch plan stops when files are ready to import into {{TARGET_REPOSITORY}} and validate with typecheck/build."
 }

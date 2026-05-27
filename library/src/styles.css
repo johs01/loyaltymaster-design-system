@@ -3606,7 +3606,11 @@
   .lm-logo-tile img,
   .lm-feature-card,
   .lm-stat-card,
-  .lm-testimonial-card {
+  .lm-testimonial-card,
+  .lm-rb-card,
+  .lm-rb-card--link,
+  .lm-rb-inline-list li,
+  .lm-rb-toggle button {
     transition: none;
   }
 
@@ -3623,7 +3627,12 @@
   .lm-logo-tile:hover img,
   .lm-feature-card:hover,
   .lm-stat-card:hover,
-  .lm-testimonial-card:hover {
+  .lm-testimonial-card:hover,
+  .lm-rb-card:hover,
+  .lm-rb-card--link:hover,
+  .lm-rb-card--link:focus-visible,
+  .lm-rb-toggle button:hover,
+  .lm-rb-toggle button:active {
     transform: none;
   }
 }

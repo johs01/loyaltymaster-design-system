@@ -33,7 +33,7 @@ export function ContactFormSection({ id = "contact-form-section", heading = "Con
         <div>
           <HeaderWithCopy eyebrow="Contact" heading={heading} body={body} align="left" />
           <div className="lm-rb-contact-list">
-            {contactItems.map((item) => item.href ? <a key={item.label} href={item.href}>{item.label}</a> : <span key={item.label}>{item.label}</span>)}
+            {contactItems.map((item, itemIndex) => item.href ? <a key={`contact-${itemIndex}`} href={item.href}>{item.label}</a> : <span key={`contact-${itemIndex}`}>{item.label}</span>)}
           </div>
         </div>
         <SimpleForm fields={fields} submitLabel={submitLabel} consentText={consentText} onSubmit={onSubmit} />

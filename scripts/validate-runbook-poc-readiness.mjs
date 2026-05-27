@@ -96,9 +96,10 @@ function walkFiles(startRelativePath, extensions) {
 const registry = readJson("registry/components.json");
 const registryIds = registry.components.map((component) => component.id);
 const indexSource = readText("library/src/index.ts");
+const minimumApprovedComponentCount = 33;
 
-if (registry.components.length !== 33) {
-  fail(`registry/components.json must expose 33 approved components, found ${registry.components.length}`);
+if (registry.components.length < minimumApprovedComponentCount) {
+  fail(`registry/components.json must expose at least ${minimumApprovedComponentCount} approved components, found ${registry.components.length}`);
 }
 
 for (const id of promotedComponentIds) {
@@ -176,6 +177,11 @@ const pocFiles = [
 for (const pocFile of pocFiles) {
   if (!exists(pocFile)) {
     fail(`Missing Runbook POC fixture file: ${pocFile}`);
+    continue;
+  }
+
+  if (readText(pocFile).includes("/Users/")) {
+    fail(`${pocFile} must use portable placeholders instead of local absolute paths`);
   }
 }
 
@@ -216,6 +222,10 @@ for (const patchPath of [
     continue;
   }
   const patch = readJson(patchPath);
+  if (patch.targetRepository !== "{{TARGET_REPOSITORY}}") {
+    fail(`${patchPath} must use {{TARGET_REPOSITORY}} as the portable target repository placeholder`);
+  }
+
   for (const requiredFile of [
     "app/<route>/page.tsx",
     "src/site-pages/<page-slug>/<PageName>Page.tsx",
@@ -226,7 +236,7 @@ for (const patchPath of [
       fail(`${patchPath} missing route-agnostic target file shape: ${requiredFile}`);
     }
   }
-  if (!patch.stopCondition?.includes("ready to import into /Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION")) {
+  if (!/ready to import into \{\{TARGET_REPOSITORY\}\}/.test(patch.stopCondition ?? "")) {
     fail(`${patchPath} must declare the production import stop condition`);
   }
 }

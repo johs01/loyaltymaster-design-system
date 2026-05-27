@@ -1,7 +1,7 @@
 # Markdown Layout Outline POC
 
 Design System Version: registry/components.json@0.2.0
-Target Repository: /Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION
+Target Repository: {{TARGET_REPOSITORY}}
 Target Route: /customer-retention-consultation
 
 ## Page Purpose
