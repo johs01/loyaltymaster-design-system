@@ -1,7 +1,7 @@
 # End-to-End POC Diagnostic Report
 
 Input File: examples/runbook-poc/end-to-end/page-brief.md
-Runbook Used: Runbook A then Runbook B future contract
+Runbook Used: RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md then RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md
 Repo Commit SHA: captured-at-runtime-by-agent
 Component Registry Checksum: registry/components.json@0.2.0
 Selected Template: route-agnostic LoyaltyMaster page outline
@@ -12,7 +12,7 @@ Generated Files or Intended File Paths: app/<route>/page.tsx; src/site-pages/<pa
 Validation Commands Run: node scripts/validate-runbook-poc-readiness.mjs
 Pass/Fail Status: PASS
 Exact Failure Reason: none
-Recommended Next Fix: keep fixture aligned with registry changes before final Runbook A/B authoring.
+Recommended Next Fix: keep fixture aligned with registry changes and canonical Runbook A/B.
 
 ## Failure Stage Catalog
 

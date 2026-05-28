@@ -4,16 +4,19 @@ This folder contains the machine-readable component manifest.
 
 ## Files
 
-- `components.json`: canonical Wave 1 component registry, including each
-  component's `specPath`.
+- `components.json`: canonical approved component registry, including each
+  component's `specPath`, `libraryPath`, `props`, `variants`, `slots`,
+  `tokensUsed`, `visualReferencePath`, `evidencePath`, and
+  `markdownCallSyntax`.
 - `components.schema.json`: JSON Schema for the registry shape.
 
 ## Status
 
-The 20 registered components are approved Wave 1 components with clean Phase 4
-React implementations. `libraryPath` points to the canonical implementation in
-`/library/src/components/`, while `rawSourcePath` points to the preserved
-snapshot used as visual/reference input only.
+The registry is the authoritative approved component inventory. Treat
+`components.json` as the source of truth at runtime; do not copy the component
+pool into prose docs, prompts, or runbooks. `libraryPath` points to the
+canonical implementation in `/library/src/components/`, while `rawSourcePath`
+points to the preserved snapshot used as visual/reference input only.
 
 Phase 3 adds `specPath` for every component. The spec file is the editable
 human and AI-readable rule source for usage, states, accessibility, screenshots,
@@ -27,23 +30,23 @@ example layer. Approved examples must cite registry ids, current specs, and
 library paths. Blocked examples define drift patterns to reject before writing
 code.
 
-Phase 7C is the current visual fidelity gate for all 20 Wave 1 components. The
-showcase app stores the resolved classification and strict font/runtime
-thresholds in `showcase/app/scripts/phase7-visual-gates.json`, and
-`npm run verify:visual` captures render targets plus diff artifacts under
+Phase 7C is the visual fidelity gate for registered components. The showcase
+app stores the resolved classification and strict font/runtime thresholds in
+`showcase/app/scripts/phase7-visual-gates.json`, and `npm run verify:visual`
+captures render targets plus diff artifacts under
 `showcase/app/artifacts/phase-7c/`. Skipped visual gates, pixel drift, font
 fallback, runtime drift, and width/height/aspect-ratio drift are no longer
 accepted.
 
-Phase 7E is the current interaction gate for all 20 Wave 1 components.
-`npm run verify:interactions` in `showcase/app` compares local library behavior
-against the live template page, raw snapshots, and specs, and fails on any
-failed, partial, missing, or undecided component.
+Phase 7E is the interaction gate for registered components. `npm run
+verify:interactions` in `showcase/app` compares local library behavior against
+the live template page, raw snapshots, and specs, and fails on any failed,
+partial, missing, or undecided component.
 
-Phase 7F is the current production-fidelity gate for all 20 Wave 1 components.
-`showcase/app/scripts/phase7f-production-targets.json` maps each component to
-the live sendPUSH URL, live selector, production source file, raw snapshot,
-spec, library path, and local showcase specimen. `npm run
+Phase 7F is the production-fidelity gate for registered components.
+`showcase/app/scripts/phase7f-production-targets.json` maps components to live
+sendPUSH URLs, live selectors, production source files, raw snapshots, specs,
+library paths, and local showcase specimens. `npm run
 verify:production-fidelity` in `showcase/app` captures desktop and mobile
 live/local pairs, writes side-by-side artifacts under
 `showcase/app/artifacts/phase-7f/`, and fails on major geometry, layout, or
@@ -89,9 +92,18 @@ Phase 10 adds `EXTERNAL_LLM_HANDOFF.md`,
 `http://127.0.0.1:5177/template-tests/real-brief-trial` to prove the same
 workflow against a practical Loyaltymaster/sendPUSH page brief.
 
-Phase 11 adds `LLM_MARKDOWN_OUTLINE_PACK.md` as the no-code Markdown outline
-instruction pack. Use it when an external LLM should draft page structure from
-approved templates and registry components before any TSX build.
+Phase 11 adds `LLM_MARKDOWN_OUTLINE_PACK.md` as a copy-paste wrapper for
+no-code Markdown outline mode before any TSX build.
+
+The Runbook A/B authoring phase adds canonical registry-driven runbooks:
+
+- `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` converts page briefs, screenshots,
+  URLs, and source pages into strict Markdown layout outlines.
+- `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` converts human-approved
+  outlines into route-agnostic Next.js App Router production page packages.
+
+Both runbooks must read `components.json` at runtime and may not freeze the
+component list manually.
 
 ## Rules
 
@@ -118,8 +130,10 @@ approved templates and registry components before any TSX build.
   as proof packages, not new component sources.
 - For external hand-offs, also read `EXTERNAL_LLM_HANDOFF.md` and compare
   normal web-page work against `examples/generated/real-brief-trial/`.
-- For Markdown page outlines, use `LLM_MARKDOWN_OUTLINE_PACK.md` and do not
-  generate implementation code until a human approves the outline.
+- For Markdown page outlines, use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and
+  do not generate implementation code until a human approves the outline.
+- For approved outline-to-page work, use
+  `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
 - Treat `navbar-glassmorphism` and `footer` as shell-only exceptions, not
   default page-body ingredients.
 - If an approved template cannot satisfy the brief from current registry
@@ -161,4 +175,6 @@ cd showcase/app && npm run verify:templates
 
 ## Runbook POC Readiness
 
-The registry is the authoritative component inventory for future Runbook A/B workflows. It currently covers 33 approved components, including the 13 promoted MagicPath handoff components. Runbooks must read this machine-readable registry instead of freezing component lists in prose.
+The registry is the authoritative component inventory for Runbook A/B
+workflows. Runbooks must read this machine-readable registry instead of
+freezing component lists in prose.

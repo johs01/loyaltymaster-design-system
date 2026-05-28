@@ -8,24 +8,33 @@ Claude, Gemini, ChatGPT, or another AI agent.
 The first file to read is `AI_START_HERE.md`. Do not start from the production
 app, a screenshot, or `/Components/`.
 
-For draft page outlines, use `LLM_MARKDOWN_OUTLINE_PACK.md`. It is a no-code
-Markdown outline mode for Codex, Claude, Gemini, ChatGPT, and similar agents.
+For draft page outlines, use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`. It is
+the canonical no-code Markdown outline workflow for Codex, Claude, Gemini,
+ChatGPT, and similar agents.
+
+`LLM_MARKDOWN_OUTLINE_PACK.md` remains a copy-paste wrapper that points agents
+to Runbook A. It is not a separate component inventory.
+
+For human-approved Markdown outlines that must become production page packages,
+use `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
 
 ## Required Workflow
 
 1. Read `AI_START_HERE.md`, `READ_FIRST_AI.md`, and `PREFLIGHT.md`.
-2. If the task is a page outline, read `LLM_MARKDOWN_OUTLINE_PACK.md` and
+2. If the task is a page outline, read `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and
    return Markdown only.
-3. Select the approved template in `templates/` that matches the artifact type.
-4. Confirm shell scope. Normal web pages, landing pages, sales pages, and
+3. If the task is approved outline-to-page work, read
+   `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
+4. Select the approved template in `templates/` that matches the artifact type.
+5. Confirm shell scope. Normal web pages, landing pages, sales pages, and
    subdomain pages are body-only because production supplies global chrome.
-5. Select only component IDs from `registry/components.json`.
-6. Read each selected component's current `specPath`.
-7. Import React implementations only through the current `libraryPath`.
-8. Check `examples/generated/` for the closest proof package.
-9. Check approved and blocked examples before writing code.
-10. Render the output in `showcase/app` when a browser review URL exists.
-11. Run validation and record human approval before treating the output as
+6. Select only component IDs from `registry/components.json`.
+7. Read each selected component's current `specPath`.
+8. Import React implementations only through the current `libraryPath`.
+9. Check `examples/generated/` for the closest proof package.
+10. Check approved and blocked examples before writing code.
+11. Render the output in `showcase/app` when a browser review URL exists.
+12. Run validation and record human approval before treating the output as
     reusable.
 
 ## Protected Sources
@@ -58,10 +67,17 @@ The Phase 10 real-brief trial renders at:
 
 ## Markdown Outline Mode
 
-Use `LLM_MARKDOWN_OUTLINE_PACK.md` when the first deliverable should be a
-reviewable Markdown page outline. In that mode, the LLM must not produce TSX,
-JSX, HTML, CSS, JavaScript, React code, new components, or implementation
-files. The human approves the outline before a separate TSX build stage begins.
+Use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` when the first deliverable should
+be a reviewable Markdown page outline. In that mode, the LLM must not produce
+TSX, JSX, HTML, CSS, JavaScript, React code, new components, or implementation
+files. The human approves the outline before Runbook B begins.
+
+## Production Page Mode
+
+Use `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` only after the Markdown
+outline has human approval. Runbook B reads the current registry, validates the
+selected props, variants, slots, tokens, and specs, then creates the
+route-agnostic Next.js App Router page package for the target production repo.
 
 ## Stop Rule
 

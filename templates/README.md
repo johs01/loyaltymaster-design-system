@@ -70,32 +70,12 @@ Every template workflow starts by reading:
 
 ## Approved Component Pool
 
-The current approved component pool is the Wave 1 registry:
-
-- `billing-toggle-button`
-- `button-email`
-- `comparison-table`
-- `cta-trial-full-form`
-- `cta-with-button-email`
-- `faq-accordion`
-- `feature-section-2-column-bullets-image`
-- `feature-section-2-column-image`
-- `features-grid`
-- `footer`
-- `geo-fence-use-case`
-- `hero-main-section`
-- `image-grid`
-- `image-strip`
-- `navbar-glassmorphism`
-- `pricing-section`
-- `process-steps`
-- `stats-card-strip`
-- `testimonial-single`
-- `testimonials-grid`
-
-For every selected component, cite its current `specPath` and `libraryPath`
-from `registry/components.json`. A template may not use a component that is not
-listed in the current registry.
+The approved component pool is the current `registry/components.json` file.
+Do not copy the component list into this README, runbooks, prompts, or generated
+artifacts. For every selected component, read and cite its current `specPath`,
+`libraryPath`, `props`, `variants`, `slots`, `tokensUsed`,
+`visualReferencePath`, and `evidencePath` from the registry. A template may not
+use a component that is not listed as stable in the current registry.
 
 ## Approval Lifecycle
 
@@ -119,9 +99,12 @@ listed in the current registry.
 9. Phase 10 adds `EXTERNAL_LLM_HANDOFF.md` and
    `examples/generated/real-brief-trial/` as the practical real-brief workflow
    proof.
-10. Phase 11 adds `LLM_MARKDOWN_OUTLINE_PACK.md` as the copy-paste prompt for
+10. Phase 11 adds `LLM_MARKDOWN_OUTLINE_PACK.md` as the copy-paste wrapper for
    no-code Markdown outline mode before TSX implementation.
-11. Future edits to an approved template must go back through human review
+11. Runbook A/B authoring adds `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and
+   `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` as the canonical
+   registry-driven workflow.
+12. Future edits to an approved template must go back through human review
    before the edited template is treated as approved.
 
 ## Protected Sources

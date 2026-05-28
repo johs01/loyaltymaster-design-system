@@ -12,11 +12,13 @@ Read these files first:
 
 1. `AI_START_HERE.md`
 2. `EXTERNAL_LLM_HANDOFF.md`
-3. `READ_FIRST_AI.md`
-4. `PREFLIGHT.md`
-5. `BRAND.md`
-6. `DESIGN_SYSTEM.md`
-7. `LLM_MARKDOWN_OUTLINE_PACK.md`
+3. `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` for page-to-outline work.
+4. `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` for approved outline-to-page work.
+5. `READ_FIRST_AI.md`
+6. `PREFLIGHT.md`
+7. `BRAND.md`
+8. `DESIGN_SYSTEM.md`
+9. `LLM_MARKDOWN_OUTLINE_PACK.md`
 
 ## Important Folders
 

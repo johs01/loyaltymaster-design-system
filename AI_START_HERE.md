@@ -4,9 +4,12 @@ This is the first file external AI agents must read when creating
 Loyaltymaster or sendPUSH digital content from this design-system folder.
 
 If the task is to draft a new page outline before code, use
-`LLM_MARKDOWN_OUTLINE_PACK.md`. That pack is Markdown outline mode only and
-must not produce TSX, JSX, HTML, CSS, JavaScript, or React code until a human
-approves the outline.
+`RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`. That runbook is Markdown outline mode
+only and must not produce TSX, JSX, HTML, CSS, JavaScript, or React code until
+a human approves the outline.
+
+If the task is to turn a human-approved outline into a production page package,
+use `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
 
 ## Purpose
 
@@ -19,21 +22,23 @@ production app as an editable target.
 
 1. `AI_START_HERE.md`
 2. `EXTERNAL_LLM_HANDOFF.md`
-3. `LLM_MARKDOWN_OUTLINE_PACK.md` when the task is a draft page outline
-4. `READ_FIRST_AI.md`
-5. `PREFLIGHT.md`
-6. `BRAND.md`
-7. `DESIGN_SYSTEM.md`
-8. `tokens/design-tokens.json`
-9. `registry/components.json`
-10. `templates/README.md`
-11. the approved `templates/*.md` recipe for the artifact type
-12. each selected component's current `specPath`
-13. each selected component's current `libraryPath`
-14. `examples/README.md`
-15. at least one relevant `examples/approved/*.md`
-16. every relevant `examples/blocked/*.md`
-17. the rendered template proof page when one exists for the artifact type
+3. `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` when the task is a draft page outline
+4. `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` when the task is an approved outline-to-page build
+5. `LLM_MARKDOWN_OUTLINE_PACK.md` only as a copy-paste wrapper for Runbook A
+6. `READ_FIRST_AI.md`
+7. `PREFLIGHT.md`
+8. `BRAND.md`
+9. `DESIGN_SYSTEM.md`
+10. `tokens/design-tokens.json`
+11. `registry/components.json`
+12. `templates/README.md`
+13. the approved `templates/*.md` recipe for the artifact type
+14. each selected component's current `specPath`
+15. each selected component's current `libraryPath`
+16. `examples/README.md`
+17. at least one relevant `examples/approved/*.md`
+18. every relevant `examples/blocked/*.md`
+19. the rendered template proof page when one exists for the artifact type
 
 ## Body-Only Rule
 
@@ -120,9 +125,15 @@ Loyaltymaster/sendPUSH page brief:
 
 ## Required Output From Future Agents
 
-For Markdown outline mode, use `LLM_MARKDOWN_OUTLINE_PACK.md` and return the
-outline structure from that pack. Do not write implementation code during that
-stage.
+For Markdown outline mode, use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and
+return the outline structure from that runbook. Do not write implementation
+code during that stage.
+
+For approved outline-to-page mode, use
+`RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`. Runbook B must read
+`registry/components.json` at runtime and use promoted registry/library
+components only. It must not use raw MagicPath output or `/Components/`
+handoff code as production page code.
 
 Before writing implementation code, produce a written plan that lists:
 

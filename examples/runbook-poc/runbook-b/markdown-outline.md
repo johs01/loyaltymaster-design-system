@@ -1,6 +1,7 @@
 # Markdown Layout Outline POC
 
 Design System Version: registry/components.json@0.2.0
+Runbook Used: RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md
 Target Repository: {{TARGET_REPOSITORY}}
 Target Route: /customer-retention-consultation
 
@@ -23,6 +24,8 @@ Submit a consultation/contact request.
 - canonicalPath: /customer-retention-consultation
 
 ## Section Order
+
+## Component Sequence Using Approved Registry IDs
 
 1. component: hero-main-section
    variant: default
@@ -78,3 +81,8 @@ Use the library component responsive behavior. Do not add route-specific breakpo
 - All component IDs exist in registry/components.json.
 - No invented props, tokens, variants, or slots.
 - Output remains ready for Runbook B.
+
+## Ready For TSX Build
+
+Ready for TSX build: Yes
+Ready for Runbook B: Yes

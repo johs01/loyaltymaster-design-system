@@ -8,6 +8,8 @@ const requiredFiles = [
   "AI_START_HERE.md",
   "EXTERNAL_LLM_HANDOFF.md",
   "LLM_MARKDOWN_OUTLINE_PACK.md",
+  "RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md",
+  "RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md",
   "tokens/design-tokens.json",
   "tokens/fonts.css",
   "tokens/tokens.css",

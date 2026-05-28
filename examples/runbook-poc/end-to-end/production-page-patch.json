@@ -1,5 +1,6 @@
 {
   "artifactType": "production-page-patch-plan",
+  "runbookUsed": "RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md",
   "targetRepository": "{{TARGET_REPOSITORY}}",
   "routePlaceholder": "<route>",
   "pageSlugPlaceholder": "<page-slug>",
@@ -15,6 +16,16 @@
     "article-body",
     "contact-form-section",
     "thank-you-confirmation-section"
+  ],
+  "registryDrivenFields": [
+    "specPath",
+    "libraryPath",
+    "props",
+    "variants",
+    "slots",
+    "tokensUsed",
+    "visualReferencePath",
+    "evidencePath"
   ],
   "stopCondition": "Patch plan stops when files are ready to import into {{TARGET_REPOSITORY}} and validate with typecheck/build."
 }

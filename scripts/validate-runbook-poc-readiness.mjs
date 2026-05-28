@@ -48,6 +48,22 @@ const requiredFailureStages = [
   "PRODUCTION_IMPORT_FAILED",
 ];
 
+const runbookAPath = "RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md";
+const runbookBPath = "RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md";
+
+const requiredRunbookRegistryFields = [
+  "specPath",
+  "libraryPath",
+  "props",
+  "variants",
+  "slots",
+  "tokensUsed",
+  "whenToUse",
+  "whenNotToUse",
+  "visualReferencePath",
+  "evidencePath",
+];
+
 function fail(message) {
   console.error(`FAIL: ${message}`);
   process.exitCode = 1;
@@ -97,6 +113,70 @@ const registry = readJson("registry/components.json");
 const registryIds = registry.components.map((component) => component.id);
 const indexSource = readText("library/src/index.ts");
 const minimumApprovedComponentCount = 33;
+
+for (const runbookPath of [runbookAPath, runbookBPath]) {
+  if (!exists(runbookPath)) {
+    fail(`Missing canonical runbook file: ${runbookPath}`);
+    continue;
+  }
+
+  const runbook = readText(runbookPath);
+  if (!runbook.includes("registry/components.json")) {
+    fail(`${runbookPath} must point agents to registry/components.json`);
+  }
+  if (!runbook.includes("templates/new-component-request.md")) {
+    fail(`${runbookPath} must fail closed through templates/new-component-request.md`);
+  }
+  if (!runbook.includes("MagicPath") || !runbook.includes("/Components/")) {
+    fail(`${runbookPath} must explain MagicPath and /Components/ are not production runtime sources`);
+  }
+
+  for (const field of requiredRunbookRegistryFields) {
+    if (!runbook.includes(field)) {
+      fail(`${runbookPath} must require registry field: ${field}`);
+    }
+  }
+
+  if (/Approved Component Pool|current approved component pool|Wave 1 registry:\s*\n\s*-/i.test(runbook)) {
+    fail(`${runbookPath} must not freeze a manual approved component inventory`);
+  }
+
+  const explicitComponentIds = registryIds.filter((id) => new RegExp(`(^|[^a-z0-9-])${id}([^a-z0-9-]|$)`, "i").test(runbook));
+  if (explicitComponentIds.length > 2) {
+    fail(`${runbookPath} appears to hard-code component ids instead of reading the registry: ${explicitComponentIds.join(", ")}`);
+  }
+}
+
+const runbookASource = exists(runbookAPath) ? readText(runbookAPath) : "";
+for (const requiredText of [
+  "## Required Markdown Output",
+  "## Page Purpose",
+  "## Target Audience",
+  "## Conversion Goal",
+  "## SEO Fields",
+  "## Section Order",
+  "## Component Sequence Using Approved Registry IDs",
+  "## QA Checklist",
+  "## Ready For TSX Build",
+  "Ready for Runbook B",
+]) {
+  if (!runbookASource.includes(requiredText)) {
+    fail(`${runbookAPath} missing Runbook A contract text: ${requiredText}`);
+  }
+}
+
+const runbookBSource = exists(runbookBPath) ? readText(runbookBPath) : "";
+for (const requiredText of [
+  "app/<route>/page.tsx",
+  "src/site-pages/<page-slug>/<PageName>Page.tsx",
+  "src/config/seoRoutes.json",
+  "src/next/SitePage.tsx",
+  "PRODUCTION_IMPORT_FAILED",
+]) {
+  if (!runbookBSource.includes(requiredText)) {
+    fail(`${runbookBPath} missing Runbook B production target text: ${requiredText}`);
+  }
+}
 
 if (registry.components.length < minimumApprovedComponentCount) {
   fail(`registry/components.json must expose at least ${minimumApprovedComponentCount} approved components, found ${registry.components.length}`);
@@ -196,6 +276,7 @@ for (const outlinePath of [
   const outline = readText(outlinePath);
   for (const requiredText of [
     "Design System Version:",
+    `Runbook Used: ${runbookAPath}`,
     "## Page Purpose",
     "## Target Audience",
     "## Conversion Goal",
@@ -222,6 +303,9 @@ for (const patchPath of [
     continue;
   }
   const patch = readJson(patchPath);
+  if (patch.runbookUsed !== runbookBPath) {
+    fail(`${patchPath} must name canonical Runbook B as runbookUsed`);
+  }
   if (patch.targetRepository !== "{{TARGET_REPOSITORY}}") {
     fail(`${patchPath} must use {{TARGET_REPOSITORY}} as the portable target repository placeholder`);
   }
@@ -239,6 +323,11 @@ for (const patchPath of [
   if (!/ready to import into \{\{TARGET_REPOSITORY\}\}/.test(patch.stopCondition ?? "")) {
     fail(`${patchPath} must declare the production import stop condition`);
   }
+  for (const field of requiredRunbookRegistryFields.filter((field) => !["whenToUse", "whenNotToUse"].includes(field))) {
+    if (!patch.registryDrivenFields?.includes(field)) {
+      fail(`${patchPath} must record registry-driven field coverage: ${field}`);
+    }
+  }
 }
 
 for (const reportPath of [
@@ -250,6 +339,15 @@ for (const reportPath of [
     continue;
   }
   const report = readText(reportPath);
+  if (reportPath.includes("runbook-a") && !report.includes(`Runbook Used: ${runbookAPath}`)) {
+    fail(`${reportPath} must name canonical Runbook A`);
+  }
+  if (reportPath.includes("runbook-b") && !report.includes(`Runbook Used: ${runbookBPath}`)) {
+    fail(`${reportPath} must name canonical Runbook B`);
+  }
+  if (reportPath.includes("end-to-end") && (!report.includes(runbookAPath) || !report.includes(runbookBPath))) {
+    fail(`${reportPath} must name canonical Runbook A and Runbook B`);
+  }
   for (const requiredText of [
     "Input File:",
     "Runbook Used:",
