@@ -72,7 +72,7 @@ candidate evidence for review instead of using an unsupported substitute.
 For the Loyaltymaster run, the source evidence came from live
 `loyaltymaster.com` pages captured with Playwright at desktop and mobile
 viewports. The related evidence report is
-`PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md`.
+`_archive/phase-reports/PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md`.
 
 ## 3. Component Folder Mechanism
 

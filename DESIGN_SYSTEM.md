@@ -337,3 +337,24 @@ layouts.
   existing Remy system.
 - Don't rely on color alone for form states, warnings, success, or navigation
   status.
+
+## 9. System Policies
+
+These are standing engineering decisions for the whole design system:
+
+- `tokens/design-tokens.json` (DTCG v1.0 JSON) is the single token source of
+  truth. `tokens/tokens.css`, `tokens/tokens.d.ts`, and
+  `tokens/tailwind.preset.cjs` are generated exports and must never be edited
+  ahead of the JSON source.
+- React components are server components by default. Each component declares
+  its `clientBoundary` (`server` or `client`) in `registry/components.json`;
+  client components start with `'use client'` and server components must not
+  use React hooks.
+- Prop validation uses TypeScript types plus the JSON Schema `props` blocks in
+  the registry. Zod is intentionally not used.
+- The sendPUSH production repository
+  (`/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION`) and its replica under
+  `RAW/` are read-only. Runbook B produces import-ready page packages; it never
+  edits the production repo directly unless the task explicitly authorizes it.
+- The component inventory lives only in `registry/components.json`; prose
+  documents must not state or freeze component counts.

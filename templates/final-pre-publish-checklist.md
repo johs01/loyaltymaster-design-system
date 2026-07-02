@@ -35,9 +35,9 @@ explicitly standalone and needs its own shell.
 - `examples/README.md`
 - relevant `examples/approved/` files
 - every relevant `examples/blocked/` file
-- `PHASE_7C_REPORT.md`
-- `PHASE_7E_INTERACTION_FIX_REPORT.md`
-- `PHASE_7F_PRODUCTION_FIDELITY_REPORT.md`
+- `_archive/phase-reports/PHASE_7C_REPORT.md`
+- `_archive/phase-reports/PHASE_7E_INTERACTION_FIX_REPORT.md`
+- `_archive/phase-reports/PHASE_7F_PRODUCTION_FIDELITY_REPORT.md`
 
 ## Approved Component Recipe
 

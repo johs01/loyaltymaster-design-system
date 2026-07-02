@@ -12,6 +12,7 @@ code in this turn.
 
 Read these files in full:
 
+- `llms.txt` - the canonical entry manifest and task router.
 - `AI_START_HERE.md` - the external LLM entry point and read order.
 - `EXTERNAL_LLM_HANDOFF.md` - the external hand-off workflow.
 - `LLM_MARKDOWN_OUTLINE_PACK.md` - the no-code Markdown outline mode for draft
@@ -86,9 +87,10 @@ Search the canonical system for components and tokens already in use:
 - `showcase/app/scripts/phase7-visual-gates.json` for each component's current
   visual review classification and strict Phase 7C threshold before relying
   on pixel-diff approval.
-- `PHASE_7C_REPORT.md` for the latest font/runtime parity, regenerated
-  reference, and strict visual-gate notes.
-- `PHASE_7D_INTERACTION_AUDIT.md` and `PHASE_7E_INTERACTION_FIX_REPORT.md` for
+- `_archive/phase-reports/PHASE_7C_REPORT.md` for the latest font/runtime
+  parity, regenerated reference, and strict visual-gate notes.
+- `_archive/phase-reports/PHASE_7D_INTERACTION_AUDIT.md` and
+  `_archive/phase-reports/PHASE_7E_INTERACTION_FIX_REPORT.md` for
   the latest hover/focus/active/open-state gate evidence.
 - `/examples/approved/` for acceptable composition patterns.
 - `/examples/blocked/` for drift patterns that must be rejected.
@@ -110,9 +112,17 @@ For every component you intend to use, read the current `specPath` listed in
 `registry/components.json` immediately before including that component in the
 plan, then use the current `libraryPath` for the React implementation. Check the
 matching Phase 5 showcase specimen when visual alignment is uncertain. If a rule
-was edited in the spec, apply the edited rule to this page. Check the Phase 7C
+was edited in the spec, apply the edited rule to this page.
+
+The available component inventory comes only from `registry/components.json`
+at runtime. The "20 Wave 1" counts below describe the components covered by
+the Phase 7C/7E/7F gates, not the full stable inventory; later-approved
+registry components are also selectable when `status` is `stable`.
+
+Check the Phase 7C
 visual classification for every component you intend to rely on, then use the
-current Phase 7C gate: review `PHASE_7C_REPORT.md`, confirm local font/runtime
+current Phase 7C gate: review `_archive/phase-reports/PHASE_7C_REPORT.md`,
+confirm local font/runtime
 parity, and run `npm run verify:visual` from `showcase/app` before claiming
 visual fidelity. Phase 7C requires all 20 Wave 1 components to be gated with
 zero skipped components and no pixel, width, height, aspect-ratio, font, or

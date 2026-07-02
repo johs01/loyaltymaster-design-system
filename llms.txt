@@ -1,0 +1,82 @@
+# Loyaltymaster Design System
+
+> Canonical entry manifest for any LLM building Loyaltymaster.com / sendPUSH
+> pages from this repo. Read this file first. Every page must match the look of
+> https://sendpush.loyaltymaster.com/design-system-template-page
+
+## The Key Rule
+
+Loyaltymaster pages must be built from approved components only. The AI may
+compose approved Lego blocks; it may not invent new design — no new components,
+variants, tokens, colors, radii, shadows, typography, layouts, animation, or
+hover behavior. The rules live on three levels: brand rules (`BRAND.md`,
+`DESIGN_SYSTEM.md`), component rules (`specs/components/*.md`), and combination
+rules (`templates/*.md`).
+
+## Pick Your Task
+
+- Draft page outline (no code): follow `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`.
+  Output is Markdown only; a human must approve it before any code exists.
+  `LLM_MARKDOWN_OUTLINE_PACK.md` is a copy-paste prompt wrapper for this mode.
+- Approved outline → production page: follow
+  `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
+- Missing component or template: stop and complete
+  `templates/new-component-request.md`. Never improvise inside the artifact.
+
+Each runbook embeds its own runtime read list — follow it. Core sources both
+runbooks rely on:
+
+- `registry/components.json` — the ONLY component inventory. Build the
+  available component list from it at runtime. Never trust a component count
+  or list written in prose docs; counts in older docs describe gating waves,
+  not availability. Only `status: "stable"` components may be used.
+- `tokens/design-tokens.json` — the only token source (DTCG JSON).
+  `tokens.css`, `tokens.d.ts`, and `tailwind.preset.cjs` are generated exports.
+- `specs/components/<id>.md` — read the current spec immediately before using
+  a component.
+- `templates/` — approved composition recipes per artifact type.
+- `examples/approved/`, `examples/blocked/`, `examples/generated/` — accepted
+  patterns, rejection patterns, and full proof packages.
+
+## Hard Boundaries
+
+- Body-only by default: production supplies the global navbar/header/footer.
+  `navbar-glassmorphism` and `footer` are shell-only exceptions for explicitly
+  standalone artifacts.
+- `/Components/` is evidence only (screenshots, handoff archives, source
+  review). Runtime imports come exclusively from `library/src/components/` via
+  each component's registry `libraryPath`.
+- Read-only sources — never edit, import from, or copy runtime code from:
+  `/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION`,
+  `RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/`, raw MagicPath
+  output, and `_archive/`.
+- React is server-by-default; each component declares `clientBoundary` in the
+  registry. Validation uses TypeScript types + JSON Schema (no Zod).
+- `{{TARGET_REPOSITORY}}` in the runbooks is filled from the task brief. If the
+  brief does not name a target repository, produce the route-agnostic package
+  and record the target as UNKNOWN in the diagnostic report.
+
+## Do Not Read (noise for page-generation tasks)
+
+- `_archive/` — historical material, including phase reports and old design
+  system versions.
+- `RAW/` — research captures and production replicas.
+- `Claude Memory/` — internal session memory.
+- `.understand-anything/`, `project-birds-eye-report/`, `.playwright-mcp/`,
+  `.nested-git-backups/` — tooling output and backups.
+- `showcase/app/artifacts/` and `showcase/preview/` — historical gate
+  screenshots and logs.
+
+## Optional Reference
+
+- `AI_START_HERE.md` — expanded workflow overview and proof-package index.
+- `EXTERNAL_LLM_HANDOFF.md` — hand-off checklist for external agents.
+- `PREFLIGHT.md` — mandatory human-gated checklist before planning a new page.
+- `READ_FIRST_AI.md` — operating manual with gate evidence details.
+- `KNOWN_ISSUES.md` — pre-existing deferred issues.
+
+## Validation
+
+After Runbook B output, run `node scripts/validate-phase2.mjs` and
+`node scripts/validate-runbook-poc-readiness.mjs`, then record human approval
+before publishing.

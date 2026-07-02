@@ -80,7 +80,7 @@ use a component that is not listed as stable in the current registry.
 ## Approval Lifecycle
 
 1. Draft templates are created in this folder.
-2. `PHASE_8_TEMPLATE_APPROVAL_PACKET.md` lists each template, allowed component
+2. `_archive/phase-reports/PHASE_8_TEMPLATE_APPROVAL_PACKET.md` lists each template, allowed component
    recipes, drift risks blocked, and approval questions.
 3. The approval authority reviews the packet.
 4. The current template set is explicitly approved and marked `Approved`.

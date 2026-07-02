@@ -99,33 +99,33 @@ const requiredFiles = [
   "templates/final-pre-publish-checklist.md",
   "templates/ai-compliance-checklist.md",
   "templates/new-component-request.md",
-  "PHASE_2_REPORT.md",
-  "PHASE_3_REPORT.md",
-  "PHASE_4_REPORT.md",
-  "PHASE_5_REPORT.md",
-  "PHASE_6_REPORT.md",
-  "PHASE_7_REPORT.md",
-  "PHASE_7B_VISUAL_REVIEW.md",
-  "PHASE_7C_REPORT.md",
-  "PHASE_7D_INTERACTION_AUDIT.md",
-  "PHASE_7E_INTERACTION_FIX_REPORT.md",
-  "PHASE_7F_PRODUCTION_FIDELITY_REPORT.md",
-  "PHASE_8_TEMPLATE_APPROVAL_PACKET.md",
-  "PHASE_8_REPORT.md",
-  "PHASE_8B_TEMPLATE_RENDERING_REVIEW.md",
-  "PHASE_8C_REPORT.md",
-  "PHASE_8D_REPORT.md",
-  "PHASE_8E_TEMPLATE_PROOF_REVIEW.md",
-  "PHASE_8E_REPORT.md",
-  "PHASE_8F_APPROVAL_LOCK_REPORT.md",
-  "PHASE_9_REPORT.md",
-  "PHASE_10_REPORT.md",
-  "PHASE_11_REPORT.md",
-  "PHASE_12_CONVERSION_READINESS_AUDIT.md",
-  "PHASE_12_REPORT.md",
+  "_archive/phase-reports/PHASE_2_REPORT.md",
+  "_archive/phase-reports/PHASE_3_REPORT.md",
+  "_archive/phase-reports/PHASE_4_REPORT.md",
+  "_archive/phase-reports/PHASE_5_REPORT.md",
+  "_archive/phase-reports/PHASE_6_REPORT.md",
+  "_archive/phase-reports/PHASE_7_REPORT.md",
+  "_archive/phase-reports/PHASE_7B_VISUAL_REVIEW.md",
+  "_archive/phase-reports/PHASE_7C_REPORT.md",
+  "_archive/phase-reports/PHASE_7D_INTERACTION_AUDIT.md",
+  "_archive/phase-reports/PHASE_7E_INTERACTION_FIX_REPORT.md",
+  "_archive/phase-reports/PHASE_7F_PRODUCTION_FIDELITY_REPORT.md",
+  "_archive/phase-reports/PHASE_8_TEMPLATE_APPROVAL_PACKET.md",
+  "_archive/phase-reports/PHASE_8_REPORT.md",
+  "_archive/phase-reports/PHASE_8B_TEMPLATE_RENDERING_REVIEW.md",
+  "_archive/phase-reports/PHASE_8C_REPORT.md",
+  "_archive/phase-reports/PHASE_8D_REPORT.md",
+  "_archive/phase-reports/PHASE_8E_TEMPLATE_PROOF_REVIEW.md",
+  "_archive/phase-reports/PHASE_8E_REPORT.md",
+  "_archive/phase-reports/PHASE_8F_APPROVAL_LOCK_REPORT.md",
+  "_archive/phase-reports/PHASE_9_REPORT.md",
+  "_archive/phase-reports/PHASE_10_REPORT.md",
+  "_archive/phase-reports/PHASE_11_REPORT.md",
+  "_archive/phase-reports/PHASE_12_CONVERSION_READINESS_AUDIT.md",
+  "_archive/phase-reports/PHASE_12_REPORT.md",
   "Components/README.md",
   "Components/phase13-capture-results.json",
-  "PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md",
+  "_archive/phase-reports/PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md",
 ];
 
 const requiredComponents = [
@@ -1056,7 +1056,7 @@ for (const requiredText of [
   }
 }
 
-const phase8ApprovalPacket = fs.readFileSync(path.join(root, "PHASE_8_TEMPLATE_APPROVAL_PACKET.md"), "utf8");
+const phase8ApprovalPacket = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8_TEMPLATE_APPROVAL_PACKET.md"), "utf8");
 for (const templatePath of phase8Templates) {
   if (!phase8ApprovalPacket.includes(templatePath)) {
     fail(`PHASE_8_TEMPLATE_APPROVAL_PACKET.md missing template review entry: ${templatePath}`);
@@ -1078,7 +1078,7 @@ for (const requiredText of [
   }
 }
 
-const phase8Report = fs.readFileSync(path.join(root, "PHASE_8_REPORT.md"), "utf8");
+const phase8Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8_REPORT.md"), "utf8");
 for (const requiredText of [
   "Phase 8 creates and approves the template layer",
   "All templates are `Approved`",
@@ -1156,7 +1156,7 @@ for (const fixture of phase8BTemplateFixtures) {
   }
 }
 
-const phase8BReview = fs.readFileSync(path.join(root, "PHASE_8B_TEMPLATE_RENDERING_REVIEW.md"), "utf8");
+const phase8BReview = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8B_TEMPLATE_RENDERING_REVIEW.md"), "utf8");
 for (const requiredText of [
   "http://127.0.0.1:5177/template-tests/web-page",
   "http://127.0.0.1:5177/template-tests/landing-page",
@@ -1173,7 +1173,7 @@ for (const requiredText of [
   }
 }
 
-const phase8CReport = fs.readFileSync(path.join(root, "PHASE_8C_REPORT.md"), "utf8");
+const phase8CReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8C_REPORT.md"), "utf8");
 for (const requiredText of [
   "body-only by default",
   "navbar/header",
@@ -1326,7 +1326,7 @@ for (const requiredText of [
   }
 }
 
-const phase8DReport = fs.readFileSync(path.join(root, "PHASE_8D_REPORT.md"), "utf8");
+const phase8DReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8D_REPORT.md"), "utf8");
 for (const requiredText of [
   "AI_START_HERE.md",
   "examples/generated/landing-page-body/",
@@ -1493,7 +1493,7 @@ for (const requiredText of [
   }
 }
 
-const phase8EReview = fs.readFileSync(path.join(root, "PHASE_8E_TEMPLATE_PROOF_REVIEW.md"), "utf8");
+const phase8EReview = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8E_TEMPLATE_PROOF_REVIEW.md"), "utf8");
 for (const requiredText of [
   "http://127.0.0.1:5177/template-tests/blog-document",
   "http://127.0.0.1:5177/template-tests/brochure-content",
@@ -1510,7 +1510,7 @@ if (phase8EReview.includes("Ready for human browser review")) {
   fail("PHASE_8E_TEMPLATE_PROOF_REVIEW.md must not remain in Ready for human browser review state after Phase 8F approval lock");
 }
 
-const phase8EReport = fs.readFileSync(path.join(root, "PHASE_8E_REPORT.md"), "utf8");
+const phase8EReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8E_REPORT.md"), "utf8");
 for (const requiredText of [
   "examples/generated/web-page-body/",
   "examples/generated/blog-document-body/",
@@ -1526,7 +1526,7 @@ for (const requiredText of [
   }
 }
 
-const phase8FReport = fs.readFileSync(path.join(root, "PHASE_8F_APPROVAL_LOCK_REPORT.md"), "utf8");
+const phase8FReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_8F_APPROVAL_LOCK_REPORT.md"), "utf8");
 for (const requiredText of [
   "Approved by user on 2026-05-20",
   "http://127.0.0.1:5177/template-tests/web-page",
@@ -1604,7 +1604,7 @@ for (const pendingText of ["Ready for human review", "Not yet approved"]) {
   }
 }
 
-const phase9Report = fs.readFileSync(path.join(root, "PHASE_9_REPORT.md"), "utf8");
+const phase9Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_9_REPORT.md"), "utf8");
 for (const requiredText of [
   "examples/generated/external-llm-dry-run/",
   "http://127.0.0.1:5177/template-tests/external-llm-dry-run",
@@ -1669,7 +1669,7 @@ for (const requiredText of [
   }
 }
 
-const phase10Report = fs.readFileSync(path.join(root, "PHASE_10_REPORT.md"), "utf8");
+const phase10Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_10_REPORT.md"), "utf8");
 for (const requiredText of [
   "EXTERNAL_LLM_HANDOFF.md",
   "examples/generated/real-brief-trial/",
@@ -1739,7 +1739,7 @@ for (const docPath of [
   }
 }
 
-const phase11Report = fs.readFileSync(path.join(root, "PHASE_11_REPORT.md"), "utf8");
+const phase11Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_11_REPORT.md"), "utf8");
 for (const requiredText of [
   "LLM_MARKDOWN_OUTLINE_PACK.md",
   "Markdown only",
@@ -1756,7 +1756,7 @@ for (const requiredText of [
   }
 }
 
-const phase12Audit = fs.readFileSync(path.join(root, "PHASE_12_CONVERSION_READINESS_AUDIT.md"), "utf8");
+const phase12Audit = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_12_CONVERSION_READINESS_AUDIT.md"), "utf8");
 for (const requiredText of [
   "https://loyaltymaster.com/wp-sitemap.xml",
   "URLs discovered from sitemap: 42",
@@ -1837,7 +1837,7 @@ for (const url of [
   }
 }
 
-const phase12Report = fs.readFileSync(path.join(root, "PHASE_12_REPORT.md"), "utf8");
+const phase12Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_12_REPORT.md"), "utf8");
 for (const requiredText of [
   "PHASE_12_CONVERSION_READINESS_AUDIT.md",
   "Sitemap URLs audited: 42",
@@ -1987,7 +1987,7 @@ for (const draft of phase13ApprovedComponents) {
   }
 }
 
-const phase13Report = fs.readFileSync(path.join(root, "PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md"), "utf8");
+const phase13Report = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_13_APPROVED_COMPONENT_EVIDENCE_REPORT.md"), "utf8");
 for (const requiredText of [
   "Components/",
   "single approved",
@@ -2180,7 +2180,7 @@ for (const docPath of phase7Docs) {
   }
 }
 
-const phase7CReport = fs.readFileSync(path.join(root, "PHASE_7C_REPORT.md"), "utf8");
+const phase7CReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_7C_REPORT.md"), "utf8");
 for (const requiredText of [
   "tokens/fonts.css",
   "intentional-reference-regeneration",
@@ -2194,7 +2194,7 @@ for (const requiredText of [
   }
 }
 
-const phase7BReview = fs.readFileSync(path.join(root, "PHASE_7B_VISUAL_REVIEW.md"), "utf8");
+const phase7BReview = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_7B_VISUAL_REVIEW.md"), "utf8");
 for (const requiredText of [
   "Native component capture",
   "640x360",
@@ -2207,7 +2207,7 @@ for (const requiredText of [
   }
 }
 
-const phase7FReport = fs.readFileSync(path.join(root, "PHASE_7F_PRODUCTION_FIDELITY_REPORT.md"), "utf8");
+const phase7FReport = fs.readFileSync(path.join(root, "_archive/phase-reports/PHASE_7F_PRODUCTION_FIDELITY_REPORT.md"), "utf8");
 for (const requiredText of [
   "npm run verify:production-fidelity",
   "phase7f-production-targets.json",

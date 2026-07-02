@@ -19,6 +19,11 @@ Target repository placeholder:
 {{TARGET_REPOSITORY}}
 ```
 
+`{{TARGET_REPOSITORY}}` is filled from the task brief or the approved outline.
+If neither names a target repository, keep the placeholder, produce the
+route-agnostic package, and record the target as UNKNOWN in the diagnostic
+report.
+
 Required output file shapes:
 
 ```text
@@ -111,6 +116,10 @@ Forbidden runtime sources:
 
 MagicPath is upstream for designing new or changed components after human
 approval. It is not proof that a production page may import or copy a component.
+
+`/Components/` may still be used as evidence: screenshots, source review, and
+visual comparison. The runtime implementation always comes from the registry
+`libraryPath` under `library/src/components/`.
 
 If `{{TARGET_REPOSITORY}}` does not have a way to import the current
 design-system library components, stop with `PRODUCTION_IMPORT_FAILED` and

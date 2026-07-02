@@ -13,9 +13,11 @@ platform outputs.
 
 ## Source Of Truth
 
-Edit `design-tokens.json` first for token changes. Keep `fonts.css` aligned
-with canonical files in `assets/fonts/` when font assets change. Derived outputs
-must stay aligned with their source.
+`design-tokens.json` (DTCG v1.0 JSON) is the single token source of truth.
+`tokens.css`, `tokens.d.ts`, and `tailwind.preset.cjs` are generated exports —
+edit `design-tokens.json` first and regenerate; never edit the exports ahead of
+the source. Keep `fonts.css` aligned with canonical files in `assets/fonts/`
+when font assets change.
 The current Phase 2 outputs were created from `DESIGN_SYSTEM.md`,
 `withremy.css`, and `src/design-system/tokens.ts`.
 
@@ -28,5 +30,6 @@ node scripts/validate-phase2.mjs
 ```
 
 The validator checks that required token groups exist, derived outputs contain
-expected variables/types, the registry has all 20 components, and protected raw
-paths still resolve.
+expected variables/types, the registry entries are complete, and protected raw
+paths still resolve. The component inventory itself lives only in
+`registry/components.json`.

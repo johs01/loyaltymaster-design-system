@@ -1,6 +1,9 @@
 # Loyaltymaster AI Start Here
 
-This is the first file external AI agents must read when creating
+`llms.txt` at the repo root is the canonical entry manifest; read it first.
+This file is the expanded workflow overview behind it.
+
+This is the first workflow file external AI agents must read when creating
 Loyaltymaster or sendPUSH digital content from this design-system folder.
 
 If the task is to draft a new page outline before code, use
@@ -20,25 +23,30 @@ production app as an editable target.
 
 ## Required Read Order
 
-1. `AI_START_HERE.md`
-2. `EXTERNAL_LLM_HANDOFF.md`
-3. `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` when the task is a draft page outline
-4. `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` when the task is an approved outline-to-page build
-5. `LLM_MARKDOWN_OUTLINE_PACK.md` only as a copy-paste wrapper for Runbook A
-6. `READ_FIRST_AI.md`
-7. `PREFLIGHT.md`
-8. `BRAND.md`
-9. `DESIGN_SYSTEM.md`
-10. `tokens/design-tokens.json`
-11. `registry/components.json`
-12. `templates/README.md`
-13. the approved `templates/*.md` recipe for the artifact type
-14. each selected component's current `specPath`
-15. each selected component's current `libraryPath`
-16. `examples/README.md`
-17. at least one relevant `examples/approved/*.md`
-18. every relevant `examples/blocked/*.md`
-19. the rendered template proof page when one exists for the artifact type
+There is one read order, routed by task. The selected runbook embeds its own
+runtime read list — do not read every file in the repo up front.
+
+For a draft page outline (no code):
+
+1. `llms.txt`
+2. `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`, then the files its Source Of Truth
+   section requires (`BRAND.md`, `DESIGN_SYSTEM.md`,
+   `tokens/design-tokens.json`, `registry/components.json`, the approved
+   `templates/*.md` recipe for the artifact type, each selected component's
+   current `specPath` and `libraryPath`, relevant `examples/approved/*.md`,
+   and every relevant `examples/blocked/*.md`)
+3. `LLM_MARKDOWN_OUTLINE_PACK.md` only as a copy-paste wrapper for Runbook A
+
+For an approved outline-to-page build:
+
+1. `llms.txt`
+2. `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`, then the files its
+   Source Of Truth section requires, plus the rendered template proof page
+   when one exists for the artifact type
+
+Supporting references at any point: `EXTERNAL_LLM_HANDOFF.md`,
+`READ_FIRST_AI.md`, `PREFLIGHT.md`, `templates/README.md`,
+`examples/README.md`.
 
 ## Body-Only Rule
 

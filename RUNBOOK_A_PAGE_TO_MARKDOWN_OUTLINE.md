@@ -115,6 +115,10 @@ MagicPath may be used upstream to create or revise a component only after human
 approval. Runbook A never treats raw MagicPath output, `/Components/` handoff
 code, or visual similarity as an approved runtime component.
 
+`/Components/` may still be used as evidence: screenshots, source review, and
+visual comparison. The runtime implementation always comes from the registry
+`libraryPath` under `library/src/components/`.
+
 ## Required Markdown Output
 
 Return exactly one Markdown outline with these headings. Keep it human readable,
@@ -128,6 +132,10 @@ Runbook Used: RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md
 Input Source: [brief, screenshot, URL, source page, or mixed]
 Target Repository: {{TARGET_REPOSITORY}}
 Target Route: [route path or UNKNOWN]
+
+<!-- {{TARGET_REPOSITORY}} is filled from the task brief. If the brief does not
+name a target repository, keep the placeholder, record the target as UNKNOWN in
+the diagnostic section, and continue route-agnostically. -->
 
 ## Page Purpose
 [One concise paragraph.]

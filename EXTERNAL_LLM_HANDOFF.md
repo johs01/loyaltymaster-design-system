@@ -5,8 +5,8 @@ Claude, Gemini, ChatGPT, or another AI agent.
 
 ## Start Here
 
-The first file to read is `AI_START_HERE.md`. Do not start from the production
-app, a screenshot, or `/Components/`.
+The first file to read is `llms.txt`, then `AI_START_HERE.md`. Do not start
+from the production app, a screenshot, or `/Components/`.
 
 For draft page outlines, use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`. It is
 the canonical no-code Markdown outline workflow for Codex, Claude, Gemini,

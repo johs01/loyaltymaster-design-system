@@ -4,8 +4,14 @@ This is the core operating manual an AI agent must read before creating
 Loyaltymaster or sendPUSH web pages, documents, landing pages, blog posts,
 sales pages, or subdomain content.
 
-For external LLMs entering this folder, start with `AI_START_HERE.md`; it points
-back to this operating manual and defines the full read order.
+For external LLMs entering this folder, start with `llms.txt` (the canonical
+entry manifest), then `AI_START_HERE.md`; they point back to this operating
+manual and define the task-routed read order.
+
+The component inventory lives only in `registry/components.json`. Component
+counts written in prose (for example "20 Wave 1 components") describe gating
+waves, not availability. Build the available component list from the registry
+at runtime; every `status: "stable"` component may be selected.
 
 ## Purpose
 
@@ -131,7 +137,7 @@ screenshots. The Phase 5 smoke verifier proves every Wave 1 component renders in
 desktop and mobile viewports. Phase 7C is the current visual fidelity gate for
 all 20 Wave 1 components. Before treating a component as visually stable, check
 its entry in `showcase/app/scripts/phase7-visual-gates.json`, review
-`PHASE_7C_REPORT.md`, and run `npm run verify:visual` from
+`_archive/phase-reports/PHASE_7C_REPORT.md`, and run `npm run verify:visual` from
 `showcase/app`; skipped components are no longer accepted.
 
 ## Component Interaction Review Rule
