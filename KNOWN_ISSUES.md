@@ -34,6 +34,7 @@ the cleanup.
 | Only the landing-page recipe had a complete generated proof package. | Resolved by Phase 8E. Generated proof packages now cover `examples/generated/web-page-body/`, `examples/generated/landing-page-body/`, `examples/generated/blog-document-body/`, and `examples/generated/brochure-content-body/`, with a documented new-component request for missing long-form article-body needs. | Phase 8E |
 | The design system had approved recipe proofs but no complete external-LLM dry run from `AI_START_HERE.md` to a new body-only page. | Resolved by Phase 9. `examples/generated/external-llm-dry-run/` and `http://127.0.0.1:5177/template-tests/external-llm-dry-run` prove the start-here workflow with approved components only. | Phase 9 |
 | External LLMs had no concise hand-off pack and no practical real-brief workflow proof. | Resolved by Phase 10. `EXTERNAL_LLM_HANDOFF.md`, `examples/generated/real-brief-trial/`, and `http://127.0.0.1:5177/template-tests/real-brief-trial` prove the hand-off and real-brief body-only workflow. | Phase 10 |
+| The 13 Wave 2 promoted components are `stable` with Phase 5 smoke and Phase 13 evidence approval but are not yet through the Phase 7C/7E/7F visual, interaction, and production-fidelity gates. Their visual-gate entries are coverage-only (`gate: false`). | Closing requires human-approved reference regeneration and live loyaltymaster.com gate targets; see the Gate Coverage section in `registry/README.md`. | Open — future gate-extension session |
 
 ## Non-Negotiable Constraint
 

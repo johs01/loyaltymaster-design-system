@@ -2090,17 +2090,20 @@ if (!phase7VisualResults) {
   if (!phase7VisualResults.runtime?.screenshotTiming?.includes("document.fonts.ready")) {
     fail("Phase 7C visual results must record font-ready screenshot timing");
   }
-  if (phase7VisualResults.gatedCount !== requiredComponents.length) {
+  if (phase7VisualResults.gatedCount < requiredComponents.length) {
     fail(`Phase 7 visual results must gate all ${requiredComponents.length} Wave 1 components`);
-  }
-  if (phase7VisualResults.skippedCount !== 0) {
-    fail("Phase 7 visual results must have zero skipped components");
   }
   if (phase7VisualResults.failedCount !== 0) {
     fail("Phase 7 visual results must have zero failed gated components");
   }
-  if (!Array.isArray(phase7VisualResults.results) || phase7VisualResults.results.length !== requiredComponents.length) {
-    fail(`Phase 7 visual results must include exactly ${requiredComponents.length} Wave 1 component results`);
+  if (!Array.isArray(phase7VisualResults.results) || phase7VisualResults.results.length < requiredComponents.length) {
+    fail(`Phase 7 visual results must include results for all ${requiredComponents.length} Wave 1 components`);
+  } else {
+    for (const result of phase7VisualResults.results.filter((item) => !item.gate)) {
+      if (requiredComponents.includes(result.id)) {
+        fail(`${result.id} is a Wave 1 component and must not be skipped in Phase 7 visual results`);
+      }
+    }
   }
 }
 
@@ -2110,8 +2113,8 @@ if (!phase7InteractionResults) {
   if (phase7InteractionResults.phase !== "7E") {
     fail("Phase 7 interaction results must declare phase 7E after interaction fixes");
   }
-  if (!Array.isArray(phase7InteractionResults.results) || phase7InteractionResults.results.length !== requiredComponents.length) {
-    fail(`Phase 7E interaction results must include exactly ${requiredComponents.length} Wave 1 component results`);
+  if (!Array.isArray(phase7InteractionResults.results) || phase7InteractionResults.results.length < requiredComponents.length) {
+    fail(`Phase 7E interaction results must include results for all ${requiredComponents.length} Wave 1 components`);
   } else {
     for (const component of registry.components.filter((component) => requiredComponents.includes(component.id))) {
       const interactionResult = phase7InteractionResults.results.find((result) => result.id === component.id);

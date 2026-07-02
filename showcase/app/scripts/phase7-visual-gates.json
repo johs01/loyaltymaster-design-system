@@ -2,6 +2,11 @@
   "version": "phase-7c",
   "metric": "Phase 7C native component capture compared to intentionally regenerated canonical references after local Rodger and Onest font parity. meanDelta is average RGB distance. mismatchRatio is the share of pixels with RGB distance above 0.08. Width, height, aspect, browser runtime, font readiness, deviceScaleFactor, and screenshot timing metadata are gated so layout or runtime drift cannot be hidden.",
   "components": {
+    "article-body": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "article-body is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/article-body.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
     "billing-toggle-button": {
       "classification": "Phase 7C font/runtime parity gated",
       "gate": true,
@@ -11,6 +16,21 @@
       "maxWidthDeltaRatio": 0,
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
+    },
+    "blog-article-index": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "blog-article-index is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/blog-article-index.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "booking-demo-request-section": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "booking-demo-request-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/booking-demo-request-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "branded-card-application-form": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "branded-card-application-form is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/branded-card-application-form.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     },
     "button-email": {
       "classification": "Phase 7C font/runtime parity gated",
@@ -22,6 +42,11 @@
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
     },
+    "coming-soon-section": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "coming-soon-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/coming-soon-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
     "comparison-table": {
       "classification": "Phase 7C font/runtime parity gated",
       "gate": true,
@@ -31,6 +56,11 @@
       "maxWidthDeltaRatio": 0,
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
+    },
+    "contact-form-section": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "contact-form-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/contact-form-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     },
     "cta-trial-full-form": {
       "classification": "Phase 7C font/runtime parity gated",
@@ -61,6 +91,11 @@
       "maxWidthDeltaRatio": 0,
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
+    },
+    "faq-index-search": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "faq-index-search is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/faq-index-search.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     },
     "feature-section-2-column-bullets-image": {
       "classification": "Phase 7C font/runtime parity gated",
@@ -142,6 +177,21 @@
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
     },
+    "industry-use-case-card-grid": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "industry-use-case-card-grid is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/industry-use-case-card-grid.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "knowledge-base-index": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "knowledge-base-index is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/knowledge-base-index.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "legal-document-body": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "legal-document-body is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/legal-document-body.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
     "navbar-glassmorphism": {
       "classification": "Phase 7C font/runtime parity gated",
       "gate": true,
@@ -151,6 +201,16 @@
       "maxWidthDeltaRatio": 0,
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
+    },
+    "newsletter-signup-section": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "newsletter-signup-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/newsletter-signup-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "pricing-page-matrix": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "pricing-page-matrix is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/pricing-page-matrix.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     },
     "pricing-section": {
       "classification": "Phase 7C font/runtime parity gated",
@@ -201,6 +261,11 @@
       "maxWidthDeltaRatio": 0,
       "maxHeightDeltaRatio": 0,
       "maxAspectDelta": 0
+    },
+    "thank-you-confirmation-section": {
+      "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "thank-you-confirmation-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/thank-you-confirmation-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     }
   }
 }

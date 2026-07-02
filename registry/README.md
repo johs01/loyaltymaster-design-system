@@ -105,6 +105,53 @@ The Runbook A/B authoring phase adds canonical registry-driven runbooks:
 Both runbooks must read `components.json` at runtime and may not freeze the
 component list manually.
 
+## Gate Coverage
+
+Every `status: "stable"` component is selectable in Runbook A/B. Gate depth
+differs by wave:
+
+- The 20 Wave 1 components are fully gated: Phase 7C visual pixel-diff, Phase
+  7E interaction, and Phase 7F live-production fidelity.
+- The 13 Wave 2 promoted components are stable with Phase 5 rendered smoke
+  proof and Phase 13 live-capture evidence approval, but are NOT yet through
+  the Phase 7C/7E/7F gates. Their entries in
+  `showcase/app/scripts/phase7-visual-gates.json` are coverage-only
+  (`gate: false`) so `npm run verify:visual` can run.
+
+Closing the Wave 2 gate gap requires a human-approved session:
+
+1. Run `npm run regenerate:phase7c-references` scoped to the Wave 2 ids so the
+   canonical references become showcase specimen captures (the current
+   references are 1440x1200 live loyaltymaster.com captures and can never
+   pixel-match a specimen render).
+2. Human reviews and approves the regenerated references.
+3. Flip the 13 gate entries to `gate: true` with the strict Wave 1 thresholds.
+4. Extend the Phase 7E interaction audit and Phase 7F production targets with
+   live loyaltymaster.com URLs/selectors for the Wave 2 sections.
+
+## New Component Approval Flow
+
+When a runbook stops because no approved component fits, this is the loop that
+gets a new component into the registry:
+
+1. The requesting agent fills `templates/new-component-request.md` (existing
+   components must be considered and rejected with spec/library evidence).
+2. The approval authority — the repo owner — reviews the request. Nothing is
+   built until the request is approved.
+3. On approval, the component is designed (MagicPath upstream when a new
+   visual is needed), and evidence lands in `Components/<Name>/` as handoff
+   archive material.
+4. The build steps in `templates/new-component-request.md` ("Separate Approval
+   Workflow") are completed: registry entry, spec, screenshot evidence,
+   library implementation, showcase specimen, gates, validation.
+5. The approval authority gives explicit final approval; only then does the
+   component get `status: "stable"` and become selectable by templates and
+   runbooks.
+
+There is no fixed SLA; a pending request blocks only the artifact that needs
+it. The requesting artifact must ship without the component or wait — never
+improvise a substitute.
+
 ## Rules
 
 - AI tools must request components by `id` or `name` from `components.json`.
