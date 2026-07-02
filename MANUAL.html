@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loyaltymaster Design System — Instruction Manual</title>
+<link rel="stylesheet" href="tokens/fonts.css">
+<link rel="stylesheet" href="tokens/tokens.css">
+<style>
+  /* Built from tokens/tokens.css — no invented colors, radii, shadows, or type. */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--lm-font-body);
+    color: var(--lm-color-ink);
+    background: var(--lm-color-surface-white);
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: var(--lm-container-focus);
+    margin: 0 auto;
+    padding: 0 var(--lm-container-padding-mobile);
+  }
+  @media (min-width: 768px) {
+    .container { padding: 0 var(--lm-container-padding-tablet); }
+  }
+
+  /* Hero band */
+  .hero {
+    background: var(--lm-color-background-peach);
+    padding: var(--lm-spacing-section-mobile-y) 0;
+    text-align: center;
+  }
+  @media (min-width: 1024px) {
+    .hero { padding: var(--lm-spacing-section-desktop-y) 0; }
+  }
+  .eyebrow {
+    display: inline-block;
+    background: var(--lm-color-accent-tag-yellow);
+    border-radius: var(--lm-radius-badge);
+    padding: 4px var(--lm-spacing-sm);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: var(--lm-spacing-md);
+  }
+  h1 {
+    font-family: var(--lm-font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    margin-bottom: var(--lm-spacing-md);
+  }
+  .hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--lm-color-text-muted);
+    font-size: 17px;
+  }
+
+  /* Tabs */
+  .tabs {
+    position: sticky;
+    top: 0;
+    background: var(--lm-color-surface-white);
+    border-bottom: 1px solid var(--lm-color-surface-panel-gray);
+    z-index: 10;
+  }
+  .tablist {
+    display: flex;
+    gap: var(--lm-spacing-xs);
+    justify-content: center;
+    padding: var(--lm-spacing-sm) var(--lm-container-padding-mobile);
+    flex-wrap: wrap;
+  }
+  .tab {
+    font-family: var(--lm-font-body);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--lm-color-ink);
+    background: var(--lm-color-surface-panel-light);
+    border: 1px solid var(--lm-color-surface-panel-gray);
+    border-radius: var(--lm-radius-pill);
+    padding: 10px var(--lm-spacing-lg);
+    cursor: pointer;
+    transition: background var(--lm-motion-duration-fast) var(--lm-motion-easing-gentle),
+                transform var(--lm-motion-duration-fast) var(--lm-motion-easing-gentle);
+  }
+  .tab:hover { background: var(--lm-color-surface-panel-gray); transform: translateY(-1px); }
+  .tab:focus-visible {
+    outline: 3px solid var(--lm-color-accent-orange);
+    outline-offset: 2px;
+  }
+  .tab[aria-selected="true"] {
+    background: var(--lm-color-accent-yellow);
+    border-color: var(--lm-color-accent-yellow);
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  section.band { padding: var(--lm-spacing-section-mobile-y) 0; }
+  @media (min-width: 1024px) {
+    section.band { padding: var(--lm-spacing-section-tablet-y) 0; }
+  }
+  .band-cyan { background: var(--lm-color-background-cyan); }
+  .band-peach { background: var(--lm-color-background-peach); }
+  .band-yellow { background: var(--lm-color-background-yellow); }
+
+  h2 {
+    font-family: var(--lm-font-display);
+    font-size: clamp(24px, 3.4vw, 34px);
+    margin-bottom: var(--lm-spacing-lg);
+  }
+  h3 {
+    font-family: var(--lm-font-body);
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: var(--lm-spacing-xs);
+  }
+
+  .card {
+    background: var(--lm-color-surface-white);
+    border-radius: var(--lm-radius-card-primary);
+    box-shadow: var(--lm-shadow-card-base);
+    padding: var(--lm-spacing-lg);
+    margin-bottom: var(--lm-spacing-md);
+    transition: box-shadow var(--lm-motion-duration-base) var(--lm-motion-easing-standard);
+  }
+  .card:hover { box-shadow: var(--lm-shadow-card-hover); }
+  .card p, .card li { color: var(--lm-color-ink); font-size: 15.5px; }
+  .card .muted { color: var(--lm-color-text-muted); }
+  .card ul, .card ol { padding-left: 22px; margin-top: var(--lm-spacing-xs); }
+  .card li { margin-bottom: 6px; }
+
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.88em;
+    background: var(--lm-color-surface-panel-gray);
+    border-radius: var(--lm-radius-check-dot);
+    padding: 1px 6px;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: var(--lm-radius-pill);
+    background: var(--lm-color-accent-yellow);
+    font-weight: 800;
+    font-size: 15px;
+    margin-right: var(--lm-spacing-xs);
+    flex-shrink: 0;
+  }
+  .step-head { display: flex; align-items: center; margin-bottom: var(--lm-spacing-xs); }
+
+  .stop-card { border-left: 5px solid var(--lm-color-feedback-error); }
+  .ok-card   { border-left: 5px solid var(--lm-color-feedback-success); }
+
+  /* Roadmap */
+  .progress-wrap { margin-bottom: var(--lm-spacing-lg); }
+  .progress-track {
+    height: 14px;
+    background: var(--lm-color-surface-panel-gray);
+    border-radius: var(--lm-radius-pill);
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--lm-color-accent-yellow);
+    border-radius: var(--lm-radius-pill);
+    transition: width var(--lm-motion-duration-reveal) var(--lm-motion-easing-reveal);
+  }
+  .progress-label {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--lm-color-text-muted);
+    margin-top: var(--lm-spacing-xs);
+  }
+
+  .roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--lm-spacing-sm);
+    background: var(--lm-color-surface-white);
+    border-radius: var(--lm-radius-card-secondary);
+    box-shadow: var(--lm-shadow-card-base);
+    padding: var(--lm-spacing-md);
+    margin-bottom: var(--lm-spacing-sm);
+    cursor: pointer;
+    transition: box-shadow var(--lm-motion-duration-fast) var(--lm-motion-easing-gentle);
+  }
+  .roadmap-item:hover { box-shadow: var(--lm-shadow-card-hover); }
+  .roadmap-item input[type="checkbox"] {
+    width: 22px; height: 22px;
+    margin-top: 2px;
+    accent-color: var(--lm-color-feedback-success);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .roadmap-item input[type="checkbox"]:focus-visible {
+    outline: 3px solid var(--lm-color-accent-orange);
+    outline-offset: 2px;
+  }
+  .roadmap-item .title { font-weight: 700; font-size: 15.5px; }
+  .roadmap-item .desc { font-size: 14px; color: var(--lm-color-text-muted); margin-top: 2px; }
+  .roadmap-item.done .title { text-decoration: line-through; color: var(--lm-color-text-muted); }
+  .roadmap-item.done { opacity: 0.75; }
+
+  footer {
+    background: var(--lm-color-background-dark);
+    color: var(--lm-color-surface-panel-light);
+    text-align: center;
+    padding: var(--lm-spacing-xl) var(--lm-container-padding-mobile);
+    font-size: 14px;
+  }
+  footer .brand { font-family: var(--lm-font-display); font-size: 18px; margin-bottom: var(--lm-spacing-xs); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">Internal Manual</span>
+    <h1>The Loyaltymaster Design System</h1>
+    <p>How any human or LLM turns a page brief into a production-ready
+    Loyaltymaster page — the same look, every time, with zero invented design.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Manual sections">
+  <div class="tablist" role="tablist">
+    <button class="tab" role="tab" id="tab-use" aria-selected="true" aria-controls="panel-use">How To Use It</button>
+    <button class="tab" role="tab" id="tab-why" aria-selected="false" aria-controls="panel-why">The Thinking</button>
+    <button class="tab" role="tab" id="tab-roadmap" aria-selected="false" aria-controls="panel-roadmap">Roadmap</button>
+  </div>
+</nav>
+
+<!-- TAB 1: HOW TO USE -->
+<div class="panel active" id="panel-use" role="tabpanel" aria-labelledby="tab-use">
+
+  <section class="band">
+    <div class="container">
+      <h2>The 2-step process</h2>
+
+      <div class="card">
+        <div class="step-head"><span class="step-number">0</span><h3>Always start at llms.txt</h3></div>
+        <p><code>llms.txt</code> at the repo root is the single entry point. It states the
+        Key Rule, routes you (or your LLM) to the right runbook for the task, and lists
+        which folders are noise and must not be read.</p>
+      </div>
+
+      <div class="card">
+        <div class="step-head"><span class="step-number">1</span><h3>Runbook A — brief → Markdown outline</h3></div>
+        <p>Give the LLM a page brief, URL, or screenshot and point it at
+        <code>RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md</code>. It returns a strict Markdown
+        outline: every section mapped to an approved registry component, with props,
+        content fields, CTAs, and SEO fields filled in. <strong>No code is written in
+        this step.</strong></p>
+        <p class="muted">You review the outline. Nothing proceeds without your approval.</p>
+      </div>
+
+      <div class="card">
+        <div class="step-head"><span class="step-number">2</span><h3>Runbook B — approved outline → production page</h3></div>
+        <p>Hand the approved outline to
+        <code>RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md</code>. The LLM
+        re-validates every component against the registry, then produces the Next.js
+        page package: route file, page body, SEO route entry, and SitePage wiring —
+        importing only from <code>library/src/components/</code>.</p>
+        <p class="muted">Run <code>node scripts/validate-phase2.mjs</code> afterwards and record
+        your approval before publishing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-cyan">
+    <div class="container">
+      <h2>What lives where</h2>
+      <div class="card">
+        <ul>
+          <li><code>registry/components.json</code> — the <strong>only</strong> component
+          inventory. 33 stable components with props, variants, slots, tokens, and paths.
+          Never trust a component list written in prose.</li>
+          <li><code>tokens/design-tokens.json</code> — the only token source. The CSS,
+          TypeScript, and Tailwind files are generated from it.</li>
+          <li><code>specs/components/</code> — one rule file per component. Read the spec
+          immediately before using a component; edited rules win.</li>
+          <li><code>library/src/components/</code> — the production React code. The only
+          place runtime imports come from.</li>
+          <li><code>templates/</code> — approved composition recipes: which components,
+          in which order, for each page type.</li>
+          <li><code>examples/</code> — approved patterns, blocked anti-patterns, and six
+          full generated proof packages.</li>
+          <li><code>showcase/app</code> — renders every component in a browser and runs
+          the visual, interaction, and production-fidelity gates.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <h2>Hard boundaries</h2>
+      <div class="card stop-card">
+        <h3>Never</h3>
+        <ul>
+          <li>Invent a component, variant, color, radius, shadow, font, or animation.</li>
+          <li>Add a navbar, header, or footer to a normal page body — production supplies
+          the global shell. Pages are <strong>body-only</strong> by default.</li>
+          <li>Import runtime code from <code>/Components/</code> (evidence only), from
+          <code>_archive/</code>, from raw MagicPath output, or from the protected
+          sendPUSH production repo.</li>
+          <li>Use a raw color or spacing literal when a token exists.</li>
+        </ul>
+      </div>
+      <div class="card ok-card">
+        <h3>When something is missing</h3>
+        <p>If no approved component can express what the brief needs, the workflow
+        <strong>stops</strong> and files <code>templates/new-component-request.md</code>.
+        The component is then designed, built, registered, gated, and approved by you —
+        only after that can any page use it. No improvised substitutes, ever.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TAB 2: THE THINKING -->
+<div class="panel" id="panel-why" role="tabpanel" aria-labelledby="tab-why">
+
+  <section class="band band-peach">
+    <div class="container">
+      <h2>Why this system exists</h2>
+      <div class="card">
+        <p>Left alone, every LLM produces the same generic page: purple gradients, Inter
+        on white, endless identical card grids. That is <strong>design drift</strong> —
+        and after ten pages, Loyaltymaster would no longer look like Loyaltymaster.</p>
+        <p style="margin-top: 12px;">This system prevents drift by treating design as a
+        <strong>box of approved Lego bricks</strong>. An AI may pick bricks and arrange
+        them by the recipes. It may never mold a new brick.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container">
+      <h2>Three levels of rules</h2>
+      <div class="card">
+        <div class="step-head"><span class="step-number">1</span><h3>Brand rules</h3></div>
+        <p><code>BRAND.md</code> and <code>DESIGN_SYSTEM.md</code> — voice, audience,
+        colors, typography, motion, and the anti-references to avoid. Rodger Bold for big
+        promises, Onest for readability, yellow only for high-intent action moments.</p>
+      </div>
+      <div class="card">
+        <div class="step-head"><span class="step-number">2</span><h3>Component rules</h3></div>
+        <p>One spec per component in <code>specs/components/</code>: when to use it, when
+        not to, allowed props and states, accessibility, and its exact tokens. The spec
+        is editable — the current spec always wins over memory or old examples.</p>
+      </div>
+      <div class="card">
+        <div class="step-head"><span class="step-number">3</span><h3>Combination rules</h3></div>
+        <p>Templates in <code>templates/</code> define which components go together and
+        in what order for each page type — a trial page, a pricing page, a proof-led
+        sales page. Composition is a recipe, not a free-for-all.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-cyan">
+    <div class="container">
+      <h2>Design principles behind the workflow</h2>
+      <div class="card">
+        <h3>Machine-readable beats prose</h3>
+        <p>The component inventory, props, and tokens live in JSON that an LLM reads at
+        runtime. Prose documents explain; they never define. This is why the registry —
+        not any README — decides what exists.</p>
+      </div>
+      <div class="card">
+        <h3>Humans approve, machines verify</h3>
+        <p>A human gate sits between outline and code, and before anything is published.
+        Around that, scripts verify everything mechanically: file inventory, registry
+        completeness, pixel-diff visual gates, interaction gates, and live-production
+        fidelity comparison.</p>
+      </div>
+      <div class="card">
+        <h3>Fail closed</h3>
+        <p>Every failure has a named stage (<code>COMPONENT_NOT_APPROVED</code>,
+        <code>TOKEN_INVALID</code>, …). When the system can't do something correctly, it
+        stops and reports — it never patches around the rules.</p>
+      </div>
+      <div class="card">
+        <h3>Proof over promises</h3>
+        <p>Six generated example packages prove the whole workflow end-to-end: filled
+        brief → body-only TSX → component evidence → checklist. Blocked examples document
+        exactly what rejected drift looks like, so the LLM recognizes it.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- TAB 3: ROADMAP -->
+<div class="panel" id="panel-roadmap" role="tabpanel" aria-labelledby="tab-roadmap">
+  <section class="band band-yellow">
+    <div class="container">
+      <h2>Roadmap — next steps</h2>
+      <p class="muted" style="margin-bottom: 18px; color: var(--lm-color-text-muted);">
+        Tick items off as they are completed. Progress is saved in this browser.</p>
+
+      <div class="progress-wrap">
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-label" id="progressLabel">0 of 0 complete</div>
+      </div>
+
+      <div id="roadmapList"></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="brand">sendPUSH | Loyaltymaster</div>
+  <p>Design-system instruction manual · built entirely from tokens/design-tokens.json</p>
+</footer>
+
+<script>
+  // ---- Tabs ----
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected', t === tab ? 'true' : 'false'));
+      panels.forEach(p => p.classList.toggle('active', p.id === tab.getAttribute('aria-controls')));
+    });
+  });
+
+  // ---- Roadmap ----
+  const roadmap = [
+    { id: 'e2e-test',
+      title: 'Run a real end-to-end test with an external LLM',
+      desc: 'Real page brief → Runbook A outline → human approval → Runbook B page package. The true proof the system produces spot-on pages.' },
+    { id: 'wave2-references',
+      title: 'Regenerate Phase 7C references for the 13 Wave 2 components',
+      desc: 'Capture showcase specimen renders as new canonical references (current references are live-site captures) and give human visual approval.' },
+    { id: 'wave2-gates-on',
+      title: 'Flip the 13 Wave 2 visual gate entries to gate: true',
+      desc: 'After reference approval, apply the strict Wave 1 thresholds so all 33 components are pixel-gated.' },
+    { id: 'wave2-interaction-fidelity',
+      title: 'Extend interaction and production-fidelity gates to Wave 2',
+      desc: 'Add live loyaltymaster.com URLs and selectors to the Phase 7E audit and Phase 7F production targets.' },
+    { id: 'untracked-cleanup',
+      title: 'Decide the fate of untracked root files',
+      desc: 'Commit or gitignore PROJECT_OVERVIEW.md, the RAW llms.txt research captures, and the tooling output folders.' },
+    { id: 'publish-llmstxt',
+      title: 'Publish llms.txt at loyaltymaster.com/llms.txt',
+      desc: 'Serve the entry manifest at the standard URL so external AI tools can discover the rules without the repo.' },
+    { id: 'target-repo',
+      title: 'Name the sendPUSH production repo in real briefs',
+      desc: 'Fill {{TARGET_REPOSITORY}} so Runbook B packages land route-ready instead of route-agnostic.' },
+    { id: 'site-conversion',
+      title: 'Convert the remaining loyaltymaster.com pages',
+      desc: 'Work through the Phase 12 conversion audit backlog (42 URLs) once the Wave 2 gates are closed.' },
+  ];
+
+  const STORAGE_KEY = 'lm-roadmap-v1';
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const listEl = document.getElementById('roadmapList');
+
+  roadmap.forEach(item => {
+    const done = !!saved[item.id];
+    const label = document.createElement('label');
+    label.className = 'roadmap-item' + (done ? ' done' : '');
+    label.innerHTML = `
+      <input type="checkbox" ${done ? 'checked' : ''} data-id="${item.id}"
+             aria-label="${item.title}">
+      <span>
+        <span class="title">${item.title}</span><br>
+        <span class="desc">${item.desc}</span>
+      </span>`;
+    listEl.appendChild(label);
+  });
+
+  function updateProgress() {
+    const boxes = listEl.querySelectorAll('input[type="checkbox"]');
+    const done = [...boxes].filter(b => b.checked).length;
+    document.getElementById('progressFill').style.width =
+      boxes.length ? (done / boxes.length * 100) + '%' : '0%';
+    document.getElementById('progressLabel').textContent =
+      `${done} of ${boxes.length} complete`;
+  }
+
+  listEl.addEventListener('change', event => {
+    if (event.target.type !== 'checkbox') return;
+    const state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    state[event.target.dataset.id] = event.target.checked;
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    event.target.closest('.roadmap-item').classList.toggle('done', event.target.checked);
+    updateProgress();
+  });
+
+  updateProgress();
+</script>
+
+</body>
+</html>
