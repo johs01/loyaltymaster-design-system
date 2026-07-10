@@ -32,6 +32,10 @@ Registry description: Primary first-screen marketing hero with value proposition
 - `eyebrow` (string, optional).
 - `heading` (string, required).
 - `body` (string, optional).
+- `checklist` (array, optional): 1-5 short yellow-square checklist items
+  rendered between the body and the email capture / primary action. Items come
+  from the page copy re-chunked at sentence seams only; never invent checklist
+  copy.
 - `primaryAction` (object, required).
 - `image` (object, optional; local `ImageAsset` only).
 - `emailPlaceholder` (string, optional).
@@ -108,6 +112,8 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - `eyebrow` (optional): Approved eyebrow content/input slot.
 - `heading` (required): Approved heading content/input slot.
 - `body` (optional): Approved body content/input slot.
+- `checklist` (optional): Approved yellow-square checklist slot between body
+  and email capture.
 - `primaryAction` (required): Approved primaryAction content/input slot.
 - `image` (optional): Approved image content/input slot.
 - `emailPlaceholder` (optional): Approved emailPlaceholder content/input slot.

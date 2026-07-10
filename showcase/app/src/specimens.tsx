@@ -18,6 +18,7 @@ import {
   PricingSection,
   ProcessSteps,
   StatsCardStrip,
+  StrategySentenceCards,
   TestimonialSingle,
   TestimonialsGrid,
   ArticleBody,
@@ -358,6 +359,39 @@ export const specimens: ComponentSpecimen[] = [
           { value: "3x", label: "Faster follow-ups" },
           { value: "35%", label: "More booking recoveries" },
         ]}
+      />
+    ),
+  },
+  {
+    id: "strategy-sentence-cards",
+    render: () => (
+      <StrategySentenceCards
+        eyebrow="The opportunity"
+        heading="Massive potential, right where your customers already are."
+        groups={[
+          {
+            title: "Live inside the wallet they already use.",
+            sentences: [
+              "At its core Loyaltymaster leverages Apple Wallet and Google Pay, pre-installed on all modern smartphones.",
+              "Your loyalty card lives next to your customer's virtual credit cards, hotel bookings, and flight tickets, making it easier than ever for customers to stay loyal to your brand.",
+            ],
+          },
+          {
+            title: "Reach them where they already are.",
+            sentences: [
+              "Engage your customers through the same platform they use for payments and everyday tasks.",
+              "Your customers are constantly on their smartphones, checking them up to 200 times per day, which is exactly where you want your brand to be.",
+            ],
+          },
+          {
+            title: "A frictionless, clutter-free experience.",
+            sentences: [
+              "Your customers do not have to carry physical loyalty and reward cards in their wallets, or install apps on their smartphones.",
+              "Everything is stored digitally within their mobile Apple and Google wallets, creating a frictionless experience.",
+            ],
+          },
+        ]}
+        image={sharedImage}
       />
     ),
   },

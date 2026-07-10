@@ -2217,6 +2217,12 @@
   color: var(--wr-accent-orange);
 }
 
+.lm-ds .lm-points-stack {
+  display: grid;
+  gap: 36px;
+  margin: 24px 0 0;
+}
+
 .lm-ds .wf-table-wrap {
   overflow: hidden;
   border-radius: var(--wr-r-16);

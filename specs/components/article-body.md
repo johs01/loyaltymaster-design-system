@@ -26,10 +26,22 @@ Long-form marketing, explainer, company story, and editorial body content with a
 ## Props
 
 - `title` (required): string.
+- `eyebrow` (optional): string; small uppercase label above the title.
 - `intro` (optional): string.
-- `sections` (optional): array.
+- `sections` (optional): array. Each section may carry `heading`, `paragraphs`,
+  `bullets`, `callout`, and an inline `image`. Bullets render as article-scale
+  yellow-square checklists (muted 1rem body, 14px markers - quieter than the
+  marketing-section checklist). `callout` renders as the approved highlight
+  blockquote. Bullets come from the page copy re-chunked at sentence seams
+  only.
+- `media` (optional): object; sticky square media column beside the prose
+  (image, or the approved generation-prompt placeholder slot while the asset
+  does not exist yet).
 - `image` (optional): object.
 - `action` (optional): object.
+- `ctaBand` (optional): object; closing dark conversion band using the
+  `cta-with-button-email` contract (including its `emphasis`, `hint`, and
+  non-trial `action` link-button rules). At most one per page.
 
 ## Variants
 
@@ -38,10 +50,14 @@ Long-form marketing, explainer, company story, and editorial body content with a
 ## Slots
 
 - `title` (required): Approved title slot for Article Body.
+- `eyebrow` (optional): Approved uppercase label slot above the title.
 - `intro` (optional): Approved intro slot for Article Body.
-- `sections` (optional): Approved sections slot for Article Body.
+- `sections` (optional): Approved sections slot for Article Body (headings,
+  paragraphs, article-scale checklists, callout, inline images).
+- `media` (optional): Approved sticky media-column slot beside the prose.
 - `image` (optional): Approved image slot for Article Body.
 - `action` (optional): Approved action slot for Article Body.
+- `ctaBand` (optional): Approved closing dark conversion band slot.
 
 ## States
 

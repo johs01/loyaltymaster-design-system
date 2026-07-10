@@ -88,5 +88,8 @@ export type { NewsletterSignupSectionProps } from "./components/NewsletterSignup
 export { PricingPageMatrix } from "./components/PricingPageMatrix";
 export type { PricingPageMatrixProps } from "./components/PricingPageMatrix";
 
+export { StrategySentenceCards } from "./components/StrategySentenceCards";
+export type { StrategySentenceCardsProps, StrategyGroup } from "./components/StrategySentenceCards";
+
 export { ThankYouConfirmationSection } from "./components/ThankYouConfirmationSection";
 export type { ThankYouConfirmationSectionProps } from "./components/ThankYouConfirmationSection";

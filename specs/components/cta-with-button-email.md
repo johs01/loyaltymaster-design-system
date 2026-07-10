@@ -31,12 +31,25 @@ Registry description: Compact CTA section with email capture and primary action.
 
 - `heading` (string, optional).
 - `body` (string, optional).
+- `emphasis` (string, optional): standalone italic line rendered after the body
+  in the same dark-subtext measure (canonical source: FootTrafficOnDemandPage
+  final CTA). Use for the page copy's closing one-liner; sentence-seam
+  re-chunking only, never invented copy.
 - `buttonLabel` (string, optional).
+- `hint` (string, optional): reassurance microcopy under the pill, rendered as
+  the 👉 hint row (canonical `ftd-cta-hint`, ported as `wf-cta-hint`). Standard
+  value: "No credit card required." OMIT when the heading, button label, or
+  body already states the same claim; the hint must never duplicate visible
+  copy in the band.
+- `action` (object, optional): link CTA used INSTEAD of the email capture when
+  the conversion target is not the trial form (for example a Contact Us band).
+  Renders the approved gold pill link button, never a second email field.
 - Additional props are not allowed in the Phase 3 contract.
 
 ## States
 
-- default: headline, body, email field, and CTA are visible.
+- default: headline, body, optional italic emphasis line, email field, CTA,
+  and optional 👉 hint are visible in that order.
 - hover: primary action uses approved hover treatment.
 - focus: input and button focus must be visible.
 - loading: keep CTA width stable.
@@ -102,7 +115,11 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 - `heading` (optional): Approved heading content/input slot.
 - `body` (optional): Approved body content/input slot.
+- `emphasis` (optional): Approved italic closing-line slot after the body.
 - `buttonLabel` (optional): Approved buttonLabel content/input slot.
+- `hint` (optional): Approved 👉 reassurance microcopy slot under the pill.
+- `action` (optional): Approved gold link-button slot replacing email capture
+  for non-trial conversion targets.
 
 ## Markdown Call Syntax
 

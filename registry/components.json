@@ -3,7 +3,7 @@
   "name": "Loyaltymaster Component Registry",
   "version": "0.2.0",
   "phase": "Runbook POC readiness",
-  "description": "Machine-readable registry for the 33 approved LoyaltyMaster components: 20 Wave 1 library components plus 13 promoted MagicPath handoff components.",
+  "description": "Machine-readable registry for the 34 approved LoyaltyMaster components: 20 Wave 1 library components, 13 promoted MagicPath handoff components, and 1 canon-promoted production pattern (strategy-sentence-cards).",
   "rules": {
     "sourceOfTruth": "Use registry/spec/library/showcase as canonical. /Components is approved evidence and handoff archive only.",
     "doNotImportRawSnapshots": true,
@@ -1173,7 +1173,15 @@
       "variants": [
         {
           "id": "default",
-          "description": "Approved default variant. Do not invent unregistered variants."
+          "description": "Approved default variant (3-column grid) for item counts divisible by 3. Do not invent unregistered variants."
+        },
+        {
+          "id": "grid-2x2",
+          "description": "Balanced 2x2 grid, approved 2026-07-06 for exactly 4 items so the fourth card never wraps alone. Single-column collapse on mobile. Extended 2026-07-06 (owner-approved) to remaining even counts not covered by default/grid-4x2 (2, 10, 14, ...): every row holds exactly two cards, so a pair of items renders as one complete 2-up row."
+        },
+        {
+          "id": "grid-4x2",
+          "description": "Balanced grid for larger item counts divisible by 4, approved 2026-07-06. Four columns on desktop (>=1200px), two on tablet (800-1199px), one on mobile - complete rows at every breakpoint."
         }
       ],
       "slots": [
@@ -2130,7 +2138,11 @@
       "variants": [
         {
           "id": "default",
-          "description": "Approved default variant. Do not invent unregistered variants."
+          "description": "Approved default variant (3-column grid). Do not invent unregistered variants."
+        },
+        {
+          "id": "grid-2x2",
+          "description": "Balanced 2x2 grid, approved 2026-07-06 for flows with exactly 4 steps so the fourth card never wraps alone. Same cards, tokens, and mobile collapse as default."
         }
       ],
       "slots": [
@@ -2194,6 +2206,90 @@
       "visualReferencePath": "assets/screenshots/stats-card-strip.png",
       "evidencePath": "Components/Stats Card Strip",
       "markdownCallSyntax": ":::loyaltymaster-component id=\"stats-card-strip\"\nprops:\n  # use only registry-approved props\n:::"
+    },
+    {
+      "id": "strategy-sentence-cards",
+      "name": "Strategy Sentence Cards",
+      "category": "content-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Heading-over-sentence-cards stack for strategy, problem, and opportunity sections; each sentence renders in its own white card. Canonical ftd-points pattern promoted system-wide 2026-07-10.",
+      "whenToUse": "Use for problem, opportunity, and strategy sections on product marketing pages; standard problem-section rendering replacing the numbered card list. Copy re-chunks at sentence seams only.",
+      "whenNotToUse": "Do not use for icon-led capability grids (features-grid), checklist splits (feature-section-2-column-bullets-image), or the homepage problem section, which keeps its own approved composition.",
+      "screenshotPath": "assets/screenshots/strategy-sentence-cards.png",
+      "specPath": "specs/components/strategy-sentence-cards.md",
+      "rawSourcePath": "RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "libraryPath": "library/src/components/StrategySentenceCards.tsx",
+      "visualReferencePath": "assets/screenshots/strategy-sentence-cards.png",
+      "evidencePath": "RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"strategy-sentence-cards\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Approved default layout for the source-page pattern."
+        }
+      ],
+      "slots": [
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved section heading content/input slot."
+        },
+        {
+          "name": "groups",
+          "required": true,
+          "description": "Approved groups slot: each group is a title plus one card per sentence."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved sticky media content/input slot."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "typography.title",
+        "typography.body",
+        "color.background.cyan",
+        "color.surface.white",
+        "color.ink",
+        "dimension.radius.cardSecondary",
+        "shadow.cardBase",
+        "shadow.cardHover"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array"
+          },
+          "image": {
+            "type": "object"
+          },
+          "action": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "groups"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "id": "testimonial-single",
