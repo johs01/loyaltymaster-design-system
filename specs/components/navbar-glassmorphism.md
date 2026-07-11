@@ -60,6 +60,10 @@ Registry description: Sticky glass navigation shell with responsive mobile panel
   accordion body — the drawer already ends with the primary "Start Free" CTA,
   so an inline trial card just duplicates it. The desktop mega panel keeps its
   side blurb/CTA column.
+- mobile drawer control shape (owner call, 2026-07-11): the close button, the
+  accordion chevron toggles, and the menu rows all share one 12px
+  rounded-square radius. No circular toggle controls inside the drawer — every
+  control reads as the same family.
 - responsive: desktop and mobile shells do not duplicate links visually.
 
 ## Interaction Rules (approved 2026-07-11, audited against WAI-ARIA APG)
