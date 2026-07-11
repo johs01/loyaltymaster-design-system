@@ -69,6 +69,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 ## Composition Rules
 
 - Use for a limited group of distinct features.
+- Balanced-grid rule: the grid must fill complete rows at every breakpoint; a partial trailing row (orphan cards) is not approved. Counts divisible by 3 use `default`, exactly 4 items use `grid-2x2`, larger counts divisible by 4 use `grid-4x2`, and remaining even counts (2, 10, 14, ...) use `grid-2x2` so every row holds exactly two cards. For any other count, stop and request approval instead of improvising.
 - Do not use as an endless identical card grid.
 - Pair with a stronger feature section when one capability needs depth.
 - Keep the component inside the content role it was approved for in the registry.
@@ -94,7 +95,9 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 ## Variants
 
-- `default`: Approved default variant. Do not invent unregistered variants.
+- `default`: Approved default variant (3-column grid) for item counts divisible by 3. Do not invent unregistered variants.
+- `grid-2x2`: Approved 2026-07-06 for exactly 4 items. Balanced 2x2 grid so the fourth card never wraps alone under three columns. Same cards and tokens as `default`; single-column collapse on mobile. Extended 2026-07-06 (owner-approved) to remaining even counts not covered by `default`/`grid-4x2` (2, 10, 14, ...): every row holds exactly two cards, so a pair of items renders as one complete 2-up row. First pair use: Loyaltymaster push-notifications page benefits section.
+- `grid-4x2`: Approved 2026-07-06 for larger item counts divisible by 4 (e.g. 8). Four columns on desktop (1200px and up), two columns on tablet (800-1199px), one column on mobile - complete rows at every breakpoint. First use: Loyaltymaster `/digital-loyalty-card/` benefits section.
 
 ## Slots
 

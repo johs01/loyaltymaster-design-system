@@ -69,6 +69,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 ## Composition Rules
 
 - Use for practical sequences such as setup or campaign launch.
+- With exactly 4 steps, use the `grid-2x2` variant; a 3-column layout that wraps a lone fourth card is not approved.
 - Do not use for unordered feature lists.
 - Pair with a CTA after the flow if the next action is clear.
 - Keep the component inside the content role it was approved for in the registry.
@@ -94,7 +95,8 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 
 ## Variants
 
-- `default`: Approved default variant. Do not invent unregistered variants.
+- `default`: Approved default variant (3-column grid). Do not invent unregistered variants.
+- `grid-2x2`: Approved 2026-07-06 for flows with exactly 4 steps. Render the cards as a balanced 2x2 grid instead of the default 3-column grid so the fourth card never wraps alone under three columns. Same cards, tokens, and single-column mobile collapse as `default`. First use: Loyaltymaster `/digital-loyalty-card/` How-it-works section.
 
 ## Slots
 
