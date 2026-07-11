@@ -55,6 +55,11 @@ Registry description: Sticky glass navigation shell with responsive mobile panel
   — with a hairline divider between groups (dark theme uses the light-on-dark
   hairline). Each group is `role="group"` labelled by its heading via
   `aria-labelledby`. The desktop mega panel keeps its chip-headed columns.
+- mobile accordion content (owner call, 2026-07-11): the mobile accordions
+  carry navigation links only. Do not nest a promo or trial CTA card inside an
+  accordion body — the drawer already ends with the primary "Start Free" CTA,
+  so an inline trial card just duplicates it. The desktop mega panel keeps its
+  side blurb/CTA column.
 - responsive: desktop and mobile shells do not duplicate links visually.
 
 ## Interaction Rules (approved 2026-07-11, audited against WAI-ARIA APG)
