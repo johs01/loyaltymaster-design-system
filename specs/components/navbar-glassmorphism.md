@@ -35,18 +35,60 @@ Registry description: Sticky glass navigation shell with responsive mobile panel
 ## States
 
 - default: nav links and brand are visible.
-- hover: links and controls follow approved motion timing and restrained accent treatment.
+- hover (desktop links): label stays ink; the orange underline (`color.accent.orange`)
+  plus a restrained lift carry the state.
+- hover/focus (mobile panel items): the label turns `color.accent.orange` — the same
+  accent the desktop underline uses. No background, border, or shadow shift
+  (owner call, 2026-07-11; the old floating shadow read as a background bar on
+  borderless accordion links).
 - focus: every nav link and menu control has visible focus.
-- active: active path is indicated without color alone.
+- active: active path is indicated without color alone. Mobile panel items keep
+  the persistent `.is-active` orange-border marker; flat links for the page being
+  viewed also expose `aria-current="page"` (semantic only, no visual change).
 - mobile-open: panel is accessible and dismissible.
-- mobile-closed: panel content is hidden from interaction.
+- mobile-closed: panel is `inert` and `visibility: hidden` (visibility flips after
+  the fade-out so closing still animates). Closed-panel controls must never be
+  tab-reachable or present in the accessibility tree — at any viewport.
 - responsive: desktop and mobile shells do not duplicate links visually.
+
+## Interaction Rules (approved 2026-07-11, audited against WAI-ARIA APG)
+
+- Desktop dropdowns are APG *disclosures* (`aria-expanded` + `aria-controls`), not
+  `role="menu"`. Triggers open on hover with a short close-grace timer and toggle
+  on click.
+- Hover-open is a mouse-only affordance: gate it on `pointerType === "mouse"`.
+  On touch devices a tap fires pointerenter *and* click in one gesture, so an
+  ungated hover-open plus the click toggle opens-then-closes the panel on every
+  first tap.
+- Open dropdowns close on Escape (refocusing the trigger), outside press, the
+  first scroll, and window resize (the panel position is measured on open, so a
+  resize would leave it stale).
+- Arrow keys navigate the open mega panel: ArrowDown from the trigger enters the
+  first link; ArrowDown/ArrowUp step; Home/End jump.
+- The mobile panel is a modal dialog and must honor the claim: Tab and Shift+Tab
+  wrap inside the panel while open; Escape closes and restores focus to the
+  hamburger; initial focus goes to the Close button (APG: first interactive
+  element, never the dialog container).
+- Scroll-lock the body while the panel is open and preventDefault `touchmove` on
+  the backdrop (iOS scrolls the page behind the panel despite body
+  overflow:hidden; overscroll-behavior only landed in iOS 16).
+- Growing the viewport past the mobile breakpoint auto-closes the panel.
+- If the shell ever renders from a shared layout instead of per page, add a
+  pathname-driven effect that closes the panel and dropdowns on route change.
 
 ## Accessibility Rules
 
 - Use semantic nav markup.
-- Menu button must expose expanded state.
-- Do not trap focus unless a modal-like mobile panel requires it, and then provide escape behavior.
+- Menu button must expose expanded state via `aria-expanded` with a stable label
+  ("Menu" — never a label that contradicts the state, like "Open menu" while open).
+- Disclosure triggers and accordion buttons carry `aria-controls` pointing at
+  real ids on their panels.
+- The mobile panel uses `role="dialog"` + `aria-modal="true"` and is labelled by
+  a visually hidden "Menu" heading (`aria-labelledby`). `aria-modal` requires the
+  focus trap above — never claim it without containment.
+- The theme toggle exposes `aria-pressed`, mirrored off the DOM `data-theme`
+  attribute after hydration.
+- External links rendered as plain anchors carry `rel="noopener noreferrer"`.
 - Preserve visible focus states and sufficient contrast in every implementation.
 - Respect reduced-motion preferences when animation or transitions are present.
 

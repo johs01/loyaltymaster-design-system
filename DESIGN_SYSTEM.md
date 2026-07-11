@@ -299,6 +299,18 @@ responsive mobile panel, a theme toggle, and accessible skip-link behavior.
 New source-to-page route bodies should not add their own nav, header, or footer
 unless explicitly requested.
 
+Interaction contract (approved 2026-07-11; full rules in
+`specs/components/navbar-glassmorphism.md`): desktop dropdowns are APG
+disclosures with mouse-only hover-open (`pointerType === "mouse"` gate — a
+touch tap must open in one gesture), Escape/outside/scroll/resize close, and
+arrow-key navigation inside the open panel. The mobile panel is a real modal
+dialog — closed it is `inert` + `visibility: hidden`; open it traps Tab,
+starts focus on the Close button, and Escape restores focus to the hamburger.
+Mobile panel items mark hover/focus by turning the label
+`color.accent.orange` (the desktop underline accent) with no
+background/border/shadow shift; the persistent active item keeps the
+orange-border marker.
+
 Glass treatment is approved only for the existing nav and mobile menu shell.
 Do not use glassmorphism for page-body cards, heroes, panels, or generic AI
 layouts.
