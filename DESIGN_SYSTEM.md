@@ -309,7 +309,10 @@ starts focus on the Close button, and Escape restores focus to the hamburger.
 Mobile panel items mark hover/focus by turning the label
 `color.accent.orange` (the desktop underline accent) with no
 background/border/shadow shift; the persistent active item keeps the
-orange-border marker.
+orange-border marker. Accordion group headings use the eyebrow treatment
+(small, bold, uppercase, muted ink) with hairline dividers between groups
+and `role="group"` semantics — section labels must never read as menu
+items.
 
 Glass treatment is approved only for the existing nav and mobile menu shell.
 Do not use glassmorphism for page-body cards, heroes, panels, or generic AI

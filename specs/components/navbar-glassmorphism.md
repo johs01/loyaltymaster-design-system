@@ -49,6 +49,12 @@ Registry description: Sticky glass navigation shell with responsive mobile panel
 - mobile-closed: panel is `inert` and `visibility: hidden` (visibility flips after
   the fade-out so closing still animates). Closed-panel controls must never be
   tab-reachable or present in the accessibility tree — at any viewport.
+- mobile accordion group headings (owner call, 2026-07-11): section labels
+  ("Guides", "Learn", "Company", the foot blurb titles) must never read as menu
+  items. They use the eyebrow treatment — 12px, weight 700, uppercase, muted ink
+  — with a hairline divider between groups (dark theme uses the light-on-dark
+  hairline). Each group is `role="group"` labelled by its heading via
+  `aria-labelledby`. The desktop mega panel keeps its chip-headed columns.
 - responsive: desktop and mobile shells do not duplicate links visually.
 
 ## Interaction Rules (approved 2026-07-11, audited against WAI-ARIA APG)
