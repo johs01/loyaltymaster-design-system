@@ -255,6 +255,25 @@ containers.
 Sections are separated by background color changes, not dividers or icon rows.
 Use at most one dark CTA band per page, near the bottom.
 
+### Hero Stacking Order (Mobile)
+
+When a split hero (text column + image column) collapses to one column, the
+image must sit **below the headline and sub-headline but above the checklist
+and the primary CTA** — never after the CTA. Placing the image mid-column
+keeps the promise readable and the CTA thumb-reachable without the image
+pushing it off-screen.
+
+Because the image lives in its own grid column, CSS `order` cannot move it
+between the text column's children. The canonical implementation renders the
+same image element in two slots — an inline copy inside the text column
+(mobile only) and the side column (desktop only) — swapped with a
+`display` toggle at the stacking breakpoint. Same `src`, so the browser
+fetches it once. Reference: `.wf-hero-media--mobile` / `.wf-hero-media--desktop`
+in the production `globals.css`.
+
+Mobile order, top to bottom: eyebrow → headline → sub-headline → image →
+checklist → CTA → microcopy.
+
 ### Cards And Containers
 
 - Primary desktop cards use `20px` radius.

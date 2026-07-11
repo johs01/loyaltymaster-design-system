@@ -74,7 +74,18 @@ export const MessagingHero = () => {
             <motion.p variants={fadeUpVariant} className="mb-8 max-w-[640px] text-lg leading-relaxed tracking-tight text-[#302127]/90 md:text-[20px]">
               Build your direct customer list, automate outreach, and send high-converting campaigns without relying on social algorithms.
             </motion.p>
-            
+
+            {/* Mobile-only image slot: per DESIGN_SYSTEM.md "Hero Stacking Order
+                (Mobile)", the image sits below the sub-headline and above the
+                checklist/CTA when the hero stacks. Same src as the desktop
+                column, so the browser fetches it once. */}
+            <motion.div variants={fadeUpVariant} className="relative mx-auto mb-8 w-full max-w-[553px] lg:hidden">
+              <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[20px] border border-[#979093]/20 bg-white/40 shadow-xl backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent" />
+                <img src="https://ik.imagekit.io/loyalty/sendpush/Image02.png?tr=w-800,q-85:w-3840,c-at_max" alt="Customer messaging platform dashboard" className="h-full w-full object-contain p-2" loading="eager" />
+              </div>
+            </motion.div>
+
             <motion.ul variants={fadeUpVariant} className="mb-10 flex flex-col gap-4">
               {CHECKLIST_ITEMS.map((item, index) => <li key={index} className="flex items-start gap-3 text-lg tracking-tight text-[#302127] md:text-[20px]">
                   <span className="mt-1.5 block h-[18px] w-[18px] shrink-0 rounded-md bg-[#fcb827]" aria-hidden="true" />
@@ -103,8 +114,9 @@ export const MessagingHero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Image */}
-          <motion.div initial="hidden" animate="show" variants={imageVariant} className="relative mx-auto w-full max-w-[553px] lg:ml-auto lg:mr-0">
+          {/* Right Column - Image (desktop only; the mobile slot lives inside
+              the text column, above the checklist/CTA) */}
+          <motion.div initial="hidden" animate="show" variants={imageVariant} className="relative mx-auto hidden w-full max-w-[553px] lg:ml-auto lg:mr-0 lg:block">
             <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-[20px] border border-[#979093]/20 bg-white/40 shadow-xl backdrop-blur-sm transition-transform duration-500 hover:scale-[1.02]">
               <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent" />
               <img src="https://ik.imagekit.io/loyalty/sendpush/Image02.png?tr=w-800,q-85:w-3840,c-at_max" alt="Customer messaging platform dashboard" className="h-full w-full object-contain p-2" loading="eager" />
