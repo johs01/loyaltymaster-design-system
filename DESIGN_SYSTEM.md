@@ -274,6 +274,17 @@ in the production `globals.css`.
 Mobile order, top to bottom: eyebrow → headline → sub-headline → image →
 checklist → CTA → microcopy.
 
+### Email CTA Stacking (Slot Width, Not Viewport)
+
+The email pill switches to its stacked mobile treatment based on how wide its
+**slot** is, not how wide the screen is (owner call, 2026-07-11). A viewport
+query misses the two-column hero range (~800-1150px) where the column is only
+~390-510px wide and the input gets crushed beside the fixed-width button.
+Wrap the pill in a CSS size container and apply the stacked treatment below a
+520px slot width; wide CTA bands at the same viewports keep the row pill.
+Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
+`globals.css`.
+
 ### Cards And Containers
 
 - Primary desktop cards use `20px` radius.

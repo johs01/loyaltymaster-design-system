@@ -43,7 +43,14 @@ Registry description: Email capture CTA shell pairing an email field with primar
 - disabled: disable submit while validating or submitting.
 - loading: button label may change, but width must remain stable.
 - error: show concise validation near the field without shifting the shell unpredictably.
-- responsive: stack only when width requires it; keep the email CTA visually unified.
+- responsive (owner call, 2026-07-11): the stacked treatment keys off the
+  pill's **slot width**, not the viewport. The pill lives in a CSS size
+  container and stacks below a ~520px slot — the narrowest width where the
+  longest approved button label still leaves the input ~230px. This catches
+  narrow split-hero columns on 800-1150px screens that a viewport query
+  misses; wide CTA bands at those same viewports keep the row pill. When
+  stacked, the pill shell dissolves and the full-width button renders above
+  the full-width input (identical to the sub-600px mobile treatment).
 
 ## Accessibility Rules
 
