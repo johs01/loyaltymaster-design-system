@@ -49,8 +49,12 @@ Registry description: Email capture CTA shell pairing an email field with primar
   longest approved button label still leaves the input ~230px. This catches
   narrow split-hero columns on 800-1150px screens that a viewport query
   misses; wide CTA bands at those same viewports keep the row pill. When
-  stacked, the pill shell dissolves and the full-width button renders above
-  the full-width input (identical to the sub-600px mobile treatment).
+  stacked, the pill shell dissolves and the full-width input renders above
+  the full-width button (identical to the sub-600px mobile treatment).
+  Stacked order flipped from the library's original button-first
+  `column-reverse` (owner call, 2026-07-12): a filled action button above an
+  empty email field read as the thing to tap before typing and confused
+  sign-ups. The input always reads first; never restore `column-reverse`.
 
 ## Accessibility Rules
 

@@ -282,6 +282,9 @@ query misses the two-column hero range (~800-1150px) where the column is only
 ~390-510px wide and the input gets crushed beside the fixed-width button.
 Wrap the pill in a CSS size container and apply the stacked treatment below a
 520px slot width; wide CTA bands at the same viewports keep the row pill.
+When stacked, the input sits above the button (owner call, 2026-07-12 —
+`flex-direction: column`, not the original `column-reverse`; the field the
+user must fill reads first, the action follows).
 Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
 `globals.css`.
 
