@@ -241,6 +241,12 @@ containers.
 - Pill radius (`var(--wr-r-pill)`, `999px`) with a minimum height around `58px`.
 - Primary buttons use yellow action color, dark text, orange edge treatment,
   sheen, and restrained lift.
+- Secondary buttons (owner call, 2026-07-13, `.wf-btn-secondary`): same pill
+  geometry at ~52px, white surface, 1.5px ink border and ink text, orange
+  border plus a 1px lift on hover, orange focus outline. Use when the page
+  already has its one primary action and a second CTA is needed (e.g. the
+  Contact button on /manage-subscription/, where the PayPal button owns the
+  yellow) — never render a second yellow CTA beside the primary.
 - Loading and disabled states must use native disabled behavior and visible
   non-color-only state changes.
 
@@ -304,6 +310,11 @@ Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
 - Email CTA inputs may use pill radius.
 - Focus should shift toward a brighter background with orange border or ring.
 - Errors, disabled states, and warnings must not rely on color alone.
+- Standing warning/security notes (owner call, 2026-07-13, `.wf-security-note`):
+  a 12px-radius panel on `--wf-feedback-warning-bg` with a 6px left border in
+  `--wf-feedback-warning` and ink text. The copy itself must carry the message
+  (color is supplementary); tokens flip in dark theme. First used for the
+  never-send-card-details notice on /manage-subscription/.
 
 ### Navigation
 

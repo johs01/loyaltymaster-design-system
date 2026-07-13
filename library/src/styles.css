@@ -3988,3 +3988,48 @@
   .lm-rb-document,
   .lm-rb-embed { padding: 22px; }
 }
+
+/* Secondary pill button (owner call, 2026-07-13): pill geometry without the
+   yellow — for a second CTA on a page whose primary action owns the gold
+   (first use: Contact button on /manage-subscription/). */
+.lm-ds .wf-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 1.5px solid var(--wr-ink);
+  border-radius: var(--wr-r-pill);
+  background: var(--wr-white);
+  color: var(--wr-ink);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--wf-motion-base) var(--wf-motion-ease-gentle),
+    border-color var(--wf-motion-fast) ease-out;
+}
+
+.lm-ds .wf-btn-secondary:hover {
+  border-color: var(--wr-accent-orange);
+  transform: translateY(-1px);
+}
+
+.lm-ds .wf-btn-secondary:focus-visible {
+  outline: 3px solid var(--wr-accent-orange);
+  outline-offset: 2px;
+}
+
+/* Standing warning/security note (owner call, 2026-07-13): the copy carries
+   the message, color is supplementary; tokens flip in dark theme. */
+.lm-ds .wf-security-note {
+  display: grid;
+  gap: 10px;
+  padding: 22px 26px;
+  border-left: 6px solid var(--wf-feedback-warning);
+  border-radius: var(--wr-r-12);
+  background: var(--wf-feedback-warning-bg);
+  color: var(--wr-ink);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.55;
+}

@@ -29,7 +29,12 @@ Registry description: Accessible accordion for frequently asked questions.
 
 ## Props
 
-- `items` (array, required).
+- `items` (array, required). Each item is `{ question, answer }` plus an
+  optional `link` (`{ label, href }`, owner call 2026-07-13): a follow-up
+  anchor rendered inline after the answer text, for answers that route to a
+  dedicated page (e.g. "How do I change the card used for my subscription?"
+  → the Manage Your Subscription page). The answer text must still stand
+  alone without the link, since FAQPage JSON-LD carries the text only.
 - `defaultOpenIndex` (number, optional).
 - Additional props are not allowed in the Phase 3 contract.
 
