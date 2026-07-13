@@ -315,6 +315,11 @@ Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
   `--wf-feedback-warning` and ink text. The copy itself must carry the message
   (color is supplementary); tokens flip in dark theme. First used for the
   never-send-card-details notice on /manage-subscription/.
+- Secondary explainer notes (owner call, 2026-07-13): when a loud callout
+  needs a follow-up "here's why", render it as a quiet text-led note directly
+  below — a bold heading plus muted body text, no second color block. Never
+  stack two loud callouts. First used for the "Why 'Set as preferred' won't
+  work" explainer under the payment callout on /manage-subscription/.
 
 ### Navigation
 
