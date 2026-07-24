@@ -302,6 +302,16 @@ Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
 - Use cool-gray translucent borders around 22-36 percent alpha.
 - Use white or panel-light surfaces on warm section bands.
 - Use translucent bordered cards on dark sections only where needed.
+- Whole-card links — stretched-link + concise anchor (owner call, 2026-07-24):
+  when a card links to one destination (related-pages band, index cards), do not
+  wrap the whole card in one `<a>`. Make the card's heading the single anchor and
+  render the description as plain text outside it, then stretch the link across
+  the card with `position: relative` on the card and an `::after { position:
+  absolute; inset: 0 }` on the anchor. This keeps the whole card clickable while
+  the crawlable/accessible anchor text stays the concise page title — never the
+  title plus a full paragraph, and never duplicated descriptions across cards.
+  One clear focusable link per card; keyboard focus lands on the heading. First
+  used for the "Keep reading" related-pages band on product/article pages.
 
 ### Inputs And Fields
 

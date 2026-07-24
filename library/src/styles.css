@@ -2114,6 +2114,24 @@
   background: var(--wr-bg-yellow);
 }
 
+/* Whole-card link: heading is the only anchor, description sits outside it, and
+   a stretched ::after keeps the whole card clickable. Concise anchor text stays
+   the page title. See DESIGN_SYSTEM.md "Cards And Containers". */
+.lm-ds .wf-related-card {
+  position: relative;
+}
+
+.lm-ds .wf-related-card__link {
+  color: var(--wr-ink);
+  text-decoration: none;
+}
+
+.lm-ds .wf-related-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 .lm-ds .wr-pill-step {
   display: flex;
   align-items: center;
