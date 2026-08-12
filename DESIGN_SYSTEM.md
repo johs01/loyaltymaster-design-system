@@ -380,18 +380,19 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
 
 - Canvas is 1200×630, delivered as JPEG. Cards land around 70–100 KB; keep
   every card under 300 KB so WhatsApp large previews stay reliable.
-- Field is flat `color.background.peach` (`#fef0e9`). Headline, tagline, and
-  wordmark are `color.ink` (`#302127`).
+- Field is flat `color.background.peach` (`#fef0e9`). Headline and wordmark
+  are `color.ink` (`#302127`).
 - Photo panel: 516×582 at x 660 / y 24 (24px inset top, right, and bottom),
   radius from `dimension.radius.cardPrimary` (20px), photo cropped to fill.
 - Pin logomark: the orange map-pin/star favicon at 88px inside a white 120px
   circle centered on the panel seam (x 660, y 315), with the card shadow.
 - Text column: x 64 / y 64, 520px wide. Headline in Rodger Bold 700 at 84px
   (up to 22 characters), 68px (23–42), or 56px (43+), line-height 1.06.
-  Tagline is the canon share sentence from SOURCE-OF-TRUTH §2, verbatim, in
-  Onest 400 at 22px. Wordmark is live text "Loyaltymaster" in Lato 900 at
-  40px with -0.035em tracking — the `.brand-logo` treatment. The wordmark
-  stays ink: yellow means action, so no gold wordmark on a light field.
+  Wordmark is live text "Loyaltymaster" in Lato 900 at 40px with -0.035em
+  tracking — the `.brand-logo` treatment. The wordmark stays ink: yellow
+  means action, so no gold wordmark on a light field. No other copy on the
+  card (owner decision, 2026-08-12): messengers render og:title and
+  og:description directly under the image, so a tagline reads twice.
 - Safe areas (this section is the authority the image style guide lists as
   undecided): all text at least 64px from every canvas edge and fully inside
   the left 630px square; nothing within 24px of any edge.
@@ -400,8 +401,16 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
   card renderer reads only PNG/JPEG, so `f_auto` breaks it. Per-photo gravity
   overrides are allowed when auto framing clips the subject. Pages without a
   hero use the homepage hero card.
-- On loyaltymaster.com the renderer is `src/lib/og.tsx` and the slug-to-photo
-  map is `src/lib/og-photos.ts` — one entry there per new page.
+- Delivery: the og:image URL must answer 200 directly — link scrapers
+  (WhatsApp above all) do not reliably follow redirects, and a redirected
+  card URL is how a preview silently loses its image. Scrapers also cache
+  the fetched image by URL, so the card URL carries a version query that is
+  bumped on every redesign.
+- On loyaltymaster.com the renderer is `src/lib/og.tsx`, served as
+  `/og/{slug}.jpg` by `src/app/og/[slug]/route.ts` (the dotted last segment
+  keeps `trailingSlash: true` from 308-redirecting the URL), and the
+  slug-to-photo map is `src/lib/og-photos.ts` — one entry there per new
+  page, plus an `OG_CARD_VERSION` bump when the card design changes.
 
 ## 7. Iconography
 
