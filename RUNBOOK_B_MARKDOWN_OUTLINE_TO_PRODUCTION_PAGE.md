@@ -172,9 +172,13 @@ The page-body file must:
 - avoid dead CTAs
 
 Patch `src/config/seoRoutes.json` with the approved SEO fields from the
-outline. Patch `src/next/SitePage.tsx` by adding the route union entry, page
-import, and route render branch that wraps the page body in the existing
-production shell.
+outline. If the outline sets `ogImage`, also register the slug and hero path
+in the target repository's OG photo map so the share card carries the page's
+own photo (on loyaltymaster.com: `src/lib/og-photos.ts`; the card contract is
+"Share Cards (Open Graph)" in `DESIGN_SYSTEM.md` §6). Patch
+`src/next/SitePage.tsx` by adding the route union entry, page import, and
+route render branch that wraps the page body in the existing production
+shell.
 
 ## Output Package
 

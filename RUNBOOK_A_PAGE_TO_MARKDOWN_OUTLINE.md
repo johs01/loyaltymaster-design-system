@@ -155,6 +155,7 @@ the diagnostic section, and continue route-agnostically. -->
 - sitemap:
 - breadcrumbs:
 - schemaTypes:
+- ogImage:
 
 ## Selected Approved Template
 - Template file:
