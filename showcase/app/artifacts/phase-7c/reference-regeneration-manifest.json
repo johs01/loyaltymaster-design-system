@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-05-20T07:06:14.543Z",
+  "generatedAt": "2026-08-29T16:51:50.772Z",
   "phase": "7C",
   "mode": "intentional-reference-regeneration",
   "runtime": {
     "phase": "7C",
     "browserName": "chromium",
-    "browserVersion": "148.0.7778.168",
+    "browserVersion": "148.0.7778.96",
     "deviceScaleFactor": 1,
     "playwrightPackage": "@playwright/test",
-    "os": "Darwin 25.4.0 arm64",
+    "os": "Darwin 25.5.0 arm64",
     "fontRuntime": {
       "checks": [
         {
@@ -378,12 +378,44 @@
   },
   "references": [
     {
+      "id": "article-body",
+      "canonicalPath": "assets/screenshots/article-body.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/article-body.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/article-body.png",
+      "width": 1440,
+      "height": 771
+    },
+    {
       "id": "billing-toggle-button",
       "canonicalPath": "assets/screenshots/billing-toggle-button.png",
       "historicalPath": "assets/screenshots/historical-phase-7b/billing-toggle-button.png",
       "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/billing-toggle-button.png",
       "width": 1277,
       "height": 302
+    },
+    {
+      "id": "blog-article-index",
+      "canonicalPath": "assets/screenshots/blog-article-index.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/blog-article-index.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/blog-article-index.png",
+      "width": 1440,
+      "height": 647
+    },
+    {
+      "id": "booking-demo-request-section",
+      "canonicalPath": "assets/screenshots/booking-demo-request-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/booking-demo-request-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/booking-demo-request-section.png",
+      "width": 1440,
+      "height": 705
+    },
+    {
+      "id": "branded-card-application-form",
+      "canonicalPath": "assets/screenshots/branded-card-application-form.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/branded-card-application-form.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/branded-card-application-form.png",
+      "width": 1440,
+      "height": 717
     },
     {
       "id": "button-email",
@@ -394,12 +426,28 @@
       "height": 293
     },
     {
+      "id": "coming-soon-section",
+      "canonicalPath": "assets/screenshots/coming-soon-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/coming-soon-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/coming-soon-section.png",
+      "width": 1440,
+      "height": 622
+    },
+    {
       "id": "comparison-table",
       "canonicalPath": "assets/screenshots/comparison-table.png",
       "historicalPath": "assets/screenshots/historical-phase-7b/comparison-table.png",
       "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/comparison-table.png",
       "width": 1172,
       "height": 595
+    },
+    {
+      "id": "contact-form-section",
+      "canonicalPath": "assets/screenshots/contact-form-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/contact-form-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/contact-form-section.png",
+      "width": 1440,
+      "height": 717
     },
     {
       "id": "cta-trial-full-form",
@@ -424,6 +472,14 @@
       "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/faq-accordion.png",
       "width": 1172,
       "height": 748
+    },
+    {
+      "id": "faq-index-search",
+      "canonicalPath": "assets/screenshots/faq-index-search.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/faq-index-search.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/faq-index-search.png",
+      "width": 1440,
+      "height": 718
     },
     {
       "id": "feature-section-2-column-bullets-image",
@@ -490,12 +546,52 @@
       "height": 253
     },
     {
+      "id": "industry-use-case-card-grid",
+      "canonicalPath": "assets/screenshots/industry-use-case-card-grid.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/industry-use-case-card-grid.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/industry-use-case-card-grid.png",
+      "width": 1440,
+      "height": 579
+    },
+    {
+      "id": "knowledge-base-index",
+      "canonicalPath": "assets/screenshots/knowledge-base-index.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/knowledge-base-index.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/knowledge-base-index.png",
+      "width": 1440,
+      "height": 698
+    },
+    {
+      "id": "legal-document-body",
+      "canonicalPath": "assets/screenshots/legal-document-body.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/legal-document-body.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/legal-document-body.png",
+      "width": 1440,
+      "height": 661
+    },
+    {
       "id": "navbar-glassmorphism",
       "canonicalPath": "assets/screenshots/navbar-glassmorphism.png",
       "historicalPath": "assets/screenshots/historical-phase-7b/navbar-glassmorphism.png",
       "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/navbar-glassmorphism.png",
       "width": 1161,
       "height": 82
+    },
+    {
+      "id": "newsletter-signup-section",
+      "canonicalPath": "assets/screenshots/newsletter-signup-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/newsletter-signup-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/newsletter-signup-section.png",
+      "width": 1440,
+      "height": 667
+    },
+    {
+      "id": "pricing-page-matrix",
+      "canonicalPath": "assets/screenshots/pricing-page-matrix.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/pricing-page-matrix.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/pricing-page-matrix.png",
+      "width": 1440,
+      "height": 950
     },
     {
       "id": "pricing-section",
@@ -522,6 +618,14 @@
       "height": 196
     },
     {
+      "id": "strategy-sentence-cards",
+      "canonicalPath": "assets/screenshots/strategy-sentence-cards.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/strategy-sentence-cards.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/strategy-sentence-cards.png",
+      "width": 1344,
+      "height": 1276
+    },
+    {
       "id": "testimonial-single",
       "canonicalPath": "assets/screenshots/testimonial-single.png",
       "historicalPath": "assets/screenshots/historical-phase-7b/testimonial-single.png",
@@ -536,6 +640,14 @@
       "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/testimonials-grid.png",
       "width": 1172,
       "height": 606
+    },
+    {
+      "id": "thank-you-confirmation-section",
+      "canonicalPath": "assets/screenshots/thank-you-confirmation-section.png",
+      "historicalPath": "assets/screenshots/historical-phase-7b/thank-you-confirmation-section.png",
+      "regeneratedArtifactPath": "showcase/app/artifacts/phase-7c/regenerated-references/thank-you-confirmation-section.png",
+      "width": 1440,
+      "height": 867
     }
   ]
 }
