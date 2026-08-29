@@ -47,6 +47,7 @@ Machine-local files are intentionally ignored, including `node_modules/`,
 `.DS_Store`, local agent state, Playwright MCP traces, build output, logs,
 environment files, and deployment state.
 
-`.nested-git-backups/` is a tracked rollback backup of the sendPUSH production
-repository. It is not source material; do not read or restore from it without
-explicit instruction.
+`.nested-git-backups/` is a local-only (gitignored, NOT tracked) rollback
+backup of the retired sendPUSH production repository — it exists only on this
+machine and is not recoverable from the remote. It is not source material; do
+not read or restore from it without explicit instruction.

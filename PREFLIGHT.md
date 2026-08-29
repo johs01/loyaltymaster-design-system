@@ -115,23 +115,28 @@ matching Phase 5 showcase specimen when visual alignment is uncertain. If a rule
 was edited in the spec, apply the edited rule to this page.
 
 The available component inventory comes only from `registry/components.json`
-at runtime. The "20 Wave 1" counts below describe the components covered by
-the Phase 7C/7E/7F gates, not the full stable inventory; later-approved
-registry components are also selectable when `status` is `stable`.
+at runtime. Wave names below describe gate coverage, not availability;
+later-approved registry components are also selectable when `status` is
+`stable`.
 
 Check the Phase 7C
 visual classification for every component you intend to rely on, then use the
 current Phase 7C gate: review `_archive/phase-reports/PHASE_7C_REPORT.md`,
 confirm local font/runtime
 parity, and run `npm run verify:visual` from `showcase/app` before claiming
-visual fidelity. Phase 7C requires all 20 Wave 1 components to be gated with
+visual fidelity. Phase 7C requires every Wave 1 component to be gated with
 zero skipped components and no pixel, width, height, aspect-ratio, font, or
-runtime failures. Then run `npm run verify:interactions` from `showcase/app`;
-Phase 7E requires all 20 Wave 1 components to pass hover, focus, active,
+runtime failures; later-promoted components carry coverage-only
+(`gate: false`) entries until their references are regenerated and approved.
+Then run `npm run verify:interactions` from `showcase/app`;
+Phase 7E requires every Wave 1 component to pass hover, focus, active,
 pressed, expanded, and mobile-open checks with zero failed or partial results.
-Then run `npm run verify:production-fidelity` from `showcase/app`; Phase 7F
-requires all 20 Wave 1 components to pass desktop and mobile comparison against
-their live sendPUSH runtime selectors with zero failed results.
+Phase 7F required every Wave 1 component to pass desktop and mobile comparison
+against its live sendPUSH runtime selectors with zero failed results; those
+targets were retired with the sendPUSH subdomain in July 2026, so the frozen
+Phase 7F artifacts stand as gate-time evidence and `npm run
+verify:production-fidelity` stays unrunnable until the targets are repointed
+at loyaltymaster.com (see `KNOWN_ISSUES.md`).
 If a primitive exists, use it. If one almost fits,
 ask before forking it. Do not silently create a parallel implementation.
 
@@ -145,40 +150,33 @@ stop and complete `templates/new-component-request.md`.
 
 ## 5. Produce A Written Plan
 
-Write a plan in this exact structure, then stop and wait for approval:
+For page-generation work the written plan IS the Runbook A outline. Follow
+`RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`, write the outline to
+`outlines/<page-slug>.md`, and stop there for approval — do not write a
+second, differently-shaped plan document; a competing plan format is how
+outlines fail Runbook B's schema check. If outline mode was started from the
+copy-paste wrapper, confirm `LLM_MARKDOWN_OUTLINE_PACK.md` was used and no
+implementation code was generated.
 
-- **Purpose**: what this page must accomplish, in one sentence.
-- **Primary action**: the one thing the visitor should do.
-- **Shell scope**: body-only by default, or standalone shell only if explicitly
-  requested.
-- **Sections**: ordered list with one-line description each.
-- **Hierarchy**: which element is loudest, which is quietest, why.
-- **Tokens to be used**: named, not raw values.
-- **Components to reuse**: from the inventory in step 4.
-- **Approved template used**: list the `templates/*.md` recipe selected for the
-  artifact and explain why it fits.
-- **Component specs read**: list every `specs/components/<component-id>.md`
-  file read immediately before selecting the component.
-- **Components to create**: only if step 4 found no match.
-- **Approved examples referenced**: list the relevant `examples/approved/*.md`
+Alongside the outline, record this gate addendum for the human reviewer:
+
+- **Approved examples referenced**: the relevant `examples/approved/*.md`
   files used as composition references.
-- **Generated examples referenced**: list any relevant
+- **Generated examples referenced**: any relevant
   `examples/generated/*` proof packages used as recipe-to-output references.
   For external LLM work, include `EXTERNAL_LLM_HANDOFF.md` and review
   `examples/generated/real-brief-trial/` when the brief is a normal web-page
   body. The Phase 10 review URL is
   `http://127.0.0.1:5177/template-tests/real-brief-trial`.
-- **Markdown outline mode**: if the first deliverable is a page outline,
-  confirm `LLM_MARKDOWN_OUTLINE_PACK.md` was used and no implementation code
-  was generated.
-- **Blocked examples checked**: list the relevant `examples/blocked/*.md` files
+- **Blocked examples checked**: the relevant `examples/blocked/*.md` files
   used as rejection tests.
-- **Phase 7C visual gate status**: list each selected component's current
+- **Phase 7C visual gate status**: each selected component's current
   classification from `showcase/app/scripts/phase7-visual-gates.json`.
-- **Phase 7E interaction gate status**: confirm each selected component has
-  passed the current `npm run verify:interactions` audit.
-- **Phase 7F production fidelity status**: confirm each selected component has
-  a live runtime target and passed `npm run verify:production-fidelity`.
+  Coverage-only (`gate: false`) components are selectable, but flag them: the
+  pixel gate has not certified them yet.
+- **Phase 7E interaction and Phase 7F production fidelity status**: whether
+  each selected component is covered by the frozen Wave 1 audits (the live
+  targets are sendPUSH-era and pending repointing — see `KNOWN_ISSUES.md`).
 - **Phase 8E rendered template status**: confirm the relevant local
   template-test URL was reviewed for web-page, landing-page, blog/document, or
   brochure-content work, or explain why this artifact type is outside the
@@ -187,7 +185,7 @@ Write a plan in this exact structure, then stop and wait for approval:
   forbidden in `DESIGN_SYSTEM.md`, and how you will resist it.
 - **Open questions**: anything ambiguous in the brief.
 
-Do not generate code until the plan is approved.
+Do not generate code until the outline is approved.
 
 ## Hard Rules Across All Steps
 

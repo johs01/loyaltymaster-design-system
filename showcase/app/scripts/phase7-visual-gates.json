@@ -266,6 +266,11 @@
       "classification": "Wave 2 promoted - pending Phase 7C reference regeneration and human approval",
       "gate": false,
       "notes": "thank-you-confirmation-section is a stable Wave 2 registry component with Phase 5 smoke and Phase 13 evidence approval. Its canonical reference at assets/screenshots/thank-you-confirmation-section.png is a 1440x1200 live loyaltymaster.com capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "strategy-sentence-cards": {
+      "classification": "Canon-promoted (2026-07-10 site rollout) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "strategy-sentence-cards is a stable registry component promoted from the approved 2026-07-10 loyaltymaster.com site rollout, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/strategy-sentence-cards.png is a live-site capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     }
   }
 }

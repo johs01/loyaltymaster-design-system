@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 5177",
     "typecheck": "tsc --noEmit",
     "verify:showcase": "node scripts/verify-showcase.mjs",
     "verify:visual": "node scripts/verify-visual.mjs",

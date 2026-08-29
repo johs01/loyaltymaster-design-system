@@ -10,11 +10,16 @@ Brand.
 
 ## Product Naming
 
-- Parent brand: **Loyaltymaster**.
-- Product brand: **sendPUSH**.
-- Joined form: **sendPUSH | Loyaltymaster**.
-- Use lowercase `send` and uppercase `PUSH`. Do not write `SendPush`,
-  `Sendpush`, or `sendpush` in authored copy unless referencing a URL or file.
+- Brand name on the live site: **Loyaltymaster** — exactly this casing, one
+  word. The production facts canon (`SOURCE-OF-TRUTH.md` in the production
+  repo, see `llms.txt` Production Target) is the authority for all naming,
+  facts, and claims in new page copy; the sendPUSH product branding was
+  retired with the sendpush subdomain in July 2026.
+- Historical product brand: **sendPUSH** (joined form **sendPUSH |
+  Loyaltymaster**). When referencing it historically, use lowercase `send`
+  and uppercase `PUSH`; do not write `SendPush`, `Sendpush`, or `sendpush` in
+  authored copy unless referencing a URL or file. Do not introduce sendPUSH
+  naming into new Loyaltymaster page copy.
 
 ## Users
 

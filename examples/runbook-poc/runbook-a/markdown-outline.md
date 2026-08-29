@@ -40,13 +40,6 @@ Submit a consultation/contact request.
    variant: default
    props: heading, body, nextSteps
 
-## Component Names
-
-- hero-main-section
-- article-body
-- contact-form-section
-- thank-you-confirmation-section
-
 ## Component Variants
 
 All components use the registry-approved default variant.

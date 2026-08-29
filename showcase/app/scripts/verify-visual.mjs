@@ -409,20 +409,24 @@ try {
 
   fs.writeFileSync(path.join(artifactsDir, "visual-results.json"), `${JSON.stringify(output, null, 2)}\n`);
 
-  if (skipped.length > 0) {
-    for (const skippedResult of skipped) {
-      console.error(`${skippedResult.id} is not gated by Phase 7 visual verification.`);
-    }
-    process.exitCode = 1;
-  } else if (failed.length > 0) {
+  // Failures always print and always fail the run — never hidden behind
+  // skip warnings. Coverage-only (gate:false) entries are intentional
+  // pending-approval state per registry/README.md Gate Coverage, so they warn
+  // without failing the run; assertGateCoverage already rejects components
+  // missing from the gates file entirely.
+  if (failed.length > 0) {
     for (const failure of failed) {
       console.error(
         `${failure.id} failed Phase ${phaseLabel} visual gate: ${failure.failureReasons.join("; ")}`,
       );
     }
     process.exitCode = 1;
-  } else {
-    console.log(`Phase ${phaseLabel} visual fidelity verification passed for ${gated.length} gated components; 0 skipped.`);
+  }
+  for (const skippedResult of skipped) {
+    console.warn(`${skippedResult.id} is coverage-only (gate: false); pixel fidelity not yet certified.`);
+  }
+  if (failed.length === 0) {
+    console.log(`Phase ${phaseLabel} visual fidelity verification passed for ${gated.length} gated components; ${skipped.length} coverage-only.`);
   }
   }
 } catch (error) {

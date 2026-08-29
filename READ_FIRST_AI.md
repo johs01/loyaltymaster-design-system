@@ -9,9 +9,9 @@ entry manifest), then `AI_START_HERE.md`; they point back to this operating
 manual and define the task-routed read order.
 
 The component inventory lives only in `registry/components.json`. Component
-counts written in prose (for example "20 Wave 1 components") describe gating
-waves, not availability. Build the available component list from the registry
-at runtime; every `status: "stable"` component may be selected.
+counts written in prose describe gating waves, not availability. Build the
+available component list from the registry at runtime; every
+`status: "stable"` component may be selected.
 
 ## Purpose
 
@@ -21,23 +21,24 @@ brand rules, tokens, approved components, and workflow.
 
 ## Required Reading Order
 
-1. `AI_START_HERE.md` - external LLM entry point and full workflow overview.
-2. `BRAND.md` - audience, voice, anti-references, and brand principles.
-3. `DESIGN_SYSTEM.md` - visual rules, tokens, motion, components, and
-   constraints.
-4. `PREFLIGHT.md` - mandatory workflow before planning any new page.
-5. `tokens/design-tokens.json` - canonical machine-readable token source.
-6. `registry/components.json` - approved component names and metadata.
-7. `specs/README.md` - how component specs govern future artifacts.
-8. `specs/components/<component-id>.md` - read each relevant component spec
-   immediately before using that component.
-9. `examples/README.md` - how approved and blocked examples are used.
-10. Relevant files in `examples/approved/`, `examples/blocked/`, and
-   `examples/generated/` before
-   planning a similar artifact.
-11. `templates/README.md` - approved recipe layer for future AI-created
-    Loyaltymaster artifacts.
-12. The relevant approved template in `templates/` for the artifact type.
+There is one read order and it is task-routed: start at `llms.txt`, pick the
+runbook for the task, and follow that runbook's embedded read list. Do not
+read every file in the repo up front. The map of what each source governs:
+
+- `AI_START_HERE.md` - expanded workflow overview and proof-package index.
+- `BRAND.md` - audience, voice, anti-references, and brand principles.
+- `DESIGN_SYSTEM.md` - visual rules, tokens, motion, components, and
+  constraints.
+- `PREFLIGHT.md` - the human reviewer's gate before a new page is planned.
+- `tokens/design-tokens.json` - canonical machine-readable token source.
+- `registry/components.json` - approved component names and metadata.
+- `specs/README.md` and `specs/components/<component-id>.md` - component
+  contracts; read each relevant spec immediately before using that component.
+- `examples/README.md`, `examples/approved/`, `examples/blocked/`,
+  `examples/generated/` - accepted patterns, rejection patterns, and proof
+  packages.
+- `templates/README.md` and the relevant approved template in `templates/` -
+  the recipe layer for the artifact type.
 
 ## Current Design-System Status
 
@@ -60,8 +61,9 @@ brand rules, tokens, approved components, and workflow.
   font readiness, browser runtime, deviceScaleFactor, or capture timing
   metadata.
 - `/showcase/app/scripts/phase7-visual-gates.json` records each component's
-  current Phase 7C visual classification and strict threshold status; all 20
-  Wave 1 components are gated.
+  current Phase 7C visual classification and strict threshold status; every
+  Wave 1 component is gated, and later-promoted components carry coverage-only
+  (`gate: false`) entries until their references are regenerated and approved.
 - `/assets/screenshots/historical-phase-7b/` preserves the pre-regeneration
   screenshots. `/assets/screenshots/*.png` is now the intentionally regenerated
   Phase 7C canonical reference set.
@@ -135,7 +137,7 @@ not from `/Components/`, `_archive/`, or the protected production replica.
 Use `/showcase/app/` to review live component renders against approved
 screenshots. The Phase 5 smoke verifier proves every Wave 1 component renders in
 desktop and mobile viewports. Phase 7C is the current visual fidelity gate for
-all 20 Wave 1 components. Before treating a component as visually stable, check
+every Wave 1 component. Before treating a component as visually stable, check
 its entry in `showcase/app/scripts/phase7-visual-gates.json`, review
 `_archive/phase-reports/PHASE_7C_REPORT.md`, and run `npm run verify:visual` from
 `showcase/app`; skipped components are no longer accepted.
@@ -150,10 +152,13 @@ template page and raw snapshot evidence.
 ## Production Fidelity Rule
 
 Use Phase 7F production-fidelity verification before treating a component as
-ready for production adoption. Run `npm run verify:production-fidelity` from
-`showcase/app`; every Wave 1 component must pass desktop and mobile comparison
-against the live sendPUSH runtime targets in
-`showcase/app/scripts/phase7f-production-targets.json`. Regenerated local
+ready for production adoption. Every Wave 1 component passed desktop and
+mobile comparison against the live sendPUSH runtime targets in
+`showcase/app/scripts/phase7f-production-targets.json`. Those targets were
+retired with the sendPUSH subdomain in July 2026: the frozen Phase 7F
+artifacts stand as gate-time evidence, and `npm run
+verify:production-fidelity` stays unrunnable until the targets are repointed
+at live loyaltymaster.com URLs (see `KNOWN_ISSUES.md`). Regenerated local
 screenshots do not replace live production fidelity unless a later phase
 explicitly approves a new reference.
 
@@ -222,11 +227,13 @@ of default page-body recipes.
 
 ## Non-Negotiable Rules
 
-- Use `sendPUSH | Loyaltymaster` naming exactly.
+- Use the naming in the production facts canon (`Loyaltymaster`, one word);
+  `sendPUSH | Loyaltymaster` is historical naming — see `BRAND.md`.
 - Build from approved components and tokens before inventing anything.
 - Start from an approved template recipe in `templates/` before creating a new
   page, landing page, document, brochure, blog post, sales page, or subdomain.
-- External LLMs must start from `AI_START_HERE.md`.
+- External LLMs must start from `llms.txt`; `AI_START_HERE.md` is the
+  expanded workflow overview.
 - Read the relevant component spec immediately before using a component.
 - Import approved React implementations from `/library/src/components/`.
 - Use the Phase 7C showcase visual gate, Phase 7E interaction gate, and Phase
@@ -248,7 +255,9 @@ of default page-body recipes.
 ## Approved Conflict Resolutions
 
 - The production stack is Next.js 16 App Router, not Vite.
-- `/design-system-template-page` is canonical; archived previews are references.
+- The approved design as rolled out on live loyaltymaster.com pages is
+  canonical; the retired sendPUSH `/design-system-template-page` and archived
+  previews are historical references.
 - Primary desktop cards use 20px radius; secondary/mobile/form-adjacent cards
   use 16px.
 - Tenant/trial inputs use 16px radius; compact fields use 12px; email CTA inputs

@@ -2,9 +2,14 @@
 
 import { useId, useState } from "react";
 
+import type { LinkItem } from "../types";
+
 export interface FaqItem {
   question: string;
   answer: string;
+  /** Optional follow-up anchor after the answer (owner call 2026-07-13).
+      The answer text must stand alone: FAQPage JSON-LD carries text only. */
+  link?: LinkItem;
 }
 
 const defaultItems: FaqItem[] = [
@@ -55,7 +60,10 @@ export function FaqAccordion({
                   {item.question}
                 </button>
                 <div id={panelId} className="wf-faq-answer" role="region" aria-labelledby={buttonId}>
-                  <p>{item.answer}</p>
+                  <p>
+                    {item.answer}
+                    {item.link ? <> <a href={item.link.href}>{item.link.label}</a></> : null}
+                  </p>
                 </div>
               </div>
             );

@@ -40,6 +40,7 @@ const requiredFailureStages = [
   "PROP_INVALID",
   "TOKEN_INVALID",
   "TEMPLATE_MISMATCH",
+  "CONTENT_MISSING",
   "ROUTE_WIRING_FAILED",
   "SEO_METADATA_FAILED",
   "TYPESCRIPT_FAILED",
@@ -167,10 +168,12 @@ for (const requiredText of [
 
 const runbookBSource = exists(runbookBPath) ? readText(runbookBPath) : "";
 for (const requiredText of [
-  "app/<route>/page.tsx",
-  "src/site-pages/<page-slug>/<PageName>Page.tsx",
-  "src/config/seoRoutes.json",
-  "src/next/SitePage.tsx",
+  "src/content/<page-slug>.ts",
+  "src/components/<PageName>Page.tsx",
+  "src/lib/seo-meta.ts",
+  "src/data/loyaltymaster-pages.ts",
+  "SOURCE-OF-TRUTH.md",
+  "CONTENT_MISSING",
   "PRODUCTION_IMPORT_FAILED",
 ]) {
   if (!runbookBSource.includes(requiredText)) {
@@ -311,10 +314,11 @@ for (const patchPath of [
   }
 
   for (const requiredFile of [
-    "app/<route>/page.tsx",
-    "src/site-pages/<page-slug>/<PageName>Page.tsx",
-    "src/config/seoRoutes.json",
-    "src/next/SitePage.tsx",
+    "src/content/<page-slug>.ts",
+    "src/content/index.ts",
+    "src/data/loyaltymaster-pages.ts",
+    "src/lib/seo-meta.ts",
+    "src/lib/og-photos.ts",
   ]) {
     if (!patch.targetFiles?.includes(requiredFile)) {
       fail(`${patchPath} missing route-agnostic target file shape: ${requiredFile}`);
@@ -366,6 +370,33 @@ for (const reportPath of [
       fail(`${reportPath} missing failure stage code: ${failureStage}`);
     }
   }
+}
+
+// The three token exports must match design-tokens.json exactly.
+{
+  const { spawnSync } = await import("node:child_process");
+  const tokenCheck = spawnSync(process.execPath, ["scripts/generate-tokens.mjs", "--check"], {
+    cwd: root,
+    stdio: "inherit",
+  });
+  if (tokenCheck.status !== 0) {
+    fail("token exports drift from tokens/design-tokens.json; run node scripts/generate-tokens.mjs");
+  }
+}
+
+// Registry props/slots must match the TSX prop interfaces. Skipped (not
+// failed) when the library's typescript dependency is not installed.
+if (fs.existsSync(path.join(root, "library/node_modules/typescript"))) {
+  const { spawnSync } = await import("node:child_process");
+  const propsCheck = spawnSync(process.execPath, ["scripts/generate-registry-props.mjs", "--check"], {
+    cwd: root,
+    stdio: "inherit",
+  });
+  if (propsCheck.status !== 0) {
+    fail("registry props/slots drift from library TSX; run node scripts/generate-registry-props.mjs");
+  }
+} else {
+  console.log("NOTE: registry props parity check skipped (library/node_modules/typescript not installed).");
 }
 
 if (!process.exitCode) {

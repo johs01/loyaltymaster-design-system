@@ -1,17 +1,16 @@
 # Runbook B: Markdown Outline To Production Page
 
 Use this runbook when an LLM must turn a human-approved Runbook A Markdown
-layout outline into route-agnostic production page files for the Loyaltymaster
-sendPUSH Next.js App Router website.
+layout outline into production page files for the Loyaltymaster Next.js App
+Router website.
 
-Runbook B starts only after a human approves a Runbook A outline. If the
-outline is missing, unapproved, or fails schema checks, stop with
+Runbook B starts only after a human approves a Runbook A outline. Approval is
+recorded in the outline itself: the `Approved-By:` / `Approval-Date:` lines
+are filled and `Ready for Runbook B:` is `Yes`. If the outline is missing,
+lacks that approval record, or fails schema checks, stop with
 `OUTLINE_SCHEMA_FAILED`.
 
 ## Production Target
-
-The current production target shape is the sendPUSH Next.js App Router
-repository. Use it as a target contract, not as a source of design truth.
 
 Target repository placeholder:
 
@@ -20,22 +19,33 @@ Target repository placeholder:
 ```
 
 `{{TARGET_REPOSITORY}}` is filled from the task brief or the approved outline.
-If neither names a target repository, keep the placeholder, produce the
-route-agnostic package, and record the target as UNKNOWN in the diagnostic
-report.
+The default production target is the Loyaltymaster production repo:
 
-Required output file shapes:
+- Local path: `/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex`
+- GitHub: `https://github.com/johs01/Loyaltymaster` (deployed to
+  loyaltymaster.com via Vercel)
+
+That repo re-implements the approved design system natively (its rollout was
+approved page-by-page in July 2026). A new page there is a typed content model
+plus registrations — not a freestanding component composition. Required
+output file shapes in the production repo:
 
 ```text
-app/<route>/page.tsx
-src/site-pages/<page-slug>/<PageName>Page.tsx
-src/config/seoRoutes.json
-src/next/SitePage.tsx
+src/content/<page-slug>.ts
+src/content/index.ts
+src/data/loyaltymaster-pages.ts
+src/lib/seo-meta.ts
+src/lib/og-photos.ts
 ```
 
-The generated package stops when these files are ready to import into
-`{{TARGET_REPOSITORY}}` and validate there. Do not edit the production
-repository unless the task explicitly authorizes direct edits there.
+Optionally, for a bespoke composition only: `src/components/<PageName>Page.tsx`
+plus its render branch in `src/app/(public)/[slug]/page.tsx`.
+
+If the brief names a different target, or no target at all, produce the
+route-agnostic package (Mode 2 below) and record the target as UNKNOWN in the
+diagnostic report. Do not edit the production repository unless the task
+explicitly authorizes direct edits there; otherwise stop when the files are
+ready to import into `{{TARGET_REPOSITORY}}` and validate there.
 
 ## Source Of Truth
 
@@ -48,12 +58,27 @@ Read these files at runtime:
 5. the selected template file recorded in the outline
 6. every selected component's current `specPath`
 7. every selected component's current `libraryPath`
-8. `examples/README.md`
-9. the closest relevant `examples/generated/` proof package
-10. relevant `examples/blocked/*.md` drift examples
+8. the production facts canon: `SOURCE-OF-TRUTH.md` in `{{TARGET_REPOSITORY}}`
+9. for Mode 1: `src/types/content.ts` and one existing `src/content/*.ts`
+   model in `{{TARGET_REPOSITORY}}` as the shape reference
+10. `examples/README.md`
+11. the closest relevant `examples/generated/` proof package
+12. relevant `examples/blocked/*.md` drift examples
 
 Do not use a copied component inventory. Do not use older examples as a source
 of current component availability.
+
+## Content Verification
+
+Every fact in the outline — prices, plan names, offer story, turnaround
+times, stats, contact details, legal claims — must be verified against the
+facts canon (`SOURCE-OF-TRUTH.md` in the target repo) before it enters page
+code. Copy verified facts exactly; never restate them from memory.
+
+If the outline carries unresolved `contentStillNeeded` entries, or a stated
+fact cannot be verified in the canon, stop with `CONTENT_MISSING` and list
+each unresolved item in the diagnostic report. Never fill the gap with
+invented copy, stats, testimonials, or offers.
 
 ## Registry Validation
 
@@ -118,67 +143,76 @@ MagicPath is upstream for designing new or changed components after human
 approval. It is not proof that a production page may import or copy a component.
 
 `/Components/` may still be used as evidence: screenshots, source review, and
-visual comparison. The runtime implementation always comes from the registry
-`libraryPath` under `library/src/components/`.
+visual comparison. In Mode 2, the runtime implementation always comes from the
+registry `libraryPath` under `library/src/components/`. In Mode 1, the
+production repo's own approved compositions render the content model; those
+compositions were ported from this design system and the registry specs remain
+the visual contract they must match.
 
-If `{{TARGET_REPOSITORY}}` does not have a way to import the current
-design-system library components, stop with `PRODUCTION_IMPORT_FAILED` and
-report the integration gap. Do not paste raw component implementations into
-the page as a workaround.
+If the target repo can neither render the outline through an existing approved
+composition nor import the current design-system library components, stop with
+`PRODUCTION_IMPORT_FAILED` and report the integration gap. Do not paste raw
+component implementations into the page as a workaround.
 
-## Next.js App Router Output Contract
+## Output Contract
 
-Create or patch the route file:
+### Mode 1 — Loyaltymaster production repo (default)
 
-```tsx
-import { findSeoRoute } from "../../src/config/seoRoutes";
-import { routeMetadata } from "../../src/next/metadata";
-import { SitePage } from "../../src/next/SitePage";
-import { StructuredData } from "../../src/next/StructuredData";
-
-export const dynamic = "force-static";
-
-const route = findSeoRoute("/<route>")!;
-export const metadata = routeMetadata(route);
-
-export default function Page() {
-  return (
-    <>
-      <StructuredData route="/<route>" />
-      <SitePage route="/<route>" />
-    </>
-  );
-}
-```
-
-Adjust only the relative import depth required by the final `app/<route>/page.tsx`
-location.
-
-Create the page-body file under:
+Create the content model:
 
 ```text
-src/site-pages/<page-slug>/<PageName>Page.tsx
+src/content/<page-slug>.ts
 ```
 
-The page-body file must:
+- Export one typed object (`ProductPageContent` for product/landing pages,
+  `ArticleContent` for article pages — exact types come from
+  `src/types/content.ts` in the target repo).
+- Section order and copy come from the approved outline; facts are verified
+  per Content Verification above.
+- Follow the shape of an existing content model file, including its
+  comment style citing the canon facts used.
 
-- render body content only unless the outline explicitly approved a standalone
-  shell
-- import only approved design-system library components
+Register the page (four patches):
+
+1. `src/content/index.ts` — import the model and add it to the matching
+   registry record (product, article, or custom).
+2. `src/data/loyaltymaster-pages.ts` — add the sub-page entry (slug, title,
+   sourceUrl, pageType, headings, buttons, imageCount, excerpt); this drives
+   `generateStaticParams` and the sitemap.
+3. `src/lib/seo-meta.ts` — add the authored SERP title (without the brand
+   suffix) and a 140–160 character meta description from the outline's SEO
+   fields.
+4. `src/lib/og-photos.ts` — when the outline sets `ogImage`, register the
+   slug and hero path so the share card carries the page's own photo (the
+   card contract is "Share Cards (Open Graph)" in `DESIGN_SYSTEM.md` §6);
+   pages without a hero fall back to the homepage card automatically.
+
+The generic `ProductPage` / `ArticlePage` composition renders the model —
+no new component file is needed. Only when the approved outline explicitly
+calls for a bespoke composition, add `src/components/<PageName>Page.tsx`
+(PascalCase of the page slug) and its slug-matched render branch in
+`src/app/(public)/[slug]/page.tsx`, composing only patterns that already
+exist in the production repo's approved design-system components.
+
+### Mode 2 — route-agnostic package (unknown or non-Loyaltymaster target)
+
+Emit a body-only TSX composition that imports only from registry
+`libraryPath` values, plus the same content model data as a Markdown table,
+and list the intended integration points for the eventual target. Follow the
+`examples/generated/` proof-package shape. A client-boundary note: when the
+composition includes any `clientBoundary: "client"` component, the importing
+file needs no `'use client'` of its own — the boundary lives inside the
+library component.
+
+In both modes the page must:
+
+- render body content only unless the outline explicitly approved a
+  standalone shell
 - pass only validated props, slots, variants, CTAs, images, and content
 - preserve the component order from the approved outline
 - avoid route-specific visual overrides unless a spec explicitly allows them
 - preserve accessibility labels, form labels, alt text, and CTA destinations
 - avoid dead CTAs
-
-Patch `src/config/seoRoutes.json` with the approved SEO fields from the
-outline. If the outline sets `ogImage`, also register the slug and hero path
-in the target repository's OG photo map so the share card carries the page's
-own photo (on loyaltymaster.com: `src/lib/og-photos.ts`; the card contract is
-"Share Cards (Open Graph)" in `DESIGN_SYSTEM.md` §6). Patch
-`src/next/SitePage.tsx` by adding the route union entry, page import, and
-route render branch that wraps the page body in the existing production
-shell.
 
 ## Output Package
 
@@ -188,11 +222,11 @@ Return a package with these sections:
 # Production Page Package: [Page Name]
 
 Runbook Used: RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md
-Approved Outline: [path or identifier]
+Approved Outline: [path, normally outlines/<page-slug>.md]
 Target Repository: {{TARGET_REPOSITORY}}
-Target Route: /<route>
+Output Mode: [Mode 1 production repo | Mode 2 route-agnostic]
+Target Route: /<page-slug>/
 Page Slug: <page-slug>
-Page Component: <PageName>Page
 
 ## Registry Validation
 - Registry source:
@@ -205,24 +239,32 @@ Page Component: <PageName>Page
 - Slots validated:
 - Tokens validated:
 
+## Content Verification
+- Facts canon read: [path]
+- Facts verified: [list]
+- Unresolved contentStillNeeded items: [none, or stop with CONTENT_MISSING]
+
 ## Files To Create Or Patch
-- app/<route>/page.tsx
-- src/site-pages/<page-slug>/<PageName>Page.tsx
-- src/config/seoRoutes.json
-- src/next/SitePage.tsx
+- src/content/<page-slug>.ts
+- src/content/index.ts
+- src/data/loyaltymaster-pages.ts
+- src/lib/seo-meta.ts
+- src/lib/og-photos.ts
+- [Mode 2: <PageName>BodyExample.tsx and intended integration points instead]
 
 ## Production Page Code
-[Provide file-by-file code or a patch plan, depending on task authorization.]
+[Provide file-by-file code, or a patch plan when the task does not authorize
+direct edits to the target repo.]
 
 ## Validation Commands For Target Repo
-- cd {{TARGET_REPOSITORY}} && npm run typecheck
-- cd {{TARGET_REPOSITORY}} && npm run build
+- cd {{TARGET_REPOSITORY}} && npm run check
+- cd {{TARGET_REPOSITORY}} && npx vitest run
 
 ## Diagnostic Report
 - Input File:
 - Runbook Used:
-- Repo Commit SHA:
-- Component Registry Checksum:
+- Repo Commit SHA: [design-system repo commit at generation time]
+- Component Registry Checksum: [shasum -a 256 registry/components.json]
 - Selected Template:
 - Selected Components:
 - Rejected Components and Why:
@@ -236,7 +278,7 @@ Page Component: <PageName>Page
 
 ## Stop Condition
 Patch plan stops when files are ready to import into {{TARGET_REPOSITORY}} and
-validate with typecheck/build.
+validate with the target repo's check and test commands.
 ```
 
 ## Failure Stages
@@ -244,21 +286,26 @@ validate with typecheck/build.
 Use one of these stages:
 
 - `INPUT_INVALID`: the outline or target context is unreadable.
-- `OUTLINE_SCHEMA_FAILED`: the outline does not match Runbook A output.
+- `OUTLINE_SCHEMA_FAILED`: the outline does not match Runbook A output or
+  lacks the human-approval record.
 - `COMPONENT_NOT_APPROVED`: a component is absent or not stable in the registry.
 - `PROP_INVALID`: a prop, slot, variant, CTA, image field, or content field is invalid.
 - `TOKEN_INVALID`: token usage is not approved.
 - `TEMPLATE_MISMATCH`: the outline no longer matches an approved template.
-- `ROUTE_WIRING_FAILED`: route file, SEO route, or `SitePage` wiring is invalid.
+- `CONTENT_MISSING`: a fact cannot be verified in the facts canon, or the
+  outline carries unresolved `contentStillNeeded` entries.
+- `ROUTE_WIRING_FAILED`: content-model registration, slug wiring, or render
+  branch is invalid.
 - `SEO_METADATA_FAILED`: SEO fields are missing or invalid.
 - `TYPESCRIPT_FAILED`: generated code fails typecheck.
 - `BUILD_FAILED`: the target Next.js build fails.
 - `VISUAL_FIDELITY_FAILED`: generated page does not match approved visual evidence.
-- `PRODUCTION_IMPORT_FAILED`: the target repo cannot import the design-system library.
+- `PRODUCTION_IMPORT_FAILED`: the target repo can neither render the outline
+  through an approved composition nor import the design-system library.
 
 ## Validation Gate
 
 Runbook B is complete only when the package identifies every intended file,
-uses only registry-approved components, includes a diagnostic report, and
-states the target repo validation commands that must pass before production
-import.
+uses only registry-approved components, verifies every fact against the facts
+canon, includes a diagnostic report, and states the target repo validation
+commands that must pass before production import.

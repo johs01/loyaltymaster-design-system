@@ -48,8 +48,25 @@ header, or `footer`.
 | Pricing page | `hero-main-section`, `pricing-section`, `billing-toggle-button`, `comparison-table`, `faq-accordion`, `cta-with-button-email` |
 | Proof page | `hero-main-section`, `stats-card-strip`, `testimonials-grid`, `testimonial-single`, `image-grid`, `cta-with-button-email` |
 
-If the brief requires a section outside those approved recipes, stop and use
-`templates/new-component-request.md`.
+The recipes above are proven orders, not the inventory — the registry is the
+only inventory. Specialized page types compose their matching stable registry
+components the same body-only way:
+
+| Specialized Page Need | Approved Components |
+|---|---|
+| Problem/opportunity framing on product pages | `strategy-sentence-cards` |
+| Long-form article or explainer body | `article-body` |
+| Legal or policy document | `legal-document-body` |
+| Blog, knowledge-base, or FAQ index | `blog-article-index`, `knowledge-base-index`, `faq-index-search` |
+| Full pricing comparison matrix | `pricing-page-matrix` |
+| Industry / use-case overview | `industry-use-case-card-grid` |
+| Contact, booking, or application page | `contact-form-section`, `booking-demo-request-section`, `branded-card-application-form` |
+| Newsletter signup page | `newsletter-signup-section` |
+| Thank-you / confirmation page | `thank-you-confirmation-section` |
+| Pre-launch placeholder page | `coming-soon-section` |
+
+If the brief requires a section no stable registry component expresses, stop
+and use `templates/new-component-request.md`.
 
 `navbar-glassmorphism` and `footer` are approved shell components only for
 standalone artifacts that explicitly request their own global chrome. They are

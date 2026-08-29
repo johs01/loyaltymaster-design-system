@@ -22,6 +22,7 @@ Recommended Next Fix: keep fixture aligned with registry changes and canonical R
 - PROP_INVALID: diagnostic stage reserved for POC and future runbook validation.
 - TOKEN_INVALID: diagnostic stage reserved for POC and future runbook validation.
 - TEMPLATE_MISMATCH: diagnostic stage reserved for POC and future runbook validation.
+- CONTENT_MISSING: diagnostic stage reserved for POC and future runbook validation.
 - ROUTE_WIRING_FAILED: diagnostic stage reserved for POC and future runbook validation.
 - SEO_METADATA_FAILED: diagnostic stage reserved for POC and future runbook validation.
 - TYPESCRIPT_FAILED: diagnostic stage reserved for POC and future runbook validation.

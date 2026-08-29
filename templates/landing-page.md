@@ -49,6 +49,17 @@ not include `navbar-glassmorphism`, header, or `footer`.
 | Proof-led sales | `hero-main-section`, `stats-card-strip`, `testimonials-grid`, `image-grid`, `testimonial-single`, `cta-with-button-email` |
 | Full trial form | `hero-main-section`, `cta-trial-full-form`, `feature-section-2-column-bullets-image`, `faq-accordion` |
 
+Recipe rows are proven base orders, not closed lists: keep the listed order
+for the components you use, and you may add another `status: "stable"`
+registry component between them where its `whenToUse` matches the section
+need (for example a problem-framing or proof section the brief demands). The
+registry is the only inventory; never add an unregistered section.
+
+When `hero-main-section` renders its built-in email capture
+(`showEmailCapture`), a separate `button-email` section is the mid-page or
+closing repeat of the same CTA — never a second capture inside the hero
+region.
+
 `geo-fence-use-case` and `image-strip` may be used only when the brief is about
 location-triggered use cases or when the selected component spec allows that
 media proof pattern.

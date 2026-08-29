@@ -1,8 +1,13 @@
 # Loyaltymaster Design System
 
-> Canonical entry manifest for any LLM building Loyaltymaster.com / sendPUSH
-> pages from this repo. Read this file first. Every page must match the look of
-> https://sendpush.loyaltymaster.com/design-system-template-page
+> Canonical entry manifest for any LLM building Loyaltymaster.com pages from
+> this repo. Read this file first. Every page must match the approved design
+> system as it runs live on https://loyaltymaster.com — canonical examples:
+> https://loyaltymaster.com/features/ and
+> https://loyaltymaster.com/digital-loyalty-card-for-coffee-shops/
+> (The original template page at sendpush.loyaltymaster.com was retired in
+> July 2026 when the design system was rolled out onto loyaltymaster.com
+> itself; that subdomain no longer resolves.)
 
 ## The Key Rule
 
@@ -12,6 +17,10 @@ variants, tokens, colors, radii, shadows, typography, layouts, animation, or
 hover behavior. The rules live on three levels: brand rules (`BRAND.md`,
 `DESIGN_SYSTEM.md`), component rules (`specs/components/*.md`), and combination
 rules (`templates/*.md`).
+
+The same rule applies to facts: the AI may draft copy in the `BRAND.md` voice,
+but every fact, number, price, and claim must match the production facts canon
+(see Content Authority below). No invented stats, testimonials, or offers.
 
 ## Pick Your Task
 
@@ -31,12 +40,36 @@ runbooks rely on:
   or list written in prose docs; counts in older docs describe gating waves,
   not availability. Only `status: "stable"` components may be used.
 - `tokens/design-tokens.json` — the only token source (DTCG JSON).
-  `tokens.css`, `tokens.d.ts`, and `tailwind.preset.cjs` are generated exports.
+  `tokens.css`, `tokens.d.ts`, and `tailwind.preset.cjs` are generated exports
+  (`node scripts/generate-tokens.mjs`).
 - `specs/components/<id>.md` — read the current spec immediately before using
   a component.
 - `templates/` — approved composition recipes per artifact type.
 - `examples/approved/`, `examples/blocked/`, `examples/generated/` — accepted
   patterns, rejection patterns, and full proof packages.
+
+## Content Authority
+
+The production facts canon is `SOURCE-OF-TRUTH.md` in the production
+repository (see Production Target below). Every fact the page states —
+prices, plan names, offer story, turnaround times, stats, contact details,
+legal claims — must match that file. Copy the fact; never restate it from
+memory. A fact you cannot verify there goes into the outline as
+`contentStillNeeded`, and Runbook B stops with `CONTENT_MISSING` until a
+human resolves it.
+
+## Production Target
+
+Unless the task brief names a different repository, `{{TARGET_REPOSITORY}}`
+is the Loyaltymaster production repo:
+
+- Local path: `/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex`
+- GitHub: `https://github.com/johs01/Loyaltymaster` (deployed to
+  loyaltymaster.com via Vercel)
+
+Runbook B documents the exact files a new page registers there. If the brief
+names no target and that path is unavailable, produce the route-agnostic
+package and record the target as UNKNOWN in the diagnostic report.
 
 ## Hard Boundaries
 
@@ -48,30 +81,35 @@ runbooks rely on:
   each component's registry `libraryPath`.
 - Read-only sources — never edit, import from, or copy runtime code from:
   `/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION`,
-  `RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/`, raw MagicPath
-  output, and `_archive/`.
+  `RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/` (both are frozen
+  replicas of the retired sendPUSH app), raw MagicPath output, and
+  `_archive/`. The production repo named above is edited only when the task
+  explicitly authorizes direct edits; otherwise emit an import-ready package.
 - React is server-by-default; each component declares `clientBoundary` in the
   registry. Validation uses TypeScript types + JSON Schema (no Zod).
-- `{{TARGET_REPOSITORY}}` in the runbooks is filled from the task brief. If the
-  brief does not name a target repository, produce the route-agnostic package
-  and record the target as UNKNOWN in the diagnostic report.
 
 ## Do Not Read (noise for page-generation tasks)
 
 - `_archive/` — historical material, including phase reports and old design
-  system versions.
+  system versions. Exception: when a live doc (for example `PREFLIGHT.md` or
+  `registry/README.md`) cites a specific archived phase report as frozen gate
+  evidence, reading that cited file is allowed.
 - `RAW/` — research captures and production replicas.
 - `Claude Memory/` — internal session memory.
 - `.understand-anything/`, `project-birds-eye-report/`, `.playwright-mcp/`,
   `.nested-git-backups/` — tooling output and backups.
 - `showcase/app/artifacts/` and `showcase/preview/` — historical gate
-  screenshots and logs.
+  screenshots and logs. Exception: the specific JSON result ledgers a live
+  doc names (for example `interaction-results.json`,
+  `production-fidelity-results.json`) are readable gate evidence.
 
 ## Optional Reference
 
 - `AI_START_HERE.md` — expanded workflow overview and proof-package index.
 - `EXTERNAL_LLM_HANDOFF.md` — hand-off checklist for external agents.
-- `PREFLIGHT.md` — mandatory human-gated checklist before planning a new page.
+- `PREFLIGHT.md` — the human-gated checklist a human reviewer completes
+  before a new page is planned; LLMs follow the runbooks, which embed the
+  same rules.
 - `READ_FIRST_AI.md` — operating manual with gate evidence details.
 - `KNOWN_ISSUES.md` — pre-existing deferred issues.
 
@@ -79,4 +117,5 @@ runbooks rely on:
 
 After Runbook B output, run `node scripts/validate-phase2.mjs` and
 `node scripts/validate-runbook-poc-readiness.mjs`, then record human approval
-before publishing.
+before publishing. When the target repo is available, also run its own checks
+(`npm run check` and `npx vitest run` in the production repo).

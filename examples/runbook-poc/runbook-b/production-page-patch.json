@@ -6,10 +6,11 @@
   "pageSlugPlaceholder": "<page-slug>",
   "pageNamePlaceholder": "<PageName>",
   "targetFiles": [
-    "app/<route>/page.tsx",
-    "src/site-pages/<page-slug>/<PageName>Page.tsx",
-    "src/config/seoRoutes.json",
-    "src/next/SitePage.tsx"
+    "src/content/<page-slug>.ts",
+    "src/content/index.ts",
+    "src/data/loyaltymaster-pages.ts",
+    "src/lib/seo-meta.ts",
+    "src/lib/og-photos.ts"
   ],
   "componentImports": [
     "hero-main-section",
@@ -27,5 +28,5 @@
     "visualReferencePath",
     "evidencePath"
   ],
-  "stopCondition": "Patch plan stops when files are ready to import into {{TARGET_REPOSITORY}} and validate with typecheck/build."
+  "stopCondition": "Patch plan stops when files are ready to import into {{TARGET_REPOSITORY}} and validate with the target repo's check and test commands."
 }

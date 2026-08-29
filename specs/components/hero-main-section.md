@@ -16,7 +16,7 @@ Registry description: Primary first-screen marketing hero with value proposition
 
 ## When To Use
 
-- Use as the first major section of a sendPUSH marketing page.
+- Use as the first major section of a Loyaltymaster marketing page.
 - Use only when this approved component matches the page need more closely than a new pattern.
 - Read this spec fresh immediately before using the component so edited rules are applied to the next artifact.
 

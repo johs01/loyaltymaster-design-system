@@ -68,6 +68,14 @@ Every template workflow starts by reading:
 | `templates/ai-compliance-checklist.md` | AI compliance proof | Approved |
 | `templates/new-component-request.md` | Missing component request | Approved |
 
+Artifact-type tiebreaker: a page with a single conversion goal and
+campaign/offer framing is a landing page (`templates/landing-page.md`); an
+evergreen site page that lives in the main navigation is a web page
+(`templates/web-page-brief.md`). Long-form reading is blog/document; framed
+sales collateral is brochure content. When a brief genuinely straddles two
+types, pick the one matching its primary conversion goal and record the
+choice in the outline's "Why this template fits".
+
 ## Approved Component Pool
 
 The approved component pool is the current `registry/components.json` file.
@@ -95,7 +103,8 @@ use a component that is not listed as stable in the current registry.
    `examples/generated/blog-document-body/`, and
    `examples/generated/brochure-content-body/`. The blog/document proof records
    the missing article-body/content-block need as a new-component request
-   instead of inventing layout.
+   instead of inventing layout. (That request has since been fulfilled:
+   `article-body` is now a stable registry component.)
 9. Phase 10 adds `EXTERNAL_LLM_HANDOFF.md` and
    `examples/generated/real-brief-trial/` as the practical real-brief workflow
    proof.

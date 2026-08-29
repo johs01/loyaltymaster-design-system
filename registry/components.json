@@ -1,7 +1,7 @@
 {
   "$schema": "./components.schema.json",
   "name": "Loyaltymaster Component Registry",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "phase": "Runbook POC readiness",
   "description": "Machine-readable registry for the 34 approved LoyaltyMaster components: 20 Wave 1 library components, 13 promoted MagicPath handoff components, and 1 canon-promoted production pattern (strategy-sentence-cards).",
   "rules": {
@@ -37,29 +37,39 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
           "name": "title",
           "required": true,
-          "description": "Approved title slot for Article Body."
+          "description": "Approved title content/input slot."
         },
         {
           "name": "intro",
           "required": false,
-          "description": "Approved intro slot for Article Body."
+          "description": "Approved intro content/input slot."
         },
         {
           "name": "sections",
           "required": false,
-          "description": "Approved sections slot for Article Body."
+          "description": "Approved sections content/input slot."
         },
         {
           "name": "image",
           "required": false,
-          "description": "Approved image slot for Article Body."
+          "description": "Approved image content/input slot."
         },
         {
           "name": "action",
           "required": false,
-          "description": "Approved action slot for Article Body."
+          "description": "Approved action content/input slot."
         }
       ],
       "tokensUsed": [
@@ -75,6 +85,12 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
           "title": {
             "type": "string"
           },
@@ -82,13 +98,68 @@
             "type": "string"
           },
           "sections": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "paragraphs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
           },
           "image": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
           },
           "action": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -127,7 +198,13 @@
             ]
           },
           "onChange": {
-            "description": "Callback receiving the selected billing cadence."
+            "description": "Runtime callback; not set from Markdown outlines."
+          },
+          "monthlyLabel": {
+            "type": "string"
+          },
+          "yearlyLabel": {
+            "type": "string"
           }
         },
         "required": [
@@ -153,6 +230,16 @@
           "name": "onChange",
           "required": true,
           "description": "Approved onChange content/input slot."
+        },
+        {
+          "name": "monthlyLabel",
+          "required": false,
+          "description": "Approved monthlyLabel content/input slot."
+        },
+        {
+          "name": "yearlyLabel",
+          "required": false,
+          "description": "Approved yearlyLabel content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/billing-toggle-button.png",
@@ -183,24 +270,29 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Blog Article Index."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Blog Article Index."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "articles",
           "required": false,
-          "description": "Approved articles slot for Blog Article Index."
+          "description": "Approved articles content/input slot."
         },
         {
           "name": "emptyMessage",
           "required": false,
-          "description": "Approved emptyMessage slot for Blog Article Index."
+          "description": "Approved emptyMessage content/input slot."
         }
       ],
       "tokensUsed": [
@@ -216,6 +308,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -223,15 +318,49 @@
             "type": "string"
           },
           "articles": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "meta": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "title"
+              ],
+              "additionalProperties": false
+            }
           },
           "emptyMessage": {
             "type": "string"
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -259,29 +388,34 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Booking Demo Request Section."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Booking Demo Request Section."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "expectations",
           "required": false,
-          "description": "Approved expectations slot for Booking Demo Request Section."
+          "description": "Approved expectations content/input slot."
         },
         {
           "name": "bookingAction",
           "required": false,
-          "description": "Approved bookingAction slot for Booking Demo Request Section."
+          "description": "Approved bookingAction content/input slot."
         },
         {
           "name": "embedLabel",
           "required": false,
-          "description": "Approved embedLabel slot for Booking Demo Request Section."
+          "description": "Approved embedLabel content/input slot."
         }
       ],
       "tokensUsed": [
@@ -297,6 +431,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -304,18 +441,57 @@
             "type": "string"
           },
           "expectations": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "paragraphs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
           },
           "bookingAction": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           },
           "embedLabel": {
             "type": "string"
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -343,34 +519,39 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Branded Card Application Form."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Branded Card Application Form."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "features",
           "required": false,
-          "description": "Approved features slot for Branded Card Application Form."
+          "description": "Approved features content/input slot."
         },
         {
           "name": "fields",
           "required": false,
-          "description": "Approved fields slot for Branded Card Application Form."
+          "description": "Approved fields content/input slot."
         },
         {
           "name": "submitLabel",
           "required": false,
-          "description": "Approved submitLabel slot for Branded Card Application Form."
+          "description": "Approved submitLabel content/input slot."
         },
         {
           "name": "onSubmit",
           "required": false,
-          "description": "Approved onSubmit slot for Branded Card Application Form."
+          "description": "Approved onSubmit content/input slot."
         }
       ],
       "tokensUsed": [
@@ -386,6 +567,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -393,21 +577,60 @@
             "type": "string"
           },
           "features": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "fields": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "email",
+                    "tel",
+                    "url",
+                    "textarea",
+                    "select"
+                  ]
+                },
+                "placeholder": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "label"
+              ],
+              "additionalProperties": false
+            }
           },
           "submitLabel": {
             "type": "string"
           },
           "onSubmit": {
-            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+            "description": "Runtime callback; not set from Markdown outlines."
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -433,6 +656,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "placeholder": {
             "type": "string"
           },
@@ -440,7 +666,13 @@
             "type": "string"
           },
           "onSubmit": {
-            "description": "Submit handler for the email value."
+            "description": "Runtime callback; not set from Markdown outlines."
+          },
+          "inputLabel": {
+            "type": "string"
+          },
+          "className": {
+            "type": "string"
           }
         },
         "required": [
@@ -458,6 +690,11 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "placeholder",
           "required": false,
           "description": "Approved placeholder content/input slot."
@@ -471,6 +708,16 @@
           "name": "onSubmit",
           "required": true,
           "description": "Approved onSubmit content/input slot."
+        },
+        {
+          "name": "inputLabel",
+          "required": false,
+          "description": "Approved inputLabel content/input slot."
+        },
+        {
+          "name": "className",
+          "required": false,
+          "description": "Approved className content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/button-email.png",
@@ -501,24 +748,29 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Coming Soon Section."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Coming Soon Section."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "launchNote",
           "required": false,
-          "description": "Approved launchNote slot for Coming Soon Section."
+          "description": "Approved launchNote content/input slot."
         },
         {
           "name": "action",
           "required": false,
-          "description": "Approved action slot for Coming Soon Section."
+          "description": "Approved action content/input slot."
         }
       ],
       "tokensUsed": [
@@ -534,6 +786,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -544,12 +799,27 @@
             "type": "string"
           },
           "action": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -559,7 +829,7 @@
       "category": "proof-section",
       "status": "stable",
       "clientBoundary": "server",
-      "description": "Comparison section for positioning sendPUSH against less direct customer-reach channels.",
+      "description": "Comparison section for positioning Loyaltymaster against less direct customer-reach channels.",
       "whenToUse": "Use when the page must explain why direct customer messaging is stronger than social-only reach.",
       "whenNotToUse": "Do not use as a dense feature matrix with many technical rows.",
       "screenshotPath": "assets/screenshots/comparison-table.png",
@@ -575,14 +845,84 @@
       "props": {
         "type": "object",
         "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
           "heading": {
+            "type": "string"
+          },
+          "body": {
             "type": "string"
           },
           "rows": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "loyaltymaster": {
+                  "type": "string"
+                },
+                "alternative": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "loyaltymaster",
+                "alternative"
+              ],
+              "additionalProperties": false
             }
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "isHighlighted": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "feature": {
+                  "type": "string"
+                },
+                "values": {
+                  "type": "object"
+                }
+              },
+              "required": [
+                "feature",
+                "values"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "ctaLabel": {
+            "type": "string"
+          },
+          "ctaHref": {
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -596,14 +936,44 @@
       ],
       "slots": [
         {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
           "name": "heading",
           "required": false,
           "description": "Approved heading content/input slot."
         },
         {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "rows",
           "required": false,
           "description": "Approved rows content/input slot."
+        },
+        {
+          "name": "columns",
+          "required": false,
+          "description": "Approved columns content/input slot."
+        },
+        {
+          "name": "data",
+          "required": false,
+          "description": "Approved data content/input slot."
+        },
+        {
+          "name": "ctaLabel",
+          "required": false,
+          "description": "Approved ctaLabel content/input slot."
+        },
+        {
+          "name": "ctaHref",
+          "required": false,
+          "description": "Approved ctaHref content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/comparison-table.png",
@@ -634,39 +1004,44 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Contact Form Section."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Contact Form Section."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "contactItems",
           "required": false,
-          "description": "Approved contactItems slot for Contact Form Section."
+          "description": "Approved contactItems content/input slot."
         },
         {
           "name": "fields",
           "required": false,
-          "description": "Approved fields slot for Contact Form Section."
+          "description": "Approved fields content/input slot."
         },
         {
           "name": "submitLabel",
           "required": false,
-          "description": "Approved submitLabel slot for Contact Form Section."
+          "description": "Approved submitLabel content/input slot."
         },
         {
           "name": "consentText",
           "required": false,
-          "description": "Approved consentText slot for Contact Form Section."
+          "description": "Approved consentText content/input slot."
         },
         {
           "name": "onSubmit",
           "required": false,
-          "description": "Approved onSubmit slot for Contact Form Section."
+          "description": "Approved onSubmit content/input slot."
         }
       ],
       "tokensUsed": [
@@ -682,6 +1057,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -689,10 +1067,64 @@
             "type": "string"
           },
           "contactItems": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ],
+              "additionalProperties": false
+            }
           },
           "fields": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "email",
+                    "tel",
+                    "url",
+                    "textarea",
+                    "select"
+                  ]
+                },
+                "placeholder": {
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "label"
+              ],
+              "additionalProperties": false
+            }
           },
           "submitLabel": {
             "type": "string"
@@ -701,12 +1133,9 @@
             "type": "string"
           },
           "onSubmit": {
-            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+            "description": "Runtime callback; not set from Markdown outlines."
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -735,11 +1164,14 @@
           "heading": {
             "type": "string"
           },
+          "body": {
+            "type": "string"
+          },
           "submitLabel": {
             "type": "string"
           },
           "onSubmit": {
-            "description": "Submit handler for the trial form."
+            "description": "Runtime callback; not set from Markdown outlines."
           }
         },
         "required": [
@@ -760,6 +1192,11 @@
           "name": "heading",
           "required": false,
           "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
         },
         {
           "name": "submitLabel",
@@ -805,6 +1242,12 @@
           },
           "buttonLabel": {
             "type": "string"
+          },
+          "placeholder": {
+            "type": "string"
+          },
+          "onSubmit": {
+            "description": "Runtime callback; not set from Markdown outlines."
           }
         },
         "additionalProperties": false
@@ -831,6 +1274,16 @@
           "name": "buttonLabel",
           "required": false,
           "description": "Approved buttonLabel content/input slot."
+        },
+        {
+          "name": "placeholder",
+          "required": false,
+          "description": "Approved placeholder content/input slot."
+        },
+        {
+          "name": "onSubmit",
+          "required": false,
+          "description": "Approved onSubmit content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/cta-with-button-email.png",
@@ -859,6 +1312,12 @@
       "props": {
         "type": "object",
         "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
           "items": {
             "type": "array",
             "items": {
@@ -869,6 +1328,22 @@
                 },
                 "answer": {
                   "type": "string"
+                },
+                "link": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "additionalProperties": false
                 }
               },
               "required": [
@@ -882,9 +1357,6 @@
             "type": "number"
           }
         },
-        "required": [
-          "items"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/faq-accordion.md",
@@ -896,8 +1368,18 @@
       ],
       "slots": [
         {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "items",
-          "required": true,
+          "required": false,
           "description": "Approved items content/input slot."
         },
         {
@@ -934,24 +1416,29 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for FAQ Index Search."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for FAQ Index Search."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "categories",
           "required": false,
-          "description": "Approved categories slot for FAQ Index Search."
+          "description": "Approved categories content/input slot."
         },
         {
           "name": "searchPlaceholder",
           "required": false,
-          "description": "Approved searchPlaceholder slot for FAQ Index Search."
+          "description": "Approved searchPlaceholder content/input slot."
         }
       ],
       "tokensUsed": [
@@ -967,6 +1454,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -974,15 +1464,34 @@
             "type": "string"
           },
           "categories": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "items"
+              ],
+              "additionalProperties": false
+            }
           },
           "searchPlaceholder": {
             "type": "string"
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -1007,6 +1516,21 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "white",
+              "peach",
+              "cyan",
+              "salmon"
+            ]
+          },
+          "eyebrow": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1020,12 +1544,45 @@
             }
           },
           "image": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
-          "heading",
-          "bullets"
+          "heading"
         ],
         "additionalProperties": false
       },
@@ -1038,6 +1595,21 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "tone",
+          "required": false,
+          "description": "Approved tone content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
           "name": "heading",
           "required": true,
           "description": "Approved heading content/input slot."
@@ -1049,13 +1621,18 @@
         },
         {
           "name": "bullets",
-          "required": true,
+          "required": false,
           "description": "Approved bullets content/input slot."
         },
         {
           "name": "image",
           "required": false,
           "description": "Approved image content/input slot."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/feature-section-2-column-bullets-image.png",
@@ -1083,6 +1660,12 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1090,10 +1673,67 @@
             "type": "string"
           },
           "image": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
           },
           "reversed": {
             "type": "boolean"
+          },
+          "problems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "description"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
         "required": [
@@ -1110,6 +1750,16 @@
         }
       ],
       "slots": [
+        {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
         {
           "name": "heading",
           "required": true,
@@ -1129,6 +1779,16 @@
           "name": "reversed",
           "required": false,
           "description": "Approved reversed content/input slot."
+        },
+        {
+          "name": "problems",
+          "required": false,
+          "description": "Approved problems content/input slot."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/feature-section-2-column-image.png",
@@ -1157,16 +1817,38 @@
       "props": {
         "type": "object",
         "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
           "items": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "icon": {
+                  "description": "ReactNode content; supplied as JSX by the build, not set from Markdown outlines."
+                }
+              },
+              "required": [
+                "title",
+                "body"
+              ],
+              "additionalProperties": false
             }
           }
         },
-        "required": [
-          "items"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/features-grid.md",
@@ -1186,8 +1868,23 @@
       ],
       "slots": [
         {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "items",
-          "required": true,
+          "required": false,
           "description": "Approved items content/input slot."
         }
       ],
@@ -1220,28 +1917,201 @@
           "brandLabel": {
             "type": "string"
           },
+          "brandHref": {
+            "type": "string"
+          },
           "body": {
             "type": "string"
           },
           "columns": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "links": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "label": {
+                        "type": "string"
+                      },
+                      "href": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "label",
+                      "href"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "heading": {
+                        "type": "string"
+                      },
+                      "links": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "href": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "href"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "groups": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "heading": {
+                              "type": "string"
+                            },
+                            "links": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "label": {
+                                    "type": "string"
+                                  },
+                                  "href": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "label",
+                                  "href"
+                                ],
+                                "additionalProperties": false
+                              }
+                            },
+                            "groups": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "heading": {
+                                    "type": "string"
+                                  },
+                                  "links": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object"
+                                    }
+                                  },
+                                  "groups": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object"
+                                    }
+                                  }
+                                },
+                                "required": [
+                                  "heading",
+                                  "links"
+                                ],
+                                "additionalProperties": false
+                              }
+                            }
+                          },
+                          "required": [
+                            "heading",
+                            "links"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "heading",
+                      "links"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "heading",
+                "links"
+              ],
+              "additionalProperties": false
             }
           },
           "contactItems": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label"
+              ],
+              "additionalProperties": false
             }
           },
           "cta": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           },
           "legalLinks": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "additionalProperties": false
             }
           },
           "copyright": {
@@ -1262,6 +2132,11 @@
           "name": "brandLabel",
           "required": false,
           "description": "Approved brandLabel content/input slot."
+        },
+        {
+          "name": "brandHref",
+          "required": false,
+          "description": "Approved brandHref content/input slot."
         },
         {
           "name": "body",
@@ -1320,6 +2195,27 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "peach",
+              "cyan",
+              "white",
+              "salmon"
+            ]
+          },
+          "reversed": {
+            "type": "boolean"
+          },
+          "usePointCopy": {
+            "type": "boolean"
+          },
+          "eyebrow": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1333,10 +2229,41 @@
             }
           },
           "image": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
           },
           "action": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -1349,6 +2276,31 @@
         }
       ],
       "slots": [
+        {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "tone",
+          "required": false,
+          "description": "Approved tone content/input slot."
+        },
+        {
+          "name": "reversed",
+          "required": false,
+          "description": "Approved reversed content/input slot."
+        },
+        {
+          "name": "usePointCopy",
+          "required": false,
+          "description": "Approved usePointCopy content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
         {
           "name": "heading",
           "required": false,
@@ -1386,7 +2338,7 @@
       "status": "stable",
       "clientBoundary": "server",
       "description": "Primary first-screen marketing hero with value proposition, CTA, checklist, and visual area.",
-      "whenToUse": "Use as the first major section of a sendPUSH marketing page.",
+      "whenToUse": "Use as the first major section of a Loyaltymaster marketing page.",
       "whenNotToUse": "Do not use for mid-page sections or document layouts.",
       "screenshotPath": "assets/screenshots/hero-main-section.png",
       "rawSourcePath": "Components/Hero Main Section/Hero Main Section.tsx",
@@ -1401,6 +2353,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "eyebrow": {
             "type": "string"
           },
@@ -1411,7 +2366,47 @@
             "type": "string"
           },
           "primaryAction": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "checklist": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
           },
           "emailPlaceholder": {
             "type": "string"
@@ -1438,6 +2433,11 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "eyebrow",
           "required": false,
           "description": "Approved eyebrow content/input slot."
@@ -1456,6 +2456,16 @@
           "name": "primaryAction",
           "required": true,
           "description": "Approved primaryAction content/input slot."
+        },
+        {
+          "name": "checklist",
+          "required": false,
+          "description": "Approved checklist content/input slot."
+        },
+        {
+          "name": "image",
+          "required": false,
+          "description": "Approved image content/input slot."
         },
         {
           "name": "emailPlaceholder",
@@ -1498,17 +2508,30 @@
       "props": {
         "type": "object",
         "properties": {
-          "images": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
           "heading": {
             "type": "string"
           },
           "body": {
             "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
+            }
           }
         },
         "required": [
@@ -1525,11 +2548,6 @@
       ],
       "slots": [
         {
-          "name": "images",
-          "required": true,
-          "description": "Approved images content/input slot."
-        },
-        {
           "name": "heading",
           "required": false,
           "description": "Approved heading content/input slot."
@@ -1538,6 +2556,11 @@
           "name": "body",
           "required": false,
           "description": "Approved body content/input slot."
+        },
+        {
+          "name": "images",
+          "required": true,
+          "description": "Approved images content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/image-grid.png",
@@ -1567,8 +2590,24 @@
           "images": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "src": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "src",
+                "alt"
+              ],
+              "additionalProperties": false
             }
+          },
+          "ariaLabel": {
+            "type": "string"
           }
         },
         "required": [
@@ -1588,6 +2627,11 @@
           "name": "images",
           "required": true,
           "description": "Approved images content/input slot."
+        },
+        {
+          "name": "ariaLabel",
+          "required": false,
+          "description": "Approved ariaLabel content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/image-strip.png",
@@ -1618,19 +2662,24 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Industry Use Case Card Grid."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Industry Use Case Card Grid."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "items",
           "required": false,
-          "description": "Approved items slot for Industry Use Case Card Grid."
+          "description": "Approved items content/input slot."
         }
       ],
       "tokensUsed": [
@@ -1646,6 +2695,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1653,12 +2705,46 @@
             "type": "string"
           },
           "items": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "meta": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "title"
+              ],
+              "additionalProperties": false
+            }
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -1686,19 +2772,24 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Knowledge Base Index."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Knowledge Base Index."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "categories",
           "required": false,
-          "description": "Approved categories slot for Knowledge Base Index."
+          "description": "Approved categories content/input slot."
         }
       ],
       "tokensUsed": [
@@ -1714,6 +2805,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1721,12 +2815,31 @@
             "type": "string"
           },
           "categories": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "items"
+              ],
+              "additionalProperties": false
+            }
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -1754,24 +2867,29 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "title",
           "required": true,
-          "description": "Approved title slot for Legal Document Body."
+          "description": "Approved title content/input slot."
         },
         {
           "name": "lastUpdated",
           "required": false,
-          "description": "Approved lastUpdated slot for Legal Document Body."
+          "description": "Approved lastUpdated content/input slot."
         },
         {
           "name": "intro",
           "required": false,
-          "description": "Approved intro slot for Legal Document Body."
+          "description": "Approved intro content/input slot."
         },
         {
           "name": "sections",
           "required": false,
-          "description": "Approved sections slot for Legal Document Body."
+          "description": "Approved sections content/input slot."
         }
       ],
       "tokensUsed": [
@@ -1787,6 +2905,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "title": {
             "type": "string"
           },
@@ -1797,7 +2918,31 @@
             "type": "string"
           },
           "sections": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "paragraphs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
           }
         },
         "required": [
@@ -1830,6 +2975,55 @@
         "properties": {
           "activePath": {
             "type": "string"
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "action": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
+          },
+          "brandHref": {
+            "type": "string"
+          },
+          "brandLabel": {
+            "type": "string"
+          },
+          "showBackdrop": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1846,6 +3040,31 @@
           "name": "activePath",
           "required": false,
           "description": "Approved activePath content/input slot."
+        },
+        {
+          "name": "links",
+          "required": false,
+          "description": "Approved links content/input slot."
+        },
+        {
+          "name": "action",
+          "required": false,
+          "description": "Approved action content/input slot."
+        },
+        {
+          "name": "brandHref",
+          "required": false,
+          "description": "Approved brandHref content/input slot."
+        },
+        {
+          "name": "brandLabel",
+          "required": false,
+          "description": "Approved brandLabel content/input slot."
+        },
+        {
+          "name": "showBackdrop",
+          "required": false,
+          "description": "Approved showBackdrop content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/navbar-glassmorphism.png",
@@ -1876,39 +3095,44 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Newsletter Signup Section."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Newsletter Signup Section."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "benefits",
           "required": false,
-          "description": "Approved benefits slot for Newsletter Signup Section."
+          "description": "Approved benefits content/input slot."
         },
         {
           "name": "privacyNote",
           "required": false,
-          "description": "Approved privacyNote slot for Newsletter Signup Section."
+          "description": "Approved privacyNote content/input slot."
         },
         {
           "name": "placeholder",
           "required": false,
-          "description": "Approved placeholder slot for Newsletter Signup Section."
+          "description": "Approved placeholder content/input slot."
         },
         {
           "name": "buttonLabel",
           "required": false,
-          "description": "Approved buttonLabel slot for Newsletter Signup Section."
+          "description": "Approved buttonLabel content/input slot."
         },
         {
           "name": "onSubmit",
           "required": false,
-          "description": "Approved onSubmit slot for Newsletter Signup Section."
+          "description": "Approved onSubmit content/input slot."
         }
       ],
       "tokensUsed": [
@@ -1924,6 +3148,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -1931,7 +3158,10 @@
             "type": "string"
           },
           "benefits": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "privacyNote": {
             "type": "string"
@@ -1943,12 +3173,9 @@
             "type": "string"
           },
           "onSubmit": {
-            "description": "Client-side submit handler. Production forms must wire to the host website form pipeline."
+            "description": "Runtime callback; not set from Markdown outlines."
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -1976,29 +3203,34 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Pricing Page Matrix."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Pricing Page Matrix."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "plans",
           "required": false,
-          "description": "Approved plans slot for Pricing Page Matrix."
+          "description": "Approved plans content/input slot."
         },
         {
           "name": "defaultCadence",
           "required": false,
-          "description": "Approved defaultCadence slot for Pricing Page Matrix."
+          "description": "Approved defaultCadence content/input slot."
         },
         {
           "name": "disclaimer",
           "required": false,
-          "description": "Approved disclaimer slot for Pricing Page Matrix."
+          "description": "Approved disclaimer content/input slot."
         }
       ],
       "tokensUsed": [
@@ -2014,6 +3246,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -2021,18 +3256,73 @@
             "type": "string"
           },
           "plans": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "monthlyPrice": {
+                  "type": "string"
+                },
+                "yearlyPrice": {
+                  "type": "string"
+                },
+                "features": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "action": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "onClick": {
+                      "description": "Runtime callback; not set from Markdown outlines."
+                    },
+                    "ariaLabel": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "highlighted": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "name",
+                "monthlyPrice",
+                "features",
+                "action"
+              ],
+              "additionalProperties": false
+            }
           },
           "defaultCadence": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "monthly",
+              "yearly"
+            ]
           },
           "disclaimer": {
             "type": "string"
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     },
@@ -2058,10 +3348,76 @@
       "props": {
         "type": "object",
         "properties": {
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
           "plans": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "badge": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "monthlyPrice": {
+                  "type": "string"
+                },
+                "yearlyPrice": {
+                  "type": "string"
+                },
+                "priceSuffix": {
+                  "type": "string"
+                },
+                "note": {
+                  "type": "string"
+                },
+                "features": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "cta": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "onClick": {
+                      "description": "Runtime callback; not set from Markdown outlines."
+                    },
+                    "ariaLabel": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "highlighted": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "name",
+                "monthlyPrice",
+                "features",
+                "cta"
+              ],
+              "additionalProperties": false
             }
           },
           "defaultCadence": {
@@ -2072,9 +3428,6 @@
             ]
           }
         },
-        "required": [
-          "plans"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/pricing-section.md",
@@ -2086,8 +3439,18 @@
       ],
       "slots": [
         {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "plans",
-          "required": true,
+          "required": false,
           "description": "Approved plans content/input slot."
         },
         {
@@ -2122,16 +3485,44 @@
       "props": {
         "type": "object",
         "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
           "steps": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "body"
+              ],
+              "additionalProperties": false
             }
+          },
+          "emailPlaceholder": {
+            "type": "string"
+          },
+          "emailButtonLabel": {
+            "type": "string"
+          },
+          "showEmailCapture": {
+            "type": "boolean"
           }
         },
-        "required": [
-          "steps"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/process-steps.md",
@@ -2147,9 +3538,39 @@
       ],
       "slots": [
         {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "steps",
-          "required": true,
+          "required": false,
           "description": "Approved steps content/input slot."
+        },
+        {
+          "name": "emailPlaceholder",
+          "required": false,
+          "description": "Approved emailPlaceholder content/input slot."
+        },
+        {
+          "name": "emailButtonLabel",
+          "required": false,
+          "description": "Approved emailButtonLabel content/input slot."
+        },
+        {
+          "name": "showEmailCapture",
+          "required": false,
+          "description": "Approved showEmailCapture content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/process-steps.png",
@@ -2180,13 +3601,23 @@
           "stats": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "value",
+                "label"
+              ],
+              "additionalProperties": false
             }
           }
         },
-        "required": [
-          "stats"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/stats-card-strip.md",
@@ -2199,7 +3630,7 @@
       "slots": [
         {
           "name": "stats",
-          "required": true,
+          "required": false,
           "description": "Approved stats content/input slot."
         }
       ],
@@ -2218,10 +3649,10 @@
       "whenNotToUse": "Do not use for icon-led capability grids (features-grid), checklist splits (feature-section-2-column-bullets-image), or the homepage problem section, which keeps its own approved composition.",
       "screenshotPath": "assets/screenshots/strategy-sentence-cards.png",
       "specPath": "specs/components/strategy-sentence-cards.md",
-      "rawSourcePath": "RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
+      "rawSourcePath": "Components/Strategy Sentence Cards/Strategy Sentence Cards.tsx",
       "libraryPath": "library/src/components/StrategySentenceCards.tsx",
       "visualReferencePath": "assets/screenshots/strategy-sentence-cards.png",
-      "evidencePath": "RAW/Pre-Flight - New Page Creation/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand",
+      "evidencePath": "Components/Strategy Sentence Cards",
       "markdownCallSyntax": ":::loyaltymaster-component id=\"strategy-sentence-cards\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
       "variants": [
         {
@@ -2231,6 +3662,21 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "tone",
+          "required": false,
+          "description": "Approved tone content/input slot."
+        },
+        {
+          "name": "reversed",
+          "required": false,
+          "description": "Approved reversed content/input slot."
+        },
+        {
           "name": "eyebrow",
           "required": false,
           "description": "Approved eyebrow content/input slot."
@@ -2238,17 +3684,17 @@
         {
           "name": "heading",
           "required": false,
-          "description": "Approved section heading content/input slot."
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "groups",
-          "required": true,
-          "description": "Approved groups slot: each group is a title plus one card per sentence."
+          "required": false,
+          "description": "Approved groups content/input slot."
         },
         {
           "name": "image",
           "required": false,
-          "description": "Approved sticky media content/input slot."
+          "description": "Approved image content/input slot."
         },
         {
           "name": "action",
@@ -2269,6 +3715,21 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "peach",
+              "cyan",
+              "white",
+              "salmon"
+            ]
+          },
+          "reversed": {
+            "type": "boolean"
+          },
           "eyebrow": {
             "type": "string"
           },
@@ -2276,18 +3737,65 @@
             "type": "string"
           },
           "groups": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "sentences": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "title",
+                "sentences"
+              ],
+              "additionalProperties": false
+            }
           },
           "image": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "src": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "src",
+              "alt"
+            ],
+            "additionalProperties": false
           },
           "action": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
-        "required": [
-          "groups"
-        ],
         "additionalProperties": false
       }
     },
@@ -2312,6 +3820,12 @@
       "props": {
         "type": "object",
         "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
           "quote": {
             "type": "string"
           },
@@ -2321,17 +3835,58 @@
           "role": {
             "type": "string"
           },
-          "eyebrow": {
-            "type": "string"
-          },
-          "heading": {
-            "type": "string"
-          },
           "testimonials": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "quote": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "initials": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote",
+                "author"
+              ],
+              "additionalProperties": false
             }
+          },
+          "cta": {
+            "type": "object",
+            "properties": {
+              "placeholder": {
+                "type": "string"
+              },
+              "buttonLabel": {
+                "type": "string"
+              },
+              "action": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "get",
+                  "post"
+                ]
+              },
+              "inputName": {
+                "type": "string"
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
@@ -2344,6 +3899,16 @@
         }
       ],
       "slots": [
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
         {
           "name": "quote",
           "required": false,
@@ -2360,19 +3925,14 @@
           "description": "Approved role content/input slot."
         },
         {
-          "name": "eyebrow",
-          "required": false,
-          "description": "Approved eyebrow content/input slot."
-        },
-        {
-          "name": "heading",
-          "required": false,
-          "description": "Approved heading content/input slot."
-        },
-        {
           "name": "testimonials",
           "required": false,
           "description": "Approved testimonials content/input slot."
+        },
+        {
+          "name": "cta",
+          "required": false,
+          "description": "Approved cta content/input slot."
         }
       ],
       "visualReferencePath": "assets/screenshots/testimonial-single.png",
@@ -2401,16 +3961,41 @@
       "props": {
         "type": "object",
         "properties": {
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
           "items": {
             "type": "array",
             "items": {
-              "type": "object"
+              "type": "object",
+              "properties": {
+                "quote": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "initials": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote",
+                "author"
+              ],
+              "additionalProperties": false
             }
           }
         },
-        "required": [
-          "items"
-        ],
         "additionalProperties": false
       },
       "specPath": "specs/components/testimonials-grid.md",
@@ -2422,8 +4007,23 @@
       ],
       "slots": [
         {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "body",
+          "required": false,
+          "description": "Approved body content/input slot."
+        },
+        {
           "name": "items",
-          "required": true,
+          "required": false,
           "description": "Approved items content/input slot."
         }
       ],
@@ -2455,29 +4055,34 @@
       ],
       "slots": [
         {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
           "name": "heading",
-          "required": true,
-          "description": "Approved heading slot for Thank You Confirmation Section."
+          "required": false,
+          "description": "Approved heading content/input slot."
         },
         {
           "name": "body",
           "required": false,
-          "description": "Approved body slot for Thank You Confirmation Section."
+          "description": "Approved body content/input slot."
         },
         {
           "name": "nextSteps",
           "required": false,
-          "description": "Approved nextSteps slot for Thank You Confirmation Section."
+          "description": "Approved nextSteps content/input slot."
         },
         {
           "name": "primaryAction",
           "required": false,
-          "description": "Approved primaryAction slot for Thank You Confirmation Section."
+          "description": "Approved primaryAction content/input slot."
         },
         {
           "name": "secondaryAction",
           "required": false,
-          "description": "Approved secondaryAction slot for Thank You Confirmation Section."
+          "description": "Approved secondaryAction content/input slot."
         }
       ],
       "tokensUsed": [
@@ -2493,6 +4098,9 @@
       "props": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string"
+          },
           "heading": {
             "type": "string"
           },
@@ -2500,18 +4108,67 @@
             "type": "string"
           },
           "nextSteps": {
-            "type": "array"
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "body"
+              ],
+              "additionalProperties": false
+            }
           },
           "primaryAction": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           },
           "secondaryAction": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "onClick": {
+                "description": "Runtime callback; not set from Markdown outlines."
+              },
+              "ariaLabel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label"
+            ],
+            "additionalProperties": false
           }
         },
-        "required": [
-          "heading"
-        ],
         "additionalProperties": false
       }
     }
