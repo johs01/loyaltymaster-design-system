@@ -10,9 +10,9 @@ Raw snapshot: `Components/Comparison Table/Comparison Table.tsx`
 
 ## Purpose
 
-Positions sendPUSH against weaker customer reach channels. It should make a small number of business differences easy to compare.
+Positions Loyaltymaster against weaker customer reach channels. It should make a small number of business differences easy to compare.
 
-Registry description: Comparison section for positioning sendPUSH against less direct customer-reach channels.
+Registry description: Comparison section for positioning Loyaltymaster against less direct customer-reach channels.
 
 ## When To Use
 

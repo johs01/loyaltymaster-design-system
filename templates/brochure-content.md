@@ -36,7 +36,10 @@ components.
 
 ## Approved Component Recipe
 
-Brochure pages or panels must be assembled from these approved component groups:
+Brochure pages or panels must be assembled from approved registry components.
+This map lists common fits; the registry remains the only inventory, so any
+`status: "stable"` component whose `whenToUse` matches a brochure need may
+fill it:
 
 | Brochure Need | Approved Components |
 |---|---|

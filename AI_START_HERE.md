@@ -3,8 +3,8 @@
 `llms.txt` at the repo root is the canonical entry manifest; read it first.
 This file is the expanded workflow overview behind it.
 
-This is the first workflow file external AI agents must read when creating
-Loyaltymaster or sendPUSH digital content from this design-system folder.
+This is the expanded workflow file for AI agents creating Loyaltymaster
+digital content from this design-system folder; `llms.txt` routes here.
 
 If the task is to draft a new page outline before code, use
 `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`. That runbook is Markdown outline mode
@@ -87,7 +87,8 @@ planning. The canonical implementation layer for current runtime imports is
 ## Template Proof
 
 For web-page, landing-page, blog/document, and brochure-content work, review
-the matching browser-visible proof page:
+the matching browser-visible proof page (serve it with `npm run dev` from
+`showcase/app`, which starts Vite on port 5177):
 
 - `http://127.0.0.1:5177/template-tests/web-page`
 - `http://127.0.0.1:5177/template-tests/landing-page`

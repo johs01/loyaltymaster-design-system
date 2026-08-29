@@ -20,7 +20,8 @@ use `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md`.
 
 ## Required Workflow
 
-1. Read `AI_START_HERE.md`, `READ_FIRST_AI.md`, and `PREFLIGHT.md`.
+1. Read `llms.txt` and route by task; `AI_START_HERE.md` is the expanded
+   overview and `PREFLIGHT.md` is the human reviewer's gate.
 2. If the task is a page outline, read `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and
    return Markdown only.
 3. If the task is approved outline-to-page work, read
@@ -76,8 +77,10 @@ files. The human approves the outline before Runbook B begins.
 
 Use `RUNBOOK_B_MARKDOWN_OUTLINE_TO_PRODUCTION_PAGE.md` only after the Markdown
 outline has human approval. Runbook B reads the current registry, validates the
-selected props, variants, slots, tokens, and specs, then creates the
-route-agnostic Next.js App Router page package for the target production repo.
+selected props, variants, slots, tokens, and specs, verifies every fact
+against the production facts canon, then creates the page package for the
+target production repo (or a route-agnostic package when the target is
+unknown).
 
 ## Stop Rule
 
@@ -92,10 +95,11 @@ Run:
 
 ```bash
 node scripts/validate-phase2.mjs
-cd library && npm run typecheck
-cd showcase/app && npm run typecheck
-cd showcase/app && npm run verify:templates
-cd showcase/app && npm run verify:showcase
+node scripts/validate-runbook-poc-readiness.mjs
+(cd library && npm run typecheck)
+(cd showcase/app && npm run typecheck)
+(cd showcase/app && npm run verify:templates)
+(cd showcase/app && npm run verify:showcase)
 ```
 
 Record the browser review result before reuse or publication.

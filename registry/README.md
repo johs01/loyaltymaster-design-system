@@ -81,6 +81,8 @@ covers `/template-tests/web-page`, `/template-tests/landing-page`,
 `/template-tests/blog-document`, and `/template-tests/brochure-content`.
 The blog/document package records a new-component request for future
 article-body/content-block needs instead of permitting improvised prose layout.
+(That request has since been fulfilled: `article-body` is now a stable
+registry component.)
 
 Phase 9 adds `examples/generated/external-llm-dry-run/` and
 `http://127.0.0.1:5177/template-tests/external-llm-dry-run` to prove the full external-LLM workflow:
@@ -108,26 +110,37 @@ component list manually.
 ## Gate Coverage
 
 Every `status: "stable"` component is selectable in Runbook A/B. Gate depth
-differs by wave:
+differs by wave (wave names describe gate coverage, not availability — the
+registry is the only inventory):
 
-- The 20 Wave 1 components are fully gated: Phase 7C visual pixel-diff, Phase
+- The Wave 1 components are fully gated: Phase 7C visual pixel-diff, Phase
   7E interaction, and Phase 7F live-production fidelity.
-- The 13 Wave 2 promoted components are stable with Phase 5 rendered smoke
+- The Wave 2 promoted components are stable with Phase 5 rendered smoke
   proof and Phase 13 live-capture evidence approval, but are NOT yet through
   the Phase 7C/7E/7F gates. Their entries in
   `showcase/app/scripts/phase7-visual-gates.json` are coverage-only
   (`gate: false`) so `npm run verify:visual` can run.
+- `strategy-sentence-cards` was canon-promoted from the approved 2026-07-10
+  loyaltymaster.com site rollout with Phase 5 smoke evidence; its gate entry
+  is likewise coverage-only pending reference regeneration.
 
-Closing the Wave 2 gate gap requires a human-approved session:
+Historical note (2026-08): the Phase 7E interaction audit and Phase 7F
+production targets point at `sendpush.loyaltymaster.com`, which was retired in
+July 2026 and no longer resolves. The frozen Phase 7E/7F artifacts remain
+valid evidence that the Wave 1 library matched the sendPUSH runtime at
+gate time, but `npm run verify:production-fidelity` cannot re-run until its
+targets are repointed at live loyaltymaster.com URLs.
 
-1. Run `npm run regenerate:phase7c-references` scoped to the Wave 2 ids so the
-   canonical references become showcase specimen captures (the current
-   references are 1440x1200 live loyaltymaster.com captures and can never
-   pixel-match a specimen render).
+Closing the gate gap requires a human-approved session:
+
+1. Run `npm run regenerate:phase7c-references` scoped to the ungated ids so
+   the canonical references become showcase specimen captures (the current
+   references are live loyaltymaster.com captures and can never pixel-match a
+   specimen render).
 2. Human reviews and approves the regenerated references.
-3. Flip the 13 gate entries to `gate: true` with the strict Wave 1 thresholds.
-4. Extend the Phase 7E interaction audit and Phase 7F production targets with
-   live loyaltymaster.com URLs/selectors for the Wave 2 sections.
+3. Flip those gate entries to `gate: true` with the strict Wave 1 thresholds.
+4. Repoint the Phase 7E interaction audit and Phase 7F production targets at
+   live loyaltymaster.com URLs/selectors for every gated section.
 
 ## New Component Approval Flow
 
@@ -173,8 +186,8 @@ improvise a substitute.
 - Compare planned compositions against the Phase 6 approved and blocked
   examples before implementation.
 - Start future AI-created artifacts from the approved templates in `templates/`.
-- External LLMs must start from `AI_START_HERE.md` and use generated examples
-  as proof packages, not new component sources.
+- External LLMs must start from `llms.txt` (the canonical entry manifest) and
+  use generated examples as proof packages, not new component sources.
 - For external hand-offs, also read `EXTERNAL_LLM_HANDOFF.md` and compare
   normal web-page work against `examples/generated/real-brief-trial/`.
 - For Markdown page outlines, use `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md` and

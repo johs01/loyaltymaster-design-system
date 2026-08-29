@@ -1482,6 +1482,11 @@
   --wf-cta-sheen-mid-alpha: 0.34;
   --wf-cta-sheen-opacity: 0.64;
   --wf-cta-sheen-hover-opacity: 0.82;
+  --wf-feedback-error: var(--lm-color-feedback-error);
+  --wf-feedback-info: var(--lm-color-feedback-info);
+  --wf-feedback-success: var(--lm-color-feedback-success);
+  --wf-feedback-warning: var(--lm-color-feedback-warning);
+  --wf-feedback-warning-bg: color-mix(in srgb, var(--lm-color-feedback-warning) 12%, var(--lm-color-surface-white));
   --wf-motion-fast: var(--lm-motion-duration-fast);
   --wf-motion-base: var(--lm-motion-duration-base);
   --wf-motion-ease-gentle: var(--lm-motion-easing-gentle);

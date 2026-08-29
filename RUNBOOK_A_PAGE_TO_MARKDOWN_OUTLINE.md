@@ -12,23 +12,25 @@ Runbook B is the only approved next step after a human approves the outline.
 Read the design-system repo at runtime. Do not rely on memory, older examples,
 or a copied component list.
 
-Required read order:
+Required read order (you arrive here from `llms.txt`; this file is the
+canonical read list for outline work — no other doc's read order applies):
 
-1. `AI_START_HERE.md`
-2. `EXTERNAL_LLM_HANDOFF.md`
-3. `RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md`
-4. `README.md`
-5. `BRAND.md`
-6. `DESIGN_SYSTEM.md`
-7. `tokens/design-tokens.json`
-8. `registry/components.json`
-9. `templates/README.md`
-10. the approved `templates/*.md` file matching the artifact type
-11. `examples/README.md`
-12. at least one relevant file in `examples/approved/`
-13. every relevant drift pattern in `examples/blocked/`
-14. each selected component's current `specPath`
-15. each selected component's current `libraryPath`
+1. `BRAND.md`
+2. `DESIGN_SYSTEM.md`
+3. `tokens/design-tokens.json`
+4. `registry/components.json`
+5. `templates/README.md`
+6. the approved `templates/*.md` file matching the artifact type
+7. the production facts canon: `SOURCE-OF-TRUTH.md` in `{{TARGET_REPOSITORY}}`
+   (the default target is named in `llms.txt`; skip only if the target is
+   UNKNOWN and no canon is reachable — then every fact becomes
+   `contentStillNeeded`)
+8. `examples/README.md`
+9. at least one relevant file in `examples/approved/` (when the selected
+   template requires specific approved examples, the template's list wins)
+10. every relevant drift pattern in `examples/blocked/`
+11. each selected component's current `specPath`
+12. each selected component's current `libraryPath`
 
 If a referenced file is missing or unreadable, stop with `INPUT_INVALID`.
 
@@ -61,6 +63,10 @@ Only components with `status: "stable"` may be selected. A selected component
 is invalid until its current `specPath` has been read. Use `whenToUse` and
 `whenNotToUse` as hard constraints, not suggestions.
 
+Variant tie-break: when the brief does not call for a specific registered
+variant, select the component's `default` variant. Never invent an
+unregistered variant.
+
 Use `tokensUsed` only as evidence for approved token usage. Do not invent token
 names, CSS variables, color values, radii, shadows, typography, spacing,
 breakpoints, animation, component variants, or layout rules.
@@ -81,10 +87,29 @@ Analyze the input before selecting components:
 - Responsive needs
 - Missing or unverifiable inputs
 
-If the input is a URL and the URL cannot be accessed, record that as
-`INPUT_INVALID` unless the brief provides enough evidence to continue. If the
-input is a screenshot, record screenshot-only uncertainties instead of guessing
-hidden content.
+If the input is a URL, fetch it with the tools available and record the source
+copy verbatim in the Content Fields. If the URL cannot be accessed, record that
+as `INPUT_INVALID` unless the brief provides enough evidence to continue. If
+the input is a screenshot, record screenshot-only uncertainties instead of
+guessing hidden content.
+
+## Content Authority
+
+The LLM is the copywriter, within two hard limits:
+
+- Voice: draft headings, body copy, and CTAs in the `BRAND.md` voice, sized to
+  what each component's spec shows.
+- Facts: every fact, number, price, plan name, offer, turnaround time, stat,
+  contact detail, and legal claim must be copied from the production facts
+  canon (`SOURCE-OF-TRUTH.md` in `{{TARGET_REPOSITORY}}`) — never restated
+  from memory, never invented. That includes testimonials and social proof:
+  if the canon or the brief does not supply one, the page does not get one.
+
+A fact the canon cannot confirm goes into `contentStillNeeded` for that
+section. Runbook B refuses to build (`CONTENT_MISSING`) until a human resolves
+every `contentStillNeeded` entry, so record them honestly rather than papering
+over gaps. Source copy migrated from an input URL or screenshot keeps its
+facts intact and may only be reworded into the `BRAND.md` voice.
 
 ## Template Selection
 
@@ -97,8 +122,8 @@ a new template during Runbook A.
 
 ## Shell Scope
 
-Normal Loyaltymaster or sendPUSH pages are body-only. The production website
-supplies global navigation, header, and footer.
+Normal Loyaltymaster pages are body-only. The production website supplies
+global navigation, header, and footer.
 
 Do not include shell components in a normal page body. Shell components may be
 used only when the brief explicitly requests a standalone artifact with its
@@ -122,20 +147,28 @@ visual comparison. The runtime implementation always comes from the registry
 ## Required Markdown Output
 
 Return exactly one Markdown outline with these headings. Keep it human readable,
-but keep every field explicit enough for machine validation.
+but keep every field explicit enough for machine validation. Write the outline
+to `outlines/<page-slug>.md` in this repo; that path is what Runbook B receives.
+
+Human approval is recorded in the outline itself: the human fills
+`Approved-By:` and `Approval-Date:` and flips `Ready for Runbook B:` to `Yes`.
+Until then those fields stay `PENDING` / `No`.
 
 ```markdown
 # Markdown Layout Outline: [Page Name]
 
-Design System Version: registry/components.json@[version or commit SHA]
+Design System Version: registry/components.json@[the registry file's top-level "version" value]
 Runbook Used: RUNBOOK_A_PAGE_TO_MARKDOWN_OUTLINE.md
 Input Source: [brief, screenshot, URL, source page, or mixed]
 Target Repository: {{TARGET_REPOSITORY}}
 Target Route: [route path or UNKNOWN]
+Approved-By: PENDING
+Approval-Date: PENDING
 
-<!-- {{TARGET_REPOSITORY}} is filled from the task brief. If the brief does not
-name a target repository, keep the placeholder, record the target as UNKNOWN in
-the diagnostic section, and continue route-agnostically. -->
+<!-- {{TARGET_REPOSITORY}} is filled from the task brief. If the brief names
+none, use the default production target from llms.txt. Only when that default
+is unavailable too: keep the placeholder, record the target as UNKNOWN in the
+diagnostic section, and continue route-agnostically. -->
 
 ## Page Purpose
 [One concise paragraph.]
@@ -147,6 +180,14 @@ the diagnostic section, and continue route-agnostically. -->
 [Primary user action.]
 
 ## SEO Fields
+<!-- title: SERP title WITHOUT the brand suffix (the site template appends it),
+     keep the page's head term, roughly 45-60 characters.
+     description: 140-160 characters, ends on a complete sentence.
+     ogImage: the page's own hero photo per "Share Cards (Open Graph)" in
+     DESIGN_SYSTEM.md section 6; pages without a hero fall back to the
+     homepage card. robots/sitemap default to index + included unless the
+     brief says otherwise. schemaTypes: WebPage plus types the facts canon
+     supports; invent nothing. -->
 - title:
 - description:
 - canonicalPath:
@@ -174,9 +215,6 @@ List the intended section order in plain language.
 | Order | component | variant | sectionPurpose | registryEvidence | specPath |
 |---|---|---|---|---|---|
 | 1 |  |  |  | registry/components.json |  |
-
-## Component Names
-List only the selected component IDs from the current registry.
 
 ## Component Variants
 | component | variant | variantEvidence |
@@ -288,7 +326,6 @@ Use one of these stages when the outline cannot proceed:
 - `PROP_INVALID`: a selected prop is not allowed by registry/spec evidence.
 - `TOKEN_INVALID`: an unapproved token or raw value is required.
 - `TEMPLATE_MISMATCH`: no approved template fits the artifact.
-- `VISUAL_FIDELITY_FAILED`: visual evidence conflicts with approved specs.
 
 ## Acceptance Gate
 

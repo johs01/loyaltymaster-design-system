@@ -460,16 +460,25 @@ These are standing engineering decisions for the whole design system:
 - `tokens/design-tokens.json` (DTCG v1.0 JSON) is the single token source of
   truth. `tokens/tokens.css`, `tokens/tokens.d.ts`, and
   `tokens/tailwind.preset.cjs` are generated exports and must never be edited
-  ahead of the JSON source.
+  ahead of the JSON source. Regenerate with `node scripts/generate-tokens.mjs`.
 - React components are server components by default. Each component declares
   its `clientBoundary` (`server` or `client`) in `registry/components.json`;
   client components start with `'use client'` and server components must not
   use React hooks.
 - Prop validation uses TypeScript types plus the JSON Schema `props` blocks in
-  the registry. Zod is intentionally not used.
-- The sendPUSH production repository
+  the registry. Zod is intentionally not used. The registry `props` and
+  `slots` blocks are generated from the exported `*Props` interfaces in each
+  `libraryPath` — after changing a component's props, run
+  `node scripts/generate-registry-props.mjs` so the contract never drifts
+  from the code.
+- The production website is loyaltymaster.com, served by the repo named in
+  `llms.txt` under Production Target. The retired sendPUSH repository
   (`/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION`) and its replica under
-  `RAW/` are read-only. Runbook B produces import-ready page packages; it never
-  edits the production repo directly unless the task explicitly authorizes it.
+  `RAW/` are frozen, read-only history. Runbook B produces import-ready page
+  packages; it never edits the production repo directly unless the task
+  explicitly authorizes it.
+- Facts in page copy come from the production facts canon
+  (`SOURCE-OF-TRUTH.md` in the production repo), never from memory. Voice
+  comes from `BRAND.md`. See Content Authority in Runbook A.
 - The component inventory lives only in `registry/components.json`; prose
   documents must not state or freeze component counts.
