@@ -122,7 +122,7 @@ registry is the only inventory):
   (`gate: false`) so `npm run verify:visual` can run.
 - `strategy-sentence-cards` was canon-promoted from the approved 2026-07-10
   loyaltymaster.com site rollout with Phase 5 smoke evidence; its gate entry
-  is likewise coverage-only pending reference regeneration.
+  is likewise coverage-only.
 
 Historical note (2026-08): the Phase 7E interaction audit and Phase 7F
 production targets point at `sendpush.loyaltymaster.com`, which was retired in
@@ -131,15 +131,14 @@ valid evidence that the Wave 1 library matched the sendPUSH runtime at
 gate time, but `npm run verify:production-fidelity` cannot re-run until its
 targets are repointed at live loyaltymaster.com URLs.
 
-Closing the gate gap requires a human-approved session:
+Closing the gate gap requires a human-approved session. The reference half
+was completed on 2026-08-29: `npm run regenerate:phase7c-references`
+re-captured all 34 canonical references as showcase specimen captures
+(Chromium 148.0.7778.96, Darwin 25.5.0, deviceScaleFactor 1), and the owner
+approved them after side-by-side review. Remaining:
 
-1. Run `npm run regenerate:phase7c-references` scoped to the ungated ids so
-   the canonical references become showcase specimen captures (the current
-   references are live loyaltymaster.com captures and can never pixel-match a
-   specimen render).
-2. Human reviews and approves the regenerated references.
-3. Flip those gate entries to `gate: true` with the strict Wave 1 thresholds.
-4. Repoint the Phase 7E interaction audit and Phase 7F production targets at
+1. Flip those gate entries to `gate: true` with the strict Wave 1 thresholds.
+2. Repoint the Phase 7E interaction audit and Phase 7F production targets at
    live loyaltymaster.com URLs/selectors for every gated section.
 
 ## New Component Approval Flow
