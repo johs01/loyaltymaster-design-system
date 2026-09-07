@@ -3071,6 +3071,13 @@
   text-decoration: none;
 }
 
+/* Desktop-only wordmark inset inside the nav pill (approved 2026-09-07). */
+@media (min-width: 760.02px) {
+  .lm-ds .wf-nav-content > .wf-brand {
+    padding-left: 18px;
+  }
+}
+
 .lm-ds .wf-nav-links {
   display: inline-flex;
   align-items: center;
