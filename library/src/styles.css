@@ -3032,13 +3032,27 @@
   font-weight: 500;
 }
 
+/* top: 0 with the inset folded into the padding, so the shell reserves its full
+   painted height. A sticky `top` on an element already at y=0 shifts the paint
+   without reserving space, which overlapped the first section by 12px (8px on
+   mobile). Mirrors the approved marketing-site change (#129, 2026-09-08). */
 .lm-ds.wf-header,
 .lm-ds .wf-header {
   position: sticky;
-  top: 12px;
+  top: 0;
   z-index: 20;
-  padding: 12px 0 0;
+  padding: 24px 0 0;
   background: transparent;
+}
+
+/* Pill height, read by the browser for anchor and skip-link jumps and by
+   Next's router when it scrolls a new page's first in-flow element into view on
+   client-side navigation. Without it every in-app navigation lands with the
+   top of the page under the pill. Keep in step with the header padding-top +
+   .wf-nav-shell height: 94px desktop, 80px in the max-width: 760px block.
+   Mirrors the approved marketing-site change (#130, 2026-09-08). */
+html:has(.lm-ds.wf-header, .lm-ds .wf-header) {
+  scroll-padding-top: 94px;
 }
 
 .lm-ds .wf-nav-shell {
@@ -3374,8 +3388,12 @@
 
   .lm-ds.wf-header,
   .lm-ds .wf-header {
-    top: 8px;
-    padding-top: 8px;
+    top: 0;
+    padding-top: 16px;
+  }
+
+  html:has(.lm-ds.wf-header, .lm-ds .wf-header) {
+    scroll-padding-top: 80px;
   }
 
   .lm-ds .wf-nav-shell {
