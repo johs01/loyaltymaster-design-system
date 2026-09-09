@@ -136,6 +136,11 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 ## Design Rules
 
 - Glass is restricted to this nav/mobile shell by approved conflict resolution.
+- The shell reserves its full painted height: `top: 0` with the inset in the header
+  padding, and the root carries `scroll-padding-top` equal to the pill's bottom edge
+  (94px desktop, 80px mobile). Anchor jumps, the skip link and Next's navigation
+  auto-scroll must never land under the pill (approved 2026-09-08, marketing site
+  #129 and #130).
 - Use wordmark font, label typography, orange accent, card shadow, and approved motion only.
 - Keep the shell stable and readable over page content.
 - Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
