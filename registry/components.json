@@ -2495,7 +2495,7 @@
       "clientBoundary": "server",
       "description": "Structured partner/logo proof grid for integration and platform trust marks.",
       "whenToUse": "Use when approved partner, platform, payment, compliance, or integration logos need organized proof display.",
-      "whenNotToUse": "Do not use for full-bleed photo backgrounds, arbitrary photo galleries, or decorative stock imagery.",
+      "whenNotToUse": "Do not use for full-bleed photo backgrounds, arbitrary photo galleries, or decorative stock imagery. AWS and DigitalOcean must not appear in Loyaltymaster integration grids.",
       "screenshotPath": "assets/screenshots/image-grid.png",
       "rawSourcePath": "Components/Image Grid/Image Grid.tsx",
       "libraryPath": "library/src/components/ImageGrid.tsx",
