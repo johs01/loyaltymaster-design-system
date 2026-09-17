@@ -82,8 +82,6 @@ const partnerLogoImages = [
   { src: assetUrl("assets/partners/stripe-payment.webp"), alt: "Stripe" },
   { src: assetUrl("assets/partners/google-pay.webp"), alt: "Google Pay" },
   { src: assetUrl("assets/partners/apple-pay.webp"), alt: "Apple Pay" },
-  { src: assetUrl("assets/partners/aws.webp"), alt: "AWS" },
-  { src: assetUrl("assets/partners/digital-ocean.png"), alt: "DigitalOcean" },
   { src: assetUrl("assets/partners/clover-pos.webp"), alt: "Clover" },
   { src: assetUrl("assets/partners/touch-bistro.webp"), alt: "TouchBistro" },
   { src: assetUrl("assets/partners/toast.webp"), alt: "Toast" },
