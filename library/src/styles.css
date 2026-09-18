@@ -1936,6 +1936,11 @@
   transform: none;
 }
 
+/* Single source of the wordmark size at every viewport. Never override it per
+   nav container: a drawer head that repeats the wordmark sits outside
+   .wf-nav-content, so a container-scoped override misses it and the wordmark
+   appears to shrink when the menu opens (approved 2026-09-18, marketing site
+   #153). */
 .lm-ds .brand-logo {
   --logo-size: clamp(18.48px, 2.112vw, 30.888px);
   display: inline-flex;
