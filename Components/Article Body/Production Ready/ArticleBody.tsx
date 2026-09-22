@@ -119,7 +119,7 @@ export const ArticleBody = () => {
               Electronic rewards bring familiar loyalty mechanics into a branded digital program. Customers can scan, join, earn, and return without carrying a card or installing an app.
             </p>
             <blockquote className="mt-8 border-l-[6px] border-[#F37D39] bg-white px-6 py-5 text-[22px] font-bold leading-[1.32] text-[#302127] shadow-[0_8px_18px_rgba(48,33,39,0.06)]">
-              You can be up and running in 48 business hours with a program tailored to your business.
+              You can be up and running in the next 48 hours with a program tailored to your business.
             </blockquote>
           </motion.div>
 

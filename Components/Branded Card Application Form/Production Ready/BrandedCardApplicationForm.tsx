@@ -44,7 +44,7 @@ export const BrandedCardApplicationForm = () => {
           }}>Get a Branded Customer Loyalty Program</h1>
             <h2 className="mt-4 text-[28px] md:text-[36px] font-black leading-tight text-[#F97316]" style={{
             fontWeight: "700"
-          }}>Ready to Launch — 48 Hours!</h2>
+          }}>Launch in the next 48 hours</h2>
             <p className="mt-6 max-w-[600px] text-xl leading-[1.52] text-[#4B4246]" style={{
             fontWeight: "400"
           }}>Skip the tech headaches. We design your digital loyalty cards, set up your rewards program, and you can start to enroll your customers.<br />With this Limited Time Offer you Save Hundreds off our standard Design & Setup fees.</p>
@@ -193,7 +193,7 @@ export const BrandedCardApplicationForm = () => {
                     }} />
                     </span>
                     <span className="flex flex-col">
-                      <span className="text-[15px] font-bold text-[#302127]">Live in 48 hours</span>
+                      <span className="text-[15px] font-bold text-[#302127]">Live in the next 48 hours</span>
                       <span className="text-[13px] font-medium text-[#4B4246]">Submit today, start enrolling customers by the end of the week.</span>
                     </span>
                   </li>
