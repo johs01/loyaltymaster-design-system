@@ -411,6 +411,11 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
   keeps `trailingSlash: true` from 308-redirecting the URL), and the
   slug-to-photo map is `src/lib/og-photos.ts` — one entry there per new
   page, plus an `OG_CARD_VERSION` bump when the card design changes.
+- Swapping a page's hero photo means updating that page's entry in the map
+  as well: the card does not follow the page automatically. A hero swap that
+  skips this leaves every shared link previewing the retired image, and
+  because scrapers cache by URL it also needs the version bump to take
+  effect (seen 2026-09-07 on the homepage).
 
 ## 7. Iconography
 
