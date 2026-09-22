@@ -58,6 +58,13 @@ memory. A fact you cannot verify there goes into the outline as
 `contentStillNeeded`, and Runbook B stops with `CONTENT_MISSING` until a
 human resolves it.
 
+Approved launch headline: **Launch in the next 48 hours**. Related setup and
+card-preview copy should use **in the next 48 hours**, adapted naturally to
+the sentence. Preserve stated signup/artwork prerequisites. This change does
+not alter the separate support-response commitment in the subscription
+agreement. The production `SOURCE-OF-TRUTH.md` remains authoritative.
+See `specs/launch-copy-2026-09-22.md` for the change record.
+
 ## Production Target
 
 Unless the task brief names a different repository, `{{TARGET_REPOSITORY}}`
