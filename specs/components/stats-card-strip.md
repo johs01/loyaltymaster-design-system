@@ -78,7 +78,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Rodger Regular may be used for stat numerals.
 - Use panel-light surface, primary card radius, restrained hover lift, and approved overlay treatment.
 - Keep stats few and credible.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 

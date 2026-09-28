@@ -23,7 +23,7 @@ Brand.
 
 ## Users
 
-sendPUSH is for local business owners and operators evaluating direct customer
+Loyaltymaster is for local business owners and operators evaluating direct customer
 messaging, loyalty, retention, and customer-return campaigns. The primary
 audience includes restaurants, cafes, salons, clinics, retail shops, service
 providers, and other location-based businesses that need more predictable repeat
@@ -36,7 +36,7 @@ pressure, not abstract or software-first.
 
 ## Product Purpose
 
-The website explains how sendPUSH and Loyaltymaster help businesses create
+The website explains how Loyaltymaster helps businesses create
 direct customer relationships through digital loyalty cards, geo-aware push
 messaging, automated retention campaigns, and trial signup flows.
 

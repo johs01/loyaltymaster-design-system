@@ -1,7 +1,7 @@
 # Loyaltymaster React Component Library
 
 Phase 4 creates the clean React implementation layer for the Wave 1
-Loyaltymaster/sendPUSH component registry.
+Loyaltymaster component registry.
 
 ## Source Authority
 

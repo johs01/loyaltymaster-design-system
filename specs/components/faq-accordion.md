@@ -87,7 +87,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Use compact radius, panel-light surface tokens, and approved hover/open-state border treatment.
 - Motion must use approved duration and respect reduced-motion.
 - Keep iconography simple and functional.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 
