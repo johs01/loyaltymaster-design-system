@@ -25,7 +25,8 @@ using that component and apply the changed rule.
 - `specs/components/*.md` answers how a component may be used.
 - `tokens/design-tokens.json` answers which design values may be used.
 - `showcase/app/scripts/phase7f-production-targets.json` answers which live
-  sendPUSH runtime target a component must match before production adoption.
+  loyaltymaster.com (or blog.loyaltymaster.com) runtime target a component
+  must match before production adoption.
 - `/Components/` is approved component reference and visual handoff inventory;
   runtime page code must still import from the clean library unless a later
   implementation task explicitly promotes a handoff.

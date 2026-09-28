@@ -149,7 +149,7 @@ export function App() {
         <p>
           Every Wave 1 registry component is rendered from the React library
           with the canonical local font runtime and checked against both local
-          references and live sendPUSH production-fidelity targets.
+          references and live loyaltymaster.com production-fidelity targets.
         </p>
       </header>
 

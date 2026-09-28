@@ -1,7 +1,7 @@
 # Read First: Loyaltymaster AI Operating Manual
 
 This is the core operating manual an AI agent must read before creating
-Loyaltymaster or sendPUSH web pages, documents, landing pages, blog posts,
+Loyaltymaster web pages, documents, landing pages, blog posts,
 sales pages, or subdomain content.
 
 For external LLMs entering this folder, start with `llms.txt` (the canonical
@@ -74,13 +74,15 @@ read every file in the repo up front. The map of what each source governs:
   gate. It fails if any Wave 1 component is `Fail`, `Partial`,
   `Needs decision`, missing, or unclassified.
 - `/showcase/app/scripts/phase7f-production-targets.json` maps every Wave 1
-  component to its live sendPUSH runtime URL, live selector, production source
-  file, raw snapshot, spec, library path, and local showcase specimen.
+  component, and the blog components, to its live runtime URL on
+  loyaltymaster.com or blog.loyaltymaster.com, live selector, production
+  source file, spec, library path, and local showcase specimen (repointed
+  2026-09-28 from the retired sendPUSH subdomain).
 - `/showcase/app/scripts/phase7f-production-fidelity.mjs` is the Phase 7F
-  production-fidelity gate. It captures live sendPUSH sections and local
-  library specimens at desktop and mobile widths, writes side-by-side artifacts
-  under `/showcase/app/artifacts/phase-7f/`, and fails on major geometry,
-  layout, or visual drift.
+  production-fidelity gate. It captures live sections and local library
+  specimens at desktop and mobile widths, writes side-by-side artifacts under
+  `/showcase/app/artifacts/phase-7f/`, and fails on major geometry, layout, or
+  visual drift. `--list` prints the capture plan offline.
 - `/examples/approved/` contains approved composition examples that show how
   docs, tokens, registry IDs, specs, library paths, and showcase review fit
   together.
@@ -153,12 +155,13 @@ template page and raw snapshot evidence.
 
 Use Phase 7F production-fidelity verification before treating a component as
 ready for production adoption. Every Wave 1 component passed desktop and
-mobile comparison against the live sendPUSH runtime targets in
-`showcase/app/scripts/phase7f-production-targets.json`. Those targets were
-retired with the sendPUSH subdomain in July 2026: the frozen Phase 7F
-artifacts stand as gate-time evidence, and `npm run
-verify:production-fidelity` stays unrunnable until the targets are repointed
-at live loyaltymaster.com URLs (see `KNOWN_ISSUES.md`). Regenerated local
+mobile comparison against the then-live sendPUSH runtime; the frozen Phase 7F
+artifacts stand as that gate-time evidence. On 2026-09-28 the targets in
+`showcase/app/scripts/phase7f-production-targets.json` were repointed at live
+loyaltymaster.com sections and the blog.loyaltymaster.com templates (home,
+/news/, a single post, a category archive, search). The repointed gate has
+not been run yet: a run replaces the frozen artifacts, so it needs a
+human-approved gate session (see `KNOWN_ISSUES.md`). Regenerated local
 screenshots do not replace live production fidelity unless a later phase
 explicitly approves a new reference.
 
