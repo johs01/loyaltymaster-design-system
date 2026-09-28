@@ -1,5 +1,5 @@
 /**
- * Loyaltymaster/sendPUSH Tailwind preset generated from Phase 2 tokens.
+ * Loyaltymaster Tailwind preset generated from Phase 2 tokens.
  * Tailwind 3 compatible. Source of truth: tokens/design-tokens.json.
  */
 
@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         lm: {
           ink: "var(--lm-color-ink)",
+          secondary: "var(--lm-color-text-secondary)",
           muted: "var(--lm-color-text-muted)",
           subtle: "var(--lm-color-text-subtle)",
           white: "var(--lm-color-surface-white)",
@@ -28,9 +29,11 @@ module.exports = {
           },
           feedback: {
             error: "var(--lm-color-feedback-error)",
+            errorText: "var(--lm-color-feedback-error-text)",
             warning: "var(--lm-color-feedback-warning)",
             success: "var(--lm-color-feedback-success)",
             info: "var(--lm-color-feedback-info)",
+            infoText: "var(--lm-color-feedback-info-text)",
           },
         },
       },

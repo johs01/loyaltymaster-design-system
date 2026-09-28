@@ -40,8 +40,9 @@ runbooks rely on:
   or list written in prose docs; counts in older docs describe gating waves,
   not availability. Only `status: "stable"` components may be used.
 - `tokens/design-tokens.json` — the only token source (DTCG JSON).
-  `tokens.css`, `tokens.d.ts`, and `tailwind.preset.cjs` are generated exports
-  (`node scripts/generate-tokens.mjs`).
+  `tokens.css`, `tokens.d.ts`, `tailwind.preset.cjs`, and
+  `bricks-variables.json` (the blog.loyaltymaster.com Bricks variables) are
+  generated exports (`node scripts/generate-tokens.mjs`).
 - `specs/components/<id>.md` — read the current spec immediately before using
   a component.
 - `templates/` — approved composition recipes per artifact type.

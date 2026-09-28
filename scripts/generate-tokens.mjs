@@ -1,7 +1,7 @@
-// Generate tokens/tokens.css, tokens/tokens.d.ts, and tokens/tailwind.preset.cjs
-// from tokens/design-tokens.json (DTCG). The JSON is the single source of
-// truth; never hand-edit the three exports. Use --check to verify without
-// writing (used by the validators).
+// Generate tokens/tokens.css, tokens/tokens.d.ts, tokens/tailwind.preset.cjs,
+// and tokens/bricks-variables.json from tokens/design-tokens.json (DTCG). The
+// JSON is the single source of truth; never hand-edit the four exports. Use
+// --check to verify without writing (used by the validators).
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -64,7 +64,7 @@ function category(cssVar) {
   return cssVar.split("-")[3] ?? cssVar;
 }
 
-let css = "/*\n * Loyaltymaster/sendPUSH Phase 2 generated token output.\n * Source of truth: tokens/design-tokens.json\n */\n\n:root {\n";
+let css = "/*\n * Loyaltymaster Phase 2 generated token output.\n * Source of truth: tokens/design-tokens.json\n */\n\n:root {\n";
 let previousCategory = null;
 for (const { cssVar, value } of leaves) {
   const cat = category(cssVar);
@@ -109,7 +109,7 @@ export declare const designTokens: DesignTokens;
 const durations = tokens.motion.duration;
 const fontsJs = (families) => families.map((f) => `"${f}"`).join(", ");
 const preset = `/**
- * Loyaltymaster/sendPUSH Tailwind preset generated from Phase 2 tokens.
+ * Loyaltymaster Tailwind preset generated from Phase 2 tokens.
  * Tailwind 3 compatible. Source of truth: tokens/design-tokens.json.
  */
 
@@ -119,6 +119,7 @@ module.exports = {
       colors: {
         lm: {
           ink: "var(--lm-color-ink)",
+          secondary: "var(--lm-color-text-secondary)",
           muted: "var(--lm-color-text-muted)",
           subtle: "var(--lm-color-text-subtle)",
           white: "var(--lm-color-surface-white)",
@@ -138,9 +139,11 @@ module.exports = {
           },
           feedback: {
             error: "var(--lm-color-feedback-error)",
+            errorText: "var(--lm-color-feedback-error-text)",
             warning: "var(--lm-color-feedback-warning)",
             success: "var(--lm-color-feedback-success)",
             info: "var(--lm-color-feedback-info)",
+            infoText: "var(--lm-color-feedback-info-text)",
           },
         },
       },
@@ -177,10 +180,22 @@ module.exports = {
 };
 `;
 
+// Bricks global variables for blog.loyaltymaster.com: a flat [{name, value}]
+// list, one row per CSS variable, named as the blog's Bricks install names
+// them (the CSS variable without its "--" prefix) with the same CSS value as
+// tokens.css. Generation only; importing into WordPress is a separate,
+// approval-gated step.
+const bricksVariables = `${JSON.stringify(
+  leaves.map(({ cssVar, value }) => ({ name: cssVar.replace(/^--/, ""), value })),
+  null,
+  2,
+)}\n`;
+
 const outputs = [
   ["tokens/tokens.css", css],
   ["tokens/tokens.d.ts", dts],
   ["tokens/tailwind.preset.cjs", preset],
+  ["tokens/bricks-variables.json", bricksVariables],
 ];
 
 const check = process.argv.includes("--check");
