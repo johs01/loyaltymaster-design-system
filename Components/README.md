@@ -65,6 +65,14 @@ Approved MagicPath visual handoffs:
 - `Pricing Page Matrix`
 - `Thank You Confirmation Section`
 
+Canon-promoted production patterns (evidence folders for components promoted
+from approved live pages):
+
+- `Strategy Sentence Cards` (loyaltymaster.com rollout, 2026-07-10)
+- `Blog Article Card`, `Blog Featured Article`, `Blog Topic Card`,
+  `Blog Industry Link Tile`, and `Keep Reading Band` (blog.loyaltymaster.com
+  redesign published 2026-09-27; promoted 2026-09-28)
+
 ## Known Limitations
 
 - Some reference TSX files use hardcoded color values instead of canonical

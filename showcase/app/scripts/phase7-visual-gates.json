@@ -271,6 +271,31 @@
       "classification": "Canon-promoted (2026-07-10 site rollout) - pending Phase 7C reference regeneration and human approval",
       "gate": false,
       "notes": "strategy-sentence-cards is a stable registry component promoted from the approved 2026-07-10 loyaltymaster.com site rollout, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/strategy-sentence-cards.png is a live-site capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "blog-article-card": {
+      "classification": "Canon-promoted (2026-09-28 blog.loyaltymaster.com redesign) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "blog-article-card is a stable registry component promoted from the blog.loyaltymaster.com redesign the owner approved and published on 2026-09-27, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/blog-article-card.png is a crop of the approved redesign mockup capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "blog-featured-article": {
+      "classification": "Canon-promoted (2026-09-28 blog.loyaltymaster.com redesign) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "blog-featured-article is a stable registry component promoted from the blog.loyaltymaster.com redesign the owner approved and published on 2026-09-27, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/blog-featured-article.png is a crop of the approved redesign mockup capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "blog-topic-card": {
+      "classification": "Canon-promoted (2026-09-28 blog.loyaltymaster.com redesign) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "blog-topic-card is a stable registry component promoted from the blog.loyaltymaster.com redesign the owner approved and published on 2026-09-27, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/blog-topic-card.png is a crop of the approved redesign mockup capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "blog-industry-link-tile": {
+      "classification": "Canon-promoted (2026-09-28 blog.loyaltymaster.com redesign) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "blog-industry-link-tile is a stable registry component promoted from the blog.loyaltymaster.com redesign the owner approved and published on 2026-09-27, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/blog-industry-link-tile.png is a crop of the approved redesign mockup capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
+    },
+    "keep-reading-band": {
+      "classification": "Canon-promoted (2026-09-28 blog.loyaltymaster.com redesign) - pending Phase 7C reference regeneration and human approval",
+      "gate": false,
+      "notes": "keep-reading-band is a stable registry component promoted from the blog.loyaltymaster.com redesign the owner approved and published on 2026-09-27, with Phase 5 smoke evidence. Its canonical reference at assets/screenshots/keep-reading-band.png is a crop of the approved redesign mockup capture, not a showcase specimen render, so the pixel gate cannot pass until an intentional Phase 7C-style reference regeneration is run for this id and a human approves the new reference. Until then this entry is coverage-only so verify:visual can run."
     }
   }
 }
