@@ -8,6 +8,8 @@
   --lm-color-text-secondary: #72676c;
   --lm-color-text-muted: #979093;
   --lm-color-text-subtle: #bfb8bc;
+  --lm-color-line: rgba(48, 33, 39, 0.1);
+  --lm-color-line-strong: rgba(48, 33, 39, 0.18);
   --lm-color-surface-white: #ffffff;
   --lm-color-surface-panel-light: #faf8f9;
   --lm-color-surface-panel-gray: #f4eff2;

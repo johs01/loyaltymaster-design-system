@@ -16,6 +16,14 @@
     "value": "#bfb8bc"
   },
   {
+    "name": "lm-color-line",
+    "value": "rgba(48, 33, 39, 0.1)"
+  },
+  {
+    "name": "lm-color-line-strong",
+    "value": "rgba(48, 33, 39, 0.18)"
+  },
+  {
     "name": "lm-color-surface-white",
     "value": "#ffffff"
   },

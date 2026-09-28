@@ -36,6 +36,22 @@
         }
       }
     },
+    "line": {
+      "default": {
+        "$value": "rgba(48, 33, 39, 0.1)",
+        "$description": "Hairline borders and dividers (ink at 10%): card outlines, the article end rule, TOC box edge. Decorative, not a text colour. Added 2026-09-28; the blog already ships it as the Bricks variable lm-color-line.",
+        "$extensions": {
+          "cssVariable": "--lm-color-line"
+        }
+      },
+      "strong": {
+        "$value": "rgba(48, 33, 39, 0.18)",
+        "$description": "Stronger hairline (ink at 18%) for input outlines such as the blog search field. Decorative, not a text colour. Added 2026-09-28; the blog already ships it as the Bricks variable lm-color-line-strong.",
+        "$extensions": {
+          "cssVariable": "--lm-color-line-strong"
+        }
+      }
+    },
     "surface": {
       "white": {
         "$value": "#ffffff",
