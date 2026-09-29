@@ -85,7 +85,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Use five desktop columns and two mobile columns, preserving the order of the remaining logos. The library retains its existing 760px mobile breakpoint; the website retains 799.98px.
 - The website integration list is Stripe, Square, Apple Pay, Clover POS, TouchBistro, Toast, Make, Zapier, ActiveCampaign, ManyChat. Other existing showcase marks are unchanged.
 - Keep logo sizing consistent and avoid stretching or cropping marks.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 

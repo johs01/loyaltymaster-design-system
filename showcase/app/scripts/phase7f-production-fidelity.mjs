@@ -14,12 +14,36 @@ const artifactsDir = path.join(appDir, "artifacts/phase-7f");
 const port = 4179;
 const baseUrl = `http://127.0.0.1:${port}`;
 const isVerify = process.argv.includes("--verify");
+const isList = process.argv.includes("--list");
 const mismatchPixelThreshold = 0.08;
 
 const registry = JSON.parse(fs.readFileSync(registryPath, "utf8"));
 const targets = JSON.parse(fs.readFileSync(targetsPath, "utf8"));
 const registryById = new Map(registry.components.map((component) => [component.id, component]));
-const expectedIds = registry.components.map((component) => component.id);
+// Every component with a target is captured, except entries marked
+// liveEquivalent: false (no live section exists; kept for coverage only).
+// validate-phase2.mjs separately requires a target for every Wave 1 id.
+const targetIds = Object.keys(targets.components ?? {});
+const expectedIds = targetIds.filter((id) => targets.components[id].liveEquivalent !== false);
+const skippedIds = targetIds.filter((id) => targets.components[id].liveEquivalent === false);
+
+// One capture per target plus one per additionalTargets entry (for example the
+// same card on another blog template). Extra captures inherit the target's
+// fields and are keyed "<id>--<key>".
+function capturesFor(id) {
+  const target = targets.components[id];
+  const base = {
+    key: id,
+    liveUrl: target.liveUrl,
+    liveSelector: target.liveSelector,
+    localSelector: target.localSelector ?? `[data-capture-target="${id}"] .lm-ds`,
+    productionSourcePath: target.productionSourcePath,
+  };
+  return [
+    base,
+    ...(target.additionalTargets ?? []).map((extra) => ({ ...base, ...extra, key: `${id}--${extra.key}` })),
+  ];
+}
 
 function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -74,18 +98,19 @@ function ensureTargetCoverage() {
     throw new Error("phase7f-production-targets.json must declare version phase-7f");
   }
 
-  for (const id of expectedIds) {
-    const target = targets.components?.[id];
-    if (!target) {
-      throw new Error(`Missing Phase 7F production fidelity target for ${id}`);
+  for (const id of targetIds) {
+    if (!registryById.has(id)) {
+      throw new Error(`Phase 7F target ${id} is not a registry component`);
     }
-    for (const requiredKey of ["liveUrl", "liveSelector", "productionSourcePath"]) {
-      if (!target[requiredKey]) {
-        throw new Error(`${id} Phase 7F target missing ${requiredKey}`);
+    for (const capture of capturesFor(id)) {
+      for (const requiredKey of ["liveUrl", "liveSelector", "productionSourcePath"]) {
+        if (!capture[requiredKey]) {
+          throw new Error(`${capture.key} Phase 7F target missing ${requiredKey}`);
+        }
       }
-    }
-    if (!fs.existsSync(target.productionSourcePath)) {
-      throw new Error(`${id} productionSourcePath does not exist: ${target.productionSourcePath}`);
+      if (!fs.existsSync(capture.productionSourcePath)) {
+        throw new Error(`${capture.key} productionSourcePath does not exist: ${capture.productionSourcePath}`);
+      }
     }
   }
 }
@@ -260,6 +285,22 @@ function evaluateResult({ liveCapture, localCapture, comparison, thresholds }) {
 }
 
 ensureTargetCoverage();
+
+if (isList) {
+  // Offline plan: no browser, no network, artifacts untouched.
+  for (const id of expectedIds) {
+    for (const capture of capturesFor(id)) {
+      console.log(`${capture.key}\t${capture.liveUrl}\t${capture.liveSelector}\t${capture.localSelector}`);
+    }
+  }
+  for (const id of skippedIds) {
+    console.log(`${id}\tSKIPPED (liveEquivalent: false)`);
+  }
+  const captureCount = expectedIds.reduce((total, id) => total + capturesFor(id).length, 0);
+  console.log(`Phase 7F plan: ${expectedIds.length} components, ${captureCount} captures per viewport, ${skippedIds.length} skipped.`);
+  process.exit(0);
+}
+
 cleanDir(artifactsDir);
 
 for (const viewport of targets.viewports) {
@@ -294,23 +335,23 @@ try {
       deviceScaleFactor: 1,
     });
 
-    for (const id of expectedIds) {
+    for (const capture of expectedIds.flatMap((id) => capturesFor(id).map((entry) => ({ ...entry, id })))) {
+      const { id, key, localSelector } = capture;
       const component = registryById.get(id);
       const target = targets.components[id];
       const thresholds = getThresholds(target);
-      const localSelector = target.localSelector ?? `[data-capture-target="${id}"] .lm-ds`;
-      const liveFile = path.join(artifactsDir, viewport.name, "live", `${id}.png`);
-      const localFile = path.join(artifactsDir, viewport.name, "local", `${id}.png`);
-      const diffFile = path.join(artifactsDir, viewport.name, "diffs", `${id}.png`);
-      const sideBySideFile = path.join(artifactsDir, viewport.name, "side-by-side", `${id}.png`);
+      const liveFile = path.join(artifactsDir, viewport.name, "live", `${key}.png`);
+      const localFile = path.join(artifactsDir, viewport.name, "local", `${key}.png`);
+      const diffFile = path.join(artifactsDir, viewport.name, "diffs", `${key}.png`);
+      const sideBySideFile = path.join(artifactsDir, viewport.name, "side-by-side", `${key}.png`);
 
-      if (!responseMetadataByUrl.has(target.liveUrl)) {
-        responseMetadataByUrl.set(target.liveUrl, await captureResponseMetadata(target.liveUrl));
+      if (!responseMetadataByUrl.has(capture.liveUrl)) {
+        responseMetadataByUrl.set(capture.liveUrl, await captureResponseMetadata(capture.liveUrl));
       }
 
       const livePage = await context.newPage();
-      await livePage.goto(target.liveUrl, { waitUntil: "networkidle", timeout: 60_000 });
-      const liveCapture = await captureElement(livePage, target.liveSelector, liveFile);
+      await livePage.goto(capture.liveUrl, { waitUntil: "networkidle", timeout: 60_000 });
+      const liveCapture = await captureElement(livePage, capture.liveSelector, liveFile);
       await livePage.close();
 
       const localPage = await context.newPage();
@@ -325,12 +366,13 @@ try {
       const evaluation = evaluateResult({ liveCapture, localCapture, comparison, thresholds });
       results.push({
         id,
+        captureKey: key,
         name: component.name,
         viewport: viewport.name,
-        liveUrl: target.liveUrl,
-        liveSelector: target.liveSelector,
+        liveUrl: capture.liveUrl,
+        liveSelector: capture.liveSelector,
         localSelector,
-        productionSourcePath: target.productionSourcePath,
+        productionSourcePath: capture.productionSourcePath,
         rawSourcePath: component.rawSourcePath,
         specPath: component.specPath,
         libraryPath: component.libraryPath,
@@ -371,6 +413,7 @@ try {
     localBaseUrl: baseUrl,
     viewports: targets.viewports,
     targetCount: expectedIds.length,
+    skippedTargets: skippedIds,
     resultCount: results.length,
     gatedComponentCount: expectedIds.length,
     passedComponentCount: uniquePassedIds.size,

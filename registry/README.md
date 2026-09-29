@@ -45,8 +45,9 @@ partial, missing, or undecided component.
 
 Phase 7F is the production-fidelity gate for registered components.
 `showcase/app/scripts/phase7f-production-targets.json` maps components to live
-sendPUSH URLs, live selectors, production source files, raw snapshots, specs,
-library paths, and local showcase specimens. `npm run
+loyaltymaster.com and blog.loyaltymaster.com URLs (sendPUSH URLs until
+2026-09-28), live selectors, production source files, specs, library paths,
+and local showcase specimens. `npm run
 verify:production-fidelity` in `showcase/app` captures desktop and mobile
 live/local pairs, writes side-by-side artifacts under
 `showcase/app/artifacts/phase-7f/`, and fails on major geometry, layout, or
@@ -123,13 +124,22 @@ registry is the only inventory):
 - `strategy-sentence-cards` was canon-promoted from the approved 2026-07-10
   loyaltymaster.com site rollout with Phase 5 smoke evidence; its gate entry
   is likewise coverage-only.
+- `blog-article-card`, `blog-featured-article`, `blog-topic-card`,
+  `blog-industry-link-tile`, and `keep-reading-band` were canon-promoted on
+  2026-09-28 from the blog.loyaltymaster.com redesign the owner approved and
+  published on 2026-09-27 (`keep-reading-band`'s `pages` variant is the
+  loyaltymaster.com RelatedPages band). They have Phase 5 smoke evidence and
+  coverage-only gate entries; their visual references are crops of the
+  approved redesign mockup until a live capture is approved.
 
 Historical note (2026-08): the Phase 7E interaction audit and Phase 7F
-production targets point at `sendpush.loyaltymaster.com`, which was retired in
+production targets pointed at the sendPUSH subdomain, which was retired in
 July 2026 and no longer resolves. The frozen Phase 7E/7F artifacts remain
 valid evidence that the Wave 1 library matched the sendPUSH runtime at
-gate time, but `npm run verify:production-fidelity` cannot re-run until its
-targets are repointed at live loyaltymaster.com URLs.
+gate time. On 2026-09-28 the Phase 7F targets were repointed at live
+loyaltymaster.com sections and the blog.loyaltymaster.com templates (three
+Wave 1 components with no live equivalent are marked `liveEquivalent:
+false`); the repointed gate has not been run yet (see `KNOWN_ISSUES.md`).
 
 Closing the gate gap requires a human-approved session. The reference half
 was completed on 2026-08-29: `npm run regenerate:phase7c-references`
@@ -138,8 +148,10 @@ re-captured all 34 canonical references as showcase specimen captures
 approved them after side-by-side review. Remaining:
 
 1. Flip those gate entries to `gate: true` with the strict Wave 1 thresholds.
-2. Repoint the Phase 7E interaction audit and Phase 7F production targets at
-   live loyaltymaster.com URLs/selectors for every gated section.
+2. Rewrite the Phase 7E interaction audit against live loyaltymaster.com
+   pages (it is bound to the retired template page's DOM), and run the
+   repointed Phase 7F gate (`npm run verify:production-fidelity`; preview the
+   plan offline with `node scripts/phase7f-production-fidelity.mjs --list`).
 
 ## New Component Approval Flow
 

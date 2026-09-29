@@ -34,8 +34,13 @@ import {
   NewsletterSignupSection,
   PricingPageMatrix,
   ThankYouConfirmationSection,
+  BlogArticleCard,
+  BlogFeaturedArticle,
+  BlogTopicCard,
+  BlogIndustryLinkTile,
+  KeepReadingBand,
 } from "../../../library/src";
-import type { BillingCadence } from "../../../library/src";
+import type { BillingCadence, BlogArticle } from "../../../library/src";
 
 export interface ComponentSpecimen {
   id: string;
@@ -95,6 +100,47 @@ const galleryImages = [
   { src: assetUrl("assets/awards/awards-4-6.svg"), alt: "Industry awards 4 to 6" },
   { src: assetUrl("assets/awards/awards-7-9.svg"), alt: "Industry awards 7 to 9" },
 ];
+
+// Blog specimens use real blog.loyaltymaster.com posts (titles, dates, reading
+// times, categories) with local stand-in covers and hand-written excerpts.
+const blogArticles: BlogArticle[] = [
+  {
+    title: "The Best Digital Membership Card Software for your Club",
+    href: "https://blog.loyaltymaster.com/digital-membership-card-software/",
+    date: "2025-05-13",
+    readingMinutes: 14,
+    category: "Membership Cards",
+    excerpt: "What to look for in membership card software for a club, and how cards in Apple Wallet and Google Wallet fit in.",
+    image: { src: assetUrl("assets/media/lady-joining-loyalty-program.png"), alt: "" },
+  },
+  {
+    title: "Loyalty Cards for Apple and Google Wallet: How to Create Them",
+    href: "https://blog.loyaltymaster.com/loyalty-cards-for-apple-and-google-wallet-how-to-create-them-complete-guide/",
+    date: "2025-05-05",
+    readingMinutes: 21,
+    category: "Apple & Google Wallet",
+    excerpt: "Choose the right loyalty program type first, then build a card your customers keep in the wallet already on their phone.",
+    image: { src: assetUrl("assets/media/guy-reading-push-notification.png"), alt: "" },
+  },
+  {
+    title: "Why Your Customers Are Saying Goodbye to Their Bank Cards with Google Wallet and Apple Wallet",
+    href: "https://blog.loyaltymaster.com/why-your-customers-are-saying-goodbye-to-their-bank-cards-with-google-wallet-and-apple-wallet/",
+    date: "2025-04-09",
+    readingMinutes: 17,
+    category: "Apple & Google Wallet",
+    excerpt: "Payment habits are moving into the phone's wallet. Here is what that shift means for a small shop's loyalty card.",
+    image: { src: assetUrl("assets/media/image02.png"), alt: "" },
+  },
+];
+
+const blogFeatured: BlogArticle = {
+  title: "Paper to Digital Loyalty Program: The Growth Secret Smart Shop Owners Can’t Ignore",
+  href: "https://blog.loyaltymaster.com/paper-to-digital-loyalty-program-the-growth-secret-smart-shop-owners-cant-ignore/",
+  date: "2025-04-22",
+  readingMinutes: 12,
+  excerpt: "A coffee shop owner on what the paper stamp card was really costing, and what changed after moving to a digital card.",
+  image: { src: assetUrl("assets/media/lady-joining-loyalty-program.png"), alt: "" },
+};
 
 function FeatureIcon({ tone }: { tone: "orange" | "blue" | "yellow" }) {
   const color = {
@@ -438,4 +484,76 @@ export const specimens: ComponentSpecimen[] = [
   { id: "newsletter-signup-section", render: () => <NewsletterSignupSection /> },
   { id: "pricing-page-matrix", render: () => <PricingPageMatrix /> },
   { id: "thank-you-confirmation-section", render: () => <ThankYouConfirmationSection /> },
+  {
+    id: "blog-article-card",
+    render: () => (
+      <div className="lm-ds" style={{ padding: "48px", background: "var(--lm-color-surface-white)" }}>
+        <BlogArticleCard articles={blogArticles} />
+      </div>
+    ),
+  },
+  {
+    id: "blog-featured-article",
+    render: () => (
+      <div className="lm-ds" style={{ padding: "48px", background: "var(--lm-color-background-peach)" }}>
+        <div style={{ maxWidth: "577px", marginInline: "auto" }}>
+          <BlogFeaturedArticle article={blogFeatured} />
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: "blog-topic-card",
+    render: () => (
+      <div className="lm-ds" style={{ padding: "48px", background: "var(--lm-color-background-cyan)" }}>
+        <BlogTopicCard
+          topics={[
+            { title: "Customer Loyalty", href: "https://blog.loyaltymaster.com/category/customer-loyalty-software-solutions/", description: "Program ideas and rewards that turn first visits into regulars.", count: 21 },
+            { title: "Customer Retention", href: "https://blog.loyaltymaster.com/category/customer-retention/", description: "Win back lapsed customers and fill your quiet hours.", count: 16 },
+            { title: "Digital Loyalty Cards", href: "https://blog.loyaltymaster.com/category/digital-loyalty-cards/", description: "How stamp and reward cards work inside the phone’s wallet.", count: 10 },
+          ]}
+        />
+      </div>
+    ),
+  },
+  {
+    id: "blog-industry-link-tile",
+    render: () => (
+      <div className="lm-ds" style={{ padding: "48px", background: "var(--lm-color-background-cyan)" }}>
+        <BlogIndustryLinkTile
+          industries={[
+            { label: "Coffee Shops", href: "https://blog.loyaltymaster.com/category/customer-loyalty-software-coffee-shop/", count: 9 },
+            { label: "Restaurants", href: "https://blog.loyaltymaster.com/category/customer-loyalty-software-restaurants/", count: 6 },
+            { label: "Salons", href: "https://blog.loyaltymaster.com/category/customer-loyalty-software-salons/", count: 4 },
+            { label: "Gyms", href: "https://blog.loyaltymaster.com/category/gyms/", count: 2 },
+            { label: "Ice Cream Shops", href: "https://blog.loyaltymaster.com/category/ice-cream-shop/", count: 2 },
+            { label: "Shop Outlets", href: "https://blog.loyaltymaster.com/category/shop-outlets/", count: 2 },
+            { label: "Bakeries", href: "https://blog.loyaltymaster.com/category/bakery/", count: 1 },
+            { label: "Juice Bars", href: "https://blog.loyaltymaster.com/category/juice-bar/", count: 1 },
+          ]}
+        />
+      </div>
+    ),
+  },
+  {
+    id: "keep-reading-band",
+    render: () => (
+      <>
+        <KeepReadingBand
+          id="related-pages-specimen"
+          pages={[
+            { title: "The Digital Loyalty Card for Busy Shop Owners", href: "/digital-loyalty-card/", description: "Your digital loyalty card lives in customers' Apple Wallet and Google Wallet, already on their phones. No app downloads, no lost cards, more repeat visits." },
+            { title: "Digital Stamp Cards That Turn Visitors Into Regulars", href: "/stamp-reward-card/", description: "Boost sales and retain customers with a stamp reward card program in Apple and Google Wallet. Digital stamps never get lost, forgotten, or left at home." },
+            { title: "Digital Membership Cards for Predictable Monthly Income", href: "/digital-membership-card/", description: "The digital membership card that pays you every month. It lives in your members' Apple and Google Wallets with no apps to install and no cards to lose." },
+          ]}
+        />
+        <KeepReadingBand
+          id="related-articles-specimen"
+          variant="articles"
+          articles={blogArticles}
+          seeAll={{ label: "See all articles", href: "https://blog.loyaltymaster.com/" }}
+        />
+      </>
+    ),
+  },
 ];

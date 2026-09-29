@@ -23,6 +23,29 @@ Blog and article collection index with approved cards, metadata, empty state, an
 - Do not import or copy from `/Components/`; it remains evidence only.
 - Do not invent variants, props, slots, tokens, or layout rules.
 
+## Blog Surface Coverage (2026-09-28)
+
+`blog-article-index` is the text-led resources index approved from
+loyaltymaster.com/blog/ in Phase 13. It has no cover image, no date or
+reading time, no topic filter, no pagination, and no featured variant, and it
+stays that way: the 2026-09-28 blog canon promotion covers those needs with
+separate registry components instead of new variants here.
+
+| Need on blog.loyaltymaster.com | Covered by |
+|---|---|
+| Image-led cards with category chip | `blog-article-card` (`specs/components/blog-article-card.md`) |
+| Date ("13 May 2025") and reading time ("14 min read") | `blog-article-card` and `blog-featured-article` meta row |
+| Featured post | `blog-featured-article` (`specs/components/blog-featured-article.md`) |
+| Topic browsing | `blog-topic-card`, `blog-industry-link-tile` |
+| Related posts at the end of a post | `keep-reading-band`, `articles` variant |
+| Topic filter | Blog template pattern (Bricks, live since 2026-09-27): one labelled "Filter by topic" select (default "All topics") beside the section heading, hierarchical categories (a parent includes its children), single-category selection kept in the URL, applied on change with pagination reset, and an underlined "Clear filter" reset button shown only while a filter is active. Pill 52px select, ink text, ink focus ring. Not a library component. |
+| Pagination | Blog template pattern (Bricks `lm-blog-pager`): centred 48px pill page numbers (44px on mobile) on white with an 18% ink hairline, current page ink-filled with white text, ellipsis for gaps, orange 2px inset on hover, ink focus ring. Not a library component. |
+
+The approved screenshot for this component (and the current library render)
+shows grey chip text on yellow. That treatment is superseded by The Ink Chip
+Rule in `DESIGN_SYSTEM.md`: chips use ink text. The library fix is tracked in
+`KNOWN_ISSUES.md`.
+
 ## Props
 
 - `heading` (required): string.

@@ -120,7 +120,7 @@ stop and request a token update instead of improvising.
   groups are separated by 36px.
 - One sentence per card (two short ones at most); sentence-seam re-chunking
   only, message identical to the source copy.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display
+- Follow the approved Loyaltymaster visual language: Rodger display
   moments, Onest readable UI/body text, warm decisive accents, restrained
   shadows, and purposeful section rhythm.
 - Glass treatment is prohibited in page-body surfaces unless this spec

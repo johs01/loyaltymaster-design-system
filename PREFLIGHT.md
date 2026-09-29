@@ -79,7 +79,8 @@ Search the canonical system for components and tokens already in use:
   interaction verification.
 - `showcase/app/scripts/phase7f-production-targets.json` and
   `showcase/app/artifacts/phase-7f/production-fidelity-results.json` for the
-  Phase 7F live sendPUSH runtime comparison source map and latest results.
+  Phase 7F live runtime comparison source map (loyaltymaster.com and the
+  blog templates since 2026-09-28) and latest (frozen sendPUSH-era) results.
 - `showcase/app/src/templateFixtures.tsx` and
   `showcase/app/artifacts/phase-8e/template-fixture-results.json` for Phase 8E
   rendered proof that approved Markdown recipes can become browser-reviewable
@@ -132,11 +133,11 @@ Then run `npm run verify:interactions` from `showcase/app`;
 Phase 7E requires every Wave 1 component to pass hover, focus, active,
 pressed, expanded, and mobile-open checks with zero failed or partial results.
 Phase 7F required every Wave 1 component to pass desktop and mobile comparison
-against its live sendPUSH runtime selectors with zero failed results; those
-targets were retired with the sendPUSH subdomain in July 2026, so the frozen
-Phase 7F artifacts stand as gate-time evidence and `npm run
-verify:production-fidelity` stays unrunnable until the targets are repointed
-at loyaltymaster.com (see `KNOWN_ISSUES.md`).
+against the then-live sendPUSH runtime with zero failed results; the frozen
+Phase 7F artifacts stand as that gate-time evidence. The targets were
+repointed at live loyaltymaster.com and the blog templates on 2026-09-28, but
+`npm run verify:production-fidelity` has not been re-run against them yet
+(see `KNOWN_ISSUES.md`).
 If a primitive exists, use it. If one almost fits,
 ask before forking it. Do not silently create a parallel implementation.
 
@@ -175,8 +176,9 @@ Alongside the outline, record this gate addendum for the human reviewer:
   Coverage-only (`gate: false`) components are selectable, but flag them: the
   pixel gate has not certified them yet.
 - **Phase 7E interaction and Phase 7F production fidelity status**: whether
-  each selected component is covered by the frozen Wave 1 audits (the live
-  targets are sendPUSH-era and pending repointing — see `KNOWN_ISSUES.md`).
+  each selected component is covered by the frozen Wave 1 audits (the 7F
+  targets now point at loyaltymaster.com but have not been re-run; the 7E
+  audit is still sendPUSH-era — see `KNOWN_ISSUES.md`).
 - **Phase 8E rendered template status**: confirm the relevant local
   template-test URL was reviewed for web-page, landing-page, blog/document, or
   brochure-content work, or explain why this artifact type is outside the

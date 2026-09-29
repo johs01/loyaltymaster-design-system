@@ -89,8 +89,8 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Rodger Bold is the default display heading font.
 - Use approved peach background, body typography, button token, and card shadow.
 - Use a real local media asset through `ImageAsset`; do not nest another component screenshot as the hero visual.
-- The hero must feel specific to sendPUSH/Loyaltymaster, not like a generic SaaS template.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- The hero must feel specific to Loyaltymaster, not like a generic SaaS template.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 

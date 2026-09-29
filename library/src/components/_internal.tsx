@@ -128,3 +128,31 @@ export function EmailCapture({
     </div>
   );
 }
+
+const blogMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** "2025-05-13" -> "13 May 2025" (the blog's WordPress "j M Y" format). */
+export function formatBlogDate(isoDate: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(isoDate);
+  if (!match) return isoDate;
+  return `${Number(match[3])} ${blogMonths[Number(match[2]) - 1]} ${match[1]}`;
+}
+
+/** Date + reading time meta row shared by the blog cards. */
+export function BlogMeta({ date, readingMinutes, children }: { date: string; readingMinutes?: number; children?: ReactNode }) {
+  return (
+    <p className="lm-blog-meta">
+      <time dateTime={date}>{formatBlogDate(date)}</time>
+      {readingMinutes ? <span>{readingMinutes} min read</span> : null}
+      {children}
+    </p>
+  );
+}
+
+export function ArrowIcon() {
+  return (
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 12h14M13 6l6 6-6 6" />
+    </svg>
+  );
+}

@@ -82,7 +82,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - The control must feel compact and decisive, not like a large CTA.
 - Use pill radius and approved accent tokens only.
 - Transition timing must use the approved motion token.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 

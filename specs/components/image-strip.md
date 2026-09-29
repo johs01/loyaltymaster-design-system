@@ -78,7 +78,7 @@ Do not replace these tokens with raw literals. If a needed value is missing, sto
 - Use primary radius, approved spacing, and white surface.
 - Keep images inspectable and not purely atmospheric.
 - Avoid generic stock collage styling.
-- Follow the approved Loyaltymaster/sendPUSH visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
+- Follow the approved Loyaltymaster visual language: Rodger display moments, Onest readable UI/body text, warm decisive accents, restrained shadows, and purposeful section rhythm.
 - Use 20px primary desktop card radius and 16px secondary/mobile/form-adjacent radius only where those roles apply.
 - Glass treatment is prohibited in page-body surfaces unless this spec explicitly identifies the component as the approved nav/mobile shell.
 

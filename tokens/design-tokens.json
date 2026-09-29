@@ -1,6 +1,6 @@
 {
   "$schema": "https://design-tokens.github.io/community-group/format.schema.json",
-  "$description": "Loyaltymaster/sendPUSH canonical Phase 2 design tokens in DTCG-style JSON. Source: DESIGN_SYSTEM.md, withremy.css, and src/design-system/tokens.ts.",
+  "$description": "Loyaltymaster canonical Phase 2 design tokens in DTCG-style JSON. Source: DESIGN_SYSTEM.md, withremy.css, and src/design-system/tokens.ts.",
   "color": {
     "$type": "color",
     "ink": {
@@ -12,9 +12,16 @@
       }
     },
     "text": {
+      "secondary": {
+        "$value": "#72676c",
+        "$description": "Text-safe secondary text (WCAG AA): body copy, excerpts, meta (date, reading time), labels, captions, and placeholders at any size. 5.4:1 on white; at least 4.6:1 on every light band (peach, cyan, salmon, panels, tag yellow). Added 2026-09-28; the blog already ships it as the Bricks variable lm-color-text-secondary.",
+        "$extensions": {
+          "cssVariable": "--lm-color-text-secondary"
+        }
+      },
       "muted": {
         "$value": "#979093",
-        "$description": "Secondary body text, labels, and footer copy.",
+        "$description": "Large or decorative text only: 3.1:1 on white and 2.8:1 on peach fail WCAG AA for body, meta, and label text. Allowed for large text (at least 24px, or 18.66px bold) on white; on tinted bands treat it as decorative. Use color.text.secondary for readable secondary text.",
         "$extensions": {
           "cssVariable": "--lm-color-text-muted",
           "remyVariable": "--wr-text-muted"
@@ -22,10 +29,26 @@
       },
       "subtle": {
         "$value": "#bfb8bc",
-        "$description": "Placeholders, hints, and lowest-emphasis text.",
+        "$description": "Decorative only (1.9:1 on white): hairlines, dividers, and ornamental glyphs. Never for text that must be read, including placeholders and hints (use color.text.secondary).",
         "$extensions": {
           "cssVariable": "--lm-color-text-subtle",
           "remyVariable": "--wr-text-subtle"
+        }
+      }
+    },
+    "line": {
+      "default": {
+        "$value": "rgba(48, 33, 39, 0.1)",
+        "$description": "Hairline borders and dividers (ink at 10%): card outlines, the article end rule, TOC box edge. Decorative, not a text colour. Added 2026-09-28; the blog already ships it as the Bricks variable lm-color-line.",
+        "$extensions": {
+          "cssVariable": "--lm-color-line"
+        }
+      },
+      "strong": {
+        "$value": "rgba(48, 33, 39, 0.18)",
+        "$description": "Stronger hairline (ink at 18%) for input outlines such as the blog search field. Decorative, not a text colour. Added 2026-09-28; the blog already ships it as the Bricks variable lm-color-line-strong.",
+        "$extensions": {
+          "cssVariable": "--lm-color-line-strong"
         }
       }
     },
@@ -132,7 +155,7 @@
       },
       "orange": {
         "$value": "#f37d39",
-        "$description": "Warm Motion Orange. CTA edges, hover states, active nav, and focus rings.",
+        "$description": "Warm Motion Orange. CTA edges, hover states, and active nav. Not a focus indicator on its own: 2.7:1 on white and 2.4:1 on peach fail WCAG 1.4.11 (3:1). Focus rings are color.ink; orange may only be an optional outer halo outside the ink ring.",
         "$extensions": {
           "cssVariable": "--lm-color-accent-orange",
           "remyVariable": "--wr-accent-orange"
@@ -140,7 +163,7 @@
       },
       "blue": {
         "$value": "#4c93af",
-        "$description": "Trust Blue. Process markers and cooler contrast.",
+        "$description": "Trust Blue. Process markers and cooler contrast. Markers and fills only: 3.4:1 on white is not text-safe; blue text uses color.feedback.infoText.",
         "$extensions": {
           "cssVariable": "--lm-color-accent-blue",
           "remyVariable": "--wr-accent-blue"
@@ -158,10 +181,17 @@
     "feedback": {
       "error": {
         "$value": "#d94f3a",
-        "$description": "Error state foreground.",
+        "$description": "Error state foreground for icons, borders, and large text. 4.1:1 on white fails WCAG AA for small text; error messages use color.feedback.errorText.",
         "$extensions": {
           "cssVariable": "--lm-color-feedback-error",
           "remyVariable": "--wf-feedback-error"
+        }
+      },
+      "errorText": {
+        "$value": "#c0412c",
+        "$description": "Text-safe error colour for error messages at any size: 5.2:1 on white, 4.7:1 on peach. On salmon (4.45:1) set the message in ink and keep the error colour on the icon. Added 2026-09-28.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-error-text"
         }
       },
       "warning": {
@@ -182,10 +212,17 @@
       },
       "info": {
         "$value": "#3a7a94",
-        "$description": "Info state foreground.",
+        "$description": "Info state foreground. 4.8:1 on white but 4.3:1 on peach and cyan; info text on tinted bands uses color.feedback.infoText.",
         "$extensions": {
           "cssVariable": "--lm-color-feedback-info",
           "remyVariable": "--wf-feedback-info"
+        }
+      },
+      "infoText": {
+        "$value": "#2f7390",
+        "$description": "Text-safe blue for info messages and any blue text at any size: 5.3:1 on white, 4.7:1 on peach, 4.5:1 on salmon. Also the text-safe stand-in for color.accent.blue (Trust Blue, markers only). Added 2026-09-28.",
+        "$extensions": {
+          "cssVariable": "--lm-color-feedback-info-text"
         }
       }
     }

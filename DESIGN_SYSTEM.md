@@ -1,5 +1,5 @@
 ---
-name: "sendPUSH | Loyaltymaster"
+name: "Loyaltymaster"
 description: "A warm, credible local-growth website for direct customer messaging, loyalty, and retention campaigns."
 status: "Phase 1 canonical consolidation"
 sources:
@@ -10,7 +10,7 @@ sources:
     - "_archive/Loyaltymaster Design System V1.0/README.md"
 approvedConflictResolutions:
   appStack: "Next.js 16 App Router, not Vite"
-  componentSource: "/design-system-template-page and production Remy components are canonical"
+  componentSource: "the approved design as rolled out on live loyaltymaster.com pages is canonical; the retired sendPUSH /design-system-template-page is historical"
   cardRadius: "20px primary desktop cards; 16px secondary, mobile, and form-adjacent cards"
   inputRadius: "16px tenant/trial inputs; 12px compact fields; pill email CTA inputs"
   typography: "label and eyebrow are separate text styles"
@@ -18,6 +18,7 @@ approvedConflictResolutions:
   rodger: "Rodger Bold for headings; full Rodger family available; Rodger Regular approved for stats"
 colors:
   ink: "#302127"
+  text-secondary: "#72676c"
   text-muted: "#979093"
   text-subtle: "#bfb8bc"
   surface: "#ffffff"
@@ -35,9 +36,11 @@ colors:
   yellow-soft: "#fdd564"
   tag-yellow: "#fff3c4"
   error: "#d94f3a"
+  error-text: "#c0412c"
   warning: "#c48a12"
   success: "#2e8e7a"
   info: "#3a7a94"
+  info-text: "#2f7390"
 typography:
   display:
     fontFamily: "\"Rodger Bold\", \"Rodger Bold Placeholder\", Arial, sans-serif"
@@ -125,22 +128,28 @@ components:
     padding: "14px 16px"
 ---
 
-# Design System: sendPUSH | Loyaltymaster
+# Design System: Loyaltymaster
 
 ## 1. Overview
 
 **Creative North Star: "The Local Growth Counter"**
 
-sendPUSH uses a warm, practical brand system for local businesses that need more
+Loyaltymaster uses a warm, practical brand system for local businesses that need more
 repeat visits and direct customer relationships. The interface should feel like a
 real business tool presented with approachable marketing confidence: clear
 sections, tactile CTAs, specific use cases, and a steady rhythm of proof,
 comparison, and action.
 
-The production reference is a **Next.js 16 App Router** site. The route
-`/design-system-template-page` is the canonical component sampler for future
-website work. V1.0 previews and UI kits are useful references, but they are not
-the source of truth for component behavior.
+The production reference is live **loyaltymaster.com**, a **Next.js 16 App
+Router** site (repository named under Production Target in `llms.txt`). The
+approved design as rolled out on live loyaltymaster.com pages is canonical —
+for example https://loyaltymaster.com/features/ and
+https://loyaltymaster.com/digital-loyalty-card-for-coffee-shops/. The sendPUSH
+`/design-system-template-page` sampler was retired with the sendPUSH subdomain
+in July 2026 and is historical evidence only. V1.0 previews and UI kits are
+useful references, but they are not the source of truth for component
+behavior. blog.loyaltymaster.com (WordPress + Bricks) uses the same tokens
+through the generated `tokens/bricks-variables.json` export.
 
 The system rejects generic SaaS templates: no sterile blue or purple gradient
 pages, no vague AI-looking panels, no endless same-sized feature-card grids, and
@@ -157,7 +166,8 @@ carry page rhythm; yellow and orange mark action and motion.
 - **Direct Action Yellow** (`#fcb827`, `var(--wr-accent-yellow)`): Primary CTA
   backgrounds, pricing toggle active state, and high-intent conversion moments.
 - **Warm Motion Orange** (`#f37d39`, `var(--wr-accent-orange)`): CTA edges,
-  hover states, active navigation, focus rings, and energetic accents.
+  hover states, active navigation, and energetic accents. Never a focus
+  indicator on its own — see The Ink Focus Ring Rule.
 - **Deep Business Ink** (`#302127`, `var(--wr-ink)`): Primary body text, dark
   sections, and high-contrast structure.
 
@@ -177,6 +187,61 @@ carry page rhythm; yellow and orange mark action and motion.
   and lighter containers.
 - **Panel Gray** (`#f4eff2`, `var(--wr-bg-panel-gray)`): Inputs, toggles, and
   quiet UI surfaces.
+
+### Text And Contrast (WCAG AA)
+
+Added 2026-09-28. Every ratio below is recomputed from
+`tokens/design-tokens.json` by `node scripts/check-contrast.mjs` (WCAG
+relative luminance), which `validate-phase2.mjs` runs. AA needs 4.5:1 for
+normal text and 3:1 for large text (at least 24px, or 18.66px bold) and for
+focus indicators and other non-text UI (1.4.11).
+
+| Token | Value | White | Peach | Use |
+|---|---|---|---|---|
+| `color.ink` | `#302127` | 15.30:1 | 13.74:1 | Headings, body, chip text, focus rings. |
+| `color.text.secondary` | `#72676c` | 5.42:1 | 4.87:1 | Readable secondary text at any size: excerpts, meta (date, reading time), labels, captions, placeholders. At least 4.63:1 on every light band (cyan 4.88, salmon 4.63, panel light 5.13, panel gray 4.77, band yellow 5.14, tag yellow 4.87). Not on `accent.yellow` (3.11:1). |
+| `color.text.muted` | `#979093` | 3.12:1 | 2.80:1 | Large or decorative text only. Passes 3:1 for large text on white only; on peach, cyan, salmon, and panels (2.67–2.95:1) it is decorative. Never for body, meta, or label text. |
+| `color.text.subtle` | `#bfb8bc` | 1.94:1 | — | Decorative only (hairlines, dividers, ornaments). Never for text, including placeholders and hints. |
+| `color.accent.orange` | `#f37d39` | 2.69:1 | 2.42:1 | Fails 1.4.11 as a focus indicator. Optional outer halo only. |
+| `color.feedback.error` | `#d94f3a` | 4.09:1 | — | Icons, borders, large text. Not for error messages. |
+| `color.feedback.errorText` | `#c0412c` | 5.21:1 | 4.67:1 | Error message text (cyan 4.69:1). On salmon (4.45:1) set the message in ink and keep the error colour on the icon. |
+| `color.feedback.info` | `#3a7a94` | 4.78:1 | 4.29:1 | Info text on white only (cyan 4.31:1 fails). |
+| `color.feedback.infoText` | `#2f7390` | 5.28:1 | 4.74:1 | Blue text on any light band (cyan 4.76, salmon 4.51). Also the text-safe stand-in for `color.accent.blue` (Trust Blue, 3.44:1, markers only). |
+
+`color.feedback.warning` (3.00:1) and `color.feedback.success` (3.99:1) also
+fall short of 4.5:1 for small text on white. Keep message copy in ink and use
+them for borders, icons, and fills (as `.wf-security-note` already does).
+
+**The Secondary Text Rule.** Readable secondary copy is
+`color.text.secondary`. `color.text.muted` is for large or decorative text
+only and `color.text.subtle` is decorative only. Note the production drift:
+live loyaltymaster.com already renders its muted text darker — the
+production `globals.css` sets `--wr-text-muted: #6f696d` (5.36:1 on white,
+4.58:1 on salmon) — so the live site's secondary copy passes AA today, while
+this token, the library, and the blog's `lm-color-text-muted` still carry
+`#979093`. Token values were deliberately left unchanged on 2026-09-28;
+aligning `color.text.muted` with production is an owner decision recorded in
+`KNOWN_ISSUES.md`. The tenant/trial form placeholders on loyaltymaster.com
+still use `--wr-text-subtle` (1.94:1) and are listed there too.
+
+**The Ink Chip Rule.** Chips, tags, and category labels use ink text:
+`color.ink` on `color.accent.tagYellow` (13.75:1), or white on ink for the
+dark featured chip (15.30:1). Never grey on yellow — `text.muted` on tag
+yellow is 2.81:1 and on accent yellow 1.79:1. The approved
+`blog-article-index` screenshot shows grey chip text on yellow; that
+treatment is superseded by this rule.
+
+**The Ink Focus Ring Rule.** The keyboard focus indicator is a 3px
+`color.ink` outline with a 3px offset (`outline: 3px solid var(--lm-color-ink);
+outline-offset: 3px`), as blog.loyaltymaster.com already ships. It clears 3:1
+on every light band (13.06:1 or more). On `color.background.dark` the ring is
+white (15.30:1 against ink). `color.accent.orange` may appear only as an
+optional outer halo outside the ink ring, never as the ring itself: orange
+alone is 2.69:1 on white and 2.42:1 on peach. Rules written before
+2026-09-28 that name an orange focus outline (the primary CTA and
+`.wf-btn-secondary` on loyaltymaster.com) describe the live site as it is
+today; new work uses the ink ring, and migrating loyaltymaster.com is an
+approval-gated production change tracked in `KNOWN_ISSUES.md`.
 
 ### Named Rules
 
@@ -226,11 +291,13 @@ restrained shadows.
 - **Scroll reveal:** opacity 0 to 1 plus translateY 24px to 0, staggered by
   order when used.
 - **Reduced motion:** all animations must respect `prefers-reduced-motion`.
-- **Primary CTA:** yellow pill, orange edge/focus, sheen, and small vertical
-  lift. Do not scale the CTA.
+- **Primary CTA:** yellow pill, orange edge, sheen, and small vertical
+  lift; keyboard focus follows The Ink Focus Ring Rule. Do not scale the CTA.
 - **Cards:** base shadow `0 8px 20px rgba(48, 33, 39, 0.06)`, hover shadow
   `0 14px 26px rgba(48, 33, 39, 0.12)`.
-- **Focus ring:** orange outline with visible offset.
+- **Focus ring:** 3px `color.ink` outline with a 3px offset (white on dark
+  bands); orange only as an optional outer halo. See The Ink Focus Ring Rule
+  in section 2 (orange alone fails WCAG 1.4.11).
 
 **The Lift Only When Useful Rule.** Surfaces should stay calm at rest. Use
 stronger shadows only for interaction, forms, pricing emphasis, or conversion
@@ -313,14 +380,23 @@ Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
   the crawlable/accessible anchor text stays the concise page title — never the
   title plus a full paragraph, and never duplicated descriptions across cards.
   One clear focusable link per card; keyboard focus lands on the heading. First
-  used for the "Keep reading" related-pages band on product/article pages.
+  used for the "Keep reading" related-pages band on product/article pages,
+  now the registry component `keep-reading-band`
+  (`specs/components/keep-reading-band.md`, `pages` variant = production
+  `RelatedPages.tsx`); the blog cards (`blog-article-card`,
+  `blog-featured-article`, `blog-topic-card`) use the same pattern.
+- Chips and category tags follow The Ink Chip Rule (section 2): ink text on
+  tag yellow, or white on ink for the featured chip. Never grey on yellow.
 
 ### Inputs And Fields
 
 - Tenant/trial conversion inputs use `16px` radius.
 - Compact/default fields use `12px` radius.
 - Email CTA inputs may use pill radius.
-- Focus should shift toward a brighter background with orange border or ring.
+- Focus shifts toward a brighter background and shows the ink focus ring
+  (The Ink Focus Ring Rule); orange may only add an outer halo.
+- Placeholders and hints use `color.text.secondary`, never
+  `color.text.subtle`. Error messages use `color.feedback.errorText`.
 - Errors, disabled states, and warnings must not rely on color alone.
 - Standing warning/security notes (owner call, 2026-07-13, `.wf-security-note`):
   a 12px-radius panel on `--wf-feedback-warning-bg` with a 6px left border in
@@ -414,6 +490,39 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
   slug-to-photo map is `src/lib/og-photos.ts` — one entry there per new
   page, plus an `OG_CARD_VERSION` bump when the card design changes.
 
+### Blog Posts (blog.loyaltymaster.com)
+
+Content rules for every post, added 2026-09-28 from the owner-approved blog
+review. The blog components (`blog-article-card`, `blog-featured-article`,
+`keep-reading-band` articles variant) render these fields.
+
+- **Date and reading time.** Dates read "13 May 2025": day without a
+  leading zero, three-letter English month, four-digit year (WordPress and
+  Bricks `j M Y`; the library's `formatBlogDate`). The date always travels
+  with the reading time — "13 May 2025 · 14 min read" — on cards, on the
+  featured card, and in the article byline. Mark it up as
+  `<time datetime="2025-05-13">` and set it in `color.text.secondary`.
+- **Excerpts.** Every post gets a hand-written excerpt of 160 characters or
+  fewer: one or two plain sentences saying what the reader will learn. No
+  filler openers ("Welcome to a comprehensive guide..."), no trailing
+  ellipsis, no repeat of the title. WordPress's automatic excerpt is a
+  fallback only. Cards clamp excerpts to two lines, so the first sentence
+  must carry the point.
+- **Covers: one style.** Every cover is 16:9 (the blog serves 1024×576 and
+  768×432 sizes) and photo-led, with **no baked-in text**: no titles,
+  taglines, logos, badges, or stickers in the image. The title is live text
+  beside the cover; text inside the image repeats it, is unreadable at card
+  size, and is invisible to screen readers. Photography follows this
+  section's rules (rounded containers, no gradients, no abstract tech
+  stock). On cards the cover sits next to the linked title, so its alt text
+  may be empty unless the photo shows something the title does not.
+- **Share images.** A post's share image follows The Share Card Rule above:
+  flat peach field, the cover photo in the rounded photo panel, and the
+  Rodger headline set from the post title. The headline lives on the share
+  card, never inside the cover. New and replacement covers may come from the
+  image-generation workflow; many existing covers still carry baked-in text,
+  and replacing them is a content task, not a template change.
+
 ## 7. Iconography
 
 - Use inline outlined SVGs with rounded caps and joins.
@@ -429,15 +538,17 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
 
 ### Do
 
-- Do reuse `/design-system-template-page` as the component reference before
-  creating new website routes.
+- Do reuse the registry components as rolled out on live loyaltymaster.com
+  (for example https://loyaltymaster.com/features/) as the component
+  reference before creating new website routes.
 - Do use the existing `wf-section` band colors to create page rhythm.
 - Do preserve Rodger Bold for large promises and Onest for UI/readability.
 - Do keep CTAs tactile: yellow fill, orange edge/focus, pill shape, and
   restrained lift.
 - Do keep future pages responsive across desktop, tablet, and mobile.
-- Do maintain WCAG AA intent with visible focus, reduced motion support, and
-  color-independent meaning.
+- Do maintain WCAG AA: the ink focus ring, text colours from Text And
+  Contrast (section 2), reduced motion support, and color-independent
+  meaning.
 - Do use Cloudinary images or intentional placeholders where images belong.
 
 ### Don't
@@ -454,6 +565,8 @@ Lato wordmark + pin mark, per-page hero photo, peach field.)
   existing Remy system.
 - Don't rely on color alone for form states, warnings, success, or navigation
   status.
+- Don't set readable text in `color.text.muted` or `color.text.subtle`, don't
+  put grey text on yellow, and don't use orange alone as a focus indicator.
 
 ## 9. System Policies
 
@@ -484,3 +597,8 @@ These are standing engineering decisions for the whole design system:
   comes from `BRAND.md`. See Content Authority in Runbook A.
 - The component inventory lives only in `registry/components.json`; prose
   documents must not state or freeze component counts.
+- blog.loyaltymaster.com (WordPress + Bricks) takes its global variables from
+  `tokens/bricks-variables.json`, generated by the same
+  `node scripts/generate-tokens.mjs` run as the CSS, TypeScript, and Tailwind
+  exports. The blog syncs from that file (an approval-gated step in the blog
+  workspace), never from a hand-maintained copy. See `tokens/README.md`.

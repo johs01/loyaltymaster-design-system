@@ -3,7 +3,7 @@
   "name": "Loyaltymaster Component Registry",
   "version": "0.3.0",
   "phase": "Runbook POC readiness",
-  "description": "Machine-readable registry for the 34 approved LoyaltyMaster components: 20 Wave 1 library components, 13 promoted MagicPath handoff components, and 1 canon-promoted production pattern (strategy-sentence-cards).",
+  "description": "Machine-readable registry for the 39 approved LoyaltyMaster components: 20 Wave 1 library components, 13 promoted MagicPath handoff components, 1 canon-promoted production pattern (strategy-sentence-cards), and 5 canon-promoted blog.loyaltymaster.com components (2026-09-28: blog-article-card, blog-featured-article, blog-topic-card, blog-industry-link-tile, keep-reading-band).",
   "rules": {
     "sourceOfTruth": "Use registry/spec/library/showcase as canonical. /Components is approved evidence and handoff archive only.",
     "doNotImportRawSnapshots": true,
@@ -247,6 +247,128 @@
       "markdownCallSyntax": ":::loyaltymaster-component id=\"billing-toggle-button\"\nprops:\n  # use only registry-approved props\n:::"
     },
     {
+      "id": "blog-article-card",
+      "name": "Blog Article Card",
+      "category": "blog-card",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Image-led blog article card (16:9 cover, category chip, title, excerpt, date and reading time) rendered in the approved 3/2/1 grid. Canon-promoted 2026-09-28 from the blog.loyaltymaster.com redesign published 2026-09-27.",
+      "whenToUse": "Use for lists of blog posts: blog listing, category archives, search results, and the articles variant of keep-reading-band.",
+      "whenNotToUse": "Do not use for loyaltymaster.com product pages (keep-reading-band pages variant), the single featured post (blog-featured-article), topics, or industries.",
+      "screenshotPath": "assets/screenshots/blog-article-card.png",
+      "specPath": "specs/components/blog-article-card.md",
+      "rawSourcePath": "Components/Blog Article Card/lm-blog-card.css",
+      "libraryPath": "library/src/components/BlogArticleCard.tsx",
+      "visualReferencePath": "assets/screenshots/blog-article-card.png",
+      "evidencePath": "Components/Blog Article Card",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"blog-article-card\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Image-led card in the 3/2/1 listing grid (Bricks lm-blog-card + lm-blog-grid)."
+        }
+      ],
+      "slots": [
+        {
+          "name": "articles",
+          "required": true,
+          "description": "Approved articles content/input slot."
+        },
+        {
+          "name": "headingLevel",
+          "required": false,
+          "description": "Approved headingLevel content/input slot."
+        },
+        {
+          "name": "emptyMessage",
+          "required": false,
+          "description": "Approved emptyMessage content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "color.surface.white",
+        "color.ink",
+        "color.text.secondary",
+        "color.accent.tagYellow",
+        "color.surface.panelGray",
+        "fontFamily.display",
+        "fontFamily.body",
+        "dimension.radius.cardPrimary",
+        "dimension.radius.badge",
+        "shadow.cardBase",
+        "shadow.cardHover",
+        "motion.duration.fast",
+        "motion.easing.gentle"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "readingMinutes": {
+                  "type": "number"
+                },
+                "excerpt": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "title",
+                "href",
+                "date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "headingLevel": {
+            "type": "string",
+            "enum": [
+              "h2",
+              "h3"
+            ]
+          },
+          "emptyMessage": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "articles"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
       "id": "blog-article-index",
       "name": "Blog Article Index",
       "category": "index-section",
@@ -361,6 +483,330 @@
             "type": "string"
           }
         },
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "blog-featured-article",
+      "name": "Blog Featured Article",
+      "category": "blog-card",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Featured blog post card for the listing hero with a dark label chip, larger title, excerpt, date and reading time. Canon-promoted 2026-09-28 from the blog.loyaltymaster.com redesign published 2026-09-27.",
+      "whenToUse": "Use once per blog listing page, in the right column of the listing hero.",
+      "whenNotToUse": "Do not use more than once per page, inside article grids, for product promotions, or on loyaltymaster.com product pages.",
+      "screenshotPath": "assets/screenshots/blog-featured-article.png",
+      "specPath": "specs/components/blog-featured-article.md",
+      "rawSourcePath": "Components/Blog Featured Article/lm-blog-feature.css",
+      "libraryPath": "library/src/components/BlogFeaturedArticle.tsx",
+      "visualReferencePath": "assets/screenshots/blog-featured-article.png",
+      "evidencePath": "Components/Blog Featured Article",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"blog-featured-article\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Vertical featured card; horizontal between 768px and 991px (Bricks lm-blog-feature)."
+        }
+      ],
+      "slots": [
+        {
+          "name": "article",
+          "required": true,
+          "description": "Approved article content/input slot."
+        },
+        {
+          "name": "label",
+          "required": false,
+          "description": "Approved label content/input slot."
+        },
+        {
+          "name": "readLabel",
+          "required": false,
+          "description": "Approved readLabel content/input slot."
+        },
+        {
+          "name": "headingLevel",
+          "required": false,
+          "description": "Approved headingLevel content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "color.surface.white",
+        "color.ink",
+        "color.text.secondary",
+        "color.surface.panelGray",
+        "fontFamily.display",
+        "fontFamily.body",
+        "dimension.radius.cardPrimary",
+        "dimension.radius.badge",
+        "shadow.cardHover",
+        "motion.duration.fast",
+        "motion.easing.gentle"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "article": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "readingMinutes": {
+                "type": "number"
+              },
+              "excerpt": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "image": {
+                "type": "object",
+                "properties": {
+                  "src": {
+                    "type": "string"
+                  },
+                  "alt": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src",
+                  "alt"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "title",
+              "href",
+              "date"
+            ],
+            "additionalProperties": false
+          },
+          "label": {
+            "type": "string"
+          },
+          "readLabel": {
+            "type": "string"
+          },
+          "headingLevel": {
+            "type": "string",
+            "enum": [
+              "h2",
+              "h3"
+            ]
+          }
+        },
+        "required": [
+          "article"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "blog-industry-link-tile",
+      "name": "Blog Industry Link Tile",
+      "category": "blog-link-list",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Labelled list of compact industry link tiles with guide-count badges in a 4/3/2/1-column grid. Canon-promoted 2026-09-28 from the blog.loyaltymaster.com redesign published 2026-09-27.",
+      "whenToUse": "Use for the industry shortcut list in the blog browse band, under the topic cards.",
+      "whenNotToUse": "Do not use for the loyaltymaster.com industry index (industry-use-case-card-grid), topics (blog-topic-card), or navigation menus.",
+      "screenshotPath": "assets/screenshots/blog-industry-link-tile.png",
+      "specPath": "specs/components/blog-industry-link-tile.md",
+      "rawSourcePath": "Components/Blog Industry Link Tile/lm-blog-industries.css",
+      "libraryPath": "library/src/components/BlogIndustryLinkTile.tsx",
+      "visualReferencePath": "assets/screenshots/blog-industry-link-tile.png",
+      "evidencePath": "Components/Blog Industry Link Tile",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"blog-industry-link-tile\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "Translucent white tiles on the cyan browse band (Bricks lm-blog-industries)."
+        }
+      ],
+      "slots": [
+        {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "headingLevel",
+          "required": false,
+          "description": "Approved headingLevel content/input slot."
+        },
+        {
+          "name": "industries",
+          "required": true,
+          "description": "Approved industries content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "color.surface.white",
+        "color.ink",
+        "color.background.cyan",
+        "color.accent.orange",
+        "fontFamily.body",
+        "dimension.radius.cardSecondary",
+        "dimension.radius.pill",
+        "motion.duration.fast",
+        "motion.easing.gentle"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "headingLevel": {
+            "type": "string",
+            "enum": [
+              "h2",
+              "h3"
+            ]
+          },
+          "industries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "label",
+                "href"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "industries"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "blog-topic-card",
+      "name": "Blog Topic Card",
+      "category": "blog-card",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "Topic cards (tone square, linked topic name, description, guide count) in a 3/1-column grid for browsing blog topics. Canon-promoted 2026-09-28 from the blog.loyaltymaster.com redesign published 2026-09-27.",
+      "whenToUse": "Use for the blog topic browse band, up to three main topics per row.",
+      "whenNotToUse": "Do not use for industries (blog-industry-link-tile), product features (features-grid), or related pages (keep-reading-band).",
+      "screenshotPath": "assets/screenshots/blog-topic-card.png",
+      "specPath": "specs/components/blog-topic-card.md",
+      "rawSourcePath": "Components/Blog Topic Card/lm-blog-topic-card.css",
+      "libraryPath": "library/src/components/BlogTopicCard.tsx",
+      "visualReferencePath": "assets/screenshots/blog-topic-card.png",
+      "evidencePath": "Components/Blog Topic Card",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"blog-topic-card\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "default",
+          "description": "White topic cards in the 3/1 grid (Bricks lm-blog-topic-card + lm-blog-topics)."
+        }
+      ],
+      "slots": [
+        {
+          "name": "topics",
+          "required": true,
+          "description": "Approved topics content/input slot."
+        },
+        {
+          "name": "headingLevel",
+          "required": false,
+          "description": "Approved headingLevel content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "color.surface.white",
+        "color.ink",
+        "color.text.secondary",
+        "color.accent.orange",
+        "color.accent.blue",
+        "color.accent.yellow",
+        "fontFamily.body",
+        "dimension.radius.cardPrimary",
+        "dimension.radius.brandDot",
+        "shadow.cardBase",
+        "shadow.cardHover",
+        "motion.duration.fast",
+        "motion.easing.gentle"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "number"
+                },
+                "tone": {
+                  "type": "string",
+                  "enum": [
+                    "orange",
+                    "blue",
+                    "yellow"
+                  ]
+                }
+              },
+              "required": [
+                "title",
+                "href"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "headingLevel": {
+            "type": "string",
+            "enum": [
+              "h2",
+              "h3"
+            ]
+          }
+        },
+        "required": [
+          "topics"
+        ],
         "additionalProperties": false
       }
     },
@@ -2743,6 +3189,193 @@
               ],
               "additionalProperties": false
             }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "id": "keep-reading-band",
+      "name": "Keep Reading Band",
+      "category": "content-section",
+      "status": "stable",
+      "clientBoundary": "server",
+      "description": "End-of-page band with 2-3 related links: related site pages as process-style cards (pages, loyaltymaster.com RelatedPages.tsx) or related posts as blog article cards (articles, blog single posts). Registered 2026-09-28; previously prose only in DESIGN_SYSTEM.md.",
+      "whenToUse": "Use once near the end of a product, article, or blog post page, before the final CTA band, with curated related pages or related posts.",
+      "whenNotToUse": "Do not use as navigation, as a generic card grid, with fewer than two links, or after the final CTA.",
+      "screenshotPath": "assets/screenshots/keep-reading-band.png",
+      "specPath": "specs/components/keep-reading-band.md",
+      "rawSourcePath": "Components/Keep Reading Band/RelatedPages.tsx",
+      "libraryPath": "library/src/components/KeepReadingBand.tsx",
+      "visualReferencePath": "assets/screenshots/keep-reading-band.png",
+      "evidencePath": "Components/Keep Reading Band",
+      "markdownCallSyntax": ":::loyaltymaster-component id=\"keep-reading-band\"\nprops:\n  # use only registry-approved props from registry/components.json\n:::",
+      "variants": [
+        {
+          "id": "pages",
+          "description": "Default. loyaltymaster.com related pages: centred head, process-style cards in orange, blue, yellow tones (production RelatedPages.tsx)."
+        },
+        {
+          "id": "articles",
+          "description": "blog.loyaltymaster.com related posts: section head with see-all link over blog-article-card on a panel-light band."
+        }
+      ],
+      "slots": [
+        {
+          "name": "id",
+          "required": false,
+          "description": "Approved id content/input slot."
+        },
+        {
+          "name": "variant",
+          "required": false,
+          "description": "Approved variant content/input slot."
+        },
+        {
+          "name": "eyebrow",
+          "required": false,
+          "description": "Approved eyebrow content/input slot."
+        },
+        {
+          "name": "heading",
+          "required": false,
+          "description": "Approved heading content/input slot."
+        },
+        {
+          "name": "pages",
+          "required": false,
+          "description": "Approved pages content/input slot."
+        },
+        {
+          "name": "articles",
+          "required": false,
+          "description": "Approved articles content/input slot."
+        },
+        {
+          "name": "seeAll",
+          "required": false,
+          "description": "Approved seeAll content/input slot."
+        }
+      ],
+      "tokensUsed": [
+        "color.surface.white",
+        "color.surface.panelLight",
+        "color.background.peach",
+        "color.background.cyan",
+        "color.background.yellow",
+        "color.ink",
+        "color.text.secondary",
+        "color.accent.yellow",
+        "typography.headline",
+        "dimension.radius.cardPrimary",
+        "dimension.spacing.sectionDesktopY",
+        "shadow.cardBase",
+        "shadow.cardHover"
+      ],
+      "props": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "string",
+            "enum": [
+              "pages",
+              "articles"
+            ]
+          },
+          "eyebrow": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title",
+                "href"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "href": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "readingMinutes": {
+                  "type": "number"
+                },
+                "excerpt": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "title",
+                "href",
+                "date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "seeAll": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ],
+            "additionalProperties": false
           }
         },
         "additionalProperties": false

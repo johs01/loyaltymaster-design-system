@@ -15,7 +15,9 @@ const requiredFiles = [
   "tokens/tokens.css",
   "tokens/tokens.d.ts",
   "tokens/tailwind.preset.cjs",
+  "tokens/bricks-variables.json",
   "tokens/README.md",
+  "scripts/check-contrast.mjs",
   "registry/components.json",
   "registry/components.schema.json",
   "registry/README.md",
@@ -2130,9 +2132,15 @@ if (!phase7InteractionResults) {
 if (phase7ProductionTargets.version !== "phase-7f") {
   fail("phase7f-production-targets.json must declare version phase-7f");
 }
-if (!phase7ProductionTargets.metric?.includes("live sendPUSH runtime")) {
-  fail("phase7f-production-targets.json metric must describe live sendPUSH runtime comparison");
+if (!phase7ProductionTargets.metric?.includes("live loyaltymaster.com runtime")) {
+  fail("phase7f-production-targets.json metric must describe live loyaltymaster.com runtime comparison");
 }
+// Wave 1 components whose target is marked liveEquivalent: false have no live
+// loyaltymaster.com section to compare against (retired with sendPUSH); their
+// frozen sendPUSH-era results stay as evidence but are not required again.
+const phase7LiveGatedComponents = requiredComponents.filter(
+  (id) => phase7ProductionTargets.components?.[id]?.liveEquivalent !== false,
+);
 if (!Array.isArray(phase7ProductionTargets.viewports) || phase7ProductionTargets.viewports.length < 2) {
   fail("phase7f-production-targets.json must include desktop and mobile viewports");
 }
@@ -2142,16 +2150,16 @@ if (!phase7ProductionResults) {
   if (phase7ProductionResults.phase !== "7F") {
     fail("Phase 7F production results must declare phase 7F");
   }
-  if (phase7ProductionResults.gatedComponentCount !== requiredComponents.length) {
-    fail(`Phase 7F production fidelity must gate all ${requiredComponents.length} Wave 1 components`);
+  if (phase7ProductionResults.gatedComponentCount < phase7LiveGatedComponents.length) {
+    fail(`Phase 7F production fidelity must gate all ${phase7LiveGatedComponents.length} live-gated Wave 1 components`);
   }
   if (phase7ProductionResults.failedCount !== 0) {
     fail("Phase 7F production fidelity results must have zero failed viewport results");
   }
-  if (!Array.isArray(phase7ProductionResults.results) || phase7ProductionResults.results.length !== requiredComponents.length * phase7ProductionTargets.viewports.length) {
-    fail(`Phase 7F production fidelity results must include desktop and mobile results for all ${requiredComponents.length} Wave 1 components`);
+  if (!Array.isArray(phase7ProductionResults.results) || phase7ProductionResults.results.length < phase7LiveGatedComponents.length * phase7ProductionTargets.viewports.length) {
+    fail(`Phase 7F production fidelity results must include desktop and mobile results for all ${phase7LiveGatedComponents.length} live-gated Wave 1 components`);
   } else {
-    for (const component of registry.components.filter((component) => requiredComponents.includes(component.id))) {
+    for (const component of registry.components.filter((component) => phase7LiveGatedComponents.includes(component.id))) {
       for (const viewport of phase7ProductionTargets.viewports) {
         const result = phase7ProductionResults.results.find((item) => item.id === component.id && item.viewport === viewport.name);
         if (!result) {
@@ -2221,6 +2229,14 @@ for (const requiredText of [
   if (!phase7FReport.includes(requiredText)) {
     fail(`PHASE_7F_PRODUCTION_FIDELITY_REPORT.md missing required report detail: ${requiredText}`);
   }
+}
+
+const contrastResult = spawnSync(process.execPath, ["scripts/check-contrast.mjs"], {
+  cwd: root,
+  stdio: ["ignore", "ignore", "inherit"],
+});
+if (contrastResult.status !== 0) {
+  fail("Documented colour contrast claims no longer hold; run node scripts/check-contrast.mjs");
 }
 
 const runbookReadinessResult = spawnSync(process.execPath, ["scripts/validate-runbook-poc-readiness.mjs"], {

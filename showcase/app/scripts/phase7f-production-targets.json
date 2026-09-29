@@ -1,9 +1,60 @@
 {
   "version": "phase-7f",
-  "metric": "Phase 7F production fidelity capture compares live sendPUSH runtime sections against local library specimens at desktop and mobile viewports.",
+  "metric": "Phase 7F production fidelity capture compares live loyaltymaster.com runtime sections, and the blog.loyaltymaster.com templates for the blog components, against local library specimens at desktop and mobile viewports. Targets were repointed on 2026-09-28 from the retired sendpush.loyaltymaster.com; the artifacts under showcase/app/artifacts/phase-7f/ are the frozen sendPUSH-era gate evidence until a human-approved re-run replaces them.",
+  "repointedAt": "2026-09-28",
+  "productionCheckoutNote": "productionSourcePath values point into local checkouts. As of 2026-09-28 the local Clone Codex checkout sits on branch claude/navbar-wordmark-inset-2026-09-07 (b607521, 2026-09-07) and is behind origin/main (c1ce379, 2026-09-24), which is what loyaltymaster.com serves. Selectors were verified read-only against origin/main with git show; update the checkout before running the gate. Entries whose live source exists only on origin/main keep a frozen sendPUSH productionSourcePath and name the live file in productionSourceRef.",
+  "blogTemplates": [
+    {
+      "template": "Blog home (page 1240)",
+      "url": "https://blog.loyaltymaster.com/",
+      "components": [
+        "blog-featured-article",
+        "blog-article-card",
+        "blog-topic-card",
+        "blog-industry-link-tile"
+      ]
+    },
+    {
+      "template": "News listing (page 12)",
+      "url": "https://blog.loyaltymaster.com/news/",
+      "components": [
+        "blog-featured-article",
+        "blog-article-card"
+      ]
+    },
+    {
+      "template": "Single post (template 2531)",
+      "url": "https://blog.loyaltymaster.com/digital-membership-card-software/",
+      "components": [
+        "keep-reading-band"
+      ]
+    },
+    {
+      "template": "Category archive (template 2533)",
+      "url": "https://blog.loyaltymaster.com/category/customer-loyalty-software-restaurants/",
+      "components": [
+        "blog-article-card"
+      ]
+    },
+    {
+      "template": "Search results (template 2535)",
+      "url": "https://blog.loyaltymaster.com/?s=loyalty&post_type=post",
+      "components": [
+        "blog-article-card"
+      ]
+    }
+  ],
   "viewports": [
-    { "name": "desktop", "width": 1440, "height": 1400 },
-    { "name": "mobile", "width": 390, "height": 1200 }
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1400
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 1200
+    }
   ],
   "defaultThresholds": {
     "maxMeanDelta": 0.18,
@@ -14,126 +65,208 @@
   },
   "components": {
     "billing-toggle-button": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/price-list/",
       "liveSelector": "#pricing .wf-pricing-toggle",
       "localSelector": "[data-capture-target=\"billing-toggle-button\"] .wf-pricing-toggle",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
-      "notes": "Billing toggle is judged against the live pricing cadence control."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/PricingPage.tsx",
+      "notes": "Billing toggle is judged against the live pricing cadence control (PricingPage.tsx:230 #pricing, :249 .wf-pricing-toggle on Clone Codex origin/main c1ce379)."
     },
     "button-email": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/",
-      "liveSelector": "#ftd-hero .wf-email-cta",
+      "liveUrl": "https://loyaltymaster.com/join-email-newsletter-form/",
+      "liveSelector": "#newsletter form.wf-email-cta",
       "localSelector": "[data-capture-target=\"button-email\"] .wf-email-cta",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/MarketingPrimitives.tsx",
-      "notes": "Standalone email CTA uses the same primitive as the home hero."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/LeadForms.tsx",
+      "notes": "Medium confidence. The newsletter form (LeadForms.tsx:59, NewsletterPage.tsx:34 #newsletter) is the only input+button email pill left on Clone Codex origin/main c1ce379; its label and placeholder differ from the specimen. Hero and CTA bands now use StartCta, a link button with no input."
     },
     "comparison-table": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#comparison",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ComparisonSection.tsx",
-      "notes": "Full comparison section is gated, not only the table element."
+      "liveUrl": "https://loyaltymaster.com/loyaltymaster-vs-competitors/",
+      "liveSelector": "#pricing-compared",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/ComparisonTableSection.tsx",
+      "notes": "Full comparison section (eyebrow, h2, intro, wf-compare-table) is gated; the dynamic id resolves to pricing-compared (LoyaltymasterVsCompetitorsPage.tsx:47 on Clone Codex origin/main c1ce379)."
     },
     "cta-trial-full-form": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#tenant-trial-cta",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
-      "notes": "Trial form remains part of the production-fidelity map even though it was not in the user-named mismatch list."
+      "liveUrl": "https://loyaltymaster.com/go/apply/",
+      "liveSelector": "#apply",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/campaign/CampaignApplyPage.tsx",
+      "notes": "Low-medium confidence. The only live trial form on Clone Codex origin/main c1ce379 (CampaignApplyPage.tsx:21 #apply, LeadForms.tsx #apply-form). /go/ is a noindex campaign route with its own header and footer; the $1 funnel removed the form from /get-your-own-customized-digital-reward-card/."
     },
     "cta-with-button-email": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#final-cta",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/CtaSections.tsx",
-      "notes": "Final dark CTA section is gated as a full section."
+      "liveUrl": "https://loyaltymaster.com/features/",
+      "liveSelector": "#start",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/DesignSystemProductPage.tsx",
+      "notes": "Medium confidence. The final dark CTA section shell matches (DesignSystemProductPage.tsx:426-427 wf-final-cta #start on Clone Codex origin/main c1ce379), but its action is the StartCta link button, not the email pill; expect drift until the specimen or the gate decision is updated."
     },
     "faq-accordion": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/features/",
       "liveSelector": "#faq",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FaqSection.tsx",
-      "notes": "FAQ rows are judged in their default rendered state."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/FaqSection.tsx",
+      "notes": "FAQ rows are judged in their default rendered state; the first item of the first group is open by default."
     },
     "feature-section-2-column-bullets-image": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#use-case-2",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/UseCaseSection.tsx",
-      "notes": "Right-column image frame hover and section geometry are part of the target."
+      "liveUrl": "https://loyaltymaster.com/features/",
+      "liveSelector": "#showcase-1",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/DesignSystemProductPage.tsx",
+      "notes": "Row 0 of the product-page showcase (salmon band, checklist + CTA, square image right; DesignSystemProductPage.tsx:258-273 on Clone Codex origin/main c1ce379)."
     },
     "feature-section-2-column-image": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/",
       "liveSelector": "#problem",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProblemSection.tsx",
-      "notes": "Problem split section is the production equivalent for this registry component."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/ProblemSection.tsx",
+      "notes": "Homepage cyan problem split with wf-number-list (ProblemSection.tsx:22). Not the /features/ #problem, which is the strategy-sentence-cards pattern."
     },
     "features-grid": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#features",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
-      "notes": "Capabilities grid is gated as a full section."
+      "liveUrl": "https://loyaltymaster.com/features/",
+      "liveSelector": "#intro",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/DesignSystemProductPage.tsx",
+      "notes": "Medium confidence. Capabilities intro grid (DesignSystemProductPage.tsx:199); four items render 2x2 while the specimen is 3-up."
     },
     "footer": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/features/",
       "liveSelector": "#site-footer",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Footer.tsx",
-      "notes": "Footer uses the production Loyaltymaster wordmark structure."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/Footer.tsx",
+      "notes": "Site footer (Footer.tsx:127) on every page except /go/; an Industries column was added 2026-09-24."
     },
     "geo-fence-use-case": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/",
-      "liveSelector": "#ftd-strategy-2",
+      "liveUrl": "https://loyaltymaster.com/geo-fenced-push-notifications/",
+      "liveSelector": "#strategy-2",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
-      "notes": "Home page geo-fence strategy section is authoritative."
+      "productionSourceRef": "Clone Codex origin/main c1ce379: src/components/GeoFencedPushNotificationsPage.tsx:94-105",
+      "notes": "The live page is a word-for-word port of the sendPUSH home page; #strategy-2 is the former #ftd-strategy-2 geo-fencing band (ftd-points renamed wf-points). productionSourcePath stays on the frozen sendPUSH original because the live source exists only on origin/main (see productionSourceRef)."
     },
     "hero-main-section": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/",
-      "liveSelector": "#ftd-hero",
+      "liveUrl": "https://loyaltymaster.com/geo-fenced-push-notifications/",
+      "liveSelector": "#hero",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/site-pages/foot-traffic-on-demand/FootTrafficOnDemandPage.tsx",
-      "notes": "Home page hero is authoritative for this phase."
+      "productionSourceRef": "Clone Codex origin/main c1ce379: src/components/GeoFencedPushNotificationsPage.tsx:58-72",
+      "notes": "Structural port of the sendPUSH #ftd-hero (eyebrow, h1, mobile media, checklist); the CTA is now the StartCta button, not the email pill. productionSourcePath stays on the frozen sendPUSH original because the live source exists only on origin/main (see productionSourceRef). Alternative: homepage #hero (HeroContent.tsx), default copy without utm parameters."
     },
     "image-grid": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#logo-grid",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/LogoGrid.tsx",
-      "notes": "Partner logo grid is the approved image-grid interpretation."
+      "liveUrl": "https://loyaltymaster.com/",
+      "liveSelector": "#integrations",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/IntegrationStrip.tsx",
+      "notes": "Integration logo grid (IntegrationStrip.tsx:18,23); also on /features/ and /geo-fenced-push-notifications/."
     },
     "image-strip": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/",
-      "liveSelector": ".wf-awards-strip",
+      "liveUrl": "https://loyaltymaster.com/",
+      "liveSelector": "(no live equivalent)",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/AwardsStrip.tsx",
-      "notes": "Awards strip from the home page is authoritative."
+      "liveEquivalent": false,
+      "notes": "No live equivalent: the awards strip (.wf-awards-strip) is not rendered anywhere on Clone Codex origin/main c1ce379 (OfferStrip removed from the homepage). Skipped by the capture script (liveEquivalent: false); productionSourcePath is the frozen sendPUSH original. Closest live section, for reference only: https://loyaltymaster.com/price-list/ #payments .wf-payment-grid (PaymentLogoGrid.tsx)."
     },
     "navbar-glassmorphism": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/features/",
       "liveSelector": "header.wf-header",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Nav.tsx",
-      "notes": "Navigation shell and Loyaltymaster wordmark are gated."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/Header.tsx",
+      "notes": "Navigation shell and Loyaltymaster wordmark (Header.tsx:880); the nav gained an Industries menu 2026-09-24."
     },
     "pricing-section": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/price-list/",
       "liveSelector": "#pricing",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/PricingSection.tsx",
-      "notes": "Full pricing section is gated, including aligned buttons."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/PricingPage.tsx",
+      "notes": "Full pricing section. South African visitors also see a ZAR/USD switch, and the yearly grid is hidden by default."
     },
     "process-steps": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#process",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/ProcessSection.tsx",
-      "notes": "Process cards and bottom CTA are gated as one section."
+      "liveUrl": "https://loyaltymaster.com/digital-loyalty-card-for-coffee-shops/",
+      "liveSelector": "#how-it-works",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/DesignSystemProductPage.tsx",
+      "notes": "Three steps in the 3-up wf-process-grid with intro and bottom CTA (DesignSystemProductPage.tsx:356-387). The homepage #how-it-works changed to an image split on Clone Codex origin/main c1ce379."
     },
     "stats-card-strip": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
+      "liveUrl": "https://loyaltymaster.com/",
       "liveSelector": "#stats",
-      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/StatsSection.tsx",
-      "notes": "Stats card strip is gated against the live four-card row."
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/StatsBand.tsx",
+      "notes": "Four-card stats row (StatsBand.tsx:7-8)."
     },
     "testimonial-single": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#testimonial-2",
+      "liveUrl": "https://loyaltymaster.com/",
+      "liveSelector": "(no live equivalent)",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/TestimonialSection.tsx",
-      "notes": "Dark proof section with email CTA is authoritative."
+      "liveEquivalent": false,
+      "notes": "No live equivalent: there is no testimonial or quote markup on Clone Codex origin/main c1ce379. Skipped by the capture script (liveEquivalent: false); productionSourcePath is the frozen sendPUSH original. Closest shell, for reference only: /geo-fenced-push-notifications/ #strategies (dark band)."
     },
     "testimonials-grid": {
-      "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
-      "liveSelector": "#capabilities-testimonials",
+      "liveUrl": "https://loyaltymaster.com/",
+      "liveSelector": "(no live equivalent)",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/FeaturesSection.tsx",
-      "notes": "Card proof grid is gated against the live capabilities testimonials section."
+      "liveEquivalent": false,
+      "notes": "No live equivalent: the capabilities testimonials grid is not rendered on Clone Codex origin/main c1ce379 (wf-cap-testimonials survives only as a CSS variable). Skipped by the capture script (liveEquivalent: false); productionSourcePath is the frozen sendPUSH original."
+    },
+    "blog-article-card": {
+      "liveUrl": "https://blog.loyaltymaster.com/",
+      "liveSelector": ".lm-blog-card",
+      "localSelector": "[data-capture-target=\"blog-article-card\"] .lm-blog-card",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+      "additionalTargets": [
+        {
+          "key": "news",
+          "liveUrl": "https://blog.loyaltymaster.com/news/",
+          "liveSelector": ".lm-blog-card",
+          "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+          "notes": "/news/ (page 12) renders the same listing body."
+        },
+        {
+          "key": "category-archive",
+          "liveUrl": "https://blog.loyaltymaster.com/category/customer-loyalty-software-restaurants/",
+          "liveSelector": ".lm-blog-card",
+          "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2533-archive.json",
+          "notes": "Category archive template (2533)."
+        },
+        {
+          "key": "search",
+          "liveUrl": "https://blog.loyaltymaster.com/?s=loyalty&post_type=post",
+          "liveSelector": ".lm-blog-card",
+          "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2535-search.json",
+          "notes": "Search results template (2535)."
+        }
+      ],
+      "notes": "First card of the Latest Articles loop on the blog home. Class CSS: WORDPRESS implementation scripts/redesign/build_classes.py (lm-blog-card, lm-blog-grid, lm-blog-chip, lm-blog-meta)."
+    },
+    "blog-featured-article": {
+      "liveUrl": "https://blog.loyaltymaster.com/",
+      "liveSelector": ".lm-blog-feature",
+      "localSelector": "[data-capture-target=\"blog-featured-article\"] .lm-blog-feature",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+      "additionalTargets": [
+        {
+          "key": "news",
+          "liveUrl": "https://blog.loyaltymaster.com/news/",
+          "liveSelector": ".lm-blog-feature",
+          "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+          "notes": "/news/ (page 12) renders the same hero."
+        }
+      ],
+      "notes": "Featured guide card in the blog listing hero (lm-blog-feature)."
+    },
+    "blog-topic-card": {
+      "liveUrl": "https://blog.loyaltymaster.com/",
+      "liveSelector": ".lm-blog-topics",
+      "localSelector": "[data-capture-target=\"blog-topic-card\"] .lm-blog-topics",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+      "notes": "Topic card grid in the Browse band (lm-blog-topic-card + lm-blog-topics)."
+    },
+    "blog-industry-link-tile": {
+      "liveUrl": "https://blog.loyaltymaster.com/",
+      "liveSelector": ".lm-blog-industries",
+      "localSelector": "[data-capture-target=\"blog-industry-link-tile\"] .lm-blog-industries",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2544-home.json",
+      "notes": "Industry tile list in the Browse band (lm-blog-industries)."
+    },
+    "keep-reading-band": {
+      "liveUrl": "https://loyaltymaster.com/features/",
+      "liveSelector": "#related",
+      "localSelector": "[data-capture-target=\"keep-reading-band\"] .lm-keep-reading--pages",
+      "productionSourcePath": "/Users/johs777/LOYALTYMASTER/Loyaltymaster Clone Codex/src/components/RelatedPages.tsx",
+      "additionalTargets": [
+        {
+          "key": "articles-single-post",
+          "liveUrl": "https://blog.loyaltymaster.com/digital-membership-card-software/",
+          "liveSelector": "section:has(#lm-blog-keep-title)",
+          "localSelector": "[data-capture-target=\"keep-reading-band\"] .lm-keep-reading--articles",
+          "productionSourcePath": "/Users/johs777/LOYALTYMASTER/WORDPRESS/implementation/release/redesign/drafts/2531-single.json",
+          "notes": "articles variant on the blog single-post template (2531); the section is identified by its h2 #lm-blog-keep-title."
+        }
+      ],
+      "notes": "pages variant: production RelatedPages.tsx; /features/ has a curated entry in src/content/related-pages.ts."
     }
   }
 }

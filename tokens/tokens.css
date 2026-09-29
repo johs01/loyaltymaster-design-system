@@ -1,12 +1,15 @@
 /*
- * Loyaltymaster/sendPUSH Phase 2 generated token output.
+ * Loyaltymaster Phase 2 generated token output.
  * Source of truth: tokens/design-tokens.json
  */
 
 :root {
   --lm-color-ink: #302127;
+  --lm-color-text-secondary: #72676c;
   --lm-color-text-muted: #979093;
   --lm-color-text-subtle: #bfb8bc;
+  --lm-color-line: rgba(48, 33, 39, 0.1);
+  --lm-color-line-strong: rgba(48, 33, 39, 0.18);
   --lm-color-surface-white: #ffffff;
   --lm-color-surface-panel-light: #faf8f9;
   --lm-color-surface-panel-gray: #f4eff2;
@@ -23,9 +26,11 @@
   --lm-color-accent-blue: #4c93af;
   --lm-color-accent-tag-yellow: #fff3c4;
   --lm-color-feedback-error: #d94f3a;
+  --lm-color-feedback-error-text: #c0412c;
   --lm-color-feedback-warning: #c48a12;
   --lm-color-feedback-success: #2e8e7a;
   --lm-color-feedback-info: #3a7a94;
+  --lm-color-feedback-info-text: #2f7390;
 
   --lm-font-display: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
   --lm-font-stat: "Rodger", "Rodger Regular", Arial, sans-serif;

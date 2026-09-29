@@ -1,0 +1,254 @@
+[
+  {
+    "name": "lm-color-ink",
+    "value": "#302127"
+  },
+  {
+    "name": "lm-color-text-secondary",
+    "value": "#72676c"
+  },
+  {
+    "name": "lm-color-text-muted",
+    "value": "#979093"
+  },
+  {
+    "name": "lm-color-text-subtle",
+    "value": "#bfb8bc"
+  },
+  {
+    "name": "lm-color-line",
+    "value": "rgba(48, 33, 39, 0.1)"
+  },
+  {
+    "name": "lm-color-line-strong",
+    "value": "rgba(48, 33, 39, 0.18)"
+  },
+  {
+    "name": "lm-color-surface-white",
+    "value": "#ffffff"
+  },
+  {
+    "name": "lm-color-surface-panel-light",
+    "value": "#faf8f9"
+  },
+  {
+    "name": "lm-color-surface-panel-gray",
+    "value": "#f4eff2"
+  },
+  {
+    "name": "lm-color-background-peach",
+    "value": "#fef0e9"
+  },
+  {
+    "name": "lm-color-background-cyan",
+    "value": "#eaf5f8"
+  },
+  {
+    "name": "lm-color-background-salmon",
+    "value": "#fde9e2"
+  },
+  {
+    "name": "lm-color-background-dark",
+    "value": "#302127"
+  },
+  {
+    "name": "lm-color-background-yellow",
+    "value": "#fef9e6"
+  },
+  {
+    "name": "lm-color-dark-warm",
+    "value": "#1A1519"
+  },
+  {
+    "name": "lm-color-dark-deep",
+    "value": "#141015"
+  },
+  {
+    "name": "lm-color-accent-yellow",
+    "value": "#fcb827"
+  },
+  {
+    "name": "lm-color-accent-yellow-soft",
+    "value": "#fdd564"
+  },
+  {
+    "name": "lm-color-accent-orange",
+    "value": "#f37d39"
+  },
+  {
+    "name": "lm-color-accent-blue",
+    "value": "#4c93af"
+  },
+  {
+    "name": "lm-color-accent-tag-yellow",
+    "value": "#fff3c4"
+  },
+  {
+    "name": "lm-color-feedback-error",
+    "value": "#d94f3a"
+  },
+  {
+    "name": "lm-color-feedback-error-text",
+    "value": "#c0412c"
+  },
+  {
+    "name": "lm-color-feedback-warning",
+    "value": "#c48a12"
+  },
+  {
+    "name": "lm-color-feedback-success",
+    "value": "#2e8e7a"
+  },
+  {
+    "name": "lm-color-feedback-info",
+    "value": "#3a7a94"
+  },
+  {
+    "name": "lm-color-feedback-info-text",
+    "value": "#2f7390"
+  },
+  {
+    "name": "lm-font-display",
+    "value": "\"Rodger Bold\", \"Rodger Bold Placeholder\", Arial, sans-serif"
+  },
+  {
+    "name": "lm-font-stat",
+    "value": "\"Rodger\", \"Rodger Regular\", Arial, sans-serif"
+  },
+  {
+    "name": "lm-font-body",
+    "value": "\"Onest\", \"Onest Placeholder\", sans-serif"
+  },
+  {
+    "name": "lm-font-wordmark",
+    "value": "\"Lato\", \"Lato Fallback\", sans-serif"
+  },
+  {
+    "name": "lm-radius-pill",
+    "value": "999px"
+  },
+  {
+    "name": "lm-radius-card-primary",
+    "value": "20px"
+  },
+  {
+    "name": "lm-radius-card-secondary",
+    "value": "16px"
+  },
+  {
+    "name": "lm-radius-input-tenant",
+    "value": "16px"
+  },
+  {
+    "name": "lm-radius-input-compact",
+    "value": "12px"
+  },
+  {
+    "name": "lm-radius-badge",
+    "value": "8px"
+  },
+  {
+    "name": "lm-radius-brand-dot",
+    "value": "7px"
+  },
+  {
+    "name": "lm-radius-check-dot",
+    "value": "6px"
+  },
+  {
+    "name": "lm-spacing-xs",
+    "value": "8px"
+  },
+  {
+    "name": "lm-spacing-sm",
+    "value": "12px"
+  },
+  {
+    "name": "lm-spacing-md",
+    "value": "18px"
+  },
+  {
+    "name": "lm-spacing-lg",
+    "value": "24px"
+  },
+  {
+    "name": "lm-spacing-xl",
+    "value": "48px"
+  },
+  {
+    "name": "lm-spacing-section-mobile-y",
+    "value": "56px"
+  },
+  {
+    "name": "lm-spacing-section-tablet-y",
+    "value": "72px"
+  },
+  {
+    "name": "lm-spacing-section-desktop-y",
+    "value": "84px"
+  },
+  {
+    "name": "lm-shadow-card-base",
+    "value": "0 8px 20px rgba(48, 33, 39, 0.06)"
+  },
+  {
+    "name": "lm-shadow-card-hover",
+    "value": "0 14px 26px rgba(48, 33, 39, 0.12)"
+  },
+  {
+    "name": "lm-shadow-badge",
+    "value": "0 7px 0 0 rgba(48, 33, 39, 0.82)"
+  },
+  {
+    "name": "lm-shadow-form-shell",
+    "value": "0 12px 24px rgba(48, 33, 39, 0.1)"
+  },
+  {
+    "name": "lm-motion-duration-fast",
+    "value": "220ms"
+  },
+  {
+    "name": "lm-motion-duration-base",
+    "value": "280ms"
+  },
+  {
+    "name": "lm-motion-duration-reveal",
+    "value": "560ms"
+  },
+  {
+    "name": "lm-motion-easing-gentle",
+    "value": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+  },
+  {
+    "name": "lm-motion-easing-standard",
+    "value": "cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  {
+    "name": "lm-motion-easing-reveal",
+    "value": "cubic-bezier(0.22, 1, 0.36, 1)"
+  },
+  {
+    "name": "lm-container-main",
+    "value": "1280px"
+  },
+  {
+    "name": "lm-container-focus",
+    "value": "840px"
+  },
+  {
+    "name": "lm-container-cta",
+    "value": "640px"
+  },
+  {
+    "name": "lm-container-padding-desktop",
+    "value": "48px"
+  },
+  {
+    "name": "lm-container-padding-tablet",
+    "value": "32px"
+  },
+  {
+    "name": "lm-container-padding-mobile",
+    "value": "20px"
+  }
+]
