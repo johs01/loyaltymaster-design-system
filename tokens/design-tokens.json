@@ -214,8 +214,8 @@
       }
     },
     "wordmark": {
-      "$value": ["Lato", "sans-serif"],
-      "$description": "Live text wordmark stack only.",
+      "$value": ["Lato", "Lato Fallback", "sans-serif"],
+      "$description": "Live text wordmark stack only. Lato 900 and the metric-matched Lato Fallback are loaded by tokens/fonts.css.",
       "$extensions": {
         "cssVariable": "--lm-font-wordmark"
       }

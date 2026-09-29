@@ -73,7 +73,7 @@
       "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
       "liveSelector": "#site-footer",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Footer.tsx",
-      "notes": "Footer uses the production sendPUSH | Loyaltymaster wordmark structure."
+      "notes": "Footer uses the production Loyaltymaster wordmark structure."
     },
     "geo-fence-use-case": {
       "liveUrl": "https://sendpush.loyaltymaster.com/",
@@ -103,7 +103,7 @@
       "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",
       "liveSelector": "header.wf-header",
       "productionSourcePath": "/Users/johs777/LOYALTYMASTER/sendPUSH-PRODUCTION/src/components/Nav.tsx",
-      "notes": "Navigation shell and sendPUSH | Loyaltymaster wordmark are gated."
+      "notes": "Navigation shell and Loyaltymaster wordmark are gated."
     },
     "pricing-section": {
       "liveUrl": "https://sendpush.loyaltymaster.com/design-system-template-page",

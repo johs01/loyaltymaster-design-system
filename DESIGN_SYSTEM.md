@@ -194,7 +194,9 @@ before inventing new section colors.
 - **Stats:** Rodger Regular is approved for large stat numerals when the lighter
   numeral look is needed.
 - **Body:** Onest with Onest Placeholder fallback.
-- **Brand Wordmark:** Lato for the live text logo.
+- **Brand Wordmark:** Lato 900 for the live text logo "Loyaltymaster" (`.brand-logo`,
+  -0.035em tracking, line-height 0.9). `tokens/fonts.css` loads the same Lato
+  files as loyaltymaster.com; see the navbar spec for sizes.
 
 Rodger Bold gives the site a distinctive, friendly commercial voice. Onest keeps
 the page readable and practical for business owners scanning value, proof, and
@@ -334,7 +336,7 @@ Reference: `.wf-email-cta-slot` + `@container email-cta` in the production
 ### Navigation
 
 Navigation is part of the shell, not the page body. It uses the live
-`sendPUSH | Loyaltymaster` wordmark, Onest links, active orange states, a
+`Loyaltymaster` wordmark, Onest links, active orange states, a
 responsive mobile panel, a theme toggle, and accessible skip-link behavior.
 New source-to-page route bodies should not add their own nav, header, or footer
 unless explicitly requested.

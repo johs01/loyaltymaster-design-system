@@ -7,7 +7,8 @@ assets from here instead of from archived folders or the production replica.
 ## Folders
 
 - `logos/`: sendPUSH and Loyaltymaster logo assets.
-- `fonts/`: bundled Rodger font files and local Onest files used by
+- `fonts/`: bundled Rodger font files, local Onest files, and `lato/` (Lato 900,
+  byte-identical to loyaltymaster.com, SIL OFL 1.1) used by
   `tokens/fonts.css`.
 - `media/`: recovered local page media used by the showcase and visual gates.
 - `awards/`: recovered local awards SVG assets used by `image-strip`.
