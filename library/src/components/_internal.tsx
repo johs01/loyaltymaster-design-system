@@ -79,8 +79,6 @@ export function Card({
 export function BrandWordmark({ className }: { className?: string }) {
   return (
     <span className={cn("brand-logo", className)} aria-hidden="true">
-      <span className="brand-logo__send">sendPUSH</span>
-      <span className="brand-logo__divider">|</span>
       <span className="brand-logo__loyalty">Loyaltymaster</span>
     </span>
   );

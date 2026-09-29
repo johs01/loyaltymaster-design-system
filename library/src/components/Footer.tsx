@@ -58,7 +58,7 @@ export interface FooterProps {
 }
 
 export function Footer({
-  brandLabel = "sendPUSH | Loyaltymaster",
+  brandLabel = "Loyaltymaster",
   brandHref = "/",
   body = "sendPUSH | Loyaltymaster helps B2B teams run reminders, offers, and follow-ups from one place.",
   columns = defaultColumns,

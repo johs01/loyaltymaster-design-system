@@ -30,7 +30,7 @@
   --lm-font-display: "Rodger Bold", "Rodger Bold Placeholder", Arial, sans-serif;
   --lm-font-stat: "Rodger", "Rodger Regular", Arial, sans-serif;
   --lm-font-body: "Onest", "Onest Placeholder", sans-serif;
-  --lm-font-wordmark: "Lato", sans-serif;
+  --lm-font-wordmark: "Lato", "Lato Fallback", sans-serif;
 
   --lm-radius-pill: 999px;
   --lm-radius-card-primary: 20px;
