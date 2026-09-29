@@ -40,7 +40,7 @@ module.exports = {
       fontFamily: {
         rodger: ["Rodger Bold", "Rodger Bold Placeholder", "Arial", "sans-serif"],
         onest: ["Onest", "Onest Placeholder", "sans-serif"],
-        wordmark: ["Lato", "sans-serif"],
+        wordmark: ["Lato", "Lato Fallback", "sans-serif"],
       },
       borderRadius: {
         "lm-pill": "var(--lm-radius-pill)",

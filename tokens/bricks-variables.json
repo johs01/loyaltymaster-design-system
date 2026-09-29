@@ -121,7 +121,7 @@
   },
   {
     "name": "lm-font-wordmark",
-    "value": "\"Lato\", sans-serif"
+    "value": "\"Lato\", \"Lato Fallback\", sans-serif"
   },
   {
     "name": "lm-radius-pill",

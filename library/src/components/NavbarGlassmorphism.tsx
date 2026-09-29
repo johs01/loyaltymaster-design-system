@@ -27,7 +27,7 @@ export function NavbarGlassmorphism({
   links = defaultLinks,
   action = { label: "Start Free", href: "/trial" },
   brandHref = "/",
-  brandLabel = "sendPUSH | Loyaltymaster",
+  brandLabel = "Loyaltymaster",
   showBackdrop = true,
 }: NavbarGlassmorphismProps) {
   const [isOpen, setIsOpen] = useState(false);

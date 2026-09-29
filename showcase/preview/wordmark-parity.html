@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wordmark parity</title>
+<!-- Wordmark exactly as the library renders it (BrandWordmark inside NavbarGlassmorphism
+     and Footer), for scripts/check-wordmark-parity.mjs. Add ?pixel to strip every box
+     around the wordmark so screenshots can be compared pixel for pixel. -->
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/tokens.css">
+<link rel="stylesheet" href="../../library/src/styles.css">
+<script>if (location.search.includes("pixel")) document.documentElement.classList.add("pixel");</script>
+<style>
+  body { margin: 0; background: #fff; }
+  /* ?pixel: drop every box around the wordmark (inheritance still flows through
+     display: contents) and pin the two wordmarks at the same page coordinates. */
+  .pixel body *:not(.wf-brand, .brand-logo, .brand-logo__loyalty, script) { display: contents !important; }
+  .pixel .wf-brand { position: absolute !important; left: 40px; top: 40px; margin: 0 !important; padding: 0 !important; }
+  .pixel footer .wf-brand { top: 140px; }
+  .pixel *, .pixel *::before, .pixel *::after { animation: none !important; transition: none !important; }
+  .pixel *::before, .pixel *::after { content: none !important; } /* nav glass overlays */
+</style>
+</head>
+<body>
+<header class="lm-ds wf-header">
+  <div class="wf-nav-shell">
+    <nav class="wf-nav-content" aria-label="Main navigation">
+      <a class="wf-brand" href="/" aria-label="Loyaltymaster home"><span class="brand-logo" aria-hidden="true"><span class="brand-logo__loyalty">Loyaltymaster</span></span></a>
+      <div class="wf-nav-links"><a href="/features/"><span>Features</span></a><a href="/price-list/"><span>Pricing</span></a><a href="/contact-us/"><span>Contact Us</span></a></div>
+      <button class="wf-mobile-menu-toggle" type="button" aria-expanded="false" aria-label="Open menu"></button>
+    </nav>
+  </div>
+</header>
+<footer id="site-footer" class="lm-ds wf-site-footer wf-bg-white">
+  <div class="wr-container--main"><div class="wf-footer-shell"><div class="wf-footer-grid"><div class="wf-footer-brand">
+    <div class="wf-footer-brand-mark"><a class="wf-brand" href="/" aria-label="Loyaltymaster home"><span class="brand-logo" aria-hidden="true"><span class="brand-logo__loyalty">Loyaltymaster</span></span></a></div>
+    <p class="wf-footer-copy">Digital loyalty cards for Apple Wallet and Google Wallet.</p>
+  </div></div></div></div>
+</footer>
+<pre id="out" hidden></pre>
+<script>
+  const PROPS = ["font-family", "font-size", "font-weight", "letter-spacing", "line-height", "color", "padding-left", "-webkit-font-smoothing", "font-kerning", "font-feature-settings", "font-variant-ligatures", "text-rendering", "font-synthesis", "text-transform", "font-stretch", "font-style", "word-spacing"];
+  if (document.documentElement.classList.contains("pixel")) {
+    document.querySelectorAll(".wf-nav-links, .wf-mobile-menu-toggle, .wf-footer-copy, #out").forEach((el) => el.remove());
+  }
+  document.fonts.ready.then(() => {
+    if (!document.getElementById("out")) return;
+    const out = { vw: innerWidth, lato900: document.fonts.check("900 20px Lato") };
+    const pick = (sel, key) => {
+      const el = document.querySelector(sel), cs = getComputedStyle(el), r = el.getBoundingClientRect();
+      out[key] = { ...Object.fromEntries(PROPS.map((p) => [p, cs.getPropertyValue(p)])), x: +r.x.toFixed(3), y: +r.y.toFixed(3), w: +r.width.toFixed(3), h: +r.height.toFixed(3) };
+    };
+    pick(".wf-nav-content > .wf-brand", "navBrand"); pick(".wf-nav-content .brand-logo", "navLogo"); pick(".wf-nav-content .brand-logo__loyalty", "navText");
+    pick(".wf-footer-brand .wf-brand", "footBrand"); pick(".wf-footer-brand .brand-logo", "footLogo"); pick(".wf-footer-brand .brand-logo__loyalty", "footText");
+    document.getElementById("out").textContent = JSON.stringify(out);
+  });
+</script>
+</body>
+</html>

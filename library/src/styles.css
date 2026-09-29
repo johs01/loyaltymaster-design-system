@@ -1936,14 +1936,16 @@
   transform: none;
 }
 
-/* Single source of the wordmark size at every viewport. Never override it per
-   nav container: a drawer head that repeats the wordmark sits outside
-   .wf-nav-content, so a container-scoped override misses it and the wordmark
-   appears to shrink when the menu opens (approved 2026-09-18, marketing site
-   #153). */
+/* Wordmark: a copy of the live loyaltymaster.com rules (checked 2026-09-29).
+   The size is set on .brand-logo itself, never per nav container: a drawer
+   head that repeats the wordmark sits outside .wf-nav-content, so a
+   container-scoped override misses it and the wordmark appears to shrink when
+   the menu opens (approved 2026-09-18, marketing site #153). The mobile size
+   sits in the max-width 799.98px block below .lm-ds .wf-brand. */
 .lm-ds .brand-logo {
   --logo-size: clamp(18.48px, 2.112vw, 30.888px);
   display: inline-flex;
+  flex: 0 auto;
   align-items: center;
   max-width: 100%;
   color: inherit;
@@ -1952,23 +1954,14 @@
   line-height: 0.9;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.lm-ds .brand-logo__send {
-  font-weight: 900;
-  letter-spacing: -0.035em;
-}
-
-.lm-ds .brand-logo__divider {
-  margin: 0 0.26em;
-  font-size: 0.98em;
-  font-weight: 400;
+  /* The live site sets these on <html>; scoped here so only the wordmark changes. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .lm-ds .brand-logo__loyalty {
-  font-size: 0.99em;
-  font-weight: 400;
-  letter-spacing: -0.041em;
+  font-weight: 900;
+  letter-spacing: -0.035em;
 }
 
 .lm-ds .wf-feature-grid,
@@ -3085,15 +3078,28 @@ html:has(.lm-ds.wf-header, .lm-ds .wf-header) {
 
 .lm-ds .wf-brand {
   display: inline-flex;
+  flex: 0 auto;
   align-items: center;
+  gap: 10px;
+  min-width: 0;
   color: var(--wr-ink);
+  font-weight: 700;
+  letter-spacing: -0.2px;
   text-decoration: none;
 }
 
-/* Desktop-only wordmark inset inside the nav pill (approved 2026-09-07). */
-@media (min-width: 760.02px) {
+/* Wordmark inset inside the nav pill: 18px, 14px below 800px (live site). */
+.lm-ds .wf-nav-content > .wf-brand {
+  padding-left: 18px;
+}
+
+@media (max-width: 799.98px) {
+  .lm-ds .brand-logo {
+    --logo-size: 22.44px;
+  }
+
   .lm-ds .wf-nav-content > .wf-brand {
-    padding-left: 18px;
+    padding-left: 14px;
   }
 }
 

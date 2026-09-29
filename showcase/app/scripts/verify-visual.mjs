@@ -115,6 +115,7 @@ async function waitForRuntimeParity(page) {
       ['700 16px "Onest"', "Loyaltymaster"],
       ['800 16px "Onest"', "Loyaltymaster"],
       ['900 16px "Onest"', "Loyaltymaster"],
+      ['900 30px "Lato"', "Loyaltymaster"],
     ];
 
     await Promise.all(requiredLoads.map(([descriptor, text]) => document.fonts.load(descriptor, text)));
@@ -134,6 +135,7 @@ async function waitForRuntimeParity(page) {
       { family: "Onest", descriptor: '400 16px "Onest"', text: "Loyaltymaster" },
       { family: "Onest", descriptor: '700 16px "Onest"', text: "Loyaltymaster" },
       { family: "Onest", descriptor: '900 16px "Onest"', text: "Loyaltymaster" },
+      { family: "Lato", descriptor: '900 30px "Lato"', text: "Loyaltymaster" },
     ];
 
     return {
